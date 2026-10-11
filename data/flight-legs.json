@@ -184,66 +184,6 @@
         "high": 290,
         "source": "Live check Oct 11 2026: C$228–268 on Nov 29"
       }
-    },
-    {
-      "id": "probe-intl-dec1",
-      "kind": "flight",
-      "group": "international",
-      "total": false,
-      "title": "Calgary ⇄ Manila (round trip)",
-      "note": "Air Canada via Edmonton and Vancouver, then Philippine Airlines overnight to Manila. Home on PR 116 through Vancouver.",
-      "from": "YYC",
-      "to": "MNL",
-      "type": "round",
-      "outbound": "2026-11-13",
-      "return": "2026-12-01",
-      "withReturn": true,
-      "fit": {
-        "arriveBy": "2026-11-15 07:30",
-        "why": "leaves time for the morning flight to Panglao"
-      },
-      "returnFit": {
-        "departAfter": "2026-12-01 05:00",
-        "arriveBy": "2026-12-01 23:59",
-        "why": ""
-      },
-      "estimate": {
-        "low": 1400,
-        "high": 1550,
-        "source": "Live check Oct 11 2026: C$1,474"
-      },
-      "preferFlights": [
-        "AC 8138",
-        "AC 249",
-        "PR 117"
-      ],
-      "preferReturn": [
-        "PR 116",
-        "WS 126"
-      ]
-    },
-    {
-      "id": "probe-usu-crk-dec1",
-      "kind": "flight",
-      "group": "domestic",
-      "total": false,
-      "title": "Coron → Clark",
-      "note": "Separate ticket. Several nonstops a day, so a later one still makes the evening flight home if the first is delayed.",
-      "from": "USU",
-      "to": "CRK",
-      "type": "oneway",
-      "outbound": "2026-12-01",
-      "fit": {
-        "departAfter": "2026-12-01 07:00",
-        "arriveBy": "2026-12-01 14:05",
-        "why": ""
-      },
-      "estimate": {
-        "low": 130,
-        "high": 210,
-        "source": "Live check Oct 11 2026: C$132–208 on Nov 30"
-      },
-      "prefer": "earliest"
     }
   ]
 }
