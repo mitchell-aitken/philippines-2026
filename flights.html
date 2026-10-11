@@ -148,10 +148,10 @@
     <h2>Turn on live prices</h2>
     Live fares come from Google Flights through SerpApi. A GitHub Action checks them once a day and saves them to this site.
     <ol>
-      <li>Sign up for a free account at <a href="https://serpapi.com/users/sign_up" target="_blank" rel="noopener">serpapi.com</a> (250 searches/month free; this uses about 120).</li>
+      <li>Sign up for a free account at <a href="https://serpapi.com/users/sign_up" target="_blank" rel="noopener">serpapi.com</a> (250 searches/month free; this uses about 125).</li>
       <li>Copy your API key from the SerpApi dashboard.</li>
       <li>In the GitHub repo: <b>Settings → Secrets and variables → Actions → New repository secret</b>. Name it <code>SERPAPI_KEY</code> and paste the key.</li>
-      <li>Go to <b>Actions → Update flight prices → Run workflow</b>. Prices appear here a minute or two later, then refresh every morning.</li>
+      <li>Go to <b>Actions → Update flight prices → Run workflow</b>. Prices appear here a minute or two later, then refresh every other morning.</li>
     </ol>
   </section>
 

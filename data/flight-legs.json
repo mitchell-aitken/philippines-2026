@@ -55,7 +55,7 @@
       "group": "international",
       "total": false,
       "title": "Calgary → Panglao, home from Coron",
-      "note": "One ticket, two different airports: fly into Bohol-Panglao (TAG) on Nov 14 and home from Coron (USU) on Nov 30. No Cebu ferry at the start and no Cebu night at the end.",
+      "note": "Compared, not booked: one ticket into Bohol-Panglao (TAG) on Nov 14 and home from Coron (USU) on Nov 30. It lands in Panglao about 10:15 on the 16th, but on Oct 11 it cost about C$375 more each and every return reached Calgary on Tuesday.",
       "type": "multi",
       "segments": [
         {
@@ -82,9 +82,9 @@
         "why": "Coron town is 40 min from the airport"
       },
       "estimate": {
-        "low": 1300,
-        "high": 1800,
-        "source": "Not yet checked live"
+        "low": 1800,
+        "high": 1900,
+        "source": "Live check Oct 11 2026: C$1,843"
       }
     },
     {
@@ -243,59 +243,6 @@
         "low": 60,
         "high": 130,
         "source": "Live CEB–USU fares Oct 11 2026: C$85–156"
-      }
-    },
-    {
-      "id": "probe-yyc-mnl",
-      "kind": "flight",
-      "group": "international",
-      "total": false,
-      "title": "Probe: Calgary ⇄ Manila",
-      "note": "",
-      "from": "YYC",
-      "to": "MNL",
-      "type": "round",
-      "outbound": "2026-11-14",
-      "return": "2026-11-30",
-      "withReturn": true,
-      "estimate": {
-        "low": 1100,
-        "high": 1500,
-        "source": "probe"
-      }
-    },
-    {
-      "id": "probe-mnl-tag",
-      "kind": "flight",
-      "group": "domestic",
-      "total": false,
-      "title": "Probe: Manila → Panglao",
-      "note": "",
-      "from": "MNL",
-      "to": "TAG",
-      "type": "oneway",
-      "outbound": "2026-11-16",
-      "estimate": {
-        "low": 50,
-        "high": 150,
-        "source": "probe"
-      }
-    },
-    {
-      "id": "probe-usu-mnl",
-      "kind": "flight",
-      "group": "domestic",
-      "total": false,
-      "title": "Probe: Coron → Manila",
-      "note": "",
-      "from": "USU",
-      "to": "MNL",
-      "type": "oneway",
-      "outbound": "2026-11-30",
-      "estimate": {
-        "low": 50,
-        "high": 150,
-        "source": "probe"
       }
     }
   ]

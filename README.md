@@ -16,9 +16,9 @@ To add accommodation, fill in `name` (and optionally `link`) in the `STAYS` bloc
 Basemap: Esri World Light Gray Canvas (no API key), with OpenStreetMap as an automatic fallback.
 
 ## Live flight prices
-`.github/workflows/update-flights.yml` runs `scripts/fetch-flights.mjs` every morning. It asks Google Flights (through SerpApi) for the legs in `data/flight-legs.json` and commits the results to `data/flights.json`.
+`.github/workflows/update-flights.yml` runs `scripts/fetch-flights.mjs` every other morning. It asks Google Flights (through SerpApi) for the legs in `data/flight-legs.json` and commits the results to `data/flights.json`.
 
-1. Get a free API key at https://serpapi.com (250 searches/month; this uses about 120).
+1. Get a free API key at https://serpapi.com (250 searches/month; this uses about 125).
 2. Repo **Settings → Secrets and variables → Actions → New repository secret**: name `SERPAPI_KEY`.
 3. **Actions → Update flight prices → Run workflow** for the first refresh.
 
