@@ -1,40 +1,282 @@
 {
-  "updated": "2026-10-11T17:40:30.750Z",
+  "updated": "2026-10-11T17:43:40.408Z",
   "currency": "CAD",
   "source": "Google Flights via SerpApi",
   "legs": {
     "intl-main": {
-      "checked": "2026-10-11T17:40:30.750Z",
-      "lowest": 1467,
-      "priceLevel": "high",
+      "checked": "2026-10-11T17:43:40.408Z",
+      "lowest": 1334,
+      "priceLevel": "typical",
       "typicalRange": [
         1100,
         1400
       ],
-      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTE0agcIARIDWVlDcgcIARIDQ0VCGh4SCjIwMjYtMTEtMzBqBwgBEgNDRUJyBwgBEgNZWUNAAUgBcAGYAQE&tfu=EgIIAQ",
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTEzagcIARIDWVlDcgcIARIDQ0VCGh4SCjIwMjYtMTEtMjlqBwgBEgNDRUJyBwgBEgNZWUNAAUgBcAGYAQE&tfu=EgIIAQ",
       "options": [
         {
-          "price": 1467,
+          "price": 1334,
           "best": true,
           "airlines": [
-            "Air Canada",
+            "Alaska",
             "Philippine Airlines"
           ],
           "flights": [
-            "AC 8134",
-            "AC 245",
+            "AS 1460",
+            "PR 125",
+            "PR 2855"
+          ],
+          "from": "YYC",
+          "to": "CEB",
+          "depart": "2026-11-13 09:09",
+          "arrive": "2026-11-15 08:25",
+          "minutes": 1996,
+          "stops": 2,
+          "via": [
+            "SEA",
+            "MNL"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1522,
+          "best": true,
+          "airlines": [
+            "Air Canada",
+            "EVA Air"
+          ],
+          "flights": [
+            "AC 8073",
+            "BR 9",
+            "BR 281"
+          ],
+          "from": "YYC",
+          "to": "CEB",
+          "depart": "2026-11-13 22:15",
+          "arrive": "2026-11-15 11:15",
+          "minutes": 1380,
+          "stops": 2,
+          "via": [
+            "YVR",
+            "TPE"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1562,
+          "best": true,
+          "airlines": [
+            "WestJet",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "WS 127",
             "PR 117",
             "PR 2849"
           ],
           "from": "YYC",
           "to": "CEB",
-          "depart": "2026-11-14 14:25",
-          "arrive": "2026-11-16 10:10",
-          "minutes": 1785,
-          "stops": 3,
+          "depart": "2026-11-13 19:10",
+          "arrive": "2026-11-15 10:10",
+          "minutes": 1500,
+          "stops": 2,
           "via": [
-            "YEG",
             "YVR",
+            "MNL"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1744,
+          "best": true,
+          "airlines": [
+            "Air Canada",
+            "China Airlines"
+          ],
+          "flights": [
+            "AC 8073",
+            "CI 31",
+            "CI 705"
+          ],
+          "from": "YYC",
+          "to": "CEB",
+          "depart": "2026-11-13 22:15",
+          "arrive": "2026-11-15 11:10",
+          "minutes": 1375,
+          "stops": 2,
+          "via": [
+            "YVR",
+            "TPE"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1765,
+          "best": true,
+          "airlines": [
+            "WestJet",
+            "China Airlines"
+          ],
+          "flights": [
+            "WS 131",
+            "CI 31",
+            "CI 705"
+          ],
+          "from": "YYC",
+          "to": "CEB",
+          "depart": "2026-11-13 22:00",
+          "arrive": "2026-11-15 11:10",
+          "minutes": 1390,
+          "stops": 2,
+          "via": [
+            "YVR",
+            "TPE"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1943,
+          "best": false,
+          "airlines": [
+            "WestJet",
+            "Cathay Pacific"
+          ],
+          "flights": [
+            "WS 127",
+            "CX 865",
+            "CX 921"
+          ],
+          "from": "YYC",
+          "to": "CEB",
+          "depart": "2026-11-13 19:10",
+          "arrive": "2026-11-15 11:10",
+          "minutes": 1560,
+          "stops": 2,
+          "via": [
+            "YVR",
+            "HKG"
+          ],
+          "overnight": false
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "low": 1334
+        }
+      ],
+      "returnFor": {
+        "flights": [
+          "AS 1460",
+          "PR 125",
+          "PR 2855"
+        ],
+        "price": 1334
+      },
+      "returnOptions": [
+        {
+          "price": 1334,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "WestJet"
+          ],
+          "flights": [
+            "PR 2864",
+            "PR 116",
+            "WS 126"
+          ],
+          "from": "CEB",
+          "to": "YYC",
+          "depart": "2026-11-29 23:25",
+          "arrive": "2026-11-30 23:00",
+          "minutes": 2255,
+          "stops": 2,
+          "via": [
+            "MNL",
+            "YVR"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1384,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "WestJet"
+          ],
+          "flights": [
+            "PR 2856",
+            "PR 116",
+            "WS 126"
+          ],
+          "from": "CEB",
+          "to": "YYC",
+          "depart": "2026-11-29 09:20",
+          "arrive": "2026-11-29 23:00",
+          "minutes": 1660,
+          "stops": 2,
+          "via": [
+            "MNL",
+            "YVR"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1606,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "WestJet"
+          ],
+          "flights": [
+            "PR 2868",
+            "PR 116",
+            "WS 126"
+          ],
+          "from": "CEB",
+          "to": "YYC",
+          "depart": "2026-11-29 16:20",
+          "arrive": "2026-11-29 23:00",
+          "minutes": 1240,
+          "stops": 2,
+          "via": [
+            "MNL",
+            "YVR"
+          ],
+          "overnight": false
+        }
+      ]
+    },
+    "intl-main-30": {
+      "checked": "2026-10-11T17:43:40.408Z",
+      "lowest": 1334,
+      "priceLevel": "typical",
+      "typicalRange": [
+        1100,
+        1400
+      ],
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTEzagcIARIDWVlDcgcIARIDQ0VCGh4SCjIwMjYtMTEtMzBqBwgBEgNDRUJyBwgBEgNZWUNAAUgBcAGYAQE&tfu=EgIIAQ",
+      "options": [
+        {
+          "price": 1334,
+          "best": true,
+          "airlines": [
+            "Alaska",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "AS 1460",
+            "PR 125",
+            "PR 2855"
+          ],
+          "from": "YYC",
+          "to": "CEB",
+          "depart": "2026-11-13 09:09",
+          "arrive": "2026-11-15 08:25",
+          "minutes": 1996,
+          "stops": 2,
+          "via": [
+            "SEA",
             "MNL"
           ],
           "overnight": false
@@ -53,8 +295,8 @@
           ],
           "from": "YYC",
           "to": "CEB",
-          "depart": "2026-11-14 19:10",
-          "arrive": "2026-11-16 10:10",
+          "depart": "2026-11-13 19:10",
+          "arrive": "2026-11-15 10:10",
           "minutes": 1500,
           "stops": 2,
           "via": [
@@ -77,8 +319,8 @@
           ],
           "from": "YYC",
           "to": "CEB",
-          "depart": "2026-11-14 22:15",
-          "arrive": "2026-11-16 11:15",
+          "depart": "2026-11-13 22:15",
+          "arrive": "2026-11-15 11:15",
           "minutes": 1380,
           "stops": 2,
           "via": [
@@ -88,25 +330,25 @@
           "overnight": false
         },
         {
-          "price": 1635,
+          "price": 1694,
           "best": false,
           "airlines": [
             "WestJet",
             "China Airlines"
           ],
           "flights": [
-            "WS 3750",
-            "CI 21",
+            "WS 119",
+            "CI 31",
             "CI 705"
           ],
           "from": "YYC",
           "to": "CEB",
-          "depart": "2026-11-14 13:30",
-          "arrive": "2026-11-16 11:10",
-          "minutes": 1900,
+          "depart": "2026-11-13 18:40",
+          "arrive": "2026-11-15 11:10",
+          "minutes": 1590,
           "stops": 2,
           "via": [
-            "SEA",
+            "YVR",
             "TPE"
           ],
           "overnight": false
@@ -119,15 +361,15 @@
             "China Airlines"
           ],
           "flights": [
-            "AC 221",
+            "AC 8073",
             "CI 31",
             "CI 705"
           ],
           "from": "YYC",
           "to": "CEB",
-          "depart": "2026-11-14 19:30",
-          "arrive": "2026-11-16 11:10",
-          "minutes": 1540,
+          "depart": "2026-11-13 22:15",
+          "arrive": "2026-11-15 11:10",
+          "minutes": 1375,
           "stops": 2,
           "via": [
             "YVR",
@@ -143,15 +385,15 @@
             "China Airlines"
           ],
           "flights": [
-            "WS 127",
+            "WS 131",
             "CI 31",
             "CI 705"
           ],
           "from": "YYC",
           "to": "CEB",
-          "depart": "2026-11-14 19:10",
-          "arrive": "2026-11-16 11:10",
-          "minutes": 1560,
+          "depart": "2026-11-13 22:00",
+          "arrive": "2026-11-15 11:10",
+          "minutes": 1390,
           "stops": 2,
           "via": [
             "YVR",
@@ -163,21 +405,20 @@
       "history": [
         {
           "date": "2026-10-11",
-          "low": 1467
+          "low": 1334
         }
       ],
       "returnFor": {
         "flights": [
-          "AC 8134",
-          "AC 245",
-          "PR 117",
-          "PR 2849"
+          "AS 1460",
+          "PR 125",
+          "PR 2855"
         ],
-        "price": 1467
+        "price": 1334
       },
       "returnOptions": [
         {
-          "price": 1467,
+          "price": 1334,
           "best": false,
           "airlines": [
             "Philippine Airlines",
@@ -201,7 +442,7 @@
           "overnight": false
         },
         {
-          "price": 1467,
+          "price": 1334,
           "best": false,
           "airlines": [
             "Philippine Airlines",
@@ -225,7 +466,7 @@
           "overnight": false
         },
         {
-          "price": 1492,
+          "price": 1359,
           "best": false,
           "airlines": [
             "Philippine Airlines",
@@ -251,11 +492,215 @@
       ]
     },
     "intl-b": {
-      "checked": "2026-10-11T17:40:30.750Z",
+      "checked": "2026-10-11T17:43:40.408Z",
+      "lowest": 1566,
+      "priceLevel": null,
+      "typicalRange": null,
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTEzagcIARIDWVlDcgcIARIDVEFHGh4SCjIwMjYtMTEtMjlqBwgBEgNDRUJyBwgBEgNZWUNAAUgBcAGYAQM&tfu=EgIIAQ",
+      "options": [
+        {
+          "price": 1566,
+          "best": true,
+          "airlines": [
+            "Air Canada",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "AC 8134",
+            "AC 249",
+            "PR 117",
+            "PR 2773"
+          ],
+          "from": "YYC",
+          "to": "TAG",
+          "depart": "2026-11-13 14:25",
+          "arrive": "2026-11-15 10:15",
+          "minutes": 1790,
+          "stops": 3,
+          "via": [
+            "YEG",
+            "YVR",
+            "MNL"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1566,
+          "best": true,
+          "airlines": [
+            "Air Canada",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "AC 8134",
+            "AC 245",
+            "PR 117",
+            "PR 2773"
+          ],
+          "from": "YYC",
+          "to": "TAG",
+          "depart": "2026-11-13 14:25",
+          "arrive": "2026-11-15 10:15",
+          "minutes": 1790,
+          "stops": 3,
+          "via": [
+            "YEG",
+            "YVR",
+            "MNL"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1571,
+          "best": true,
+          "airlines": [
+            "Alaska",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "AS 1460",
+            "PR 125",
+            "PR 2773"
+          ],
+          "from": "YYC",
+          "to": "TAG",
+          "depart": "2026-11-13 09:09",
+          "arrive": "2026-11-15 10:15",
+          "minutes": 2106,
+          "stops": 2,
+          "via": [
+            "SEA",
+            "MNL"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1748,
+          "best": true,
+          "airlines": [
+            "Air Canada",
+            "EVA Air",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "AC 8073",
+            "BR 9",
+            "BR 271",
+            "PR 2777"
+          ],
+          "from": "YYC",
+          "to": "TAG",
+          "depart": "2026-11-13 22:15",
+          "arrive": "2026-11-15 17:50",
+          "minutes": 1775,
+          "stops": 3,
+          "via": [
+            "YVR",
+            "TPE",
+            "MNL"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1766,
+          "best": true,
+          "airlines": [
+            "WestJet",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "WS 127",
+            "PR 117",
+            "PR 2773"
+          ],
+          "from": "YYC",
+          "to": "TAG",
+          "depart": "2026-11-13 19:10",
+          "arrive": "2026-11-15 10:15",
+          "minutes": 1505,
+          "stops": 2,
+          "via": [
+            "YVR",
+            "MNL"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1904,
+          "best": false,
+          "airlines": [
+            "Air Canada",
+            "China Airlines",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "AC 8073",
+            "CI 31",
+            "CI 701",
+            "PR 2777"
+          ],
+          "from": "YYC",
+          "to": "TAG",
+          "depart": "2026-11-13 22:15",
+          "arrive": "2026-11-15 17:50",
+          "minutes": 1775,
+          "stops": 3,
+          "via": [
+            "YVR",
+            "TPE",
+            "MNL"
+          ],
+          "overnight": false
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "low": 1566
+        }
+      ],
+      "returnFor": {
+        "flights": [
+          "AC 8134",
+          "AC 249",
+          "PR 117",
+          "PR 2773"
+        ],
+        "price": 1566
+      },
+      "returnOptions": [
+        {
+          "price": 1799,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "WestJet"
+          ],
+          "flights": [
+            "PR 2868",
+            "PR 116",
+            "WS 126"
+          ],
+          "from": "CEB",
+          "to": "YYC",
+          "depart": "2026-11-29 16:20",
+          "arrive": "2026-11-29 23:00",
+          "minutes": 1240,
+          "stops": 2,
+          "via": [
+            "MNL",
+            "YVR"
+          ],
+          "overnight": false
+        }
+      ]
+    },
+    "intl-b-30": {
+      "checked": "2026-10-11T17:43:40.408Z",
       "lowest": 1516,
       "priceLevel": null,
       "typicalRange": null,
-      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTE0agcIARIDWVlDcgcIARIDVEFHGh4SCjIwMjYtMTEtMzBqBwgBEgNDRUJyBwgBEgNZWUNAAUgBcAGYAQM&tfu=EgIIAQ",
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTEzagcIARIDWVlDcgcIARIDVEFHGh4SCjIwMjYtMTEtMzBqBwgBEgNDRUJyBwgBEgNZWUNAAUgBcAGYAQM&tfu=EgIIAQ",
       "options": [
         {
           "price": 1516,
@@ -272,8 +717,8 @@
           ],
           "from": "YYC",
           "to": "TAG",
-          "depart": "2026-11-14 14:25",
-          "arrive": "2026-11-16 10:15",
+          "depart": "2026-11-13 14:25",
+          "arrive": "2026-11-15 10:15",
           "minutes": 1790,
           "stops": 3,
           "via": [
@@ -298,13 +743,37 @@
           ],
           "from": "YYC",
           "to": "TAG",
-          "depart": "2026-11-14 14:25",
-          "arrive": "2026-11-16 10:15",
+          "depart": "2026-11-13 14:25",
+          "arrive": "2026-11-15 10:15",
           "minutes": 1790,
           "stops": 3,
           "via": [
             "YEG",
             "YVR",
+            "MNL"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1521,
+          "best": true,
+          "airlines": [
+            "Alaska",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "AS 1460",
+            "PR 125",
+            "PR 2773"
+          ],
+          "from": "YYC",
+          "to": "TAG",
+          "depart": "2026-11-13 09:09",
+          "arrive": "2026-11-15 10:15",
+          "minutes": 2106,
+          "stops": 2,
+          "via": [
+            "SEA",
             "MNL"
           ],
           "overnight": false
@@ -323,8 +792,8 @@
           ],
           "from": "YYC",
           "to": "TAG",
-          "depart": "2026-11-14 19:10",
-          "arrive": "2026-11-16 10:15",
+          "depart": "2026-11-13 19:10",
+          "arrive": "2026-11-15 10:15",
           "minutes": 1505,
           "stops": 2,
           "via": [
@@ -334,7 +803,7 @@
           "overnight": false
         },
         {
-          "price": 1758,
+          "price": 1857,
           "best": false,
           "airlines": [
             "Air Canada",
@@ -349,8 +818,8 @@
           ],
           "from": "YYC",
           "to": "TAG",
-          "depart": "2026-11-14 22:15",
-          "arrive": "2026-11-16 17:50",
+          "depart": "2026-11-13 22:15",
+          "arrive": "2026-11-15 17:50",
           "minutes": 1775,
           "stops": 3,
           "via": [
@@ -376,40 +845,14 @@
           ],
           "from": "YYC",
           "to": "TAG",
-          "depart": "2026-11-14 22:15",
-          "arrive": "2026-11-16 17:50",
+          "depart": "2026-11-13 22:15",
+          "arrive": "2026-11-15 17:50",
           "minutes": 1775,
           "stops": 3,
           "via": [
             "YVR",
             "TPE",
             "MNL"
-          ],
-          "overnight": false
-        },
-        {
-          "price": 2024,
-          "best": false,
-          "airlines": [
-            "Air Canada",
-            "Philippine Airlines"
-          ],
-          "flights": [
-            "AC 221",
-            "PR 117",
-            "PR 2813",
-            "PR 2372"
-          ],
-          "from": "YYC",
-          "to": "TAG",
-          "depart": "2026-11-14 19:30",
-          "arrive": "2026-11-16 12:50",
-          "minutes": 1640,
-          "stops": 3,
-          "via": [
-            "YVR",
-            "MNL",
-            "DVO"
           ],
           "overnight": false
         }
@@ -505,17 +948,17 @@
       ]
     },
     "tag-eni": {
-      "checked": "2026-10-11T17:40:30.750Z",
-      "lowest": 270,
+      "checked": "2026-10-11T17:43:40.408Z",
+      "lowest": 209,
       "priceLevel": "typical",
       "typicalRange": [
         175,
         285
       ],
-      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTIxagcIARIDVEFHcgcIARIDRU5JQAFIAXABmAEC&tfu=EgIIAQ",
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTE5agcIARIDVEFHcgcIARIDRU5JQAFIAXABmAEC&tfu=EgIIAQ",
       "options": [
         {
-          "price": 270,
+          "price": 209,
           "best": false,
           "airlines": [
             "Cebgo"
@@ -525,8 +968,8 @@
           ],
           "from": "TAG",
           "to": "ENI",
-          "depart": "2026-11-21 15:50",
-          "arrive": "2026-11-21 17:35",
+          "depart": "2026-11-19 15:50",
+          "arrive": "2026-11-19 17:35",
           "minutes": 105,
           "stops": 0,
           "via": [],
@@ -536,12 +979,138 @@
       "history": [
         {
           "date": "2026-10-11",
-          "low": 270
+          "low": 209
         }
       ]
     },
     "usu-ceb": {
-      "checked": "2026-10-11T17:40:30.750Z",
+      "checked": "2026-10-11T17:43:40.408Z",
+      "lowest": 104,
+      "priceLevel": "high",
+      "typicalRange": [
+        50,
+        100
+      ],
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTI4agcIARIDVVNVcgcIARIDQ0VCQAFIAXABmAEC&tfu=EgIIAQ",
+      "options": [
+        {
+          "price": 104,
+          "best": true,
+          "airlines": [
+            "Sunlight Air"
+          ],
+          "flights": [
+            "2R 852"
+          ],
+          "from": "USU",
+          "to": "CEB",
+          "depart": "2026-11-28 16:45",
+          "arrive": "2026-11-28 18:20",
+          "minutes": 95,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 134,
+          "best": true,
+          "airlines": [
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "PR 2667"
+          ],
+          "from": "USU",
+          "to": "CEB",
+          "depart": "2026-11-28 08:10",
+          "arrive": "2026-11-28 09:25",
+          "minutes": 75,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 146,
+          "best": true,
+          "airlines": [
+            "Cebgo"
+          ],
+          "flights": [
+            "DG 6069"
+          ],
+          "from": "USU",
+          "to": "CEB",
+          "depart": "2026-11-28 09:35",
+          "arrive": "2026-11-28 11:15",
+          "minutes": 100,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 231,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "PR 2665"
+          ],
+          "from": "USU",
+          "to": "CEB",
+          "depart": "2026-11-28 15:40",
+          "arrive": "2026-11-28 16:55",
+          "minutes": 75,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 251,
+          "best": false,
+          "airlines": [
+            "Cebgo"
+          ],
+          "flights": [
+            "DG 6067"
+          ],
+          "from": "USU",
+          "to": "CEB",
+          "depart": "2026-11-28 15:40",
+          "arrive": "2026-11-28 17:20",
+          "minutes": 100,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 279,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "PR 2683"
+          ],
+          "from": "USU",
+          "to": "CEB",
+          "depart": "2026-11-28 14:00",
+          "arrive": "2026-11-28 15:10",
+          "minutes": 70,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "low": 104
+        }
+      ]
+    },
+    "usu-ceb-29": {
+      "checked": "2026-10-11T17:43:40.408Z",
       "lowest": 146,
       "priceLevel": "high",
       "typicalRange": [
