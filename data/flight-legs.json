@@ -128,7 +128,8 @@
         "low": 130,
         "high": 210,
         "source": "Live check Oct 11 2026: C$132–208 on Nov 30"
-      }
+      },
+      "prefer": "earliest"
     },
     {
       "id": "crk-mnl",

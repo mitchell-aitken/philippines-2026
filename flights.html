@@ -234,7 +234,10 @@ function render(cfg, live) {
   const flLine = o => `${o.airlines.join(" + ")} ${o.flights.join(" · ")} · ${hm(o.depart)} → ${hm(o.arrive)} · ${via(o)}`;
   const legCost = id => {
     const leg = L[id];
-    if (leg.kind === "flight") { const o = pick(D[id]?.options, x => fitOf(leg, x)); return { id, o, price: o ? o.price : est(leg), live: !!o }; }
+    if (leg.kind === "flight") {
+      const opts = leg.prefer === "earliest" ? [...(D[id]?.options || [])].sort((x, y) => x.depart.localeCompare(y.depart)) : D[id]?.options;
+      const o = pick(opts, x => fitOf(leg, x)); return { id, o, price: o ? o.price : est(leg), live: !!o };
+    }
     return { id, o: null, price: est(leg), live: false };
   };
 
