@@ -137,12 +137,12 @@ const DAYS = [
     plan: [
       ["Morning", "Last swim on Panglao, check out by noon."],
       ["13:30", "At Bohol-Panglao airport (TAG), 15 min from most Panglao hotels."],
-      ["15:40", "Cebgo DG 5611 nonstop to El Nido, about 1 hr 50 min."],
+      ["15:50", "Cebgo DG 6888 nonstop to El Nido, landing about 17:35."],
       ["Evening", "Tricycle into town (20 min), dinner, book tours for the next days."],
     ],
     move: "Direct flight TAG → ENI · tricycle to town",
     stay: "eni",
-    tip: "This nonstop only runs some days (Mon, Tue, Thu and Sat, plus a Sunday flight), so don't move this day without checking. Small ATR plane: book early and add checked bags when you buy.",
+    tip: "This nonstop only runs on some days of the week (Saturday is one), so don't move this day without checking. It's a small ATR plane: book early and add checked bags when you buy.",
     photos: [["El Nido", "El Nido Palawan limestone cliffs"], ["El Nido airport", "Lio airport El Nido"]]  // [label, image search]
   },
   {
@@ -203,11 +203,11 @@ const DAYS = [
     lede: "Ride the fast ferry north through the island chain to Coron, arriving around lunch. Climb the town's viewpoint for sunset and finish in a saltwater hot spring.",
     plan: [
       ["07:20", "Check in at El Nido port (1 hr before)."],
-      ["08:20", "Phimal fast ferry to Coron, arriving about 12:20. Montenegro also leaves at 12:00, arriving about 16:00."],
+      ["08:20", "Phimal fast ferry to Coron, arriving about 12:20. Or fly: Cebgo has a 40 min flight at about 12:05 (see the Flights page)."],
       ["Sunset", "Climb the 721 steps up Mt Tapyas (about 30 min)."],
       ["Evening", "Soak at Maquinit Hot Springs (about 40°C saltwater)."],
     ],
-    move: "Fast ferry 3–4 hrs (₱3,175–3,290) · or a 40 min AirSWIFT flight",
+    move: "Fast ferry 3–4 hrs (₱3,175–3,290) · or a 40 min Cebgo flight",
     stay: "crn",
     tip: "Book the ferry ahead and bring a printed ticket. If seas are rough the ferry can be cancelled; the Saturday free day in Coron absorbs a one-day delay.",
     photos: [["El Nido to Coron ferry", "El Nido to Coron fast ferry"], ["Mt Tapyas", "Mt Tapyas Coron sunset"], ["Maquinit Hot Springs", "Maquinit Hot Springs Coron"]]  // [label, image search]

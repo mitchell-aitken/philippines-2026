@@ -78,7 +78,7 @@
   .level.high{background:#FBE9EB;color:var(--red)}
 
   .options{list-style:none;margin:16px 0 0;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .opt{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.5fr) auto;gap:4px 18px;align-items:center;padding:12px 14px;border-top:1px solid var(--line)}
+  .opt{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.5fr) 84px;gap:4px 18px;align-items:center;padding:12px 14px;border-top:1px solid var(--line)}
   .opt:first-child{border-top:0}
   .opt .air{font-weight:600;font-size:14px}
   .opt .air small{display:block;font-weight:400;color:var(--muted);font-size:12px;font-family:var(--mono)}
@@ -230,7 +230,7 @@ function fitWindow(f, o) {
   if (!f) return null;
   const why = f.why ? ` (${f.why})` : "";
   if (f.departAfter && o.depart < f.departAfter) return { cls: "bad", text: `Leaves too early for the plan${why}` };
-  if (f.arriveBy && o.arrive > f.arriveBy) return { cls: "bad", text: "Arrives too late for the plan" };
+  if (f.arriveBy && o.arrive > f.arriveBy) return { cls: "bad", text: `Lands ${day(o.arrive)} at ${o.arrive.slice(11, 16)}, too late for the plan` };
   return { cls: "ok", text: "Fits the plan" };
 }
 function fitOf(leg, o) {

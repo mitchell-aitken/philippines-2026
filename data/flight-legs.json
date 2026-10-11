@@ -22,7 +22,7 @@
         "gap": 150,
         "gapWhy": "about 2.5 hrs for immigration, bags, the 45 min ride to Pier 1 and ferry check-in"
       },
-      "returnFit": { "departAfter": "2026-11-30 05:00", "why": "you sleep on Mactan the night before" },
+      "returnFit": { "departAfter": "2026-11-30 05:00", "arriveBy": "2026-11-30 23:59", "why": "you sleep on Mactan the night before" },
       "estimate": { "low": 1150, "high": 1500, "source": "Momondo, Oct 11 2026: Nov fares from C$1,223" }
     },
     {
@@ -61,7 +61,7 @@
       "group": "domestic",
       "total": true,
       "title": "Bohol → El Nido",
-      "note": "One way, nonstop on Cebgo. It only runs some days of the week, so the plan is built around this flight.",
+      "note": "One way, nonstop on Cebgo, landing late afternoon. It only runs some days of the week, so the plan is built around this flight.",
       "from": "TAG", "to": "ENI",
       "type": "oneway",
       "outbound": "2026-11-21",
@@ -90,7 +90,7 @@
       "group": "domestic",
       "total": false,
       "title": "El Nido → Coron by plane (instead of the ferry)",
-      "note": "One way, about 40 min on AirSWIFT. Not in the total: an option if the seas are rough or you'd rather skip the boat.",
+      "note": "One way, about 40 min nonstop on Cebgo. Not in the total: an alternative to the ferry if the seas are rough or you'd rather not spend the morning on a boat.",
       "from": "ENI", "to": "USU",
       "type": "oneway",
       "outbound": "2026-11-25",
