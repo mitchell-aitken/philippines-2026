@@ -167,6 +167,7 @@ const day = iso => { const [y, m, d] = iso.slice(0, 10).split("-").map(Number); 
 const time = s => s ? `${day(s)} · ${s.slice(11, 16)}` : "";
 const dur = m => m ? `${Math.floor(m / 60)}h ${String(m % 60).padStart(2, "0")}m` : "";
 const gfUrl = leg => {
+  if (leg.type === "multi") return "https://www.google.com/travel/flights?hl=en&curr=CAD";
   const q = leg.type === "round"
     ? `Flights from ${leg.from} to ${leg.to} on ${leg.outbound} through ${leg.return}`
     : `One way flights from ${leg.from} to ${leg.to} on ${leg.outbound}`;
@@ -245,7 +246,10 @@ function fitOf(leg, o) {
 }
 
 function legHTML(leg, l, cfg) {
-  const when = leg.kind === "flight"
+  const sg = leg.segments || [];
+  const when = leg.type === "multi"
+    ? `${day(sg[0].date)} ${sg[0].from}→${sg[0].to} · ${day(sg[1].date)} ${sg[1].from}→${sg[1].to} · two airports`
+    : leg.kind === "flight"
     ? (leg.type === "round" ? `${day(leg.outbound)} – ${day(leg.return)} · round trip` : `${day(leg.outbound)} · one way`)
     : `${day(leg.date)} · ferry`;
   const p = perPerson(leg, { legs: { [leg.id]: l } });
@@ -263,10 +267,11 @@ function legHTML(leg, l, cfg) {
         </li>`;
   if (leg.kind === "flight") {
     if (l?.options?.length) {
-      const outLabel = leg.type === "round" ? `<div class="subhead">Outbound · ${day(leg.outbound)} · round-trip price</div>` : "";
+      const outLabel = leg.type === "round" ? `<div class="subhead">Outbound · ${day(leg.outbound)} · round-trip price</div>`
+        : leg.type === "multi" ? `<div class="subhead">${esc(leg.outLabel)} · ${day(sg[0].date)} · whole-ticket price</div>` : "";
       body = `${outLabel}<ul class="options">${l.options.map(o => optRow(o, fitOf(leg, o))).join("")}</ul>`;
       if (l.returnOptions?.length) {
-        body += `<div class="subhead">Return · ${day(leg.return)} · paired with the ${esc(l.returnFor.flights.join(" / "))} outbound, round-trip price</div>
+        body += `<div class="subhead">${leg.type === "multi" ? `${esc(leg.retLabel)} · ${day(sg[1].date)}` : `Return · ${day(leg.return)}`} · paired with the ${esc(l.returnFor.flights.join(" / "))} outbound, whole-ticket price</div>
           <ul class="options">${l.returnOptions.map(o => optRow(o, fitWindow(leg.returnFit, o))).join("")}</ul>`;
       } else if (l.returnError) {
         body += `<div class="empty"><span class="err">Couldn't load return flights: ${esc(l.returnError)}.</span></div>`;

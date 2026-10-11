@@ -1,7 +1,7 @@
 // Fetches flight prices from SerpApi's Google Flights API and writes data/flights.json.
 //
 // Runs daily from .github/workflows/update-flights.yml. Needs the repo secret SERPAPI_KEY
-// (free plan: 250 searches/month; this uses 6 per run, about 185/month).
+// (free plan: 250 searches/month; keep searches per run × 31 under that).
 //
 // Local test without the API:  MOCK_DIR=path/to/mocks node scripts/fetch-flights.mjs
 //   (reads <MOCK_DIR>/<leg id>.json instead of calling SerpApi)
@@ -29,19 +29,18 @@ const out = { updated: new Date().toISOString(), currency: cfg.currency, source:
 
 async function search(leg, departureToken) {
   if (MOCK_DIR) return JSON.parse(await readFile(`${MOCK_DIR}/${leg.id}${departureToken ? "-return" : ""}.json`, "utf8"));
-  const params = new URLSearchParams({
-    engine: "google_flights",
-    departure_id: leg.from,
-    arrival_id: leg.to,
-    outbound_date: leg.outbound,
-    type: leg.type === "round" ? "1" : "2",
-    currency: cfg.currency,
-    hl: "en",
-    gl: "ca",
-    adults: "1",
-    api_key: KEY,
-  });
-  if (leg.type === "round") params.set("return_date", leg.return);
+  const params = new URLSearchParams({ engine: "google_flights", currency: cfg.currency, hl: "en", gl: "ca", adults: "1", api_key: KEY });
+  if (leg.type === "multi") {
+    // Multi-city / open-jaw: e.g. YYC→TAG out, USU→YYC home
+    params.set("type", "3");
+    params.set("multi_city_json", JSON.stringify(leg.segments.map(g => ({ departure_id: g.from, arrival_id: g.to, date: g.date }))));
+  } else {
+    params.set("type", leg.type === "round" ? "1" : "2");
+    params.set("departure_id", leg.from);
+    params.set("arrival_id", leg.to);
+    params.set("outbound_date", leg.outbound);
+    if (leg.type === "round") params.set("return_date", leg.return);
+  }
   if (departureToken) params.set("departure_token", departureToken);
   const res = await fetch(`https://serpapi.com/search.json?${params}`);
   const data = await res.json().catch(() => ({}));
@@ -107,7 +106,8 @@ function summarize(leg, data, old) {
 let ok = 0, failed = 0;
 for (const leg of cfg.legs.filter(l => l.kind === "flight")) {
   const old = prev.legs?.[leg.id];
-  if (leg.outbound < today) { if (old) out.legs[leg.id] = old; console.log(`skip ${leg.id}: date has passed`); continue; }
+  const firstDate = leg.outbound || leg.segments?.[0]?.date;
+  if (firstDate < today) { if (old) out.legs[leg.id] = old; console.log(`skip ${leg.id}: date has passed`); continue; }
   try {
     const data = await search(leg);
     const summary = summarize(leg, data, old);
