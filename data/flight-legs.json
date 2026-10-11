@@ -244,6 +244,59 @@
         "high": 130,
         "source": "Live CEB–USU fares Oct 11 2026: C$85–156"
       }
+    },
+    {
+      "id": "probe-yyc-mnl",
+      "kind": "flight",
+      "group": "international",
+      "total": false,
+      "title": "Probe: Calgary ⇄ Manila",
+      "note": "",
+      "from": "YYC",
+      "to": "MNL",
+      "type": "round",
+      "outbound": "2026-11-14",
+      "return": "2026-11-30",
+      "withReturn": true,
+      "estimate": {
+        "low": 1100,
+        "high": 1500,
+        "source": "probe"
+      }
+    },
+    {
+      "id": "probe-mnl-tag",
+      "kind": "flight",
+      "group": "domestic",
+      "total": false,
+      "title": "Probe: Manila → Panglao",
+      "note": "",
+      "from": "MNL",
+      "to": "TAG",
+      "type": "oneway",
+      "outbound": "2026-11-16",
+      "estimate": {
+        "low": 50,
+        "high": 150,
+        "source": "probe"
+      }
+    },
+    {
+      "id": "probe-usu-mnl",
+      "kind": "flight",
+      "group": "domestic",
+      "total": false,
+      "title": "Probe: Coron → Manila",
+      "note": "",
+      "from": "USU",
+      "to": "MNL",
+      "type": "oneway",
+      "outbound": "2026-11-30",
+      "estimate": {
+        "low": 50,
+        "high": 150,
+        "source": "probe"
+      }
     }
   ]
 }
