@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-11T19:01:02.620Z",
+  "updated": "2026-10-11T20:04:04.232Z",
   "currency": "CAD",
   "source": "Google Flights via SerpApi",
   "legs": {
     "intl-mnl": {
-      "checked": "2026-10-11T19:01:02.620Z",
+      "checked": "2026-10-11T20:04:04.232Z",
       "lowest": 1296,
       "priceLevel": "typical",
       "typicalRange": [
@@ -157,25 +157,23 @@
           "overnight": false
         },
         {
-          "price": 1561,
+          "price": 1656,
           "best": true,
           "airlines": [
-            "Air Canada",
+            "WestJet",
             "Philippine Airlines"
           ],
           "flights": [
-            "AC 8138",
-            "AC 249",
+            "WS 127",
             "PR 117"
           ],
           "from": "YYC",
           "to": "MNL",
-          "depart": "2026-11-13 17:55",
+          "depart": "2026-11-13 19:10",
           "arrive": "2026-11-15 05:30",
-          "minutes": 1295,
-          "stops": 2,
+          "minutes": 1220,
+          "stops": 1,
           "via": [
-            "YEG",
             "YVR"
           ],
           "overnight": false
@@ -189,15 +187,14 @@
       ],
       "returnFor": {
         "flights": [
-          "AC 8138",
-          "AC 249",
+          "WS 127",
           "PR 117"
         ],
-        "price": 1561
+        "price": 1656
       },
       "returnOptions": [
         {
-          "price": 1561,
+          "price": 1656,
           "best": false,
           "airlines": [
             "Philippine Airlines",
@@ -219,7 +216,7 @@
           "overnight": false
         },
         {
-          "price": 1561,
+          "price": 1656,
           "best": false,
           "airlines": [
             "Philippine Airlines",
@@ -265,7 +262,7 @@
       ]
     },
     "mnl-tag": {
-      "checked": "2026-10-11T19:01:02.620Z",
+      "checked": "2026-10-11T20:04:04.232Z",
       "lowest": 90,
       "priceLevel": "high",
       "typicalRange": [
@@ -394,7 +391,7 @@
       ]
     },
     "tag-eni": {
-      "checked": "2026-10-11T19:01:02.620Z",
+      "checked": "2026-10-11T20:04:04.232Z",
       "lowest": 209,
       "priceLevel": "typical",
       "typicalRange": [
@@ -430,7 +427,7 @@
       ]
     },
     "usu-crk": {
-      "checked": "2026-10-11T19:01:02.620Z",
+      "checked": "2026-10-11T20:04:04.232Z",
       "lowest": 80,
       "priceLevel": "typical",
       "typicalRange": [
@@ -556,7 +553,7 @@
       ]
     },
     "usu-mnl": {
-      "checked": "2026-10-11T19:01:02.620Z",
+      "checked": "2026-10-11T20:04:04.232Z",
       "lowest": 117,
       "priceLevel": "typical",
       "typicalRange": [
@@ -587,7 +584,7 @@
           "overnight": false
         },
         {
-          "price": 123,
+          "price": 122,
           "best": true,
           "airlines": [
             "Cebgo",
@@ -610,7 +607,7 @@
         },
         {
           "price": 166,
-          "best": true,
+          "best": false,
           "airlines": [
             "Philippine Airlines"
           ],
@@ -631,7 +628,7 @@
         },
         {
           "price": 190,
-          "best": true,
+          "best": false,
           "airlines": [
             "Cebgo",
             "Cebu Pacific"
@@ -675,7 +672,7 @@
         },
         {
           "price": 217,
-          "best": true,
+          "best": false,
           "airlines": [
             "Philippine Airlines"
           ],
