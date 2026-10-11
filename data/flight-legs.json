@@ -213,6 +213,40 @@
         "high": 130,
         "source": "Live CEB–USU fares Oct 11 2026: C$85–156"
       }
+    },
+    {
+      "id": "probe-usu-crk-29",
+      "kind": "flight",
+      "group": "probe",
+      "total": false,
+      "title": "p",
+      "note": "",
+      "from": "USU",
+      "to": "CRK",
+      "type": "oneway",
+      "outbound": "2026-11-29",
+      "estimate": {
+        "low": 0,
+        "high": 0,
+        "source": "probe"
+      }
+    },
+    {
+      "id": "probe-usu-crk-30",
+      "kind": "flight",
+      "group": "probe",
+      "total": false,
+      "title": "p",
+      "note": "",
+      "from": "USU",
+      "to": "CRK",
+      "type": "oneway",
+      "outbound": "2026-11-30",
+      "estimate": {
+        "low": 0,
+        "high": 0,
+        "source": "probe"
+      }
     }
   ]
 }
