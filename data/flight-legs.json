@@ -37,6 +37,16 @@
       "preferReturn": [
         "PR 116",
         "WS 126"
+      ],
+      "book": [
+        [
+          "Philippine Airlines",
+          "https://www.philippineairlines.com/"
+        ],
+        [
+          "WestJet",
+          "https://www.westjet.com/"
+        ]
       ]
     },
     {
@@ -59,7 +69,13 @@
         "low": 90,
         "high": 135,
         "source": "Live check Oct 11 2026: C$108 for Cebu Pacific 09:50"
-      }
+      },
+      "book": [
+        [
+          "Cebu Pacific",
+          "https://www.cebupacificair.com/"
+        ]
+      ]
     },
     {
       "id": "tag-eni",
@@ -80,7 +96,13 @@
         "low": 180,
         "high": 280,
         "source": "Live check Oct 11 2026: C$209 on Thu Nov 19"
-      }
+      },
+      "book": [
+        [
+          "Cebu Pacific (Cebgo)",
+          "https://www.cebupacificair.com/"
+        ]
+      ]
     },
     {
       "id": "eni-crn",
@@ -114,7 +136,13 @@
         "high": 80,
         "source": "Jonny Melon El Nido–Coron guide: Phimal ₱3,175, Montenegro ₱3,290"
       },
-      "link": "https://www.jonnymelon.com/el-nido-to-coron/"
+      "link": "https://www.jonnymelon.com/el-nido-to-coron/",
+      "book": [
+        [
+          "12Go (Phimal, Montenegro)",
+          "https://12go.asia/en/travel/el-nido/coron"
+        ]
+      ]
     },
     {
       "id": "usu-crk",
@@ -137,7 +165,13 @@
         "high": 125,
         "source": "Live check Oct 11 2026: C$80–154 on Dec 1"
       },
-      "prefer": "earliest"
+      "prefer": "earliest",
+      "book": [
+        [
+          "Cebu Pacific (Cebgo)",
+          "https://www.cebupacificair.com/"
+        ]
+      ]
     },
     {
       "id": "crk-mnl",
@@ -160,7 +194,13 @@
         "high": 11,
         "source": "The Poor Traveler: ₱450 per person"
       },
-      "link": "https://www.thepoortraveler.net/manila-clark-p2p-bus-schedule/"
+      "link": "https://www.thepoortraveler.net/manila-clark-p2p-bus-schedule/",
+      "book": [
+        [
+          "Pay on board · timetable",
+          "https://www.thepoortraveler.net/manila-clark-p2p-bus-schedule/"
+        ]
+      ]
     },
     {
       "id": "usu-mnl",
@@ -182,7 +222,13 @@
         "low": 230,
         "high": 290,
         "source": "Live check Oct 11 2026: C$228–268 on Nov 29"
-      }
+      },
+      "book": [
+        [
+          "Cebu Pacific",
+          "https://www.cebupacificair.com/"
+        ]
+      ]
     }
   ]
 }

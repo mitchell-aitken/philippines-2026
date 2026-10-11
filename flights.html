@@ -71,6 +71,9 @@
   .clock small{font-size:12px;color:var(--muted)}
   .steps li{grid-template-columns:86px minmax(0,1fr) auto!important}
   .steps .sp{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;font-size:14px}
+  .book{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin-top:6px;font:500 10.5px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .book a{font:500 12.5px/1.4 var(--sans);text-transform:none;letter-spacing:0;color:var(--blue);text-decoration:none;padding:2px 9px;border:1px solid var(--line);border-radius:999px;background:#fff}
+  .book a:hover{border-color:var(--blue)}
   .tz{display:inline-block;margin-left:6px;font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);vertical-align:2px}
   .opt-card .note{margin:-6px 0 0;font-size:13.5px;color:var(--ink-2)}
   .verdict{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--soft);font-size:14.5px;color:var(--ink-2)}
@@ -276,6 +279,19 @@ function render(cfg, live) {
       ? step(day(t.ret.depart), `${hm(t.ret.depart)} Manila → Calgary ${hm(t.ret.arrive)} <span class="tz">Manila time out · Calgary time in</span>`, `${esc(t.ret.airlines.join(" + "))} ${esc(t.ret.flights.join(" · "))} · ${dur(t.ret.minutes)} · ${esc(via(t.ret))} · home ${day(t.ret.arrive)}`, null)
       : step(day(intl.return), "21:05 Manila → Calgary 23:00", "Philippine Airlines + WestJet via Vancouver", null),
   ];
+  const gf = id => {
+    const leg = L[id];
+    if (D[id]?.googleUrl) return D[id].googleUrl;
+    const q = leg.type === "round" ? `Flights from ${leg.from} to ${leg.to} on ${leg.outbound} through ${leg.return}` : `One way flights from ${leg.from} to ${leg.to} on ${leg.outbound}`;
+    return "https://www.google.com/travel/flights?hl=en&curr=CAD&q=" + encodeURIComponent(q);
+  };
+  const bookHTML = id => {
+    const leg = L[id];
+    const links = [...(leg.kind === "flight" ? [["Google Flights", gf(id)]] : []), ...(leg.book || [])];
+    return links.length ? `<span class="book">Book: ${links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join("")}</span>` : "";
+  };
+  const stepIds = ["intl-mnl", "mnl-tag", "tag-eni", "eni-crn", "usu-crk", "crk-mnl", "intl-mnl"];
+  stepIds.forEach((id, n) => { steps[n] = steps[n].replace("</small></div>", `</small>${bookHTML(id)}</div>`); });
   document.getElementById("plan").innerHTML = `
     <div class="plan-head">
       <div><div class="eyebrow">Your flights</div><h2>Calgary → Manila → Bohol → El Nido → Coron → Clark → Manila → Calgary</h2></div>
