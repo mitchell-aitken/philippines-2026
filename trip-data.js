@@ -15,14 +15,14 @@ const DAYS = [
     region: "In transit",
     pin: null,
     title: "Leave Calgary",
-    lede: "Fly out Friday afternoon; your 12 days off cover Nov 13 and Nov 16–27 plus Nov 30. Most fares connect in Vancouver or Seattle, then Manila.",
+    lede: "Fly out Friday morning. Your 12 days off cover Nov 13, Nov 16–27 and Nov 30.",
     plan: [
-      ["Afternoon", "Calgary → Vancouver (or Seattle) for the long-haul connection."],
+      ["Morning", "Calgary → Seattle (Alaska), then Philippine Airlines to Manila."],
       ["Overnight", "The Pacific leg. You cross the date line and lose a day."],
     ],
-    move: "YYC → YVR → MNL → CEB or TAG · about 30 hrs door to door",
+    move: "YYC → Seattle → Manila · about 33 hrs door to door",
     stay: null,
-    tip: "If your ticket connects through Manila, it's a domestic plane change. Leave at least 2.5 hrs there; you clear immigration and may switch terminals.",
+    tip: "Book the international flight and the Manila → Panglao flight as separate tickets, with at least 4–5 hrs between them.",
     photos: []  // [label, image search]
   },
   {
@@ -31,14 +31,14 @@ const DAYS = [
     region: "In transit",
     pin: null,
     title: "Across the Pacific",
-    lede: "Still travelling. The cheapest current fares land in Cebu about 08:25, or in Panglao about 10:15, on Sun Nov 15.",
+    lede: "Still travelling. The cheapest current fare lands in Manila at about 04:05 on Sun Nov 15.",
     plan: [
       ["Day", "Connection at your hub airport."],
       ["Night", "Overnight flight or layover."],
     ],
-    move: "Hub → Cebu or Panglao",
+    move: "Over the Pacific → Manila",
     stay: null,
-    tip: "If you fly into Cebu, land by about 12:30 pm on the 16th to make a ferry to Bohol the same day.",
+    tip: "Manila NAIA has several terminals. Philippine Airlines arrives at Terminal 1; Cebu Pacific domestic flights leave from Terminal 3, a 20–30 min transfer.",
     photos: []  // [label, image search]
   },
   {
@@ -47,16 +47,16 @@ const DAYS = [
     region: "Bohol",
     pin: [9.567, 123.77],
     title: "Arrive in Bohol",
-    lede: "Land mid-morning and get to Panglao the same day. Either fly straight into Bohol-Panglao, or land in Cebu and take the fast ferry across. The Flights page compares the two.",
+    lede: "Land in Manila before dawn, hop on a short morning flight to Bohol, and be on Panglao by lunch.",
     plan: [
-      ["Option A", "Land in Cebu about 08:25, taxi to Pier 1 (45 min), OceanJet ferry at 11:40, in Panglao by about 14:10."],
-      ["Option B", "Land at Bohol-Panglao (TAG) about 10:15 via Manila, at the hotel 15 min later."],
-      ["Arrival", "Grab a SIM (Globe or Smart) and pesos at the airport."],
-      ["Evening", "Beach, dinner, early night."],
+      ["04:05", "Land in Manila (Terminal 1). Get a SIM (Globe or Smart) and pesos, then transfer to Terminal 3."],
+      ["09:50", "Cebu Pacific 5J 617 to Bohol-Panglao, landing 11:35."],
+      ["Midday", "15 min to the hotel. Lunch, then sleep off the flight."],
+      ["Evening", "Sunset on the beach, early night."],
     ],
-    move: "Ferry from Cebu, or fly straight into Panglao",
+    move: "Terminal transfer · 1 hr 45 min flight · 15 min taxi",
     stay: "pgl",
-    tip: "With the ferry option, a flight landing in Cebu after about 1 pm means a night near Cebu airport and a morning ferry instead. The Flights page shows which ferry each flight connects to.",
+    tip: "If you go through Cebu instead (the cheaper alternative on the Flights page), you'd land in Cebu about 08:25 and take the 11:40 ferry, reaching Panglao about 14:10.",
     photos: [["Panglao", "Panglao Island Bohol beach"], ["Cebu to Bohol ferry", "OceanJet Cebu Tagbilaran ferry"]]  // [label, image search]
   },
   {
@@ -209,7 +209,7 @@ const DAYS = [
     ],
     move: "Fast ferry 3–4 hrs (₱3,175–3,290) · or a 40 min AirSWIFT flight",
     stay: "crn",
-    tip: "Book the ferry ahead and bring a printed ticket. If seas are rough the ferry can be cancelled; the two open days in Coron (Fri and Sat) absorb a delay.",
+    tip: "Book the ferry ahead and bring a printed ticket. If seas are rough the ferry can be cancelled; the free days in Coron absorb a delay.",
     photos: [["Maquinit Hot Springs", "Maquinit Hot Springs Coron"], ["Mt Tapyas", "Mt Tapyas Coron sunset"], ["El Nido to Coron ferry", "El Nido to Coron fast ferry"]]  // [label, image search]
   },
   {
@@ -281,65 +281,66 @@ const DAYS = [
   {
     date: 29,
     dow: "Sun",
-    region: "Cebu",
-    pin: [12.12, 120.04],
-    title: "Fly Coron → Cebu",
-    lede: "A late morning in Coron, then a short flight back to Cebu and a night next to the airport for tomorrow's long-haul.",
+    region: "Coron",
+    pin: [12.008, 120.21],
+    title: "Last day in Coron",
+    lede: "A slow last day. Catch the view from Mt Tapyas one more time, soak at Maquinit, and pack for an early start.",
     plan: [
-      ["Morning", "Airport van from Coron town to Busuanga airport, about 40 min."],
-      ["09:35", "Cebgo DG 6069 to Cebu, landing 11:15 (later nonstops run until about 17:00)."],
-      ["Evening", "Hotel on Mactan, near the terminal."],
+      ["Morning", "Sunrise from Mt Tapyas, or sleep in."],
+      ["Afternoon", "Kayak or paddleboard around the bay, or souvenir shopping in town."],
+      ["Evening", "Last soak at Maquinit Hot Springs, early night."],
     ],
-    move: "Airport van · nonstop flight 1 hr 20 min",
-    stay: "mct",
-    tip: "Pick a midday flight so a delay still gets you to Cebu tonight. The Flights page shows today's options.",
-    photos: [["Busuanga airport", "Busuanga airport Coron"], ["Mactan", "Mactan Island Cebu beach"]]  // [label, image search]
+    move: "Tricycle around town",
+    stay: "crn",
+    tip: "Book the airport van for about 06:15 tomorrow.",
+    photos: [["Coron town", "Coron Palawan town view"], ["Maquinit Hot Springs", "Maquinit Hot Springs Coron night"]]  // [label, image search]
   },
   {
     date: 30,
     dow: "Mon",
     region: "In transit",
-    pin: null,
-    title: "Fly home",
-    lede: "Cebu → Manila → Vancouver → Calgary. Leave Cebu at 09:15 and land in Calgary at 23:00 the same day, back at work Tuesday.",
+    pin: [15.186, 120.56],
+    title: "Coron → Clark → Manila → home",
+    lede: "A long but simple travel day: a short flight to Clark, a bus to Manila airport, and the evening flight home. Thanks to the date line you land in Calgary the same night.",
     plan: [
-      ["09:15", "Philippine Airlines from Cebu, connecting in Manila and Vancouver."],
-      ["23:00", "Land in Calgary."],
+      ["06:15", "Van from Coron town to Busuanga airport (40 min)."],
+      ["08:00", "Cebgo DG 6042 to Clark, landing 09:25. Later nonstops at 08:50, 12:20, 12:30 and 13:20 still make the flight home."],
+      ["Late morning", "Genesis P2P bus from Clark Airport to Manila NAIA, 2–3 hrs (₱450), or a private car."],
+      ["21:05", "Philippine Airlines PR 116 Manila → Vancouver, then on to Calgary, landing 23:00."],
     ],
-    move: "CEB → hub → YYC",
+    move: "Flight 1 hr 25 min · bus 2–3 hrs · long-haul home",
     stay: null,
-    tip: "",
-    photos: []  // [label, image search]
+    tip: "The domestic flight and the international one are separate tickets, so take the morning flight to Clark. If it's cancelled, the midday ones are your backup.",
+    photos: [["Clark airport", "Clark International Airport terminal"]]  // [label, image search]
   },
 ];
 
 const STAYS = {
   pgl: { name: "", link: "", area: "Panglao Island, Bohol", nights: "Nov 15–18 · 4 nights",
-        hint: "Alona Beach is lively and walkable; Dumaluan and Danao beach are quieter. Close to both Tagbilaran port and the airport." },
+        hint: "Alona Beach is lively and walkable; Dumaluan and Danao beach are quieter. All are 15 min from the airport." },
   eni: { name: "", link: "", area: "El Nido town or Corong-Corong", nights: "Nov 19–23 · 5 nights",
         hint: "Town is central for boat tours and the ferry port; Corong-Corong is calmer with better sunsets. Check for twin beds." },
-  crn: { name: "", link: "", area: "Coron town", nights: "Nov 24–28 · 5 nights",
+  crn: { name: "", link: "", area: "Coron town", nights: "Nov 24–29 · 6 nights",
         hint: "Stay in town, near the pier. Boat tours and tricycles leave from here; the airport is 40 min away." },
-  mct: { name: "", link: "", area: "Mactan, near Cebu airport", nights: "Nov 29 · 1 night",
-        hint: "Close to the terminal for the flight home." },
 };
 
 /* Legs group the days in the list */
 const LEGS = [
-  { name: "Getting there", sub: "Calgary → Bohol",                      region: "In transit", days: [13, 14] },
+  { name: "Getting there", sub: "Calgary → Manila → Bohol",             region: "In transit", days: [13, 14] },
   { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · canyons", region: "Bohol",      days: [15, 16, 17, 18] },
   { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves", region: "El Nido",    days: [19, 20, 21, 22, 23] },
-  { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [24, 25, 26, 27, 28] },
-  { name: "Heading home",  sub: "Coron → Cebu → Calgary",               region: "Cebu",       days: [29, 30] }
+  { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [24, 25, 26, 27, 28, 29] },
+  { name: "Heading home",  sub: "Coron → Clark → Manila → Calgary",     region: "In transit", days: [30] }
 ];
 
 /* Travel lines on the map: [lat, lng] points, mode "fly" (dashed arc) or "ground" (solid) */
 const ROUTE = [
-  { mode: "ground", pts: [[10.31, 123.98], [10.29, 123.90], [9.645, 123.85], [9.55, 123.77]] },  // Option A: Cebu airport → pier → ferry → Panglao
+  { mode: "fly",    pts: [[14.51, 121.02], [9.567, 123.77]] },                                   // Manila → Panglao
   { mode: "fly",    pts: [[9.567, 123.77], [11.18, 119.39]] },                                   // Bohol → El Nido
   { mode: "ground", pts: [[11.18, 119.39], [11.62, 119.86], [12.00, 120.205]] },                 // ferry El Nido → Coron
   { mode: "ground", pts: [[12.00, 120.205], [12.12, 120.04]] },                                  // Coron town → Busuanga airport
-  { mode: "fly",    pts: [[12.12, 120.04], [10.31, 123.98]] }                                    // Busuanga → Cebu
+  { mode: "fly",    pts: [[12.12, 120.04], [15.186, 120.56]] },                                  // Busuanga → Clark
+  { mode: "ground", pts: [[15.186, 120.56], [14.51, 121.02]] }                                   // bus Clark → Manila airport
 ];
 
 const COLORS = { "Coron": "#0038A8", "El Nido": "#0038A8", "Bohol": "#CE1126", "Cebu": "#0B0B0C", "In transit": "#0B0B0C" };

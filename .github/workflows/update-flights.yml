@@ -2,7 +2,7 @@ name: Update flight prices
 
 on:
   schedule:
-    - cron: "17 13 * * *"   # daily, about 7:17 am in Calgary (6 searches per run, ~185/month)
+    - cron: "17 13 */2 * *"   # every other day, about 7:17 am in Calgary (8 searches per run, ~125/month)
   workflow_dispatch:         # "Run workflow" button for an instant refresh
 
 permissions:

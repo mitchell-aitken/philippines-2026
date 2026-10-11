@@ -61,6 +61,7 @@
   .opt-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:auto}
   .opt-foot a{color:var(--blue);font-weight:500;text-decoration:none;font-size:13px}
   .opt-foot a:hover{text-decoration:underline}
+  .opt-card .note{margin:-6px 0 0;font-size:13.5px;color:var(--ink-2)}
   .verdict{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--soft);font-size:14.5px;color:var(--ink-2)}
   .verdict b{color:var(--ink)}
 
@@ -136,7 +137,7 @@
   <section class="intro">
     <div class="eyebrow">Nov 13–30 · per person · CAD</div>
     <h1>Two ways to fly</h1>
-    <p>Both leave Calgary on Fri Nov 13, reach Bohol on Sun Nov 15 and get you home on Mon Nov 30. The only difference is how you reach Bohol: a ferry from Cebu, or a flight straight to Panglao.</p>
+    <p>Both leave Calgary on Fri Nov 13, reach Bohol on Sun Nov 15 and get you home on Mon Nov 30. The main plan goes through Manila; going through Cebu is the cheaper alternative.</p>
     <div class="status" id="status"><i></i><span>Loading prices…</span></div>
   </section>
 
@@ -229,21 +230,20 @@ function render(cfg, live) {
     document.getElementById("setup").hidden = false;
   }
 
-  /* shared legs */
   const est = leg => (leg.estimate.low + leg.estimate.high) / 2;
-  const tagEni = pick(D["tag-eni"]?.options, o => fitOf(L["tag-eni"], o));
-  const usuCeb = pick(D["usu-ceb"]?.options, o => fitOf(L["usu-ceb"], o));
+  const flLine = o => `${o.airlines.join(" + ")} ${o.flights.join(" · ")} · ${hm(o.depart)} → ${hm(o.arrive)} · ${via(o)}`;
+  const legCost = id => {
+    const leg = L[id];
+    if (leg.kind === "flight") { const o = pick(D[id]?.options, x => fitOf(leg, x)); return { id, o, price: o ? o.price : est(leg), live: !!o }; }
+    return { id, o: null, price: est(leg), live: false };
+  };
+
+  /* ---------- legs that are the same either way ---------- */
   const ferryEC = L["eni-crn"].departures[0];
+  const tagEni = legCost("tag-eni");
   const shared = [
-    { d: L["tag-eni"].outbound, what: "Fly Bohol → El Nido",
-      detail: tagEni ? `${tagEni.airlines.join(" + ")} ${tagEni.flights.join(" · ")} · ${hm(tagEni.depart)} → ${hm(tagEni.arrive)} · ${via(tagEni)}` : "Cebgo nonstop, mid-afternoon",
-      price: tagEni ? tagEni.price : est(L["tag-eni"]), live: !!tagEni },
-    { d: L["eni-crn"].date, what: "Fast ferry El Nido → Coron",
-      detail: `${ferryEC.op} · ${ferryEC.dep} → ${ferryEC.arr} · ${ferryEC.fare}`,
-      price: est(L["eni-crn"]), live: false },
-    { d: L["usu-ceb"].outbound, what: "Fly Coron → Cebu",
-      detail: usuCeb ? `${usuCeb.airlines.join(" + ")} ${usuCeb.flights.join(" · ")} · ${hm(usuCeb.depart)} → ${hm(usuCeb.arrive)} · ${via(usuCeb)}` : "Midday nonstop",
-      price: usuCeb ? usuCeb.price : est(L["usu-ceb"]), live: !!usuCeb },
+    { d: L["tag-eni"].outbound, what: "Fly Bohol → El Nido", detail: tagEni.o ? flLine(tagEni.o) : "Cebgo nonstop, mid-afternoon", ...tagEni },
+    { d: L["eni-crn"].date, what: "Fast ferry El Nido → Coron", detail: `${ferryEC.op} · ${ferryEC.dep} → ${ferryEC.arr} · ${ferryEC.fare}`, ...legCost("eni-crn") },
   ];
   const sharedTotal = shared.reduce((a, r) => a + r.price, 0);
   document.getElementById("shared").innerHTML = shared.map(r => `
@@ -252,72 +252,81 @@ function render(cfg, live) {
       <td>${fmt(r.price)}<span class="src ${r.live ? "live" : "est"}">${r.live ? "Live" : "Est."}</span></td></tr>`).join("") +
     `<tr><td class="d"></td><td><b>Subtotal</b><small>Per person, cheapest options that fit the plan</small></td><td>${fmt(sharedTotal)}</td></tr>`;
 
-  /* the two options */
-  const A = { leg: L["intl-main"], data: D["intl-main"], key: "A", name: "Fly into Cebu, ferry to Bohol" };
-  const B = { leg: L["intl-b"], data: D["intl-b"], key: "B", name: "Fly straight into Panglao" };
-  const ferryCT = est(L["ceb-tag"]);
-  [A, B].forEach(o => {
-    o.t = ticket(o.leg, o.data);
-    o.ticketPrice = o.t ? o.t.price : est(o.leg);
-    o.extra = o.key === "A" ? ferryCT : 0;
-    o.pp = o.ticketPrice + o.extra + sharedTotal;
-  });
-  const cheaper = A.pp <= B.pp ? A : B, other = cheaper === A ? B : A;
-  const diff = other.pp - cheaper.pp;
+  /* ---------- the two ways ---------- */
+  const step = (k, title, small) => `<li><span class="k">${k}</span><div><b>${title}</b><small>${small}</small></div></li>`;
+  const outStep = (t, dest, fallbackDay) => t?.out
+    ? step(day(t.out.depart), `${hm(t.out.depart)} Calgary → ${esc(t.out.to)} ${hm(t.out.arrive)}`, `${esc(t.out.airlines.join(" + "))} · ${dur(t.out.minutes)} · ${esc(via(t.out))} · lands ${day(t.out.arrive)}`)
+    : step(day(fallbackDay), `Calgary → ${dest}`, "Live times appear once prices are checked");
+  const retStep = (t, from, fallbackDay) => t?.ret
+    ? step(day(t.ret.depart), `${hm(t.ret.depart)} ${from} → Calgary ${hm(t.ret.arrive)}`, `${esc(t.ret.airlines.join(" + "))} · ${dur(t.ret.minutes)} · ${esc(via(t.ret))} · home ${day(t.ret.arrive)}`)
+    : step(day(fallbackDay), `${from} → Calgary`, t ? "Pick the return when booking" : "Live times appear once prices are checked");
+  const flStep = (c, label, extra = "") => c.o
+    ? step(day(c.o.depart), `${hm(c.o.depart)} ${label} ${hm(c.o.arrive)}`, `${esc(c.o.airlines.join(" + "))} ${esc(c.o.flights.join(" · "))} · ${fmt(c.price)}${extra}`)
+    : step(day(L[c.id].outbound), label, `About ${fmt(c.price)}${extra}`);
 
-  document.getElementById("options").innerHTML = [A, B].map(o => {
-    const t = o.t, win = o === cheaper;
-    const out = t?.out, ret = t?.ret;
-    const steps = [];
-    steps.push(out
-      ? `<li><span class="k">${day(out.depart)}</span><div><b>${hm(out.depart)} Calgary → ${esc(out.to)} ${hm(out.arrive)}</b><small>${esc(out.airlines.join(" + "))} · ${dur(out.minutes)} · ${esc(via(out))} · lands ${day(out.arrive)}</small></div></li>`
-      : `<li><span class="k">${day(o.leg.outbound || o.leg.segments[0].date)}</span><div><b>Calgary → ${o.key === "A" ? "Cebu" : "Panglao"}</b><small>Live times appear once prices are checked</small></div></li>`);
-    if (o.key === "A") {
-      const f = t?.fit?.ferry ? `${t.fit.ferry} → ${t.fit.ferryArr}` : "13:00 or 14:00";
-      steps.push(`<li><span class="k">${day(o.leg.connect.date)}</span><div><b>OceanJet ferry ${f}</b><small>Cebu Pier 1 → Tagbilaran, 2 hrs · about ${fmt(ferryCT)}</small></div></li>`);
-      steps.push(`<li><span class="k">In Bohol</span><div><b>Sun ${t?.fit?.ferryArr ? "about " + addMin(t.fit.ferryArr, 30) : "late afternoon"}</b><small>After a 45 min taxi to the pier and a 2 hr ferry</small></div></li>`);
-    } else {
-      steps.push(`<li><span class="k">In Bohol</span><div><b>Sun ${out ? "about " + addMin(hm(out.arrive), 30) : "morning"}</b><small>Panglao airport is 15 min from the beach hotels</small></div></li>`);
-    }
-    steps.push(ret
-      ? `<li><span class="k">${day(ret.depart)}</span><div><b>${hm(ret.depart)} Cebu → Calgary ${hm(ret.arrive)}</b><small>${esc(ret.airlines.join(" + "))} · ${dur(ret.minutes)} · ${esc(via(ret))} · home ${day(ret.arrive)}</small></div></li>`
-      : `<li><span class="k">${day(o.leg.return || o.leg.segments[1].date)}</span><div><b>Cebu → Calgary</b><small>${t ? "Pick the return when booking" : "Live times appear once prices are checked"}</small></div></li>`);
-    const link = o.data?.googleUrl || "https://www.google.com/travel/flights?hl=en&curr=CAD";
-    return `<article class="opt-card${win ? " win" : ""}">
+  const M = { key: "mnl", label: "Main plan", name: "Via Manila", intl: "intl-mnl",
+    note: "Fly into Panglao, out of Coron through Clark. Six nights in Coron, no Cebu stop.",
+    legs: [legCost("mnl-tag"), legCost("usu-crk"), legCost("crk-mnl")] };
+  const C = { key: "ceb", label: "Alternative", name: "Via Cebu", intl: "intl-main",
+    note: "Ferry to Bohol, fly Coron → Cebu on Nov 29 and sleep near Cebu airport. One less night in Coron.",
+    legs: [legCost("ceb-tag"), legCost("usu-ceb")] };
+  [M, C].forEach(o => {
+    o.t = ticket(L[o.intl], D[o.intl]);
+    o.ticketPrice = o.t ? o.t.price : est(L[o.intl]);
+    o.pp = o.ticketPrice + o.legs.reduce((a, c) => a + c.price, 0) + sharedTotal;
+  });
+  const cheaper = M.pp <= C.pp ? M : C;
+
+  M.steps = [
+    outStep(M.t, "Manila", L["intl-mnl"].outbound),
+    flStep(M.legs[0], "Manila → Panglao", " · separate ticket"),
+    step("In Bohol", M.legs[0].o ? `Sun about ${addMin(hm(M.legs[0].o.arrive), 30)}` : "Sun, late morning", "Panglao airport is 15 min from the beach hotels"),
+    flStep(M.legs[1], "Coron → Clark", " · separate ticket"),
+    step("Then", "Bus to Manila airport", "Genesis P2P from Clark Airport, 2–3 hrs, ₱450"),
+    retStep(M.t, "Manila", L["intl-mnl"].return),
+  ];
+  const cf = C.t?.fit;
+  C.steps = [
+    outStep(C.t, "Cebu", L["intl-main"].outbound),
+    step(day(L["intl-main"].connect.date), `OceanJet ferry ${cf?.ferry ? `${cf.ferry} → ${cf.ferryArr}` : "late morning"}`, `Cebu Pier 1 → Tagbilaran, 2 hrs · about ${fmt(C.legs[0].price)}`),
+    step("In Bohol", cf?.ferryArr ? `Sun about ${addMin(cf.ferryArr, 30)}` : "Sun afternoon", "After a 45 min taxi to the pier and a 2 hr ferry"),
+    flStep(C.legs[1], "Coron → Cebu", " · night near Cebu airport"),
+    retStep(C.t, "Cebu", L["intl-main"].return),
+  ];
+
+  document.getElementById("options").innerHTML = [M, C].map(o => {
+    const link = D[o.intl]?.googleUrl || "https://www.google.com/travel/flights?hl=en&curr=CAD";
+    const badge = o === cheaper ? `<span class="badge win">Cheapest</span>` : `<span class="badge more">+${fmt(o.pp - cheaper.pp)}</span>`;
+    return `<article class="opt-card${o === M ? " win" : ""}">
       <div class="opt-head">
-        <div><div class="eyebrow">Option ${o.key}</div><h2>${esc(o.name)}</h2></div>
-        <span class="badge ${win ? "win" : "more"}">${win ? "Cheapest" : "+" + fmt(diff)}</span>
+        <div><div class="eyebrow">${o.label}</div><h2>${esc(o.name)}</h2></div>${badge}
       </div>
-      <div class="price-big"><b>${fmt(o.pp)}</b><span>per person, all flights and ferries${o.t ? "" : " (estimate)"}</span></div>
-      <ul class="steps">${steps.join("")}</ul>
+      <div class="price-big"><b>${fmt(o.pp)}</b><span>per person, all flights, ferries and the bus${o.t ? "" : " (estimate)"}</span></div>
+      <p class="note">${esc(o.note)}</p>
+      <ul class="steps">${o.steps.join("")}</ul>
       <div class="opt-foot"><span>International ticket ${fmt(o.ticketPrice)}</span><a href="${esc(link)}" target="_blank" rel="noopener">Book on Google Flights ↗</a></div>
     </article>`;
   }).join("");
 
-  if (A.t && B.t) {
-    const hoursSaved = (() => {
-      const aIn = A.t.fit?.ferryArr ? addMin(A.t.fit.ferryArr, 30) : null, bIn = addMin(hm(B.t.out.arrive), 30);
-      if (!aIn) return null;
-      const m = t => +t.slice(0, 2) * 60 + +t.slice(3);
-      return Math.round((m(aIn) - m(bIn)) / 60);
-    })();
-    const v = document.getElementById("verdict");
-    v.hidden = false;
-    v.innerHTML = B === cheaper
-      ? `<b>Flying into Panglao is cheaper right now</b>, and you skip the ferry.`
-      : `<b>Panglao costs ${fmt(diff)} more per person</b>${hoursSaved > 0 ? ` and gets you to the beach about ${hoursSaved} hours sooner, with no pier transfer after 30 hours of travel` : ""}.`;
-  }
+  const v = document.getElementById("verdict");
+  v.hidden = false;
+  const gap = Math.abs(M.pp - C.pp);
+  v.innerHTML = M === cheaper
+    ? `<b>Via Manila is also the cheapest right now</b>, by ${fmt(gap)} per person.`
+    : `<b>Via Manila costs ${fmt(gap)} more per person.</b> For that you get a flight straight to Panglao instead of the pier transfer, an extra night in Coron, and no Cebu stop. The domestic flights are separate tickets, so leave the buffers shown.`;
 
-  /* every flight, collapsed */
+  /* ---------- every flight, collapsed ---------- */
   const row = (o, fit) => `<li class="row${fit?.cls === "bad" ? " dim" : ""}">
       <div class="air">${esc(o.airlines.join(" + "))}<small>${esc(o.flights.join(" · "))}</small></div>
       <div class="t">${day(o.depart)} ${hm(o.depart)} → ${o.arrive.slice(0, 10) !== o.depart.slice(0, 10) ? day(o.arrive) + " " : ""}${hm(o.arrive)}<small>${dur(o.minutes)} · ${esc(via(o))}</small>${fit ? `<span class="fit ${fit.cls}">${esc(fit.text)}</span>` : ""}</div>
       <div class="p">${fmt(o.price)}</div></li>`;
   const groups = [
-    ["intl-main", "Option A · Calgary ⇄ Cebu", `Outbound ${day(L["intl-main"].outbound)}`, `Return ${day(L["intl-main"].return)}`],
-    ["intl-b", "Option B · Calgary → Panglao, Cebu → Calgary", `Calgary → Panglao, ${day(L["intl-b"].segments[0].date)}`, `Cebu → Calgary, ${day(L["intl-b"].segments[1].date)}`],
+    ["intl-mnl", "Via Manila · Calgary ⇄ Manila", `Outbound ${day(L["intl-mnl"].outbound)}`, `Return ${day(L["intl-mnl"].return)}`],
+    ["mnl-tag", `Via Manila · Manila → Panglao · ${day(L["mnl-tag"].outbound)}`],
+    ["usu-crk", `Via Manila · Coron → Clark · ${day(L["usu-crk"].outbound)}`],
     ["tag-eni", `Bohol → El Nido · ${day(L["tag-eni"].outbound)}`],
-    ["usu-ceb", `Coron → Cebu · ${day(L["usu-ceb"].outbound)}`],
+    ["intl-main", "Via Cebu · Calgary ⇄ Cebu", `Outbound ${day(L["intl-main"].outbound)}`, `Return ${day(L["intl-main"].return)}`],
+    ["usu-ceb", `Via Cebu · Coron → Cebu · ${day(L["usu-ceb"].outbound)}`],
   ];
   document.getElementById("all").innerHTML = groups.map(([id, title, outL, retL]) => {
     const leg = L[id], l = D[id];
@@ -326,8 +335,8 @@ function render(cfg, live) {
     html += `<ul class="list">${l.options.map(o => row(o, fitOf(leg, o))).join("")}</ul>`;
     if (l.returnOptions?.length) html += `<div class="sub">${esc(retL)} · with the ${esc(l.returnFor.flights.join(" / "))} outbound</div><ul class="list">${l.returnOptions.map(o => row(o, fitWindow(leg.returnFit, o))).join("")}</ul>`;
     return `<details><summary>${esc(title)}<span>from ${fmt(l.lowest)}</span></summary>${html}</details>`;
-  }).join("") + `<details><summary>Ferry timetables<span>estimates</span></summary>
-      ${["ceb-tag", "eni-crn"].map(id => `<div class="sub">${esc(L[id].title)} · ${day(L[id].date)}</div>
+  }).join("") + `<details><summary>Ferries and the Clark bus<span>timetables</span></summary>
+      ${["eni-crn", "crk-mnl", "ceb-tag"].map(id => `<div class="sub">${esc(L[id].title)} · ${day(L[id].date)}</div>
         <ul class="list">${L[id].departures.map(d => `<li class="row"><div class="air">${esc(d.op)}</div><div class="t">${esc(d.dep)} → ${esc(d.arr)}</div><div class="p">${esc(d.fare || "")}</div></li>`).join("")}</ul>`).join("")}
     </details>`;
 }
