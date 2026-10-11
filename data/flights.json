@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-11T18:39:39.093Z",
+  "updated": "2026-10-11T18:56:16.752Z",
   "currency": "CAD",
   "source": "Google Flights via SerpApi",
   "legs": {
     "intl-mnl": {
-      "checked": "2026-10-11T18:39:39.093Z",
+      "checked": "2026-10-11T18:56:16.752Z",
       "lowest": 1474,
       "priceLevel": "high",
       "typicalRange": [
@@ -216,7 +216,7 @@
       ]
     },
     "mnl-tag": {
-      "checked": "2026-10-11T18:39:39.093Z",
+      "checked": "2026-10-11T18:56:16.752Z",
       "lowest": 90,
       "priceLevel": "high",
       "typicalRange": [
@@ -345,7 +345,7 @@
       ]
     },
     "tag-eni": {
-      "checked": "2026-10-11T18:39:39.093Z",
+      "checked": "2026-10-11T18:56:16.752Z",
       "lowest": 209,
       "priceLevel": "typical",
       "typicalRange": [
@@ -381,7 +381,7 @@
       ]
     },
     "usu-crk": {
-      "checked": "2026-10-11T18:39:39.093Z",
+      "checked": "2026-10-11T18:56:16.752Z",
       "lowest": 132,
       "priceLevel": "high",
       "typicalRange": [
@@ -507,7 +507,7 @@
       ]
     },
     "usu-mnl": {
-      "checked": "2026-10-11T18:39:39.093Z",
+      "checked": "2026-10-11T18:56:16.752Z",
       "lowest": 197,
       "priceLevel": "high",
       "typicalRange": [
@@ -651,6 +651,393 @@
         {
           "date": "2026-10-11",
           "low": 197
+        }
+      ]
+    },
+    "probe-intl-dec1": {
+      "checked": "2026-10-11T18:56:16.752Z",
+      "lowest": 1296,
+      "priceLevel": "typical",
+      "typicalRange": [
+        1100,
+        1450
+      ],
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTEzagcIARIDWVlDcgcIARIDTU5MGh4SCjIwMjYtMTItMDFqBwgBEgNNTkxyBwgBEgNZWUNAAUgBcAGYAQE&tfu=EgIIAQ",
+      "options": [
+        {
+          "price": 1296,
+          "best": true,
+          "airlines": [
+            "WestJet",
+            "Cathay Pacific"
+          ],
+          "flights": [
+            "WS 115",
+            "CX 837",
+            "CX 913"
+          ],
+          "from": "YYC",
+          "to": "MNL",
+          "depart": "2026-11-13 11:15",
+          "arrive": "2026-11-14 22:40",
+          "minutes": 1285,
+          "stops": 2,
+          "via": [
+            "YVR",
+            "HKG"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1311,
+          "best": true,
+          "airlines": [
+            "Alaska",
+            "Delta",
+            "Korean Air"
+          ],
+          "flights": [
+            "AS 1460",
+            "DL 197",
+            "KE 623"
+          ],
+          "from": "YYC",
+          "to": "MNL",
+          "depart": "2026-11-13 09:09",
+          "arrive": "2026-11-14 22:10",
+          "minutes": 1381,
+          "stops": 2,
+          "via": [
+            "SEA",
+            "ICN"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1311,
+          "best": false,
+          "airlines": [
+            "Alaska",
+            "Korean Air"
+          ],
+          "flights": [
+            "AS 1460",
+            "KE 42",
+            "KE 623"
+          ],
+          "from": "YYC",
+          "to": "MNL",
+          "depart": "2026-11-13 09:09",
+          "arrive": "2026-11-14 22:10",
+          "minutes": 1381,
+          "stops": 2,
+          "via": [
+            "SEA",
+            "ICN"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1359,
+          "best": false,
+          "airlines": [
+            "Air Canada",
+            "Cathay Pacific"
+          ],
+          "flights": [
+            "AC 205",
+            "CX 837",
+            "CX 913"
+          ],
+          "from": "YYC",
+          "to": "MNL",
+          "depart": "2026-11-13 09:00",
+          "arrive": "2026-11-14 22:40",
+          "minutes": 1420,
+          "stops": 2,
+          "via": [
+            "YVR",
+            "HKG"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1388,
+          "best": false,
+          "airlines": [
+            "Air Canada",
+            "EVA Air"
+          ],
+          "flights": [
+            "AC 8073",
+            "BR 9",
+            "BR 277"
+          ],
+          "from": "YYC",
+          "to": "MNL",
+          "depart": "2026-11-13 22:15",
+          "arrive": "2026-11-15 17:50",
+          "minutes": 1775,
+          "stops": 2,
+          "via": [
+            "YVR",
+            "TPE"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1449,
+          "best": false,
+          "airlines": [
+            "Alaska",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "AS 1460",
+            "PR 125"
+          ],
+          "from": "YYC",
+          "to": "MNL",
+          "depart": "2026-11-13 09:09",
+          "arrive": "2026-11-15 04:05",
+          "minutes": 1736,
+          "stops": 1,
+          "via": [
+            "SEA"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1561,
+          "best": true,
+          "airlines": [
+            "Air Canada",
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "AC 8138",
+            "AC 249",
+            "PR 117"
+          ],
+          "from": "YYC",
+          "to": "MNL",
+          "depart": "2026-11-13 17:55",
+          "arrive": "2026-11-15 05:30",
+          "minutes": 1295,
+          "stops": 2,
+          "via": [
+            "YEG",
+            "YVR"
+          ],
+          "overnight": false
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "low": 1296
+        }
+      ],
+      "returnFor": {
+        "flights": [
+          "AC 8138",
+          "AC 249",
+          "PR 117"
+        ],
+        "price": 1561
+      },
+      "returnOptions": [
+        {
+          "price": 1561,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "WestJet"
+          ],
+          "flights": [
+            "PR 136",
+            "WS 108"
+          ],
+          "from": "MNL",
+          "to": "YYC",
+          "depart": "2026-12-01 11:05",
+          "arrive": "2026-12-01 13:30",
+          "minutes": 985,
+          "stops": 1,
+          "via": [
+            "YVR"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1561,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "WestJet"
+          ],
+          "flights": [
+            "PR 116",
+            "WS 126"
+          ],
+          "from": "MNL",
+          "to": "YYC",
+          "depart": "2026-12-01 21:05",
+          "arrive": "2026-12-01 23:00",
+          "minutes": 955,
+          "stops": 1,
+          "via": [
+            "YVR"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 3106,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "United"
+          ],
+          "flights": [
+            "PR 104",
+            "UA 2626"
+          ],
+          "from": "MNL",
+          "to": "YYC",
+          "depart": "2026-12-01 23:15",
+          "arrive": "2026-12-02 13:26",
+          "minutes": 1691,
+          "stops": 1,
+          "via": [
+            "SFO"
+          ],
+          "overnight": false
+        }
+      ]
+    },
+    "probe-usu-crk-dec1": {
+      "checked": "2026-10-11T18:56:16.752Z",
+      "lowest": 80,
+      "priceLevel": "typical",
+      "typicalRange": [
+        40,
+        160
+      ],
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTEyLTAxagcIARIDVVNVcgcIARIDQ1JLQAFIAXABmAEC&tfu=EgIIAQ",
+      "options": [
+        {
+          "price": 80,
+          "best": true,
+          "airlines": [
+            "Cebgo"
+          ],
+          "flights": [
+            "DG 6042"
+          ],
+          "from": "USU",
+          "to": "CRK",
+          "depart": "2026-12-01 08:00",
+          "arrive": "2026-12-01 09:25",
+          "minutes": 85,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 101,
+          "best": true,
+          "airlines": [
+            "Sunlight Air"
+          ],
+          "flights": [
+            "2R 602"
+          ],
+          "from": "USU",
+          "to": "CRK",
+          "depart": "2026-12-01 13:20",
+          "arrive": "2026-12-01 14:40",
+          "minutes": 80,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 101,
+          "best": false,
+          "airlines": [
+            "Sunlight Air"
+          ],
+          "flights": [
+            "2R 604"
+          ],
+          "from": "USU",
+          "to": "CRK",
+          "depart": "2026-12-01 08:30",
+          "arrive": "2026-12-01 09:50",
+          "minutes": 80,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 106,
+          "best": true,
+          "airlines": [
+            "Cebgo"
+          ],
+          "flights": [
+            "DG 6036"
+          ],
+          "from": "USU",
+          "to": "CRK",
+          "depart": "2026-12-01 12:20",
+          "arrive": "2026-12-01 13:45",
+          "minutes": 85,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 124,
+          "best": false,
+          "airlines": [
+            "Cebgo"
+          ],
+          "flights": [
+            "DG 6038"
+          ],
+          "from": "USU",
+          "to": "CRK",
+          "depart": "2026-12-01 08:50",
+          "arrive": "2026-12-01 10:10",
+          "minutes": 80,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 154,
+          "best": true,
+          "airlines": [
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "PR 2686"
+          ],
+          "from": "USU",
+          "to": "CRK",
+          "depart": "2026-12-01 12:35",
+          "arrive": "2026-12-01 13:35",
+          "minutes": 60,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "low": 80
         }
       ]
     }
