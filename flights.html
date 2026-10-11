@@ -263,7 +263,7 @@ function render(cfg, live) {
   const steps = [
     t?.out
       ? step(day(t.out.depart), `${hm(t.out.depart)} Calgary → Manila ${hm(t.out.arrive)} <span class="tz">Calgary time out · Manila time in</span>`, `${esc(t.out.airlines.join(" + "))} ${esc(t.out.flights.join(" · "))} · ${dur(t.out.minutes)} · ${esc(via(t.out))} · lands ${day(t.out.arrive)}`, intlPrice, true)
-      : step("Fri Nov 13", "17:55 Calgary → Manila 05:30", "Air Canada + Philippine Airlines · via Edmonton and Vancouver", intlPrice, false),
+      : step("Fri Nov 13", "19:10 Calgary → Manila 05:30", "WestJet WS 127 + Philippine Airlines PR 117 · via Vancouver", intlPrice, false),
     mt.o ? step(day(mt.o.depart), `${hm(mt.o.depart)} Manila → Panglao ${hm(mt.o.arrive)}`, `${esc(mt.o.airlines.join(" + "))} ${esc(mt.o.flights.join(" · "))} · separate ticket · move from Terminal 1 to Terminal 3`, mt.price, true)
          : step("Sun Nov 15", "Manila → Panglao", "Morning Cebu Pacific flight", mt.price, false),
     te.o ? step(day(te.o.depart), `${hm(te.o.depart)} Bohol → El Nido ${hm(te.o.arrive)}`, `${esc(te.o.airlines.join(" + "))} ${esc(te.o.flights.join(" · "))} · nonstop`, te.price, true)
@@ -282,11 +282,11 @@ function render(cfg, live) {
       <div class="price-big"><b>${fmt(total)}</b><span>per person, all flights, the ferry and the bus</span></div>
     </div>
     <div class="clock">
-      <div><span class="eyebrow">Leave Calgary</span><b>${t?.out ? `${day(t.out.depart)} · ${hm(t.out.depart)}` : "Fri Nov 13 · 17:55"}</b><small>Calgary time</small></div>
+      <div><span class="eyebrow">Leave Calgary</span><b>${t?.out ? `${day(t.out.depart)} · ${hm(t.out.depart)}` : "Fri Nov 13 · 19:10"}</b><small>Calgary time</small></div>
       <div><span class="eyebrow">Back in Calgary</span><b>${t?.ret ? `${day(t.ret.arrive)} · ${hm(t.ret.arrive)}` : `${day(intl.return)} · 23:00`}</b><small>Calgary time</small></div>
     </div>
     <ul class="steps">${steps.join("")}</ul>
-    <div class="opt-foot"><span>Round trip ${fmt(intlPrice)} for the Air Canada / Philippine Airlines flights${t ? "" : " (estimate)"}</span><a href="${esc(D["intl-mnl"]?.googleUrl || "https://www.google.com/travel/flights?hl=en&curr=CAD")}" target="_blank" rel="noopener">Book on Google Flights ↗</a></div>`;
+    <div class="opt-foot"><span>Round trip ${fmt(intlPrice)} for the WestJet / Philippine Airlines flights${t ? "" : " (estimate)"}</span><a href="${esc(D["intl-mnl"]?.googleUrl || "https://www.google.com/travel/flights?hl=en&curr=CAD")}" target="_blank" rel="noopener">Book on Google Flights ↗</a></div>`;
 
   /* ---------- Coron → Manila: two ways ---------- */
   const clarkTotal = uc.price + bus.price;

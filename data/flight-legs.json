@@ -9,7 +9,7 @@
       "group": "international",
       "total": false,
       "title": "Calgary ⇄ Manila (round trip)",
-      "note": "Air Canada via Edmonton and Vancouver, then Philippine Airlines overnight to Manila. Home on PR 116 through Vancouver.",
+      "note": "WestJet to Vancouver, then Philippine Airlines overnight to Manila. Home on PR 116 to Vancouver and WestJet to Calgary.",
       "from": "YYC",
       "to": "MNL",
       "type": "round",
@@ -31,8 +31,7 @@
         "source": "Live check Oct 11 2026: C$1,561"
       },
       "preferFlights": [
-        "AC 8138",
-        "AC 249",
+        "WS 127",
         "PR 117"
       ],
       "preferReturn": [
