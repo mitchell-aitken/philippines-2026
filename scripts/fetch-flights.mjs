@@ -1,7 +1,7 @@
 // Fetches flight prices from SerpApi's Google Flights API and writes data/flights.json.
 //
 // Runs daily from .github/workflows/update-flights.yml. Needs the repo secret SERPAPI_KEY
-// (free plan: 250 searches/month; this uses 4 per run, about 120/month).
+// (free plan: 250 searches/month; this uses 6 per run, about 185/month).
 //
 // Local test without the API:  MOCK_DIR=path/to/mocks node scripts/fetch-flights.mjs
 //   (reads <MOCK_DIR>/<leg id>.json instead of calling SerpApi)
@@ -27,8 +27,8 @@ try { prev = JSON.parse(await readFile(OUT, "utf8")); } catch { /* first run */ 
 const today = new Date().toISOString().slice(0, 10);
 const out = { updated: new Date().toISOString(), currency: cfg.currency, source: "Google Flights via SerpApi", legs: {} };
 
-async function search(leg) {
-  if (MOCK_DIR) return JSON.parse(await readFile(`${MOCK_DIR}/${leg.id}.json`, "utf8"));
+async function search(leg, departureToken) {
+  if (MOCK_DIR) return JSON.parse(await readFile(`${MOCK_DIR}/${leg.id}${departureToken ? "-return" : ""}.json`, "utf8"));
   const params = new URLSearchParams({
     engine: "google_flights",
     departure_id: leg.from,
@@ -42,6 +42,7 @@ async function search(leg) {
     api_key: KEY,
   });
   if (leg.type === "round") params.set("return_date", leg.return);
+  if (departureToken) params.set("departure_token", departureToken);
   const res = await fetch(`https://serpapi.com/search.json?${params}`);
   const data = await res.json().catch(() => ({}));
   if (!res.ok || data.error) throw new Error(data.error || `HTTP ${res.status}`);
@@ -65,10 +66,11 @@ function toOption(f, best) {
     stops: segs.length - 1,
     via: (f.layovers || []).map(l => l.id).filter(Boolean),
     overnight: (f.layovers || []).some(l => l.overnight),
+    token: f.departure_token || null,
   };
 }
 
-function summarize(leg, data, old) {
+function pickOptions(data) {
   const options = [
     ...(data.best_flights || []).map(f => toOption(f, true)),
     ...(data.other_flights || []).map(f => toOption(f, false)),
@@ -79,7 +81,13 @@ function summarize(leg, data, old) {
     .sort((a, b) => a.price - b.price || b.best - a.best)
     .filter(o => { const k = `${o.flights.join("+")}|${o.depart}`; if (seen.has(k)) return false; seen.add(k); return true; })
     .slice(0, MAX_OPTIONS);
+  return unique;
+}
 
+const strip = list => list.map(({ token, ...o }) => o);
+
+function summarize(leg, data, old) {
+  const unique = pickOptions(data);
   const lowest = unique.length ? unique[0].price : null;
   const pi = data.price_insights || {};
   const history = (old?.history || []).filter(h => h.date !== today);
@@ -91,7 +99,7 @@ function summarize(leg, data, old) {
     priceLevel: pi.price_level || null,
     typicalRange: pi.typical_price_range || null,
     googleUrl: data.search_metadata?.google_flights_url || null,
-    options: unique,
+    options: strip(unique),
     history: history.slice(-MAX_HISTORY),
   };
 }
@@ -102,7 +110,21 @@ for (const leg of cfg.legs.filter(l => l.kind === "flight")) {
   if (leg.outbound < today) { if (old) out.legs[leg.id] = old; console.log(`skip ${leg.id}: date has passed`); continue; }
   try {
     const data = await search(leg);
-    out.legs[leg.id] = summarize(leg, data, old);
+    const summary = summarize(leg, data, old);
+    if (leg.withReturn) {
+      const pick = pickOptions(data).find(o => o.token);
+      if (pick) {
+        try {
+          const ret = await search(leg, pick.token);
+          summary.returnFor = { flights: pick.flights, price: pick.price };
+          summary.returnOptions = strip(pickOptions(ret));
+        } catch (e) {
+          console.error(`fail ${leg.id} return: ${e.message}`);
+          summary.returnError = e.message;
+        }
+      }
+    }
+    out.legs[leg.id] = summary;
     ok++;
     console.log(`ok   ${leg.id}: ${out.legs[leg.id].options.length} options, lowest ${out.legs[leg.id].lowest} ${cfg.currency}`);
   } catch (e) {

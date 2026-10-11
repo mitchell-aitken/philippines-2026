@@ -9,11 +9,21 @@
       "group": "international",
       "total": true,
       "title": "Calgary ⇄ Cebu",
-      "note": "Round trip. Planned dates.",
+      "note": "Round trip on the planned dates. You need to land by about 12:30 pm on Mon Nov 16 to reach Bohol the same day.",
       "from": "YYC", "to": "CEB",
       "type": "round",
       "outbound": "2026-11-14", "return": "2026-11-30",
-      "estimate": { "low": 1150, "high": 1500, "source": "Momondo, Oct 11 2026: Nov fares from C$1,223; China Airlines, Korean Air and Cathay from about C$970–1,000" }
+      "withReturn": true,
+      "connect": {
+        "label": "OceanJet Cebu → Tagbilaran",
+        "date": "2026-11-16",
+        "times": ["05:10", "06:00", "07:00", "08:20", "09:20", "10:40", "11:40", "13:00", "14:00", "15:20", "16:20", "17:40", "18:40"],
+        "duration": 120,
+        "gap": 150,
+        "gapWhy": "about 2.5 hrs for immigration, bags, the 45 min ride to Pier 1 and ferry check-in"
+      },
+      "returnFit": { "departAfter": "2026-11-30 05:00", "why": "you sleep on Mactan the night before" },
+      "estimate": { "low": 1150, "high": 1500, "source": "Momondo, Oct 11 2026: Nov fares from C$1,223" }
     },
     {
       "id": "intl-alt",
@@ -21,46 +31,11 @@
       "group": "international",
       "total": false,
       "title": "Calgary ⇄ Cebu, one day earlier",
-      "note": "Round trip. Same 11 vacation days, leaving Friday Nov 13 and back Sunday Nov 29.",
+      "note": "Price comparison only: leave Fri Nov 13, back Sun Nov 29. Same 11 vacation days; the plan would shift a day earlier.",
       "from": "YYC", "to": "CEB",
       "type": "round",
       "outbound": "2026-11-13", "return": "2026-11-29",
       "estimate": { "low": 1150, "high": 1500, "source": "Same fare range as the planned dates" }
-    },
-    {
-      "id": "ceb-usu",
-      "kind": "flight",
-      "group": "domestic",
-      "total": true,
-      "title": "Cebu → Coron (Busuanga)",
-      "note": "One way. Philippine Airlines, Cebgo and Sunlight Air fly it nonstop, about 1 hr 40 min.",
-      "from": "CEB", "to": "USU",
-      "type": "oneway",
-      "outbound": "2026-11-17",
-      "estimate": { "low": 60, "high": 130, "source": "Expedia from US$44; PAL from ₱1,783 base fare" }
-    },
-    {
-      "id": "crn-eni",
-      "kind": "ferry",
-      "group": "domestic",
-      "total": true,
-      "title": "Coron → El Nido fast ferry",
-      "note": "One way, about 3.5–5 hrs. Montenegro, Phimal, Atienza or Island Water, 6–7 am departures.",
-      "date": "2026-11-20",
-      "estimate": { "low": 42, "high": 72, "source": "₱1,760–3,000 per InElNido ferry guide" },
-      "link": "https://www.inelnido.com/guides/coron-to-el-nido"
-    },
-    {
-      "id": "eni-ceb",
-      "kind": "flight",
-      "group": "domestic",
-      "total": true,
-      "title": "El Nido → Cebu",
-      "note": "One way. Cebgo is the only nonstop, a small ATR 72 with 77 seats, so book early.",
-      "from": "ENI", "to": "CEB",
-      "type": "oneway",
-      "outbound": "2026-11-24",
-      "estimate": { "low": 145, "high": 175, "source": "Kayak: US$106–124 one way" }
     },
     {
       "id": "ceb-tag",
@@ -68,21 +43,72 @@
       "group": "domestic",
       "total": true,
       "title": "Cebu → Bohol (Tagbilaran) fast ferry",
-      "note": "OceanJet or SuperCat, about 2 hrs. Departures roughly every hour.",
-      "date": "2026-11-24",
+      "note": "OceanJet from Pier 1, about 2 hrs. Which sailing you can make depends on when your flight lands (shown on each flight above).",
+      "date": "2026-11-16",
+      "departures": [
+        { "op": "OceanJet", "dep": "13:00", "arr": "15:00" },
+        { "op": "OceanJet", "dep": "14:00", "arr": "16:00" },
+        { "op": "OceanJet", "dep": "15:20", "arr": "17:20" },
+        { "op": "OceanJet", "dep": "16:20", "arr": "18:20" },
+        { "op": "OceanJet", "dep": "17:40", "arr": "19:40" }
+      ],
       "estimate": { "low": 19, "high": 30, "source": "OceanJet ₱800 tourist / ₱1,200 business, plus terminal fee" },
       "link": "https://pamasahe.com/routes/cebu-tagbilaran-oceanjet-schedule-fares"
     },
     {
-      "id": "tag-ceb",
+      "id": "tag-eni",
+      "kind": "flight",
+      "group": "domestic",
+      "total": true,
+      "title": "Bohol → El Nido",
+      "note": "One way, nonstop on Cebgo. It only runs some days of the week, so the plan is built around this flight.",
+      "from": "TAG", "to": "ENI",
+      "type": "oneway",
+      "outbound": "2026-11-21",
+      "fit": { "departAfter": "2026-11-21 11:00", "why": "check out of Panglao in the morning" },
+      "estimate": { "low": 60, "high": 200, "source": "Skyscanner from US$36; Cebgo DG 5611 at 15:40 on Mon, Tue, Thu, Sat" }
+    },
+    {
+      "id": "eni-crn",
       "kind": "ferry",
       "group": "domestic",
       "total": true,
-      "title": "Bohol → Cebu fast ferry",
-      "note": "OceanJet or SuperCat, about 2 hrs.",
-      "date": "2026-11-29",
-      "estimate": { "low": 19, "high": 30, "source": "OceanJet ₱800 tourist / ₱1,200 business, plus terminal fee" },
-      "link": "https://pamasahe.com/routes/cebu-tagbilaran-oceanjet-schedule-fares"
+      "title": "El Nido → Coron fast ferry",
+      "note": "About 3–4 hrs. Check in at El Nido port an hour before and bring a printed ticket.",
+      "date": "2026-11-25",
+      "departures": [
+        { "op": "Phimal", "dep": "08:20", "arr": "12:20", "fare": "₱3,175" },
+        { "op": "Montenegro", "dep": "12:00", "arr": "16:00", "fare": "₱3,290" },
+        { "op": "Atienza", "dep": "12:30", "arr": "~16:30" }
+      ],
+      "estimate": { "low": 76, "high": 80, "source": "Jonny Melon El Nido–Coron guide: Phimal ₱3,175, Montenegro ₱3,290" },
+      "link": "https://www.jonnymelon.com/el-nido-to-coron/"
+    },
+    {
+      "id": "eni-usu",
+      "kind": "flight",
+      "group": "domestic",
+      "total": false,
+      "title": "El Nido → Coron by plane (instead of the ferry)",
+      "note": "One way, about 40 min on AirSWIFT. Not in the total: an option if the seas are rough or you'd rather skip the boat.",
+      "from": "ENI", "to": "USU",
+      "type": "oneway",
+      "outbound": "2026-11-25",
+      "fit": { "departAfter": "2026-11-25 06:00", "why": "" },
+      "estimate": { "low": 50, "high": 100, "source": "Jonny Melon: about ₱2,000–4,000 one way" }
+    },
+    {
+      "id": "usu-ceb",
+      "kind": "flight",
+      "group": "domestic",
+      "total": true,
+      "title": "Coron (Busuanga) → Cebu",
+      "note": "One way. Philippine Airlines, Cebgo and Sunlight Air fly it nonstop. A midday flight leaves room for delays.",
+      "from": "USU", "to": "CEB",
+      "type": "oneway",
+      "outbound": "2026-11-29",
+      "fit": { "departAfter": "2026-11-29 08:30", "arriveBy": "2026-11-29 22:00", "why": "the airport is 40 min from Coron town" },
+      "estimate": { "low": 60, "high": 130, "source": "Live CEB–USU fares Oct 11 2026: C$85–156" }
     }
   ]
 }

@@ -85,6 +85,14 @@
   .opt .times{font-size:13.5px;font-variant-numeric:tabular-nums}
   .opt .times small{display:block;color:var(--muted);font-size:12px}
   .opt .p{font-weight:600;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+  .fit{display:inline-flex;align-items:center;gap:5px;margin-top:5px;font:500 11.5px/1.3 var(--sans);padding:3px 9px;border-radius:999px}
+  .fit::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+  .fit.ok{background:#E6F4EC;color:#16733F}
+  .fit.warn{background:#FFF4C2;color:#6B4F00}
+  .fit.bad{background:#FBE9EB;color:var(--red)}
+  .subhead{margin:18px 0 0;font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .subhead + .options{margin-top:8px}
+  .opt.dim{opacity:.55}
   .tag{display:inline-block;font:500 9.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:3px 5px;border-radius:3px;background:var(--gold);color:var(--ink);margin-left:6px;vertical-align:2px}
 
   .leg-foot{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-top:12px;font-size:12.5px;color:var(--muted)}
@@ -217,6 +225,25 @@ function render(cfg, live) {
     </section>`).join("");
 }
 
+const addMin = (hhmm, m) => { const [h, mi] = hhmm.split(":").map(Number); const t = h * 60 + mi + m; return `${String(Math.floor(t / 60)).padStart(2, "0")}:${String(t % 60).padStart(2, "0")}`; };
+function fitWindow(f, o) {
+  if (!f) return null;
+  const why = f.why ? ` (${f.why})` : "";
+  if (f.departAfter && o.depart < f.departAfter) return { cls: "bad", text: `Leaves too early for the plan${why}` };
+  if (f.arriveBy && o.arrive > f.arriveBy) return { cls: "bad", text: "Arrives too late for the plan" };
+  return { cls: "ok", text: "Fits the plan" };
+}
+function fitOf(leg, o) {
+  const c = leg.connect;
+  if (!c) return fitWindow(leg.fit, o);
+  const ad = o.arrive.slice(0, 10), at = o.arrive.slice(11, 16);
+  if (ad < c.date) return { cls: "warn", text: `Lands ${day(ad)}, a day early: add a night in Cebu` };
+  if (ad > c.date) return { cls: "bad", text: `Lands ${day(ad)}, a day late for the plan` };
+  const t = c.times.find(x => x >= addMin(at, c.gap));
+  if (t) return { cls: "ok", text: `Makes the ${t} ferry to Bohol, arriving ${addMin(t, c.duration)}` };
+  return { cls: "warn", text: "Too late for a ferry today: sleep in Cebu, ferry next morning" };
+}
+
 function legHTML(leg, l, cfg) {
   const when = leg.kind === "flight"
     ? (leg.type === "round" ? `${day(leg.outbound)} – ${day(leg.return)} · round trip` : `${day(leg.outbound)} · one way`)
@@ -228,17 +255,32 @@ function legHTML(leg, l, cfg) {
     : `<div class="price"><small>Estimate, per person</small><b>${range(p.lo, p.hi)}</b></div>`;
 
   let body = "";
+  const optRow = (o, fit) => `
+        <li class="opt${fit && fit.cls === "bad" ? " dim" : ""}">
+          <div class="air">${esc(o.airlines.join(" + "))}${o.best ? '<span class="tag">Best</span>' : ""}<small>${esc(o.flights.join(" · "))}</small></div>
+          <div class="times">${esc(time(o.depart))} → ${esc(time(o.arrive))}<small>${dur(o.minutes)} · ${o.stops ? `${o.stops} stop${o.stops > 1 ? "s" : ""} via ${esc(o.via.join(", "))}` : "Nonstop"}${o.overnight ? " · overnight layover" : ""}</small>${fit ? `<span class="fit ${fit.cls}">${esc(fit.text)}</span>` : ""}</div>
+          <div class="p">${fmt(o.price)}</div>
+        </li>`;
   if (leg.kind === "flight") {
     if (l?.options?.length) {
-      body = `<ul class="options">${l.options.map(o => `
-        <li class="opt">
-          <div class="air">${esc(o.airlines.join(" + "))}${o.best ? '<span class="tag">Best</span>' : ""}<small>${esc(o.flights.join(" · "))}</small></div>
-          <div class="times">${esc(time(o.depart))} → ${esc(time(o.arrive))}<small>${dur(o.minutes)} · ${o.stops ? `${o.stops} stop${o.stops > 1 ? "s" : ""} via ${esc(o.via.join(", "))}` : "Nonstop"}${o.overnight ? " · overnight layover" : ""}</small></div>
-          <div class="p">${fmt(o.price)}</div>
-        </li>`).join("")}</ul>`;
+      const outLabel = leg.type === "round" ? `<div class="subhead">Outbound · ${day(leg.outbound)} · round-trip price</div>` : "";
+      body = `${outLabel}<ul class="options">${l.options.map(o => optRow(o, fitOf(leg, o))).join("")}</ul>`;
+      if (l.returnOptions?.length) {
+        body += `<div class="subhead">Return · ${day(leg.return)} · paired with the ${esc(l.returnFor.flights.join(" / "))} outbound, round-trip price</div>
+          <ul class="options">${l.returnOptions.map(o => optRow(o, fitWindow(leg.returnFit, o))).join("")}</ul>`;
+      } else if (l.returnError) {
+        body += `<div class="empty"><span class="err">Couldn't load return flights: ${esc(l.returnError)}.</span></div>`;
+      }
     } else {
       body = `<div class="empty">${l?.error ? `<span class="err">Last check failed: ${esc(l.error)}.</span> ` : ""}Live options will show here once prices are switched on. Estimate source: ${esc(leg.estimate.source)}.</div>`;
     }
+  } else if (leg.departures?.length) {
+    body = `<div class="subhead">Sailings · ${day(leg.date)}</div><ul class="options">${leg.departures.map(d => `
+        <li class="opt">
+          <div class="air">${esc(d.op)}</div>
+          <div class="times">${esc(d.dep)} → ${esc(d.arr)}</div>
+          <div class="p">${esc(d.fare || "")}</div>
+        </li>`).join("")}</ul>`;
   }
 
   const typical = l?.typicalRange ? `Typical for these dates: ${fmt(l.typicalRange[0])}–${fmt(l.typicalRange[1]).replace("C$", "")}` : "";
