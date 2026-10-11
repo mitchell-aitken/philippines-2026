@@ -222,7 +222,7 @@ function ticket(leg, l) {
 
 /* ---------- load ---------- */
 Promise.all([
-  fetch("data/flight-legs.json").then(r => r.json()),
+  fetch("data/flight-legs.json", { cache: "no-store" }).then(r => r.json()),
   fetch("data/flights.json", { cache: "no-store" }).then(r => r.json()).catch(() => ({ legs: {} }))
 ]).then(([cfg, live]) => render(cfg, live)).catch(err => {
   document.getElementById("status").innerHTML = `<i></i><span class="err">Couldn't load prices (${esc(err.message)}).</span>`;

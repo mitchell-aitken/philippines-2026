@@ -120,7 +120,7 @@
 <script>
   if (!window.L) document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"><script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"><\/script>');
 </script>
-<script src="trip-data.js"></script>
+<script>document.write('<script src="trip-data.js?v=' + Date.now() + '"><\/script>');</script>
 <script>
 /* ---------- basemap: Esri Light Gray Canvas (no API key), OSM as fallback ---------- */
 const map = L.map("map", { zoomControl: false });

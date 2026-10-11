@@ -126,7 +126,7 @@
   <footer>Rough plan. Prices and schedules as of October 2026; check before booking.</footer>
 </main>
 
-<script src="trip-data.js"></script>
+<script>document.write('<script src="trip-data.js?v=' + Date.now() + '"><\/script>');</script>
 <script>
 const legsEl = document.getElementById("legs");
 LEGS.forEach(leg => {
