@@ -9,7 +9,7 @@
       "group": "international",
       "total": false,
       "title": "Calgary ⇄ Manila (round trip)",
-      "note": "Round trip to Manila; short domestic flights connect to Bohol and back from Coron.",
+      "note": "Air Canada via Edmonton and Vancouver, then Philippine Airlines overnight to Manila. Home on PR 116 through Vancouver.",
       "from": "YYC",
       "to": "MNL",
       "type": "round",
@@ -18,7 +18,7 @@
       "withReturn": true,
       "fit": {
         "arriveBy": "2026-11-15 07:30",
-        "why": "leaves time to transfer to the morning flight to Panglao"
+        "why": "leaves time for the morning flight to Panglao"
       },
       "returnFit": {
         "departAfter": "2026-11-30 16:00",
@@ -29,7 +29,16 @@
         "low": 1400,
         "high": 1550,
         "source": "Live check Oct 11 2026: C$1,474"
-      }
+      },
+      "preferFlights": [
+        "AC 8138",
+        "AC 249",
+        "PR 117"
+      ],
+      "preferReturn": [
+        "PR 116",
+        "WS 126"
+      ]
     },
     {
       "id": "mnl-tag",
@@ -121,8 +130,8 @@
       "outbound": "2026-11-30",
       "fit": {
         "departAfter": "2026-11-30 07:00",
-        "arriveBy": "2026-11-30 14:45",
-        "why": "Clark to Manila airport is 2–3 hrs, then check-in for 21:05"
+        "arriveBy": "2026-11-30 14:05",
+        "why": "2–3 hrs by bus to Manila airport, then 3 hrs before the 21:05 flight"
       },
       "estimate": {
         "low": 130,
@@ -155,123 +164,25 @@
       "link": "https://www.thepoortraveler.net/manila-clark-p2p-bus-schedule/"
     },
     {
-      "id": "intl-main",
-      "kind": "flight",
-      "group": "international",
-      "total": true,
-      "title": "Calgary ⇄ Cebu (round trip)",
-      "note": "Round trip to Cebu, then the OceanJet ferry to Bohol.",
-      "from": "YYC",
-      "to": "CEB",
-      "type": "round",
-      "outbound": "2026-11-13",
-      "return": "2026-11-30",
-      "withReturn": true,
-      "connect": {
-        "label": "OceanJet Cebu → Tagbilaran",
-        "date": "2026-11-15",
-        "times": [
-          "05:10",
-          "06:00",
-          "07:00",
-          "08:20",
-          "09:20",
-          "10:40",
-          "11:40",
-          "13:00",
-          "14:00",
-          "15:20",
-          "16:20",
-          "17:40",
-          "18:40"
-        ],
-        "duration": 120,
-        "gap": 150,
-        "gapWhy": "about 2.5 hrs for immigration, bags, the 45 min ride to Pier 1 and ferry check-in"
-      },
-      "returnFit": {
-        "departAfter": "2026-11-30 05:00",
-        "arriveBy": "2026-11-30 23:59",
-        "why": "you sleep on Mactan the night before"
-      },
-      "estimate": {
-        "low": 1300,
-        "high": 1450,
-        "source": "Live check Oct 11 2026: C$1,334"
-      }
-    },
-    {
-      "id": "ceb-tag",
-      "kind": "ferry",
-      "group": "domestic",
-      "total": true,
-      "title": "Cebu → Bohol (Tagbilaran) fast ferry",
-      "note": "OceanJet from Pier 1, about 2 hrs. Which sailing you can make depends on when your flight lands (shown on each flight above).",
-      "date": "2026-11-15",
-      "departures": [
-        {
-          "op": "OceanJet",
-          "dep": "09:20",
-          "arr": "11:20"
-        },
-        {
-          "op": "OceanJet",
-          "dep": "10:40",
-          "arr": "12:40"
-        },
-        {
-          "op": "OceanJet",
-          "dep": "11:40",
-          "arr": "13:40"
-        },
-        {
-          "op": "OceanJet",
-          "dep": "13:00",
-          "arr": "15:00"
-        },
-        {
-          "op": "OceanJet",
-          "dep": "14:00",
-          "arr": "16:00"
-        },
-        {
-          "op": "OceanJet",
-          "dep": "15:20",
-          "arr": "17:20"
-        },
-        {
-          "op": "OceanJet",
-          "dep": "16:20",
-          "arr": "18:20"
-        }
-      ],
-      "estimate": {
-        "low": 19,
-        "high": 30,
-        "source": "OceanJet ₱800 tourist / ₱1,200 business, plus terminal fee"
-      },
-      "link": "https://pamasahe.com/routes/cebu-tagbilaran-oceanjet-schedule-fares"
-    },
-    {
-      "id": "usu-ceb",
+      "id": "usu-mnl",
       "kind": "flight",
       "group": "domestic",
-      "total": true,
-      "title": "Coron (Busuanga) → Cebu",
-      "note": "One way. Philippine Airlines, Cebgo and Sunlight Air fly it nonstop. A midday flight leaves room for delays.",
+      "total": false,
+      "title": "Coron → Manila (via Cebu)",
+      "note": "One ticket through Cebu, landing right at Manila airport. If the first flight is late, the airline rebooks the second.",
       "from": "USU",
-      "to": "CEB",
+      "to": "MNL",
       "type": "oneway",
-      "outbound": "2026-11-29",
+      "outbound": "2026-11-30",
       "fit": {
-        "departAfter": "2026-11-29 08:30",
-        "arriveBy": "2026-11-29 22:00",
-        "why": "the airport is 40 min from Coron town"
+        "departAfter": "2026-11-30 07:00",
+        "arriveBy": "2026-11-30 18:05",
+        "why": "land at least 3 hrs before the 21:05 flight home"
       },
       "estimate": {
-        "low": 60,
-        "high": 130,
-        "source": "Live CEB–USU fares Oct 11 2026: C$85–156"
+        "low": 230,
+        "high": 290,
+        "source": "Live check Oct 11 2026: C$228–268 on Nov 29"
       }
     }
   ]

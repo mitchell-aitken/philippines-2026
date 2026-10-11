@@ -69,7 +69,9 @@ function toOption(f, best) {
   };
 }
 
-function pickOptions(data) {
+const sameFlights = (o, want) => want && want.every(n => o.flights.includes(n));
+
+function pickOptions(data, prefer) {
   const options = [
     ...(data.best_flights || []).map(f => toOption(f, true)),
     ...(data.other_flights || []).map(f => toOption(f, false)),
@@ -79,14 +81,16 @@ function pickOptions(data) {
   const unique = options
     .sort((a, b) => a.price - b.price || b.best - a.best)
     .filter(o => { const k = `${o.flights.join("+")}|${o.depart}`; if (seen.has(k)) return false; seen.add(k); return true; })
-    .slice(0, MAX_OPTIONS);
-  return unique;
+  const top = unique.slice(0, MAX_OPTIONS);
+  const pref = prefer && unique.find(o => sameFlights(o, prefer));
+  if (pref && !top.includes(pref)) top.push(pref);   // always keep the flight we're tracking
+  return top;
 }
 
 const strip = list => list.map(({ token, ...o }) => o);
 
 function summarize(leg, data, old) {
-  const unique = pickOptions(data);
+  const unique = pickOptions(data, leg.preferFlights);
   const lowest = unique.length ? unique[0].price : null;
   const pi = data.price_insights || {};
   const history = (old?.history || []).filter(h => h.date !== today);
@@ -112,12 +116,13 @@ for (const leg of cfg.legs.filter(l => l.kind === "flight")) {
     const data = await search(leg);
     const summary = summarize(leg, data, old);
     if (leg.withReturn) {
-      const pick = pickOptions(data).find(o => o.token);
+      const all = pickOptions(data, leg.preferFlights);
+      const pick = all.find(o => o.token && sameFlights(o, leg.preferFlights)) || all.find(o => o.token);
       if (pick) {
         try {
           const ret = await search(leg, pick.token);
           summary.returnFor = { flights: pick.flights, price: pick.price };
-          summary.returnOptions = strip(pickOptions(ret));
+          summary.returnOptions = strip(pickOptions(ret, leg.preferReturn));
         } catch (e) {
           console.error(`fail ${leg.id} return: ${e.message}`);
           summary.returnError = e.message;
