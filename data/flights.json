@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-11T17:14:09.335Z",
+  "updated": "2026-10-11T17:18:23.073Z",
   "currency": "CAD",
   "source": "Google Flights via SerpApi",
   "legs": {
     "intl-main": {
-      "checked": "2026-10-11T17:14:09.335Z",
+      "checked": "2026-10-11T17:18:23.073Z",
       "lowest": 1467,
       "priceLevel": "high",
       "typicalRange": [
@@ -165,10 +165,93 @@
           "date": "2026-10-11",
           "low": 1467
         }
+      ],
+      "returnFor": {
+        "flights": [
+          "AC 8134",
+          "AC 245",
+          "PR 117",
+          "PR 2849"
+        ],
+        "price": 1467
+      },
+      "returnOptions": [
+        {
+          "price": 1467,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "WestJet"
+          ],
+          "flights": [
+            "PR 1852",
+            "PR 116",
+            "WS 126"
+          ],
+          "from": "CEB",
+          "to": "YYC",
+          "depart": "2026-11-30 09:15",
+          "arrive": "2026-11-30 23:00",
+          "minutes": 1665,
+          "stops": 2,
+          "via": [
+            "MNL",
+            "YVR"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1467,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "WestJet"
+          ],
+          "flights": [
+            "PR 2864",
+            "PR 136",
+            "WS 108"
+          ],
+          "from": "CEB",
+          "to": "YYC",
+          "depart": "2026-11-30 23:25",
+          "arrive": "2026-12-01 13:30",
+          "minutes": 1685,
+          "stops": 2,
+          "via": [
+            "MNL",
+            "YVR"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 1492,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines",
+            "WestJet"
+          ],
+          "flights": [
+            "PR 2868",
+            "PR 116",
+            "WS 126"
+          ],
+          "from": "CEB",
+          "to": "YYC",
+          "depart": "2026-11-30 16:20",
+          "arrive": "2026-11-30 23:00",
+          "minutes": 1240,
+          "stops": 2,
+          "via": [
+            "MNL",
+            "YVR"
+          ],
+          "overnight": false
+        }
       ]
     },
     "intl-alt": {
-      "checked": "2026-10-11T17:14:09.335Z",
+      "checked": "2026-10-11T17:18:23.073Z",
       "lowest": 1334,
       "priceLevel": "typical",
       "typicalRange": [
@@ -329,122 +412,85 @@
         }
       ]
     },
-    "ceb-usu": {
-      "checked": "2026-10-11T17:14:09.335Z",
-      "lowest": 85,
-      "priceLevel": "high",
+    "tag-eni": {
+      "checked": "2026-10-11T17:18:23.073Z",
+      "lowest": 270,
+      "priceLevel": "typical",
       "typicalRange": [
-        45,
-        80
+        175,
+        285
       ],
-      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTE3agcIARIDQ0VCcgcIARIDVVNVQAFIAXABmAEC&tfu=EgIIAQ",
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTIxagcIARIDVEFHcgcIARIDRU5JQAFIAXABmAEC&tfu=EgIIAQ",
       "options": [
         {
-          "price": 85,
-          "best": true,
-          "airlines": [
-            "Philippine Airlines"
-          ],
-          "flights": [
-            "PR 2666"
-          ],
-          "from": "CEB",
-          "to": "USU",
-          "depart": "2026-11-17 06:30",
-          "arrive": "2026-11-17 07:50",
-          "minutes": 80,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        },
-        {
-          "price": 100,
-          "best": true,
-          "airlines": [
-            "Cebgo"
-          ],
-          "flights": [
-            "DG 6068"
-          ],
-          "from": "CEB",
-          "to": "USU",
-          "depart": "2026-11-17 07:35",
-          "arrive": "2026-11-17 09:15",
-          "minutes": 100,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        },
-        {
-          "price": 120,
-          "best": false,
-          "airlines": [
-            "Philippine Airlines"
-          ],
-          "flights": [
-            "PR 2664"
-          ],
-          "from": "CEB",
-          "to": "USU",
-          "depart": "2026-11-17 10:45",
-          "arrive": "2026-11-17 12:05",
-          "minutes": 80,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        },
-        {
-          "price": 139,
+          "price": 270,
           "best": false,
           "airlines": [
             "Cebgo"
           ],
           "flights": [
-            "DG 6066"
+            "DG 6888"
           ],
-          "from": "CEB",
-          "to": "USU",
-          "depart": "2026-11-17 13:40",
-          "arrive": "2026-11-17 15:20",
-          "minutes": 100,
+          "from": "TAG",
+          "to": "ENI",
+          "depart": "2026-11-21 15:50",
+          "arrive": "2026-11-21 17:35",
+          "minutes": 105,
           "stops": 0,
           "via": [],
           "overnight": false
-        },
+        }
+      ],
+      "history": [
         {
-          "price": 156,
+          "date": "2026-10-11",
+          "low": 270
+        }
+      ]
+    },
+    "eni-usu": {
+      "checked": "2026-10-11T17:18:23.073Z",
+      "lowest": 121,
+      "priceLevel": "typical",
+      "typicalRange": [
+        105,
+        355
+      ],
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTI1agcIARIDRU5JcgcIARIDVVNVQAFIAXABmAEC&tfu=EgIIAQ",
+      "options": [
+        {
+          "price": 121,
           "best": false,
           "airlines": [
-            "Philippine Airlines"
-          ],
-          "flights": [
-            "PR 2682"
-          ],
-          "from": "CEB",
-          "to": "USU",
-          "depart": "2026-11-17 12:10",
-          "arrive": "2026-11-17 13:30",
-          "minutes": 80,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        },
-        {
-          "price": 271,
-          "best": false,
-          "airlines": [
-            "Cebu Pacific",
             "Cebgo"
           ],
           "flights": [
-            "5J 4306",
-            "DG 6039"
+            "DG 6558"
           ],
-          "from": "CEB",
+          "from": "ENI",
           "to": "USU",
-          "depart": "2026-11-17 10:00",
-          "arrive": "2026-11-17 14:40",
-          "minutes": 280,
+          "depart": "2026-11-25 12:05",
+          "arrive": "2026-11-25 12:45",
+          "minutes": 40,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 312,
+          "best": false,
+          "airlines": [
+            "Cebgo"
+          ],
+          "flights": [
+            "DG 6358",
+            "DG 6041"
+          ],
+          "from": "ENI",
+          "to": "USU",
+          "depart": "2026-11-25 21:05",
+          "arrive": "2026-11-26 07:40",
+          "minutes": 635,
           "stops": 1,
           "via": [
             "CRK"
@@ -455,118 +501,133 @@
       "history": [
         {
           "date": "2026-10-11",
-          "low": 85
+          "low": 121
         }
       ]
     },
-    "eni-ceb": {
-      "checked": "2026-10-11T17:14:09.335Z",
-      "lowest": 174,
-      "priceLevel": "typical",
+    "usu-ceb": {
+      "checked": "2026-10-11T17:18:23.073Z",
+      "lowest": 146,
+      "priceLevel": "high",
       "typicalRange": [
-        155,
-        195
+        50,
+        100
       ],
-      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTI0agcIARIDRU5JcgcIARIDQ0VCQAFIAXABmAEC&tfu=EgIIAQ",
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTI5agcIARIDVVNVcgcIARIDQ0VCQAFIAXABmAEC&tfu=EgIIAQ",
       "options": [
         {
-          "price": 174,
-          "best": false,
-          "airlines": [
-            "Cebgo"
-          ],
-          "flights": [
-            "DG 6259"
-          ],
-          "from": "ENI",
-          "to": "CEB",
-          "depart": "2026-11-24 05:50",
-          "arrive": "2026-11-24 07:35",
-          "minutes": 105,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        },
-        {
-          "price": 197,
-          "best": false,
-          "airlines": [
-            "Cebgo"
-          ],
-          "flights": [
-            "DG 6251"
-          ],
-          "from": "ENI",
-          "to": "CEB",
-          "depart": "2026-11-24 06:20",
-          "arrive": "2026-11-24 08:10",
-          "minutes": 110,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        },
-        {
-          "price": 204,
+          "price": 146,
           "best": true,
           "airlines": [
             "Cebgo"
           ],
           "flights": [
-            "DG 6255"
+            "DG 6069"
           ],
-          "from": "ENI",
+          "from": "USU",
           "to": "CEB",
-          "depart": "2026-11-24 16:40",
-          "arrive": "2026-11-24 18:25",
-          "minutes": 105,
+          "depart": "2026-11-29 09:35",
+          "arrive": "2026-11-29 11:15",
+          "minutes": 100,
           "stops": 0,
           "via": [],
           "overnight": false
         },
         {
-          "price": 283,
-          "best": false,
+          "price": 146,
+          "best": true,
           "airlines": [
             "Cebgo"
           ],
           "flights": [
-            "DG 6257"
+            "DG 6065"
           ],
-          "from": "ENI",
+          "from": "USU",
           "to": "CEB",
-          "depart": "2026-11-24 10:45",
-          "arrive": "2026-11-24 12:30",
-          "minutes": 105,
+          "depart": "2026-11-29 10:40",
+          "arrive": "2026-11-29 12:20",
+          "minutes": 100,
           "stops": 0,
           "via": [],
           "overnight": false
         },
         {
-          "price": 301,
+          "price": 152,
+          "best": true,
+          "airlines": [
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "PR 2667"
+          ],
+          "from": "USU",
+          "to": "CEB",
+          "depart": "2026-11-29 08:10",
+          "arrive": "2026-11-29 09:25",
+          "minutes": 75,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 166,
           "best": false,
           "airlines": [
             "Cebgo"
           ],
           "flights": [
-            "DG 6558",
             "DG 6067"
           ],
-          "from": "ENI",
+          "from": "USU",
           "to": "CEB",
-          "depart": "2026-11-24 12:05",
-          "arrive": "2026-11-24 17:20",
-          "minutes": 315,
-          "stops": 1,
-          "via": [
-            "USU"
+          "depart": "2026-11-29 15:40",
+          "arrive": "2026-11-29 17:20",
+          "minutes": 100,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 190,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines"
           ],
+          "flights": [
+            "PR 2665"
+          ],
+          "from": "USU",
+          "to": "CEB",
+          "depart": "2026-11-29 15:40",
+          "arrive": "2026-11-29 16:55",
+          "minutes": 75,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 211,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "PR 2683"
+          ],
+          "from": "USU",
+          "to": "CEB",
+          "depart": "2026-11-29 14:00",
+          "arrive": "2026-11-29 15:10",
+          "minutes": 70,
+          "stops": 0,
+          "via": [],
           "overnight": false
         }
       ],
       "history": [
         {
           "date": "2026-10-11",
-          "low": 174
+          "low": 146
         }
       ]
     }
