@@ -1,0 +1,88 @@
+{
+  "currency": "CAD",
+  "travellers": 2,
+  "estimatesAsOf": "2026-10-11",
+  "legs": [
+    {
+      "id": "intl-main",
+      "kind": "flight",
+      "group": "international",
+      "total": true,
+      "title": "Calgary ⇄ Cebu",
+      "note": "Round trip. Planned dates.",
+      "from": "YYC", "to": "CEB",
+      "type": "round",
+      "outbound": "2026-11-14", "return": "2026-11-30",
+      "estimate": { "low": 1150, "high": 1500, "source": "Momondo, Oct 11 2026: Nov fares from C$1,223; China Airlines, Korean Air and Cathay from about C$970–1,000" }
+    },
+    {
+      "id": "intl-alt",
+      "kind": "flight",
+      "group": "international",
+      "total": false,
+      "title": "Calgary ⇄ Cebu, one day earlier",
+      "note": "Round trip. Same 11 vacation days, leaving Friday Nov 13 and back Sunday Nov 29.",
+      "from": "YYC", "to": "CEB",
+      "type": "round",
+      "outbound": "2026-11-13", "return": "2026-11-29",
+      "estimate": { "low": 1150, "high": 1500, "source": "Same fare range as the planned dates" }
+    },
+    {
+      "id": "ceb-usu",
+      "kind": "flight",
+      "group": "domestic",
+      "total": true,
+      "title": "Cebu → Coron (Busuanga)",
+      "note": "One way. Philippine Airlines, Cebgo and Sunlight Air fly it nonstop, about 1 hr 40 min.",
+      "from": "CEB", "to": "USU",
+      "type": "oneway",
+      "outbound": "2026-11-17",
+      "estimate": { "low": 60, "high": 130, "source": "Expedia from US$44; PAL from ₱1,783 base fare" }
+    },
+    {
+      "id": "crn-eni",
+      "kind": "ferry",
+      "group": "domestic",
+      "total": true,
+      "title": "Coron → El Nido fast ferry",
+      "note": "One way, about 3.5–5 hrs. Montenegro, Phimal, Atienza or Island Water, 6–7 am departures.",
+      "date": "2026-11-20",
+      "estimate": { "low": 42, "high": 72, "source": "₱1,760–3,000 per InElNido ferry guide" },
+      "link": "https://www.inelnido.com/guides/coron-to-el-nido"
+    },
+    {
+      "id": "eni-ceb",
+      "kind": "flight",
+      "group": "domestic",
+      "total": true,
+      "title": "El Nido → Cebu",
+      "note": "One way. Cebgo is the only nonstop, a small ATR 72 with 77 seats, so book early.",
+      "from": "ENI", "to": "CEB",
+      "type": "oneway",
+      "outbound": "2026-11-24",
+      "estimate": { "low": 145, "high": 175, "source": "Kayak: US$106–124 one way" }
+    },
+    {
+      "id": "ceb-tag",
+      "kind": "ferry",
+      "group": "domestic",
+      "total": true,
+      "title": "Cebu → Bohol (Tagbilaran) fast ferry",
+      "note": "OceanJet or SuperCat, about 2 hrs. Departures roughly every hour.",
+      "date": "2026-11-24",
+      "estimate": { "low": 19, "high": 30, "source": "OceanJet ₱800 tourist / ₱1,200 business, plus terminal fee" },
+      "link": "https://pamasahe.com/routes/cebu-tagbilaran-oceanjet-schedule-fares"
+    },
+    {
+      "id": "tag-ceb",
+      "kind": "ferry",
+      "group": "domestic",
+      "total": true,
+      "title": "Bohol → Cebu fast ferry",
+      "note": "OceanJet or SuperCat, about 2 hrs.",
+      "date": "2026-11-29",
+      "estimate": { "low": 19, "high": 30, "source": "OceanJet ₱800 tourist / ₱1,200 business, plus terminal fee" },
+      "link": "https://pamasahe.com/routes/cebu-tagbilaran-oceanjet-schedule-fares"
+    }
+  ]
+}

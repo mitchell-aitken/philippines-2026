@@ -162,18 +162,19 @@ const DAYS = [
     date: 23,
     dow: "Mon",
     region: "El Nido",
-    pin: [11.26, 119.47],
-    title: "Jungle falls and Nacpan",
-    lede: "A jungle trek to Nagkalit-kalit Falls, crossing a stream about eight times on the way, then the afternoon on Nacpan, a long quiet beach.",
+    pin: [11.165, 119.275],
+    title: "Tour C: sea cave, shrine and cliffs",
+    lede: "A boat day out to the wilder northern islands. Swim through a sea cave to a beach sealed off by cliffs, climb carved steps to a clifftop shrine, and finish at Helicopter Island. It leaves right from town, and it's quieter than Tour A.",
     plan: [
-      ["Morning", "Guided trek to Nagkalit-kalit Falls, 30–45 min each way with river crossings. Swim in the pool at the base."],
-      ["Afternoon", "Nacpan and Calitang twin beaches. Walk up the small hill for the view over both."],
+      ["Morning", "Hidden Beach on Matinloc: swim through a short cave passage to a white-sand beach enclosed by limestone."],
+      ["Midday", "Matinloc Shrine: 10–15 min climb up steep carved steps to a lookout about 50 m above the sea."],
+      ["Afternoon", "Secret Beach, Tapiutan Strait and Helicopter Island, with lunch on a beach on the way."],
       ["Evening", "Last night in Palawan."],
     ],
-    move: "Tricycle hired for the day · about 30–45 min each way",
+    move: "Bangka boat from town · about 8 am – 5 pm",
     stay: "eni",
-    tip: "The guide at the trailhead is required (around ₱200 each). November is a good month because the falls are full after the rainy season.",
-    photos: [["Nagkalit-kalit Falls", "Nagkalit-kalit Falls El Nido"], ["Nacpan Beach", "Nacpan Beach El Nido"]]  // [label, image search]
+    tip: "Takes basic swimming for the cave; everything else is easy. Wear grippy water shoes for the shrine steps. Shared tours are around ₱1,500–1,800 each, plus ₱300 in fees.",
+    photos: [["Hidden Beach", "Hidden Beach El Nido Matinloc"], ["Matinloc Shrine", "Matinloc Shrine viewpoint El Nido"], ["Helicopter Island", "Helicopter Island El Nido"]]  // [label, image search]
   },
   {
     date: 24,
@@ -311,7 +312,7 @@ const STAYS = {
 const LEGS = [
   { name: "Getting there", sub: "Calgary → Cebu",                       region: "Cebu",    days: [14, 15, 16] },
   { name: "Coron",         sub: "Lakes · Mt Tundalara · hot springs",    region: "Coron",   days: [17, 18, 19] },
-  { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · jungle falls", region: "El Nido", days: [20, 21, 22, 23] },
+  { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves", region: "El Nido", days: [20, 21, 22, 23] },
   { name: "Bohol",         sub: "Chocolate Hills · canyons · waterfalls", region: "Bohol",  days: [24, 25, 26, 27, 28] },
   { name: "Heading home",  sub: "Cebu → Calgary",                        region: "Cebu",    days: [29, 30] }
 ];
