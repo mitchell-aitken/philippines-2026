@@ -15,12 +15,12 @@ const DAYS = [
     region: "In transit",
     pin: null,
     title: "Leave Calgary",
-    lede: "Fly out on a Saturday so the travel days land on the weekend. Most fares connect in Vancouver and Manila, or in Taipei, on the way to Cebu.",
+    lede: "Fly out on a Saturday so the travel days land on the weekend. Most fares connect in Vancouver and Manila, or in Taipei.",
     plan: [
       ["Afternoon", "Calgary → Vancouver (or Seattle) for the long-haul connection."],
       ["Overnight", "The Pacific leg. You cross the date line and lose a day."],
     ],
-    move: "YYC → YVR → MNL or TPE → CEB · about 30–32 hrs door to door",
+    move: "YYC → YVR → MNL → CEB or TAG · about 30 hrs door to door",
     stay: null,
     tip: "If your ticket connects through Manila, it's a domestic plane change. Leave at least 2.5 hrs there; you clear immigration and may switch terminals.",
     photos: []  // [label, image search]
@@ -31,33 +31,33 @@ const DAYS = [
     region: "In transit",
     pin: null,
     title: "Across the Pacific",
-    lede: "Still travelling. Most current fares land in Cebu between 10 am and 11:30 am on the 16th.",
+    lede: "Still travelling. Most current fares land in Cebu or Panglao between about 10 am and 11:30 am on the 16th.",
     plan: [
       ["Day", "Connection at your hub airport."],
       ["Night", "Overnight flight or layover."],
     ],
-    move: "Hub → CEB",
+    move: "Hub → Cebu or Panglao",
     stay: null,
-    tip: "Check the arrival time when you book: landing by about 12:30 pm on the 16th means you can reach Bohol the same day.",
+    tip: "If you fly into Cebu, land by about 12:30 pm on the 16th to make a ferry to Bohol the same day.",
     photos: []  // [label, image search]
   },
   {
     date: 16,
     dow: "Mon",
     region: "Bohol",
-    pin: [10.31, 123.98],
-    title: "Land in Cebu, ferry to Bohol",
-    lede: "Land at Mactan-Cebu mid-morning, head straight to the pier and take the fast ferry across to Bohol. You're on Panglao by late afternoon.",
+    pin: [9.567, 123.77],
+    title: "Arrive in Bohol",
+    lede: "Land mid-morning and get to Panglao the same day. Either fly straight into Bohol-Panglao, or land in Cebu and take the fast ferry across. The Flights page compares the two.",
     plan: [
-      ["~10–11 am", "Land at Cebu (CEB). Grab a SIM (Globe or Smart) and pesos at arrivals."],
-      ["Midday", "Taxi or Grab to Pier 1, about 45 min."],
-      ["13:00 or 14:00", "OceanJet fast ferry to Tagbilaran, about 2 hrs."],
-      ["Evening", "20 min drive to Panglao, check in, early night."],
+      ["Option A", "Land in Cebu about 10–11 am, taxi to Pier 1 (45 min), OceanJet ferry at 13:00 or 14:00, in Panglao by about 15:30–16:30."],
+      ["Option B", "Land at Bohol-Panglao (TAG) about 10:15 via Manila, at the hotel 15 min later."],
+      ["Arrival", "Grab a SIM (Globe or Smart) and pesos at the airport."],
+      ["Evening", "Beach, dinner, early night."],
     ],
-    move: "Taxi to the pier · fast ferry 2 hrs · taxi to Panglao",
+    move: "Ferry from Cebu, or fly straight into Panglao",
     stay: "pgl",
-    tip: "If your flight lands after about 1 pm, sleep near Cebu airport instead and take a morning ferry on the 17th. The Flights page shows which ferry each flight connects to.",
-    photos: [["Cebu to Bohol ferry", "OceanJet Cebu Tagbilaran ferry"], ["Panglao", "Panglao Island Bohol beach"]]  // [label, image search]
+    tip: "With the ferry option, a flight landing in Cebu after about 1 pm means a night near Cebu airport and a morning ferry instead. The Flights page shows which ferry each flight connects to.",
+    photos: [["Panglao", "Panglao Island Bohol beach"], ["Cebu to Bohol ferry", "OceanJet Cebu Tagbilaran ferry"]]  // [label, image search]
   },
   {
     date: 17,
@@ -69,12 +69,12 @@ const DAYS = [
     plan: [
       ["Morning", "Philippine Tarsier Sanctuary in Corella, run by the Philippine Tarsier Foundation. A short guided forest walk to spot them."],
       ["Midday", "Kayak or paddleboard the Loboc River."],
-      ["Afternoon", "Swim in Hinagdanan Cave on Panglao, then sunset on the beach."],
+      ["Afternoon", "Back to Panglao for sunset on the beach."],
     ],
     move: "Driver or tricycle · under 1 hr each way",
     stay: "pgl",
     tip: "Go to the Corella sanctuary, not roadside 'tarsier parks'. Keep quiet and no flash; they're nocturnal and stress easily.",
-    photos: [["Tarsiers", "Philippine tarsier Corella sanctuary"], ["Loboc River", "Loboc River Bohol paddle"], ["Hinagdanan Cave", "Hinagdanan Cave Panglao"]]  // [label, image search]
+    photos: [["Tarsiers", "Philippine tarsier Corella sanctuary"], ["Loboc River", "Loboc River Bohol paddle"]]  // [label, image search]
   },
   {
     date: 18,
@@ -114,18 +114,18 @@ const DAYS = [
     date: 20,
     dow: "Fri",
     region: "Bohol",
-    pin: [9.93, 124.48],
-    title: "Rice terraces and Can-umantad Falls",
-    lede: "Bohol's quieter east side. Walk through the Cadapdapan rice terraces, climb down to Can-umantad Falls, the tallest on the island, and finish on Anda's white-sand beaches.",
+    pin: [9.585, 123.8],
+    title: "Easy day on Panglao",
+    lede: "A slow day close to the hotel after three busy ones. Swim in a cave pool, hit a quieter beach, and pack for El Nido.",
     plan: [
-      ["Morning", "Walk the Cadapdapan rice terraces."],
-      ["Midday", "Steep stone steps down to Can-umantad Falls (15+ min each way), swim in the green pool below."],
-      ["Afternoon", "Anda: Cabagnow Cave Pool and Quinale Beach before the drive back."],
+      ["Morning", "Swim in Hinagdanan Cave, a lit limestone cave with a clear pool."],
+      ["Midday", "Dumaluan or Bikini Beach, away from the Alona crowds."],
+      ["Afternoon", "Massage, a long lunch, or a sunset paddleboard."],
     ],
-    move: "Driver hired for the day · about 2.5 hrs each way",
+    move: "Tricycle · 10–20 min",
     stay: "pgl",
-    tip: "It's a long drive, so leave by 7 am.",
-    photos: [["Can-umantad Falls", "Can-umantad Falls Bohol"], ["Cadapdapan terraces", "Cadapdapan rice terraces Candijay"], ["Anda beach", "Anda Bohol Quinale beach"]]  // [label, image search]
+    tip: "Also your Bohol buffer: if rain wiped out the Chocolate Hills or Danao, move it here.",
+    photos: [["Hinagdanan Cave", "Hinagdanan Cave Panglao"], ["Dumaluan Beach", "Dumaluan Beach Panglao"]]  // [label, image search]
   },
   {
     date: 21,
@@ -137,12 +137,12 @@ const DAYS = [
     plan: [
       ["Morning", "Last swim on Panglao, check out by noon."],
       ["13:30", "At Bohol-Panglao airport (TAG), 15 min from most Panglao hotels."],
-      ["15:50", "Cebgo DG 6888 nonstop to El Nido, landing about 17:35."],
+      ["15:40", "Cebgo DG 5611 nonstop to El Nido, about 1 hr 50 min."],
       ["Evening", "Tricycle into town (20 min), dinner, book tours for the next days."],
     ],
     move: "Direct flight TAG → ENI · tricycle to town",
     stay: "eni",
-    tip: "This nonstop only runs on some days of the week (Saturday is one), so don't move this day without checking. It's a small ATR plane: book early and add checked bags when you buy.",
+    tip: "This nonstop only runs some days (Mon, Tue, Thu and Sat, plus a Sunday flight), so don't move this day without checking. Small ATR plane: book early and add checked bags when you buy.",
     photos: [["El Nido", "El Nido Palawan limestone cliffs"], ["El Nido airport", "Lio airport El Nido"]]  // [label, image search]
   },
   {
@@ -198,19 +198,19 @@ const DAYS = [
     date: 25,
     dow: "Wed",
     region: "Coron",
-    pin: [12.005, 120.205],
-    title: "Ferry to Coron, sunset on Mt Tapyas",
-    lede: "Ride the fast ferry north through the island chain to Coron, arriving around lunch. Climb the town's viewpoint for sunset and finish in a saltwater hot spring.",
+    pin: [11.985, 120.25],
+    title: "Ferry to Coron, Maquinit Hot Springs",
+    lede: "Ride the fast ferry north through the island chain to Coron, arriving around lunch. Climb the town's viewpoint for sunset, then soak in Maquinit, one of the few saltwater hot springs in the world.",
     plan: [
       ["07:20", "Check in at El Nido port (1 hr before)."],
-      ["08:20", "Phimal fast ferry to Coron, arriving about 12:20. Or fly: Cebgo has a 40 min flight at about 12:05 (see the Flights page)."],
+      ["08:20", "Phimal fast ferry to Coron, arriving about 12:20. Montenegro also leaves at 12:00, arriving about 16:00."],
       ["Sunset", "Climb the 721 steps up Mt Tapyas (about 30 min)."],
-      ["Evening", "Soak at Maquinit Hot Springs (about 40°C saltwater)."],
+      ["Evening", "Maquinit Hot Springs: stone pools of 40°C saltwater on the edge of the mangroves, 20 min by tricycle. Open until 10 pm, about ₱150 entry."],
     ],
-    move: "Fast ferry 3–4 hrs (₱3,175–3,290) · or a 40 min Cebgo flight",
+    move: "Fast ferry 3–4 hrs (₱3,175–3,290) · or a 40 min AirSWIFT flight",
     stay: "crn",
     tip: "Book the ferry ahead and bring a printed ticket. If seas are rough the ferry can be cancelled; the Saturday free day in Coron absorbs a one-day delay.",
-    photos: [["El Nido to Coron ferry", "El Nido to Coron fast ferry"], ["Mt Tapyas", "Mt Tapyas Coron sunset"], ["Maquinit Hot Springs", "Maquinit Hot Springs Coron"]]  // [label, image search]
+    photos: [["Maquinit Hot Springs", "Maquinit Hot Springs Coron"], ["Mt Tapyas", "Mt Tapyas Coron sunset"], ["El Nido to Coron ferry", "El Nido to Coron fast ferry"]]  // [label, image search]
   },
   {
     date: 26,
@@ -256,7 +256,7 @@ const DAYS = [
     plan: [
       ["Option", "Beach-hopping boat tour: Malcapuya, Banana and Bulog Dos islands."],
       ["Option", "Kayak the mangroves and Siete Pecados."],
-      ["Option", "Rest, massage, and a long lunch in town."],
+      ["Option", "Rest, a long lunch, and a second evening soak at Maquinit Hot Springs."],
     ],
     move: "Local",
     stay: "crn",
@@ -310,8 +310,8 @@ const STAYS = {
 
 /* Legs group the days in the list */
 const LEGS = [
-  { name: "Getting there", sub: "Calgary → Cebu",                            region: "In transit", days: [14, 15] },
-  { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · canyons · falls", region: "Bohol",   days: [16, 17, 18, 19, 20] },
+  { name: "Getting there", sub: "Calgary → Bohol",                            region: "In transit", days: [14, 15] },
+  { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · canyons",        region: "Bohol",      days: [16, 17, 18, 19, 20] },
   { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves",       region: "El Nido",    days: [21, 22, 23, 24] },
   { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",         region: "Coron",      days: [25, 26, 27, 28] },
   { name: "Heading home",  sub: "Coron → Cebu → Calgary",                     region: "Cebu",       days: [29, 30] }
@@ -319,7 +319,7 @@ const LEGS = [
 
 /* Travel lines on the map: [lat, lng] points, mode "fly" (dashed arc) or "ground" (solid) */
 const ROUTE = [
-  { mode: "ground", pts: [[10.31, 123.98], [10.29, 123.90], [9.645, 123.85], [9.55, 123.77]] },  // Cebu airport → pier → ferry → Panglao
+  { mode: "ground", pts: [[10.31, 123.98], [10.29, 123.90], [9.645, 123.85], [9.55, 123.77]] },  // Option A: Cebu airport → pier → ferry → Panglao
   { mode: "fly",    pts: [[9.567, 123.77], [11.18, 119.39]] },                                   // Bohol → El Nido
   { mode: "ground", pts: [[11.18, 119.39], [11.62, 119.86], [12.00, 120.205]] },                 // ferry El Nido → Coron
   { mode: "ground", pts: [[12.00, 120.205], [12.12, 120.04]] },                                  // Coron town → Busuanga airport

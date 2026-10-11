@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Philippines 2026 · Flights &amp; Costs</title>
-<meta name="description" content="Flight options and estimated transport costs for the Nov 14–30, 2026 Philippines trip.">
+<title>Philippines 2026 · Flights</title>
+<meta name="description" content="Two ways to fly the Nov 14–30, 2026 Philippines trip, with live prices and times.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
 <style>
   :root{
-    --blue:#0038A8; --red:#CE1126; --gold:#FCD116;
+    --blue:#0038A8; --red:#CE1126; --gold:#FCD116; --green:#16733F; --green-bg:#E6F4EC;
     --ink:#0B0B0C; --ink-2:#3A3A3F; --muted:#76767C; --line:#E8E8EB; --soft:#F5F5F6; --bg:#FFFFFF;
     --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
     --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -23,7 +23,7 @@
   .flag{height:4px;display:grid;grid-template-columns:1fr 1fr}
   .flag i:first-child{background:var(--blue)} .flag i:last-child{background:var(--red)}
   header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .bar{max-width:880px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;flex-wrap:wrap}
+  .bar{max-width:920px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;flex-wrap:wrap}
   .brand{display:flex;align-items:center;gap:12px;min-width:0}
   .sun{width:26px;height:26px;flex:0 0 auto}
   .brand b{display:block;font-size:17px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
@@ -33,87 +33,86 @@
   .btn:hover{border-color:var(--ink)}
   .btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}
 
-  main{max-width:880px;margin:0 auto;padding:0 20px 80px}
-
-  /* ---------- total ---------- */
-  .hero{padding:40px 0 28px;border-bottom:1px solid var(--line)}
+  main{max-width:920px;margin:0 auto;padding:0 20px 80px}
   .eyebrow{font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-  .total{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin:8px 0 6px}
-  .total b{font-size:clamp(38px,7vw,56px);font-weight:600;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
-  .total span{font-size:16px;color:var(--ink-2)}
-  .status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);margin-top:6px}
+  .intro{padding:40px 0 8px}
+  .intro h1{margin:6px 0 8px;font-size:clamp(30px,5vw,42px);font-weight:600;letter-spacing:-.035em;line-height:1.05}
+  .intro p{margin:0;color:var(--ink-2);max-width:62ch}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);margin-top:12px}
   .status i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
   .status.live i{background:#1F9D55;box-shadow:0 0 0 3px rgba(31,157,85,.15)}
-  .hero p{margin:10px 0 0;color:var(--ink-2);max-width:62ch}
 
-  .breakdown{width:100%;border-collapse:collapse;margin-top:24px;font-size:14px}
-  .breakdown th{font:500 10.5px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:0 10px 8px 0;border-bottom:1px solid var(--line)}
-  .breakdown td{padding:10px 10px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
-  .breakdown td.num,.breakdown th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;padding-right:0}
-  .breakdown tfoot td{font-weight:600;border-bottom:0;border-top:2px solid var(--ink)}
-  .breakdown small{display:block;color:var(--muted);font-size:12px}
+  /* ---------- the two options ---------- */
+  .options2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+  .opt-card{border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:16px;background:#fff}
+  .opt-card.win{border:2px solid var(--ink);padding:19px}
+  .opt-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .opt-head h2{margin:2px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+  .badge{font:500 10.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:5px 8px;border-radius:999px;white-space:nowrap}
+  .badge.win{background:var(--gold);color:var(--ink)}
+  .badge.more{background:var(--soft);color:var(--ink-2)}
+  .price-big b{display:block;font-size:40px;font-weight:600;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+  .price-big span{font-size:13.5px;color:var(--ink-2)}
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+  .steps li{display:grid;grid-template-columns:86px minmax(0,1fr);gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .steps li span.k{font:500 10.5px/1.8 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .steps li small{display:block;color:var(--muted);font-size:12.5px}
+  .steps li b{font-weight:600}
+  .opt-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:auto}
+  .opt-foot a{color:var(--blue);font-weight:500;text-decoration:none;font-size:13px}
+  .opt-foot a:hover{text-decoration:underline}
+  .verdict{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--soft);font-size:14.5px;color:var(--ink-2)}
+  .verdict b{color:var(--ink)}
+
+  /* ---------- shared legs ---------- */
+  section.block{padding-top:44px}
+  .block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+  .block-head h2{margin:0;font-size:22px;font-weight:600;letter-spacing:-.025em}
+  .block-head span{font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .shared{width:100%;border-collapse:collapse;font-size:14px}
+  .shared td{padding:14px 12px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .shared td:last-child{text-align:right;padding-right:0;white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums}
+  .shared .d{font:500 11px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);white-space:nowrap;width:92px}
+  .shared small{display:block;color:var(--muted);font-size:12.5px;font-weight:400}
   .tablewrap{overflow-x:auto}
-  .src{display:inline-block;font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 6px;border-radius:4px;margin-left:6px;vertical-align:1px}
-  .src.live{background:#E6F4EC;color:#16733F}
+  .src{display:inline-block;font:500 9.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:3px 5px;border-radius:3px;margin-left:6px;vertical-align:2px;font-weight:500}
+  .src.live{background:var(--green-bg);color:var(--green)}
   .src.est{background:var(--soft);color:var(--muted)}
 
-  /* ---------- legs ---------- */
-  .group{padding-top:44px}
-  .group-head{display:flex;align-items:flex-end;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:8px}
-  .group-head h2{margin:0;font-size:24px;font-weight:600;letter-spacing:-.025em;display:flex;align-items:center;gap:10px}
-  .group-head h2 i{width:12px;height:12px;border-radius:50%;background:var(--c)}
-  .group-head span{font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-
-  .leg{padding:22px 0;border-bottom:1px solid var(--line)}
-  .leg:last-child{border-bottom:0}
-  .leg-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;align-items:start}
-  .leg h3{margin:0;font-size:18px;font-weight:600;letter-spacing:-.015em}
-  .leg .when{font:500 11px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:2px}
-  .leg .note{margin:6px 0 0;color:var(--ink-2);font-size:14px;max-width:60ch}
-  .price{text-align:right}
-  .price b{display:block;font-size:24px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
-  .price small{font-size:12px;color:var(--muted)}
-  .level{display:inline-block;margin-top:6px;font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px;background:var(--soft);color:var(--ink-2)}
-  .level.low{background:#E8EEFA;color:var(--blue)}
-  .level.high{background:#FBE9EB;color:var(--red)}
-
-  .options{list-style:none;margin:16px 0 0;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .opt{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.5fr) 84px;gap:4px 18px;align-items:center;padding:12px 14px;border-top:1px solid var(--line)}
-  .opt:first-child{border-top:0}
-  .opt .air{font-weight:600;font-size:14px}
-  .opt .air small{display:block;font-weight:400;color:var(--muted);font-size:12px;font-family:var(--mono)}
-  .opt .times{font-size:13.5px;font-variant-numeric:tabular-nums}
-  .opt .times small{display:block;color:var(--muted);font-size:12px}
-  .opt .p{font-weight:600;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-  .fit{display:inline-flex;align-items:center;gap:5px;margin-top:5px;font:500 11.5px/1.3 var(--sans);padding:3px 9px;border-radius:999px}
-  .fit::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
-  .fit.ok{background:#E6F4EC;color:#16733F}
+  /* ---------- all options (collapsed) ---------- */
+  details{border-bottom:1px solid var(--line)}
+  details summary{cursor:pointer;list-style:none;padding:14px 0;display:flex;justify-content:space-between;gap:12px;font-weight:600;font-size:15px}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-weight:400;color:var(--muted);font-size:18px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details summary span{font-weight:400;color:var(--muted);font-size:13px;margin-left:auto;margin-right:6px}
+  .sub{margin:6px 0 6px;font:500 10.5px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .list{list-style:none;margin:0 0 16px;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.6fr) 80px;gap:4px 16px;align-items:center;padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px}
+  .row:first-child{border-top:0}
+  .row .air{font-weight:600}
+  .row .air small,.row .t small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+  .row .p{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+  .row.dim{opacity:.5}
+  .fit{display:inline-block;margin-top:3px;font-size:11.5px;padding:2px 8px;border-radius:999px}
+  .fit.ok{background:var(--green-bg);color:var(--green)}
   .fit.warn{background:#FFF4C2;color:#6B4F00}
   .fit.bad{background:#FBE9EB;color:var(--red)}
-  .subhead{margin:18px 0 0;font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-  .subhead + .options{margin-top:8px}
-  .opt.dim{opacity:.55}
-  .tag{display:inline-block;font:500 9.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:3px 5px;border-radius:3px;background:var(--gold);color:var(--ink);margin-left:6px;vertical-align:2px}
 
-  .leg-foot{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-top:12px;font-size:12.5px;color:var(--muted)}
-  .leg-foot a{color:var(--blue);font-weight:500;text-decoration:none;font-size:13px}
-  .leg-foot a:hover{text-decoration:underline}
-  .empty{margin-top:14px;padding:14px;border:1px dashed #CFCFD4;border-radius:12px;font-size:13.5px;color:var(--ink-2)}
-  .err{color:var(--red)}
-
-  .setup{margin-top:48px;padding:20px;border-radius:14px;background:var(--soft);font-size:14px;color:var(--ink-2)}
+  .setup{margin-top:40px;padding:20px;border-radius:14px;background:var(--soft);font-size:14px;color:var(--ink-2)}
   .setup h2{margin:0 0 8px;font-size:17px;font-weight:600;color:var(--ink)}
   .setup ol{margin:8px 0 0;padding-left:20px;display:grid;gap:4px}
   .setup code{font:12.5px var(--mono);background:#fff;padding:1px 5px;border-radius:4px;border:1px solid var(--line)}
   footer{padding-top:32px;font-size:12px;color:var(--muted)}
+  .err{color:var(--red)}
 
-  @media (max-width:640px){
+  @media (max-width:720px){
+    .options2{grid-template-columns:1fr}
     .bar{padding:10px 16px}
     main{padding:0 16px 60px}
-    .opt{grid-template-columns:minmax(0,1fr) auto}
-    .opt .times{grid-column:1/-1;grid-row:2}
-    .leg-top{grid-template-columns:1fr}
-    .price{text-align:left}
+    .row{grid-template-columns:minmax(0,1fr) auto}
+    .row .t{grid-column:1/-1;grid-row:2}
+    .shared .d{width:auto}
   }
 </style>
 </head>
@@ -124,7 +123,7 @@
   <div class="bar">
     <div class="brand">
       <svg class="sun" viewBox="-50 -50 100 100" aria-hidden="true"><g fill="#FCD116"><circle r="17"/><path id="ray" d="M0-48 5-24H-5Z"/><use href="#ray" transform="rotate(45)"/><use href="#ray" transform="rotate(90)"/><use href="#ray" transform="rotate(135)"/><use href="#ray" transform="rotate(180)"/><use href="#ray" transform="rotate(225)"/><use href="#ray" transform="rotate(270)"/><use href="#ray" transform="rotate(315)"/></g></svg>
-      <div><b>Philippines 2026</b><small>Flights &amp; costs</small></div>
+      <div><b>Philippines 2026</b><small>Flights</small></div>
     </div>
     <nav class="nav">
       <a class="btn" href="itinerary.html">Itinerary</a>
@@ -134,175 +133,203 @@
 </header>
 
 <main>
-  <section class="hero">
-    <div class="eyebrow">Getting there and around · 2 travellers</div>
-    <div class="total"><b id="total-two">…</b><span id="total-pp"></span></div>
+  <section class="intro">
+    <div class="eyebrow">Nov 14–30 · 2 travellers · CAD</div>
+    <h1>Two ways to fly</h1>
+    <p>Both get you to Bohol on Mon Nov 16 and home on Mon Nov 30. The only difference is how you reach Bohol: a ferry from Cebu, or a flight straight to Panglao.</p>
     <div class="status" id="status"><i></i><span>Loading prices…</span></div>
-    <p>All flights, ferries and transfers between islands, in Canadian dollars. Day-trip drivers, tours and hotels aren't included.</p>
-    <div class="tablewrap"><table class="breakdown" id="breakdown"></table></div>
   </section>
 
-  <div id="groups"></div>
+  <div class="options2" id="options"></div>
+  <div class="verdict" id="verdict" hidden></div>
+
+  <section class="block">
+    <div class="block-head"><h2>The same in both</h2><span>Inside the Philippines</span></div>
+    <div class="tablewrap"><table class="shared" id="shared"></table></div>
+  </section>
+
+  <section class="block">
+    <div class="block-head"><h2>Every flight we found</h2><span>Tap to open</span></div>
+    <div id="all"></div>
+  </section>
 
   <section class="setup" id="setup" hidden>
     <h2>Turn on live prices</h2>
-    Live fares come from Google Flights through SerpApi. A GitHub Action checks them once a day and saves them to this site.
+    Live fares come from Google Flights through SerpApi. A GitHub Action checks them every morning.
     <ol>
-      <li>Sign up for a free account at <a href="https://serpapi.com/users/sign_up" target="_blank" rel="noopener">serpapi.com</a> (250 searches/month free; this uses about 125).</li>
-      <li>Copy your API key from the SerpApi dashboard.</li>
-      <li>In the GitHub repo: <b>Settings → Secrets and variables → Actions → New repository secret</b>. Name it <code>SERPAPI_KEY</code> and paste the key.</li>
-      <li>Go to <b>Actions → Update flight prices → Run workflow</b>. Prices appear here a minute or two later, then refresh every other morning.</li>
+      <li>Get a free key at <a href="https://serpapi.com/users/sign_up" target="_blank" rel="noopener">serpapi.com</a>.</li>
+      <li>Repo <b>Settings → Secrets and variables → Actions → New repository secret</b>, named <code>SERPAPI_KEY</code>.</li>
+      <li><b>Actions → Update flight prices → Run workflow</b>.</li>
     </ol>
   </section>
 
-  <footer id="foot">Estimates researched October 11, 2026. Prices change constantly; always confirm with the airline before booking.</footer>
+  <footer>Flight prices are live from Google Flights and change daily. Ferry times and fares come from operator timetables; confirm before booking. Prices are per person unless they say "for 2".</footer>
 </main>
 
 <script>
-const fmt = (n, cur = "CAD") => (cur === "CAD" ? "C$" : cur + " ") + Math.round(n).toLocaleString("en-CA");
-const range = (lo, hi) => lo === hi ? fmt(lo) : `${fmt(lo)}–${fmt(hi).replace("C$", "")}`;
+/* ---------- helpers ---------- */
+const N = 2;
+const fmt = n => "C$" + Math.round(n).toLocaleString("en-CA");
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const day = iso => { const [y, m, d] = iso.slice(0, 10).split("-").map(Number); const dt = new Date(Date.UTC(y, m - 1, d)); return `${DOW[dt.getUTCDay()]} ${MON[m - 1]} ${d}`; };
-const time = s => s ? `${day(s)} · ${s.slice(11, 16)}` : "";
+const hm = s => s.slice(11, 16);
 const dur = m => m ? `${Math.floor(m / 60)}h ${String(m % 60).padStart(2, "0")}m` : "";
-const gfUrl = leg => {
-  if (leg.type === "multi") return "https://www.google.com/travel/flights?hl=en&curr=CAD";
-  const q = leg.type === "round"
-    ? `Flights from ${leg.from} to ${leg.to} on ${leg.outbound} through ${leg.return}`
-    : `One way flights from ${leg.from} to ${leg.to} on ${leg.outbound}`;
-  return "https://www.google.com/travel/flights?hl=en&curr=CAD&q=" + encodeURIComponent(q);
-};
-const GROUPS = [
-  { id: "international", name: "International", sub: "Calgary ⇄ Cebu", c: "#0B0B0C" },
-  { id: "domestic", name: "Inside the Philippines", sub: "Flights and fast ferries", c: "#0038A8" }
-];
+const addMin = (t, m) => { const [h, mi] = t.split(":").map(Number); const x = h * 60 + mi + m; return `${String(Math.floor(x / 60)).padStart(2, "0")}:${String(x % 60).padStart(2, "0")}`; };
+const via = o => o.stops ? `${o.stops} stop${o.stops > 1 ? "s" : ""} via ${o.via.join(", ")}` : "Nonstop";
 
-Promise.all([
-  fetch("data/flight-legs.json").then(r => r.json()),
-  fetch("data/flights.json", { cache: "no-store" }).then(r => r.json()).catch(() => ({ legs: {} }))
-]).then(([cfg, live]) => render(cfg, live)).catch(err => {
-  document.getElementById("status").innerHTML = `<i></i><span class="err">Couldn't load price data (${esc(err.message)}). Open this page from the website, not as a local file.</span>`;
-});
-
-function perPerson(leg, live) {
-  const l = live.legs?.[leg.id];
-  if (leg.kind === "flight" && l && typeof l.lowest === "number") return { lo: l.lowest, hi: l.lowest, live: true };
-  return { lo: leg.estimate.low, hi: leg.estimate.high, live: false };
-}
-
-function render(cfg, live) {
-  const n = cfg.travellers;
-  const counted = cfg.legs.filter(l => l.total);
-  let lo = 0, hi = 0, anyLive = false;
-  const rows = counted.map(leg => {
-    const p = perPerson(leg, live); lo += p.lo; hi += p.hi; anyLive ||= p.live;
-    const date = leg.outbound || leg.date;
-    return `<tr><td>${esc(leg.title)}<small>${day(date)}${leg.return ? " – " + day(leg.return) : ""}</small></td>
-      <td class="num">${range(p.lo, p.hi)}<span class="src ${p.live ? "live" : "est"}">${p.live ? "Live" : "Est."}</span></td>
-      <td class="num">${range(p.lo * n, p.hi * n)}</td></tr>`;
-  }).join("");
-  document.getElementById("breakdown").innerHTML =
-    `<thead><tr><th>Leg</th><th class="num">Per person</th><th class="num">For ${n}</th></tr></thead>
-     <tbody>${rows}</tbody>
-     <tfoot><tr><td>Total</td><td class="num">${range(lo, hi)}</td><td class="num">${range(lo * n, hi * n)}</td></tr></tfoot>`;
-  document.getElementById("total-two").textContent = range(lo * n, hi * n);
-  document.getElementById("total-pp").textContent = `for ${n} · ${range(lo, hi)} per person`;
-
-  const st = document.getElementById("status");
-  if (live.updated) {
-    const d = new Date(live.updated);
-    st.className = "status live";
-    st.innerHTML = `<i></i><span>Live flight prices · updated ${d.toLocaleDateString("en-CA", { month: "short", day: "numeric" })} at ${d.toLocaleTimeString("en-CA", { hour: "numeric", minute: "2-digit" })} · ferries are estimates</span>`;
-  } else {
-    st.innerHTML = `<i></i><span>Estimates only · live prices aren't switched on yet (see the bottom of the page)</span>`;
-    document.getElementById("setup").hidden = false;
-  }
-
-  document.getElementById("groups").innerHTML = GROUPS.map(g => `
-    <section class="group">
-      <div class="group-head" style="--c:${g.c}"><h2><i></i>${g.name}</h2><span>${g.sub}</span></div>
-      ${cfg.legs.filter(l => l.group === g.id).map(leg => legHTML(leg, live.legs?.[leg.id], cfg)).join("")}
-    </section>`).join("");
-}
-
-const addMin = (hhmm, m) => { const [h, mi] = hhmm.split(":").map(Number); const t = h * 60 + mi + m; return `${String(Math.floor(t / 60)).padStart(2, "0")}:${String(t % 60).padStart(2, "0")}`; };
 function fitWindow(f, o) {
   if (!f) return null;
-  const why = f.why ? ` (${f.why})` : "";
-  if (f.departAfter && o.depart < f.departAfter) return { cls: "bad", text: `Leaves too early for the plan${why}` };
-  if (f.arriveBy && o.arrive > f.arriveBy) return { cls: "bad", text: `Lands ${day(o.arrive)} at ${o.arrive.slice(11, 16)}, too late for the plan` };
+  if (f.departAfter && o.depart < f.departAfter) return { cls: "bad", text: "Leaves too early for the plan" };
+  if (f.arriveBy && o.arrive > f.arriveBy) return { cls: "bad", text: `Lands ${day(o.arrive)} ${hm(o.arrive)}, too late` };
   return { cls: "ok", text: "Fits the plan" };
 }
 function fitOf(leg, o) {
   const c = leg.connect;
   if (!c) return fitWindow(leg.fit, o);
-  const ad = o.arrive.slice(0, 10), at = o.arrive.slice(11, 16);
-  if (ad < c.date) return { cls: "warn", text: `Lands ${day(ad)}, a day early: add a night in Cebu` };
-  if (ad > c.date) return { cls: "bad", text: `Lands ${day(ad)}, a day late for the plan` };
+  const ad = o.arrive.slice(0, 10), at = hm(o.arrive);
+  if (ad < c.date) return { cls: "warn", text: `Lands ${day(ad)}: add a night in Cebu` };
+  if (ad > c.date) return { cls: "bad", text: `Lands ${day(ad)}, a day late` };
   const t = c.times.find(x => x >= addMin(at, c.gap));
-  if (t) return { cls: "ok", text: `Makes the ${t} ferry to Bohol, arriving ${addMin(t, c.duration)}` };
-  return { cls: "warn", text: "Too late for a ferry today: sleep in Cebu, ferry next morning" };
+  if (t) return { cls: "ok", text: `Makes the ${t} ferry`, ferry: t, ferryArr: addMin(t, c.duration) };
+  return { cls: "warn", text: "Too late for a ferry: night in Cebu" };
+}
+/* cheapest option that fits */
+const pick = (list, fn) => (list || []).find(o => fn(o)?.cls === "ok") || null;
+
+/* the outbound + return pair that makes one ticket, and its total price */
+function ticket(leg, l) {
+  if (!l?.options?.length) return null;
+  const out = pick(l.options, o => fitOf(leg, o));
+  if (!out) return null;
+  const paired = l.returnFor && l.returnFor.flights.join() === out.flights.join();
+  const ret = paired ? pick(l.returnOptions, o => fitWindow(leg.returnFit, o)) : null;
+  return { out, ret, price: ret ? ret.price : out.price, fit: fitOf(leg, out) };
 }
 
-function legHTML(leg, l, cfg) {
-  const sg = leg.segments || [];
-  const when = leg.type === "multi"
-    ? `${day(sg[0].date)} ${sg[0].from}→${sg[0].to} · ${day(sg[1].date)} ${sg[1].from}→${sg[1].to} · two airports`
-    : leg.kind === "flight"
-    ? (leg.type === "round" ? `${day(leg.outbound)} – ${day(leg.return)} · round trip` : `${day(leg.outbound)} · one way`)
-    : `${day(leg.date)} · ferry`;
-  const p = perPerson(leg, { legs: { [leg.id]: l } });
-  const level = l?.priceLevel ? `<span class="level ${esc(l.priceLevel)}">${esc(l.priceLevel)} for these dates</span>` : "";
-  const priceBlock = p.live
-    ? `<div class="price"><small>From, per person</small><b>${fmt(p.lo)}</b>${level}</div>`
-    : `<div class="price"><small>Estimate, per person</small><b>${range(p.lo, p.hi)}</b></div>`;
+/* ---------- load ---------- */
+Promise.all([
+  fetch("data/flight-legs.json").then(r => r.json()),
+  fetch("data/flights.json", { cache: "no-store" }).then(r => r.json()).catch(() => ({ legs: {} }))
+]).then(([cfg, live]) => render(cfg, live)).catch(err => {
+  document.getElementById("status").innerHTML = `<i></i><span class="err">Couldn't load prices (${esc(err.message)}).</span>`;
+});
 
-  let body = "";
-  const optRow = (o, fit) => `
-        <li class="opt${fit && fit.cls === "bad" ? " dim" : ""}">
-          <div class="air">${esc(o.airlines.join(" + "))}${o.best ? '<span class="tag">Best</span>' : ""}<small>${esc(o.flights.join(" · "))}</small></div>
-          <div class="times">${esc(time(o.depart))} → ${esc(time(o.arrive))}<small>${dur(o.minutes)} · ${o.stops ? `${o.stops} stop${o.stops > 1 ? "s" : ""} via ${esc(o.via.join(", "))}` : "Nonstop"}${o.overnight ? " · overnight layover" : ""}</small>${fit ? `<span class="fit ${fit.cls}">${esc(fit.text)}</span>` : ""}</div>
-          <div class="p">${fmt(o.price)}</div>
-        </li>`;
-  if (leg.kind === "flight") {
-    if (l?.options?.length) {
-      const outLabel = leg.type === "round" ? `<div class="subhead">Outbound · ${day(leg.outbound)} · round-trip price</div>`
-        : leg.type === "multi" ? `<div class="subhead">${esc(leg.outLabel)} · ${day(sg[0].date)} · whole-ticket price</div>` : "";
-      body = `${outLabel}<ul class="options">${l.options.map(o => optRow(o, fitOf(leg, o))).join("")}</ul>`;
-      if (l.returnOptions?.length) {
-        body += `<div class="subhead">${leg.type === "multi" ? `${esc(leg.retLabel)} · ${day(sg[1].date)}` : `Return · ${day(leg.return)}`} · paired with the ${esc(l.returnFor.flights.join(" / "))} outbound, whole-ticket price</div>
-          <ul class="options">${l.returnOptions.map(o => optRow(o, fitWindow(leg.returnFit, o))).join("")}</ul>`;
-      } else if (l.returnError) {
-        body += `<div class="empty"><span class="err">Couldn't load return flights: ${esc(l.returnError)}.</span></div>`;
-      }
-    } else {
-      body = `<div class="empty">${l?.error ? `<span class="err">Last check failed: ${esc(l.error)}.</span> ` : ""}Live options will show here once prices are switched on. Estimate source: ${esc(leg.estimate.source)}.</div>`;
-    }
-  } else if (leg.departures?.length) {
-    body = `<div class="subhead">Sailings · ${day(leg.date)}</div><ul class="options">${leg.departures.map(d => `
-        <li class="opt">
-          <div class="air">${esc(d.op)}</div>
-          <div class="times">${esc(d.dep)} → ${esc(d.arr)}</div>
-          <div class="p">${esc(d.fare || "")}</div>
-        </li>`).join("")}</ul>`;
+function render(cfg, live) {
+  const L = Object.fromEntries(cfg.legs.map(l => [l.id, l]));
+  const D = live.legs || {};
+
+  const st = document.getElementById("status");
+  if (live.updated) {
+    const d = new Date(live.updated);
+    st.className = "status live";
+    st.innerHTML = `<i></i><span>Live prices · checked ${d.toLocaleDateString("en-CA", { month: "short", day: "numeric" })} at ${d.toLocaleTimeString("en-CA", { hour: "numeric", minute: "2-digit" })}</span>`;
+  } else {
+    st.innerHTML = `<i></i><span>Estimates only · live prices aren't switched on yet</span>`;
+    document.getElementById("setup").hidden = false;
   }
 
-  const typical = l?.typicalRange ? `Typical for these dates: ${fmt(l.typicalRange[0])}–${fmt(l.typicalRange[1]).replace("C$", "")}` : "";
-  const hist = l?.history?.length > 1 ? (() => { const m = l.history.reduce((a, b) => b.low < a.low ? b : a); return `Lowest seen: ${fmt(m.low)} on ${day(m.date)}`; })() : "";
-  const footText = leg.kind === "flight" ? [typical, hist].filter(Boolean).join(" · ") : `Source: ${esc(leg.estimate.source)}`;
-  const link = leg.kind === "flight"
-    ? `<a href="${esc(l?.googleUrl || gfUrl(leg))}" target="_blank" rel="noopener">Search on Google Flights ↗</a>`
-    : (leg.link ? `<a href="${esc(leg.link)}" target="_blank" rel="noopener">Schedules &amp; fares ↗</a>` : "");
+  /* shared legs */
+  const est = leg => (leg.estimate.low + leg.estimate.high) / 2;
+  const tagEni = pick(D["tag-eni"]?.options, o => fitOf(L["tag-eni"], o));
+  const usuCeb = pick(D["usu-ceb"]?.options, o => fitOf(L["usu-ceb"], o));
+  const ferryEC = L["eni-crn"].departures[0];
+  const shared = [
+    { d: L["tag-eni"].outbound, what: "Fly Bohol → El Nido",
+      detail: tagEni ? `${tagEni.airlines.join(" + ")} ${tagEni.flights.join(" · ")} · ${hm(tagEni.depart)} → ${hm(tagEni.arrive)} · ${via(tagEni)}` : "Cebgo nonstop, mid-afternoon",
+      price: tagEni ? tagEni.price : est(L["tag-eni"]), live: !!tagEni },
+    { d: L["eni-crn"].date, what: "Fast ferry El Nido → Coron",
+      detail: `${ferryEC.op} · ${ferryEC.dep} → ${ferryEC.arr} · ${ferryEC.fare}`,
+      price: est(L["eni-crn"]), live: false },
+    { d: L["usu-ceb"].outbound, what: "Fly Coron → Cebu",
+      detail: usuCeb ? `${usuCeb.airlines.join(" + ")} ${usuCeb.flights.join(" · ")} · ${hm(usuCeb.depart)} → ${hm(usuCeb.arrive)} · ${via(usuCeb)}` : "Midday nonstop",
+      price: usuCeb ? usuCeb.price : est(L["usu-ceb"]), live: !!usuCeb },
+  ];
+  const sharedTotal = shared.reduce((a, r) => a + r.price, 0);
+  document.getElementById("shared").innerHTML = shared.map(r => `
+    <tr><td class="d">${day(r.d)}</td>
+      <td>${esc(r.what)}<small>${esc(r.detail)}</small></td>
+      <td>${fmt(r.price)}<span class="src ${r.live ? "live" : "est"}">${r.live ? "Live" : "Est."}</span></td></tr>`).join("") +
+    `<tr><td class="d"></td><td><b>Subtotal</b><small>Per person, cheapest options that fit the plan</small></td><td>${fmt(sharedTotal)}</td></tr>`;
 
-  return `<article class="leg">
-    <div class="leg-top">
-      <div><h3>${esc(leg.title)}</h3><div class="when">${when}</div><p class="note">${esc(leg.note)}</p></div>
-      ${priceBlock}
-    </div>
-    ${body}
-    <div class="leg-foot"><span>${footText}</span>${link}</div>
-  </article>`;
+  /* the two options */
+  const A = { leg: L["intl-main"], data: D["intl-main"], key: "A", name: "Fly into Cebu, ferry to Bohol" };
+  const B = { leg: L["intl-b"], data: D["intl-b"], key: "B", name: "Fly straight into Panglao" };
+  const ferryCT = est(L["ceb-tag"]);
+  [A, B].forEach(o => {
+    o.t = ticket(o.leg, o.data);
+    o.ticketPrice = o.t ? o.t.price : est(o.leg);
+    o.extra = o.key === "A" ? ferryCT : 0;
+    o.pp = o.ticketPrice + o.extra + sharedTotal;
+  });
+  const cheaper = A.pp <= B.pp ? A : B, other = cheaper === A ? B : A;
+  const diff = other.pp - cheaper.pp;
+
+  document.getElementById("options").innerHTML = [A, B].map(o => {
+    const t = o.t, win = o === cheaper;
+    const out = t?.out, ret = t?.ret;
+    const steps = [];
+    steps.push(out
+      ? `<li><span class="k">${day(out.depart)}</span><div><b>${hm(out.depart)} Calgary → ${esc(out.to)} ${hm(out.arrive)}</b><small>${esc(out.airlines.join(" + "))} · ${dur(out.minutes)} · ${esc(via(out))} · lands ${day(out.arrive)}</small></div></li>`
+      : `<li><span class="k">Sat Nov 14</span><div><b>Calgary → ${o.key === "A" ? "Cebu" : "Panglao"}</b><small>Live times appear once prices are checked</small></div></li>`);
+    if (o.key === "A") {
+      const f = t?.fit?.ferry ? `${t.fit.ferry} → ${t.fit.ferryArr}` : "13:00 or 14:00";
+      steps.push(`<li><span class="k">Mon Nov 16</span><div><b>OceanJet ferry ${f}</b><small>Cebu Pier 1 → Tagbilaran, 2 hrs · about ${fmt(ferryCT)}</small></div></li>`);
+      steps.push(`<li><span class="k">In Bohol</span><div><b>Mon ${t?.fit?.ferryArr ? "about " + addMin(t.fit.ferryArr, 30) : "late afternoon"}</b><small>After a 45 min taxi to the pier and a 2 hr ferry</small></div></li>`);
+    } else {
+      steps.push(`<li><span class="k">In Bohol</span><div><b>Mon ${out ? "about " + addMin(hm(out.arrive), 30) : "morning"}</b><small>Panglao airport is 15 min from the beach hotels</small></div></li>`);
+    }
+    steps.push(ret
+      ? `<li><span class="k">${day(ret.depart)}</span><div><b>${hm(ret.depart)} Cebu → Calgary ${hm(ret.arrive)}</b><small>${esc(ret.airlines.join(" + "))} · ${dur(ret.minutes)} · ${esc(via(ret))} · home ${day(ret.arrive)}</small></div></li>`
+      : `<li><span class="k">Mon Nov 30</span><div><b>Cebu → Calgary</b><small>${t ? "Pick the return when booking" : "Live times appear once prices are checked"}</small></div></li>`);
+    const link = o.data?.googleUrl || "https://www.google.com/travel/flights?hl=en&curr=CAD";
+    return `<article class="opt-card${win ? " win" : ""}">
+      <div class="opt-head">
+        <div><div class="eyebrow">Option ${o.key}</div><h2>${esc(o.name)}</h2></div>
+        <span class="badge ${win ? "win" : "more"}">${win ? "Cheapest" : "+" + fmt(diff) + " each"}</span>
+      </div>
+      <div class="price-big"><b>${fmt(o.pp * N)}</b><span>for 2 · ${fmt(o.pp)} each, all flights and ferries${o.t ? "" : " (estimate)"}</span></div>
+      <ul class="steps">${steps.join("")}</ul>
+      <div class="opt-foot"><span>International ticket ${fmt(o.ticketPrice)} each</span><a href="${esc(link)}" target="_blank" rel="noopener">Book on Google Flights ↗</a></div>
+    </article>`;
+  }).join("");
+
+  if (A.t && B.t) {
+    const hoursSaved = (() => {
+      const aIn = A.t.fit?.ferryArr ? addMin(A.t.fit.ferryArr, 30) : null, bIn = addMin(hm(B.t.out.arrive), 30);
+      if (!aIn) return null;
+      const m = t => +t.slice(0, 2) * 60 + +t.slice(3);
+      return Math.round((m(aIn) - m(bIn)) / 60);
+    })();
+    const v = document.getElementById("verdict");
+    v.hidden = false;
+    v.innerHTML = B === cheaper
+      ? `<b>Flying into Panglao is cheaper right now</b>, and you skip the ferry.`
+      : `<b>Panglao costs ${fmt(diff)} more each (${fmt(diff * N)} for both)</b>${hoursSaved > 0 ? ` and gets you to the beach about ${hoursSaved} hours sooner, with no pier transfer after 30 hours of travel` : ""}.`;
+  }
+
+  /* every flight, collapsed */
+  const row = (o, fit) => `<li class="row${fit?.cls === "bad" ? " dim" : ""}">
+      <div class="air">${esc(o.airlines.join(" + "))}<small>${esc(o.flights.join(" · "))}</small></div>
+      <div class="t">${day(o.depart)} ${hm(o.depart)} → ${o.arrive.slice(0, 10) !== o.depart.slice(0, 10) ? day(o.arrive) + " " : ""}${hm(o.arrive)}<small>${dur(o.minutes)} · ${esc(via(o))}</small>${fit ? `<span class="fit ${fit.cls}">${esc(fit.text)}</span>` : ""}</div>
+      <div class="p">${fmt(o.price)}</div></li>`;
+  const groups = [
+    ["intl-main", "Option A · Calgary ⇄ Cebu", "Outbound Sat Nov 14", "Return Mon Nov 30"],
+    ["intl-b", "Option B · Calgary → Panglao, Cebu → Calgary", "Calgary → Panglao, Sat Nov 14", "Cebu → Calgary, Mon Nov 30"],
+    ["tag-eni", "Bohol → El Nido · Sat Nov 21"],
+    ["usu-ceb", "Coron → Cebu · Sun Nov 29"],
+  ];
+  document.getElementById("all").innerHTML = groups.map(([id, title, outL, retL]) => {
+    const leg = L[id], l = D[id];
+    if (!l?.options?.length) return `<details><summary>${esc(title)}<span>${l?.error ? "check failed" : "not checked yet"}</span></summary><p class="sub">${esc(l?.error || "No live data yet.")}</p></details>`;
+    let html = outL ? `<div class="sub">${esc(outL)} · prices are for the whole ticket</div>` : "";
+    html += `<ul class="list">${l.options.map(o => row(o, fitOf(leg, o))).join("")}</ul>`;
+    if (l.returnOptions?.length) html += `<div class="sub">${esc(retL)} · with the ${esc(l.returnFor.flights.join(" / "))} outbound</div><ul class="list">${l.returnOptions.map(o => row(o, fitWindow(leg.returnFit, o))).join("")}</ul>`;
+    return `<details><summary>${esc(title)}<span>from ${fmt(l.lowest)}</span></summary>${html}</details>`;
+  }).join("") + `<details><summary>Ferry timetables<span>estimates</span></summary>
+      ${["ceb-tag", "eni-crn"].map(id => `<div class="sub">${esc(L[id].title)} · ${day(L[id].date)}</div>
+        <ul class="list">${L[id].departures.map(d => `<li class="row"><div class="air">${esc(d.op)}</div><div class="t">${esc(d.dep)} → ${esc(d.arr)}</div><div class="p">${esc(d.fare || "")}</div></li>`).join("")}</ul>`).join("")}
+    </details>`;
 }
 </script>
 </body>
