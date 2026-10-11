@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Philippines 2026 · Flights</title>
-<meta name="description" content="Two ways to fly the Nov 14–30, 2026 Philippines trip, with live prices and times.">
+<meta name="description" content="Two ways to fly the Nov 13–30, 2026 Philippines trip, with live prices and times.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
@@ -134,9 +134,9 @@
 
 <main>
   <section class="intro">
-    <div class="eyebrow">Nov 14–30 · 2 travellers · CAD</div>
+    <div class="eyebrow">Nov 13–30 · per person · CAD</div>
     <h1>Two ways to fly</h1>
-    <p>Both get you to Bohol on Mon Nov 16 and home on Mon Nov 30. The only difference is how you reach Bohol: a ferry from Cebu, or a flight straight to Panglao.</p>
+    <p>Both leave Calgary on Fri Nov 13, reach Bohol on Sun Nov 15 and get you home on Mon Nov 30. The only difference is how you reach Bohol: a ferry from Cebu, or a flight straight to Panglao.</p>
     <div class="status" id="status"><i></i><span>Loading prices…</span></div>
   </section>
 
@@ -163,12 +163,12 @@
     </ol>
   </section>
 
-  <footer>Flight prices are live from Google Flights and change daily. Ferry times and fares come from operator timetables; confirm before booking. Prices are per person unless they say "for 2".</footer>
+  <footer>Flight prices are live from Google Flights and change daily. Ferry times and fares come from operator timetables; confirm before booking. All prices are per person.</footer>
 </main>
 
 <script>
 /* ---------- helpers ---------- */
-const N = 2;
+const N = 1;
 const fmt = n => "C$" + Math.round(n).toLocaleString("en-CA");
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -271,26 +271,26 @@ function render(cfg, live) {
     const steps = [];
     steps.push(out
       ? `<li><span class="k">${day(out.depart)}</span><div><b>${hm(out.depart)} Calgary → ${esc(out.to)} ${hm(out.arrive)}</b><small>${esc(out.airlines.join(" + "))} · ${dur(out.minutes)} · ${esc(via(out))} · lands ${day(out.arrive)}</small></div></li>`
-      : `<li><span class="k">Sat Nov 14</span><div><b>Calgary → ${o.key === "A" ? "Cebu" : "Panglao"}</b><small>Live times appear once prices are checked</small></div></li>`);
+      : `<li><span class="k">${day(o.leg.outbound || o.leg.segments[0].date)}</span><div><b>Calgary → ${o.key === "A" ? "Cebu" : "Panglao"}</b><small>Live times appear once prices are checked</small></div></li>`);
     if (o.key === "A") {
       const f = t?.fit?.ferry ? `${t.fit.ferry} → ${t.fit.ferryArr}` : "13:00 or 14:00";
-      steps.push(`<li><span class="k">Mon Nov 16</span><div><b>OceanJet ferry ${f}</b><small>Cebu Pier 1 → Tagbilaran, 2 hrs · about ${fmt(ferryCT)}</small></div></li>`);
-      steps.push(`<li><span class="k">In Bohol</span><div><b>Mon ${t?.fit?.ferryArr ? "about " + addMin(t.fit.ferryArr, 30) : "late afternoon"}</b><small>After a 45 min taxi to the pier and a 2 hr ferry</small></div></li>`);
+      steps.push(`<li><span class="k">${day(o.leg.connect.date)}</span><div><b>OceanJet ferry ${f}</b><small>Cebu Pier 1 → Tagbilaran, 2 hrs · about ${fmt(ferryCT)}</small></div></li>`);
+      steps.push(`<li><span class="k">In Bohol</span><div><b>Sun ${t?.fit?.ferryArr ? "about " + addMin(t.fit.ferryArr, 30) : "late afternoon"}</b><small>After a 45 min taxi to the pier and a 2 hr ferry</small></div></li>`);
     } else {
-      steps.push(`<li><span class="k">In Bohol</span><div><b>Mon ${out ? "about " + addMin(hm(out.arrive), 30) : "morning"}</b><small>Panglao airport is 15 min from the beach hotels</small></div></li>`);
+      steps.push(`<li><span class="k">In Bohol</span><div><b>Sun ${out ? "about " + addMin(hm(out.arrive), 30) : "morning"}</b><small>Panglao airport is 15 min from the beach hotels</small></div></li>`);
     }
     steps.push(ret
       ? `<li><span class="k">${day(ret.depart)}</span><div><b>${hm(ret.depart)} Cebu → Calgary ${hm(ret.arrive)}</b><small>${esc(ret.airlines.join(" + "))} · ${dur(ret.minutes)} · ${esc(via(ret))} · home ${day(ret.arrive)}</small></div></li>`
-      : `<li><span class="k">Mon Nov 30</span><div><b>Cebu → Calgary</b><small>${t ? "Pick the return when booking" : "Live times appear once prices are checked"}</small></div></li>`);
+      : `<li><span class="k">${day(o.leg.return || o.leg.segments[1].date)}</span><div><b>Cebu → Calgary</b><small>${t ? "Pick the return when booking" : "Live times appear once prices are checked"}</small></div></li>`);
     const link = o.data?.googleUrl || "https://www.google.com/travel/flights?hl=en&curr=CAD";
     return `<article class="opt-card${win ? " win" : ""}">
       <div class="opt-head">
         <div><div class="eyebrow">Option ${o.key}</div><h2>${esc(o.name)}</h2></div>
-        <span class="badge ${win ? "win" : "more"}">${win ? "Cheapest" : "+" + fmt(diff) + " each"}</span>
+        <span class="badge ${win ? "win" : "more"}">${win ? "Cheapest" : "+" + fmt(diff)}</span>
       </div>
-      <div class="price-big"><b>${fmt(o.pp * N)}</b><span>for 2 · ${fmt(o.pp)} each, all flights and ferries${o.t ? "" : " (estimate)"}</span></div>
+      <div class="price-big"><b>${fmt(o.pp)}</b><span>per person, all flights and ferries${o.t ? "" : " (estimate)"}</span></div>
       <ul class="steps">${steps.join("")}</ul>
-      <div class="opt-foot"><span>International ticket ${fmt(o.ticketPrice)} each</span><a href="${esc(link)}" target="_blank" rel="noopener">Book on Google Flights ↗</a></div>
+      <div class="opt-foot"><span>International ticket ${fmt(o.ticketPrice)}</span><a href="${esc(link)}" target="_blank" rel="noopener">Book on Google Flights ↗</a></div>
     </article>`;
   }).join("");
 
@@ -305,7 +305,7 @@ function render(cfg, live) {
     v.hidden = false;
     v.innerHTML = B === cheaper
       ? `<b>Flying into Panglao is cheaper right now</b>, and you skip the ferry.`
-      : `<b>Panglao costs ${fmt(diff)} more each (${fmt(diff * N)} for both)</b>${hoursSaved > 0 ? ` and gets you to the beach about ${hoursSaved} hours sooner, with no pier transfer after 30 hours of travel` : ""}.`;
+      : `<b>Panglao costs ${fmt(diff)} more per person</b>${hoursSaved > 0 ? ` and gets you to the beach about ${hoursSaved} hours sooner, with no pier transfer after 30 hours of travel` : ""}.`;
   }
 
   /* every flight, collapsed */
@@ -314,10 +314,10 @@ function render(cfg, live) {
       <div class="t">${day(o.depart)} ${hm(o.depart)} → ${o.arrive.slice(0, 10) !== o.depart.slice(0, 10) ? day(o.arrive) + " " : ""}${hm(o.arrive)}<small>${dur(o.minutes)} · ${esc(via(o))}</small>${fit ? `<span class="fit ${fit.cls}">${esc(fit.text)}</span>` : ""}</div>
       <div class="p">${fmt(o.price)}</div></li>`;
   const groups = [
-    ["intl-main", "Option A · Calgary ⇄ Cebu", "Outbound Sat Nov 14", "Return Mon Nov 30"],
-    ["intl-b", "Option B · Calgary → Panglao, Cebu → Calgary", "Calgary → Panglao, Sat Nov 14", "Cebu → Calgary, Mon Nov 30"],
-    ["tag-eni", "Bohol → El Nido · Sat Nov 21"],
-    ["usu-ceb", "Coron → Cebu · Sun Nov 29"],
+    ["intl-main", "Option A · Calgary ⇄ Cebu", `Outbound ${day(L["intl-main"].outbound)}`, `Return ${day(L["intl-main"].return)}`],
+    ["intl-b", "Option B · Calgary → Panglao, Cebu → Calgary", `Calgary → Panglao, ${day(L["intl-b"].segments[0].date)}`, `Cebu → Calgary, ${day(L["intl-b"].segments[1].date)}`],
+    ["tag-eni", `Bohol → El Nido · ${day(L["tag-eni"].outbound)}`],
+    ["usu-ceb", `Coron → Cebu · ${day(L["usu-ceb"].outbound)}`],
   ];
   document.getElementById("all").innerHTML = groups.map(([id, title, outL, retL]) => {
     const leg = L[id], l = D[id];
