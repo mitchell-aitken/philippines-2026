@@ -17,12 +17,13 @@ const DAYS = [
     title: "Leave Calgary",
     lede: "Fly out Friday evening. Your 13 days off cover Nov 13, Nov 16–27, Nov 30 and Dec 1.",
     plan: [
-      ["17:55", "Leave Calgary (Calgary time) on Air Canada AC 8138, connecting in Edmonton and Vancouver."],
-      ["Overnight", "Philippine Airlines PR 117 across the Pacific. You cross the date line and lose a day."],
+      ["19:10", "WestJet WS 127 Calgary → Vancouver (Calgary time), landing 19:55."],
+      ["Layover", "4 hrs 10 min in Vancouver, international departures."],
+      ["00:05", "Philippine Airlines PR 117 Vancouver → Manila, overnight across the Pacific. You cross the date line and lose a day."],
     ],
-    move: "YYC → Edmonton → Vancouver → Manila · 21 hrs 35 min",
+    move: "YYC → Vancouver → Manila · 20 hrs 20 min",
     stay: null,
-    tip: "Book the international flight and the Manila → Panglao flight as separate tickets, with at least 4–5 hrs between them.",
+    tip: "Book the round trip as one ticket (WS 127 + PR 117 out, PR 116 + WS 126 home) and the Manila → Panglao flight separately.",
     photos: []  // [label, image search]
   },
   {
@@ -31,7 +32,7 @@ const DAYS = [
     region: "In transit",
     pin: null,
     title: "Across the Pacific",
-    lede: "In the air over the Pacific. You land in Manila at 05:30 on Sun Nov 15, Manila time.",
+    lede: "PR 117 leaves Vancouver just after midnight and lands in Manila at 05:30 on Sun Nov 15, Manila time.",
     plan: [
       ["Day", "Connection at your hub airport."],
       ["Night", "Overnight flight or layover."],
@@ -324,11 +325,12 @@ const DAYS = [
       ["06:15", "Van from Coron town to Busuanga airport (40 min)."],
       ["08:00", "Cebgo DG 6042 to Clark, landing 09:25. Later nonstops at 08:30, 08:50, 12:20 and 13:20 still make the flight home."],
       ["Late morning", "Genesis P2P bus from Clark Airport to Manila NAIA, 2–3 hrs (₱450), or a private car."],
-      ["21:05", "Philippine Airlines PR 116 Manila → Vancouver, then WestJet WS 126 to Calgary, landing 23:00 Calgary time."],
+      ["21:05", "Philippine Airlines PR 116 Manila → Vancouver, landing 18:00 (Vancouver time)."],
+      ["20:30", "After customs and a 2 hr 30 min connection, WestJet WS 126 Vancouver → Calgary, landing 23:00 Calgary time."],
     ],
     move: "Flight 1 hr 25 min · bus 2–3 hrs · long-haul home",
     stay: null,
-    tip: "The domestic flight and the international one are separate tickets, so take the morning flight to Clark. If it's cancelled, the midday ones are your backup.",
+    tip: "The Clark flight is a separate ticket, so take the morning one; the midday ones are your backup. PR 116 is often 30+ min late, but the Vancouver connection is on the same ticket, so WestJet will rebook you if it's missed.",
     photos: [["Clark airport", "Clark International Airport terminal"]]  // [label, image search]
   },
 ];
