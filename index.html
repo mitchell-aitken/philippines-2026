@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Philippines 2026 · Trip Map</title>
-<meta name="description" content="Map of a Nov 13–30, 2026 trip: the Chocolate Hills on Bohol, El Nido and Coron.">
+<meta name="description" content="Map of a Nov 13 – Dec 1, 2026 trip: the Chocolate Hills on Bohol, El Nido and Coron.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
@@ -97,7 +97,7 @@
       <svg class="sun" viewBox="-50 -50 100 100" aria-hidden="true"><g fill="#FCD116"><circle r="17"/><path id="ray" d="M0-48 5-24H-5Z"/><use href="#ray" transform="rotate(45)"/><use href="#ray" transform="rotate(90)"/><use href="#ray" transform="rotate(135)"/><use href="#ray" transform="rotate(180)"/><use href="#ray" transform="rotate(225)"/><use href="#ray" transform="rotate(270)"/><use href="#ray" transform="rotate(315)"/></g></svg>
       <div>
         <h1>Philippines 2026</h1>
-        <p>Nov 13–30 · Bohol · El Nido · Coron</p>
+        <p>Nov 13 – Dec 1 · Bohol · El Nido · Coron</p>
       </div>
     </div>
     <div class="actions">
@@ -165,7 +165,7 @@ const allBounds = L.latLngBounds(pinned.map(d => d.pin));
 
 function popupHTML(d) {
   return `<div class="pop" style="--c:${COLORS[d.region]}">
-    <div class="eyebrow"><i></i>Day ${dayNum(d)} · ${d.dow} ${MONTH} ${d.date} · ${esc(d.region)}</div>
+    <div class="eyebrow"><i></i>Day ${dayNum(d)} · ${d.dow} ${d.mon || MONTH} ${d.date} · ${esc(d.region)}</div>
     <h3>${esc(d.title)}</h3>
     <p>${esc(d.lede)}</p>
     <ul>${d.plan.map(([w, t]) => `<li><span>${esc(w)}</span>${esc(t)}</li>`).join("")}</ul>
@@ -193,9 +193,9 @@ function setActive(date) {
 
 pinned.forEach(d => {
   const icon = L.divIcon({ className: "", html: `<div class="pin" style="--c:${COLORS[d.region]}">${d.date}</div>`, iconSize: [30, 30], iconAnchor: [15, 15], popupAnchor: [0, -16] });
-  const m = L.marker(d.pin, { icon, title: `${MONTH} ${d.date}: ${d.title}`, riseOnHover: true }).addTo(map);
+  const m = L.marker(d.pin, { icon, title: `${d.mon || MONTH} ${d.date}: ${d.title}`, riseOnHover: true }).addTo(map);
   m.bindPopup(popupHTML(d), { maxWidth: 360, autoPanPaddingTopLeft: [20, 150], autoPanPaddingBottomRight: [20, 20] });
-  m.bindTooltip(`${MONTH} ${d.date} · ${esc(d.title)}`, { direction: "top", offset: [0, -16] });
+  m.bindTooltip(`${d.mon || MONTH} ${d.date} · ${esc(d.title)}`, { direction: "top", offset: [0, -16] });
   m.on("popupopen", () => { m.closeTooltip(); setActive(d.date); document.body.classList.add("popup-open"); history.replaceState(null, "", "#day-" + d.date); });
   m.on("popupclose", () => { if (activeDay === d.date) { setActive(null); document.body.classList.remove("popup-open"); history.replaceState(null, "", location.pathname); } });
   markers[d.date] = m;

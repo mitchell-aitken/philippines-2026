@@ -14,21 +14,21 @@
       "to": "MNL",
       "type": "round",
       "outbound": "2026-11-13",
-      "return": "2026-11-30",
+      "return": "2026-12-01",
       "withReturn": true,
       "fit": {
         "arriveBy": "2026-11-15 07:30",
         "why": "leaves time for the morning flight to Panglao"
       },
       "returnFit": {
-        "departAfter": "2026-11-30 16:00",
-        "arriveBy": "2026-11-30 23:59",
+        "departAfter": "2026-12-01 16:00",
+        "arriveBy": "2026-12-01 23:59",
         "why": "you fly in from Coron and ride from Clark that day"
       },
       "estimate": {
-        "low": 1400,
-        "high": 1550,
-        "source": "Live check Oct 11 2026: C$1,474"
+        "low": 1500,
+        "high": 1650,
+        "source": "Live check Oct 11 2026: C$1,561"
       },
       "preferFlights": [
         "AC 8138",
@@ -127,16 +127,16 @@
       "from": "USU",
       "to": "CRK",
       "type": "oneway",
-      "outbound": "2026-11-30",
+      "outbound": "2026-12-01",
       "fit": {
-        "departAfter": "2026-11-30 07:00",
-        "arriveBy": "2026-11-30 14:05",
+        "departAfter": "2026-12-01 07:00",
+        "arriveBy": "2026-12-01 14:05",
         "why": "2–3 hrs by bus to Manila airport, then 3 hrs before the 21:05 flight"
       },
       "estimate": {
-        "low": 130,
-        "high": 210,
-        "source": "Live check Oct 11 2026: C$132–208 on Nov 30"
+        "low": 80,
+        "high": 125,
+        "source": "Live check Oct 11 2026: C$80–154 on Dec 1"
       },
       "prefer": "earliest"
     },
@@ -147,7 +147,7 @@
       "total": false,
       "title": "Clark → Manila airport (bus)",
       "note": "Genesis P2P bus from Clark Airport to NAIA, 2–3 hrs depending on traffic. A private car or Grab is faster and costs more.",
-      "date": "2026-11-30",
+      "date": "2026-12-01",
       "departures": [
         {
           "op": "Genesis P2P",
@@ -173,10 +173,10 @@
       "from": "USU",
       "to": "MNL",
       "type": "oneway",
-      "outbound": "2026-11-30",
+      "outbound": "2026-12-01",
       "fit": {
-        "departAfter": "2026-11-30 07:00",
-        "arriveBy": "2026-11-30 18:05",
+        "departAfter": "2026-12-01 07:00",
+        "arriveBy": "2026-12-01 18:05",
         "why": "land at least 3 hrs before the 21:05 flight home"
       },
       "estimate": {

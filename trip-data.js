@@ -15,7 +15,7 @@ const DAYS = [
     region: "In transit",
     pin: null,
     title: "Leave Calgary",
-    lede: "Fly out Friday evening. Your 12 days off cover Nov 13, Nov 16–27 and Nov 30.",
+    lede: "Fly out Friday evening. Your 13 days off cover Nov 13, Nov 16–27, Nov 30 and Dec 1.",
     plan: [
       ["17:55", "Leave Calgary (Calgary time) on Air Canada AC 8138, connecting in Edmonton and Vancouver."],
       ["Overnight", "Philippine Airlines PR 117 across the Pacific. You cross the date line and lose a day."],
@@ -282,6 +282,23 @@ const DAYS = [
     date: 29,
     dow: "Sun",
     region: "Coron",
+    pin: [12.3, 119.88],
+    title: "Calauit Safari, or a slow day",
+    lede: "An optional long day trip to Calauit, a wildlife sanctuary on Busuanga's far tip where giraffes and zebras roam with the native Calamian deer. Or keep it easy in town.",
+    plan: [
+      ["05:00", "Van pickup for Calauit Safari Park, about 2 hrs each way."],
+      ["Morning", "Safari ride and feeding the giraffes, plus Calamian deer and Palawan bearded pigs."],
+      ["Afternoon", "Beach stop on the way back. Skip it all if you'd rather rest."],
+    ],
+    move: "Van tour from town · or nothing at all",
+    stay: "crn",
+    tip: "It's a long day in a van. Only worth it if the animals appeal; otherwise use the day for a second Coron Island boat tour or rest.",
+    photos: [["Calauit Safari", "Calauit Safari Park giraffes"], ["Calamian deer", "Calamian deer Calauit"]]  // [label, image search]
+  },
+  {
+    date: 30,
+    dow: "Mon",
+    region: "Coron",
     pin: [12.008, 120.21],
     title: "Last day in Coron",
     lede: "A slow last day. Catch the view from Mt Tapyas one more time, soak at Maquinit, and pack for an early start.",
@@ -296,15 +313,16 @@ const DAYS = [
     photos: [["Coron town", "Coron Palawan town view"], ["Maquinit Hot Springs", "Maquinit Hot Springs Coron night"]]  // [label, image search]
   },
   {
-    date: 30,
-    dow: "Mon",
+    date: 1,
+    dow: "Tue",
     region: "In transit",
     pin: [15.186, 120.56],
     title: "Coron → Clark → Manila → home",
-    lede: "A long but simple travel day: a short flight to Clark, a bus to Manila airport, and the evening flight home. Thanks to the date line you land in Calgary the same night.",
+    lede: "A long but simple travel day: a short flight to Clark, a bus to Manila airport, and the evening flight home. Thanks to the date line you land in Calgary the same night, and you're back at work Wednesday.",
+    mon: "Dec",
     plan: [
       ["06:15", "Van from Coron town to Busuanga airport (40 min)."],
-      ["08:00", "Cebgo DG 6042 to Clark, landing 09:25. Later nonstops at 08:50, 12:20, 12:30 and 13:20 still make the flight home."],
+      ["08:00", "Cebgo DG 6042 to Clark, landing 09:25. Later nonstops at 08:30, 08:50, 12:20 and 13:20 still make the flight home."],
       ["Late morning", "Genesis P2P bus from Clark Airport to Manila NAIA, 2–3 hrs (₱450), or a private car."],
       ["21:05", "Philippine Airlines PR 116 Manila → Vancouver, then WestJet WS 126 to Calgary, landing 23:00 Calgary time."],
     ],
@@ -320,7 +338,7 @@ const STAYS = {
         hint: "Alona Beach is lively and walkable; Dumaluan and Danao beach are quieter. All are 15 min from the airport." },
   eni: { name: "", link: "", area: "El Nido town or Corong-Corong", nights: "Nov 19–23 · 5 nights",
         hint: "Town is central for boat tours and the ferry port; Corong-Corong is calmer with better sunsets. Check for twin beds." },
-  crn: { name: "", link: "", area: "Coron town", nights: "Nov 24–29 · 6 nights",
+  crn: { name: "", link: "", area: "Coron town", nights: "Nov 24–30 · 7 nights",
         hint: "Stay in town, near the pier. Boat tours and tricycles leave from here; the airport is 40 min away." },
 };
 
@@ -329,8 +347,8 @@ const LEGS = [
   { name: "Getting there", sub: "Calgary → Manila → Bohol",             region: "In transit", days: [13, 14] },
   { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · canyons", region: "Bohol",      days: [15, 16, 17, 18] },
   { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves", region: "El Nido",    days: [19, 20, 21, 22, 23] },
-  { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [24, 25, 26, 27, 28, 29] },
-  { name: "Heading home",  sub: "Coron → Clark → Manila → Calgary",     region: "In transit", days: [30] }
+  { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [24, 25, 26, 27, 28, 29, 30] },
+  { name: "Heading home",  sub: "Coron → Clark → Manila → Calgary",     region: "In transit", days: [1] }
 ];
 
 /* Travel lines on the map: [lat, lng] points, mode "fly" (dashed arc) or "ground" (solid) */

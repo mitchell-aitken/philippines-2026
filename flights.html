@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Philippines 2026 · Flights</title>
-<meta name="description" content="Flights for the Nov 13–30, 2026 Philippines trip, with live prices and times.">
+<meta name="description" content="Flights for the Nov 13 – Dec 1, 2026 Philippines trip, with live prices and times.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
@@ -148,7 +148,7 @@
 
 <main>
   <section class="intro">
-    <div class="eyebrow">Nov 13–30 · per person · CAD</div>
+    <div class="eyebrow">Nov 13 – Dec 1 · per person · CAD</div>
     <h1>Flights</h1>
     <div class="status" id="status"><i></i><span>Loading prices…</span></div>
   </section>
@@ -156,7 +156,7 @@
   <article class="opt-card win plan-card" id="plan"></article>
 
   <section class="block">
-    <div class="block-head"><h2>Coron → Manila on Nov 30</h2><span>Two ways to reach the 21:05 flight home</span></div>
+    <div class="block-head"><h2>Coron → Manila on travel day</h2><span>Two ways to reach the 21:05 flight home</span></div>
     <div class="options2" id="options"></div>
   </section>
 
@@ -270,11 +270,11 @@ function render(cfg, live) {
          : step("Thu Nov 19", "Bohol → El Nido", "Cebgo nonstop, mid-afternoon", te.price, false),
     step(day(L["eni-crn"].date), `${ferryEC.dep} El Nido → Coron ${ferryEC.arr}`, `${esc(ferryEC.op)} fast ferry · ${esc(ferryEC.fare)}`, fe.price, false),
     uc.o ? step(day(uc.o.depart), `${hm(uc.o.depart)} Coron → Clark ${hm(uc.o.arrive)}`, `${esc(uc.o.airlines.join(" + "))} ${esc(uc.o.flights.join(" · "))} · separate ticket · earliest flight, for a safe buffer`, uc.price, true)
-         : step("Mon Nov 30", "Coron → Clark", "Morning nonstop", uc.price, false),
-    step("Mon Nov 30", "Bus Clark → Manila airport", "Genesis P2P from Clark Airport, 2–3 hrs", bus.price, false),
+         : step(day(L["usu-crk"].outbound), "Coron → Clark", "Morning nonstop", uc.price, false),
+    step(day(L["crk-mnl"].date), "Bus Clark → Manila airport", "Genesis P2P from Clark Airport, 2–3 hrs", bus.price, false),
     t?.ret
       ? step(day(t.ret.depart), `${hm(t.ret.depart)} Manila → Calgary ${hm(t.ret.arrive)} <span class="tz">Manila time out · Calgary time in</span>`, `${esc(t.ret.airlines.join(" + "))} ${esc(t.ret.flights.join(" · "))} · ${dur(t.ret.minutes)} · ${esc(via(t.ret))} · home ${day(t.ret.arrive)}`, null)
-      : step("Mon Nov 30", "21:05 Manila → Calgary 23:00", "Philippine Airlines + WestJet via Vancouver", null),
+      : step(day(intl.return), "21:05 Manila → Calgary 23:00", "Philippine Airlines + WestJet via Vancouver", null),
   ];
   document.getElementById("plan").innerHTML = `
     <div class="plan-head">
@@ -283,7 +283,7 @@ function render(cfg, live) {
     </div>
     <div class="clock">
       <div><span class="eyebrow">Leave Calgary</span><b>${t?.out ? `${day(t.out.depart)} · ${hm(t.out.depart)}` : "Fri Nov 13 · 17:55"}</b><small>Calgary time</small></div>
-      <div><span class="eyebrow">Back in Calgary</span><b>${t?.ret ? `${day(t.ret.arrive)} · ${hm(t.ret.arrive)}` : "Mon Nov 30 · 23:00"}</b><small>Calgary time</small></div>
+      <div><span class="eyebrow">Back in Calgary</span><b>${t?.ret ? `${day(t.ret.arrive)} · ${hm(t.ret.arrive)}` : `${day(intl.return)} · 23:00`}</b><small>Calgary time</small></div>
     </div>
     <ul class="steps">${steps.join("")}</ul>
     <div class="opt-foot"><span>Round trip ${fmt(intlPrice)} for the Air Canada / Philippine Airlines flights${t ? "" : " (estimate)"}</span><a href="${esc(D["intl-mnl"]?.googleUrl || "https://www.google.com/travel/flights?hl=en&curr=CAD")}" target="_blank" rel="noopener">Book on Google Flights ↗</a></div>`;
@@ -291,7 +291,7 @@ function render(cfg, live) {
   /* ---------- Coron → Manila: two ways ---------- */
   const clarkTotal = uc.price + bus.price;
   const clarkIn = uc.o ? addMin(hm(uc.o.arrive), 180) : "about 13:00";
-  const lateCebu = (D["usu-mnl"]?.options || []).filter(o => o.arrive.slice(0, 10) === "2026-11-30").sort((a, b) => a.arrive.localeCompare(b.arrive))[0];
+  const lateCebu = (D["usu-mnl"]?.options || []).filter(o => o.arrive.slice(0, 10) === L["usu-mnl"].outbound).sort((a, b) => a.arrive.localeCompare(b.arrive))[0];
   const cards = [
     { name: "Fly to Clark, bus to Manila", win: true, price: clarkTotal,
       rows: [
@@ -302,8 +302,8 @@ function render(cfg, live) {
     { name: "Fly via Cebu", win: false, price: um.o ? um.price : null,
       rows: um.o
         ? [step(hm(um.o.depart), `Coron → Manila, lands ${hm(um.o.arrive)}`, `${esc(um.o.airlines.join(" + "))} · ${esc(via(um.o))}`, um.price, true)]
-        : [step("Nov 30", "Doesn't work the same day", `Every Coron → Cebu → Manila connection found on Nov 30 leaves Coron in the afternoon${lateCebu ? ` and lands in Manila at ${hm(lateCebu.arrive)} at the earliest` : ""}, after the 21:05 flight home.`, null),
-           step("Nov 29", "Leave a day early instead", "About C$230–270, plus a hotel night in Manila, and one less day in Coron.", null)] },
+        : [step(day(L["usu-mnl"].outbound), "Doesn't work the same day", `Every Coron → Cebu → Manila connection found that day leaves Coron in the afternoon${lateCebu ? ` and lands in Manila at ${hm(lateCebu.arrive)} at the earliest` : ""}, after the 21:05 flight home.`, null),
+           step("Day before", "Leave a day early instead", "About C$250–265, plus a hotel night in Manila, and one less day in Coron.", null)] },
   ];
   document.getElementById("options").innerHTML = cards.map(c => `
     <article class="opt-card${c.win ? " win" : ""}">

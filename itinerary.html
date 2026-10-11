@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Philippines 2026 · Itinerary</title>
-<meta name="description" content="Day-by-day plan for Nov 13–30, 2026: the Chocolate Hills on Bohol, El Nido and Coron.">
+<meta name="description" content="Day-by-day plan for Nov 13 – Dec 1, 2026: the Chocolate Hills on Bohol, El Nido and Coron.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
@@ -113,8 +113,8 @@
     <h1>Two weeks of hills, lagoons and limestone</h1>
     <p>Fly into Manila and straight on to Bohol for the tarsiers and Chocolate Hills, fly direct to El Nido, ferry north to Coron, then fly to Clark and bus to Manila for the flight home.</p>
     <div class="stats">
-      <div class="stat"><b>Nov 13–30</b><span>Dates</span></div>
-      <div class="stat"><b>15</b><span>Nights</span></div>
+      <div class="stat"><b>Nov 13 – Dec 1</b><span>Dates</span></div>
+      <div class="stat"><b>16</b><span>Nights</span></div>
       <div class="stat"><b>2</b><span>Travellers</span></div>
       <div class="stat"><b>YYC ⇄ CEB</b><span>Flights</span></div>
     </div>
@@ -145,7 +145,7 @@ LEGS.forEach(leg => {
     }).join("")}
     ${days.map(d => `
       <article class="day" id="day-${d.date}" style="--c:${COLORS[d.region]}">
-        <div class="date"><small>${d.dow}</small><b>${d.date}</b><em>Day ${dayNum(d)}</em></div>
+        <div class="date"><small>${d.dow}${d.mon && d.mon !== MONTH ? " " + d.mon : ""}</small><b>${d.date}</b><em>Day ${dayNum(d)}</em></div>
         <div>
           <h3>${esc(d.title)}</h3>
           <p class="lede">${esc(d.lede)}</p>
