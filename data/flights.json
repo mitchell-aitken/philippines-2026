@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-13T18:46:31.738Z",
+  "updated": "2026-10-13T18:48:22.063Z",
   "currency": "CAD",
   "source": "Google Flights via SerpApi",
   "legs": {
     "intl-mnl": {
-      "checked": "2026-10-13T18:46:31.738Z",
+      "checked": "2026-10-13T18:48:22.063Z",
       "lowest": 1311,
       "priceLevel": "typical",
       "typicalRange": [
@@ -274,7 +274,7 @@
       ]
     },
     "mnl-tag": {
-      "checked": "2026-10-13T18:46:31.738Z",
+      "checked": "2026-10-13T18:48:22.063Z",
       "lowest": 97,
       "priceLevel": "high",
       "typicalRange": [
@@ -411,15 +411,33 @@
       ]
     },
     "tag-eni": {
-      "checked": "2026-10-13T18:46:31.738Z",
+      "checked": "2026-10-13T18:48:22.063Z",
       "lowest": 208,
       "priceLevel": "typical",
       "typicalRange": [
         170,
         280
       ],
-      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTE5agcIARIDVEFHcgcIARIDRU5JQAFIAXABmAEC&tfu=EgIIAQ",
+      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTIwagcIARIDVEFHcgcIARIDRU5JQAFIAXABmAEC&tfu=EgIIAQ",
       "options": [
+        {
+          "price": 208,
+          "best": false,
+          "airlines": [
+            "Cebgo"
+          ],
+          "flights": [
+            "DG 6886"
+          ],
+          "from": "TAG",
+          "to": "ENI",
+          "depart": "2026-11-20 10:30",
+          "arrive": "2026-11-20 12:15",
+          "minutes": 105,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
         {
           "price": 208,
           "best": false,
@@ -431,8 +449,8 @@
           ],
           "from": "TAG",
           "to": "ENI",
-          "depart": "2026-11-19 15:50",
-          "arrive": "2026-11-19 17:35",
+          "depart": "2026-11-20 15:50",
+          "arrive": "2026-11-20 17:35",
           "minutes": 105,
           "stops": 0,
           "via": [],
@@ -455,7 +473,7 @@
       ]
     },
     "usu-crk": {
-      "checked": "2026-10-13T18:46:31.738Z",
+      "checked": "2026-10-13T18:48:22.063Z",
       "lowest": 80,
       "priceLevel": "typical",
       "typicalRange": [
@@ -589,7 +607,7 @@
       ]
     },
     "usu-mnl": {
-      "checked": "2026-10-13T18:46:31.738Z",
+      "checked": "2026-10-13T18:48:22.063Z",
       "lowest": 122,
       "priceLevel": "typical",
       "typicalRange": [
@@ -741,96 +759,6 @@
         {
           "date": "2026-10-13",
           "low": 122
-        }
-      ]
-    },
-    "probe-tag-eni-20": {
-      "checked": "2026-10-13T18:46:31.738Z",
-      "lowest": 208,
-      "priceLevel": "typical",
-      "typicalRange": [
-        170,
-        280
-      ],
-      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTIwagcIARIDVEFHcgcIARIDRU5JQAFIAXABmAEC&tfu=EgIIAQ",
-      "options": [
-        {
-          "price": 208,
-          "best": false,
-          "airlines": [
-            "Cebgo"
-          ],
-          "flights": [
-            "DG 6886"
-          ],
-          "from": "TAG",
-          "to": "ENI",
-          "depart": "2026-11-20 10:30",
-          "arrive": "2026-11-20 12:15",
-          "minutes": 105,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        },
-        {
-          "price": 208,
-          "best": false,
-          "airlines": [
-            "Cebgo"
-          ],
-          "flights": [
-            "DG 6888"
-          ],
-          "from": "TAG",
-          "to": "ENI",
-          "depart": "2026-11-20 15:50",
-          "arrive": "2026-11-20 17:35",
-          "minutes": 105,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        }
-      ],
-      "history": [
-        {
-          "date": "2026-10-13",
-          "low": 208
-        }
-      ]
-    },
-    "probe-tag-eni-21": {
-      "checked": "2026-10-13T18:46:31.738Z",
-      "lowest": 269,
-      "priceLevel": "typical",
-      "typicalRange": [
-        170,
-        280
-      ],
-      "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTExLTIxagcIARIDVEFHcgcIARIDRU5JQAFIAXABmAEC&tfu=EgIIAQ",
-      "options": [
-        {
-          "price": 269,
-          "best": false,
-          "airlines": [
-            "Cebgo"
-          ],
-          "flights": [
-            "DG 6888"
-          ],
-          "from": "TAG",
-          "to": "ENI",
-          "depart": "2026-11-21 15:50",
-          "arrive": "2026-11-21 17:35",
-          "minutes": 105,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        }
-      ],
-      "history": [
-        {
-          "date": "2026-10-13",
-          "low": 269
         }
       ]
     }
