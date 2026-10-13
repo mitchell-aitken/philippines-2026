@@ -347,7 +347,7 @@ const STAYS = {
 /* Legs group the days in the list */
 const LEGS = [
   { name: "Getting there", sub: "Calgary → Manila → Bohol",             region: "In transit", days: [13, 14] },
-  { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · canyons", region: "Bohol",      days: [15, 16, 17, 18, 19] },
+  { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · sardine run", region: "Bohol",      days: [15, 16, 17, 18, 19] },
   { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves", region: "El Nido",    days: [20, 21, 22, 23, 24] },
   { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [25, 26, 27, 28, 29, 30] },
   { name: "Heading home",  sub: "Coron → Clark → Manila → Calgary",     region: "In transit", days: [1] }

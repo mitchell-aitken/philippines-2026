@@ -199,9 +199,13 @@ fetch("data/hostel-prices.json", { cache: "no-store" }).then(r => r.ok ? r.json(
     if (!h) { el.textContent = "Price not checked yet"; return; }
     const one = h.one?.perNight, two = h.two?.perNight;
     const parts = [];
-    if (one != null) parts.push(`<span>1 guest (dorm bed) <b>${money(one)}</b>/night</span>`);
-    if (two != null) parts.push(`<span>2 guests (private room) <b>${money(two)}</b>/night</span>`);
-    if (two != null && one != null && two <= one * 1.15) parts.push(`<span>2 guests may be 2 dorm beds; check room type</span>`);
+    if (one != null) parts.push(`<span>1 person <b>${money(one)}</b>/night</span>`);
+    if (two != null) {
+      const r = one ? two / one : null;
+      parts.push(`<span>2 people <b>${money(two)}</b>/night${r == null ? "" : r >= 1.8 ? " · likely 2 dorm beds" : " · likely a private room"}</span>`);
+    }
+    const site = h.two?.link || h.one?.link;
+    if (site) parts.push(`<span><a href="${esc(site)}" target="_blank" rel="noopener">Hostel's own site ↗</a></span>`);
     el.innerHTML = parts.length ? parts.join("") + `<span>Google Hotels · ${new Date(H.updated).toLocaleDateString("en-CA", { month: "short", day: "numeric" })}</span>` : "No price found for your dates";
   });
 });
