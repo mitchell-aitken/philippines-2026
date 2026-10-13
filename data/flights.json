@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-13T18:56:15.223Z",
+  "updated": "2026-10-13T19:51:44.221Z",
   "currency": "CAD",
   "source": "Google Flights via SerpApi",
   "legs": {
     "intl-mnl": {
-      "checked": "2026-10-13T18:56:15.223Z",
+      "checked": "2026-10-13T19:51:44.221Z",
       "lowest": 1311,
       "priceLevel": "typical",
       "typicalRange": [
@@ -274,7 +274,7 @@
       ]
     },
     "mnl-tag": {
-      "checked": "2026-10-13T18:56:15.223Z",
+      "checked": "2026-10-13T19:51:44.221Z",
       "lowest": 97,
       "priceLevel": "high",
       "typicalRange": [
@@ -411,7 +411,7 @@
       ]
     },
     "tag-eni": {
-      "checked": "2026-10-13T18:56:15.223Z",
+      "checked": "2026-10-13T19:51:44.221Z",
       "lowest": 208,
       "priceLevel": "typical",
       "typicalRange": [
@@ -473,7 +473,7 @@
       ]
     },
     "usu-crk": {
-      "checked": "2026-10-13T18:56:15.223Z",
+      "checked": "2026-10-13T19:51:44.221Z",
       "lowest": 80,
       "priceLevel": "typical",
       "typicalRange": [
@@ -607,8 +607,8 @@
       ]
     },
     "usu-mnl": {
-      "checked": "2026-10-13T18:56:15.223Z",
-      "lowest": 122,
+      "checked": "2026-10-13T19:51:44.221Z",
+      "lowest": 150,
       "priceLevel": "typical",
       "typicalRange": [
         110,
@@ -616,50 +616,6 @@
       ],
       "googleUrl": "https://www.google.com/travel/flights?hl=en&gl=ca&curr=CAD&tfs=CBwQAhoeEgoyMDI2LTEyLTAxagcIARIDVVNVcgcIARIDTU5MQAFIAXABmAEC&tfu=EgIIAQ",
       "options": [
-        {
-          "price": 122,
-          "best": false,
-          "airlines": [
-            "Cebgo",
-            "Cebu Pacific"
-          ],
-          "flights": [
-            "DG 6067",
-            "5J 568"
-          ],
-          "from": "USU",
-          "to": "MNL",
-          "depart": "2026-12-01 15:40",
-          "arrive": "2026-12-02 01:45",
-          "minutes": 605,
-          "stops": 1,
-          "via": [
-            "CEB"
-          ],
-          "overnight": false
-        },
-        {
-          "price": 147,
-          "best": false,
-          "airlines": [
-            "Cebgo",
-            "Cebu Pacific"
-          ],
-          "flights": [
-            "DG 6067",
-            "5J 588"
-          ],
-          "from": "USU",
-          "to": "MNL",
-          "depart": "2026-12-01 15:40",
-          "arrive": "2026-12-01 23:55",
-          "minutes": 495,
-          "stops": 1,
-          "via": [
-            "CEB"
-          ],
-          "overnight": false
-        },
         {
           "price": 150,
           "best": false,
@@ -703,21 +659,20 @@
           "overnight": false
         },
         {
-          "price": 160,
-          "best": false,
+          "price": 175,
+          "best": true,
           "airlines": [
-            "Cebgo",
-            "Cebu Pacific"
+            "Philippine Airlines"
           ],
           "flights": [
-            "DG 6067",
-            "5J 570"
+            "PR 2665",
+            "PR 2860"
           ],
           "from": "USU",
           "to": "MNL",
           "depart": "2026-12-01 15:40",
-          "arrive": "2026-12-01 22:20",
-          "minutes": 400,
+          "arrive": "2026-12-01 20:05",
+          "minutes": 265,
           "stops": 1,
           "via": [
             "CEB"
@@ -725,21 +680,65 @@
           "overnight": false
         },
         {
-          "price": 170,
-          "best": true,
+          "price": 179,
+          "best": false,
           "airlines": [
             "Cebgo",
             "Cebu Pacific"
           ],
           "flights": [
             "DG 6067",
-            "5J 572"
+            "5J 568"
           ],
           "from": "USU",
           "to": "MNL",
           "depart": "2026-12-01 15:40",
-          "arrive": "2026-12-01 20:35",
-          "minutes": 295,
+          "arrive": "2026-12-02 01:45",
+          "minutes": 605,
+          "stops": 1,
+          "via": [
+            "CEB"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 199,
+          "best": true,
+          "airlines": [
+            "Cebgo",
+            "Cebu Pacific"
+          ],
+          "flights": [
+            "DG 6069",
+            "5J 558"
+          ],
+          "from": "USU",
+          "to": "MNL",
+          "depart": "2026-12-01 09:35",
+          "arrive": "2026-12-01 13:50",
+          "minutes": 255,
+          "stops": 1,
+          "via": [
+            "CEB"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 208,
+          "best": false,
+          "airlines": [
+            "Cebgo",
+            "Cebu Pacific"
+          ],
+          "flights": [
+            "DG 6065",
+            "5J 552"
+          ],
+          "from": "USU",
+          "to": "MNL",
+          "depart": "2026-12-01 10:40",
+          "arrive": "2026-12-01 16:05",
+          "minutes": 325,
           "stops": 1,
           "via": [
             "CEB"
@@ -758,7 +757,7 @@
         },
         {
           "date": "2026-10-13",
-          "low": 122
+          "low": 150
         }
       ]
     }
