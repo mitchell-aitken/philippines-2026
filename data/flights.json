@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-13T18:48:22.063Z",
+  "updated": "2026-10-13T18:56:15.223Z",
   "currency": "CAD",
   "source": "Google Flights via SerpApi",
   "legs": {
     "intl-mnl": {
-      "checked": "2026-10-13T18:48:22.063Z",
+      "checked": "2026-10-13T18:56:15.223Z",
       "lowest": 1311,
       "priceLevel": "typical",
       "typicalRange": [
@@ -274,7 +274,7 @@
       ]
     },
     "mnl-tag": {
-      "checked": "2026-10-13T18:48:22.063Z",
+      "checked": "2026-10-13T18:56:15.223Z",
       "lowest": 97,
       "priceLevel": "high",
       "typicalRange": [
@@ -411,7 +411,7 @@
       ]
     },
     "tag-eni": {
-      "checked": "2026-10-13T18:48:22.063Z",
+      "checked": "2026-10-13T18:56:15.223Z",
       "lowest": 208,
       "priceLevel": "typical",
       "typicalRange": [
@@ -473,7 +473,7 @@
       ]
     },
     "usu-crk": {
-      "checked": "2026-10-13T18:48:22.063Z",
+      "checked": "2026-10-13T18:56:15.223Z",
       "lowest": 80,
       "priceLevel": "typical",
       "typicalRange": [
@@ -607,7 +607,7 @@
       ]
     },
     "usu-mnl": {
-      "checked": "2026-10-13T18:48:22.063Z",
+      "checked": "2026-10-13T18:56:15.223Z",
       "lowest": 122,
       "priceLevel": "typical",
       "typicalRange": [
