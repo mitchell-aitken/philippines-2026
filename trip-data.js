@@ -34,8 +34,8 @@ const DAYS = [
     title: "Across the Pacific",
     lede: "PR 117 leaves Vancouver just after midnight and lands in Manila at 05:30 on Sun Nov 15, Manila time.",
     plan: [
-      ["Day", "Connection at your hub airport."],
-      ["Night", "Overnight flight or layover."],
+      ["00:05", "Philippine Airlines PR 117 leaves Vancouver (Vancouver time)."],
+      ["In the air", "About 14.5 hrs over the Pacific. You cross the date line, so most of Saturday disappears."],
     ],
     move: "Over the Pacific → Manila",
     stay: null,
@@ -365,6 +365,43 @@ const ROUTE = [
 
 const COLORS = { "Coron": "#0038A8", "El Nido": "#0038A8", "Bohol": "#CE1126", "Cebu": "#0B0B0C", "In transit": "#0B0B0C" };
 const MONTH = "Nov";
+
+/* ---------- where to stay: nights per place + hostel picks ----------
+   Picks have private rooms (twin/double) for two. Prices are rough
+   "from" rates seen in Oct 2026; check before booking. */
+const PLACES = [
+  { key: "pgl", place: "Bohol (Panglao)", nights: 4, inDate: "2026-11-15", outDate: "2026-11-19", region: "Bohol",
+    days: "Sun Nov 15 → Thu Nov 19 (fly out 15:50)", bookingQ: "Panglao, Bohol" },
+  { key: "eni", place: "El Nido", nights: 5, inDate: "2026-11-19", outDate: "2026-11-24", region: "El Nido",
+    days: "Thu Nov 19 evening → Tue Nov 24 (ferry 08:20)", bookingQ: "El Nido, Palawan" },
+  { key: "crn", place: "Coron", nights: 7, inDate: "2026-11-24", outDate: "2026-12-01", region: "Coron",
+    days: "Tue Nov 24 midday → Tue Dec 1 (flight 08:00)", bookingQ: "Coron, Palawan" },
+];
+
+const STAY_PICKS = {
+  pgl: {
+    hostelworld: "https://www.hostelworld.com/hostels/asia/philippines/panglao-island/f/private-rooms/",
+    picks: [
+      { name: "Red Picnic Hostel", where: "Near Dumaluan Beach", why: "Pool and bar, social without being a party hostel. Private rooms.", url: "https://www.hostelworld.com/hostels/p/314478/red-picnic-hostel/" },
+      { name: "Bohol Coco Farm", where: "Inland Panglao, on a 3-hectare farm", why: "Chill, hammocks, organic meals, very well reviewed (9.7). Private rooms.", url: "https://www.hostelworld.com/hostels/p/67761/bohol-coco-farm/" },
+      { name: "Mad Monkey Panglao", where: "Danao Beach", why: "Pool, bar and a social crowd. Private rooms with their own bathroom.", url: "https://www.hostelz.com/hostel/486560-Mad-Monkey" },
+    ] },
+  eni: {
+    hostelworld: "https://www.hostelworld.com/hostels/asia/philippines/el-nido/f/private-rooms/",
+    picks: [
+      { name: "SPIN Designer Hostel", where: "El Nido town, a minute from the beach", why: "Clean, well run and central for boat tours. Private rooms.", url: "https://www.hostelworld.com/hostels/p/99361/spin-designer-hostel/" },
+      { name: "Outpost Beach Hostel", where: "Corong-Corong, 5 min south of town", why: "On the beach with sunset views, social bar; quiet hours from 11 pm. Private rooms.", url: "https://www.hostelworld.com/hostels/p/272882/outpost-beach-hostel/" },
+      { name: "Frendz Hostel El Nido", where: "El Nido town", why: "Lively, rooftop pool, DJs. Standard double private rooms.", url: "https://www.hostelworld.com/hostels/p/293897/frendz-hostel-el-nido/" },
+    ] },
+  crn: {
+    hostelworld: "https://www.hostelworld.com/hostels/asia/philippines/coron/",
+    picks: [
+      { name: "Hop Hostel", where: "Central Coron town, at the foot of Mt Tapyas", why: "Top rated (9.3), rooftop over Coron Bay, daily activities. Private rooms.", url: "https://www.hostelz.com/hostel/378411-Hop-Hostel" },
+      { name: "Outpost Hostel Coron", where: "Waterfront, a few minutes from town", why: "Pool, rooftop and sea-view private rooms. Social.", url: "https://www.hostelworld.com/hostels/p/306653/outpost-hostel-coron/" },
+      { name: "Joval Homestay", where: "Quiet spot just outside town", why: "Small, family-run, cheap private rooms; the owner helps book tours.", url: "https://www.hostelz.com/hostel/387461-Joval-Homestay" },
+    ] },
+};
+const bookingSearch = p => `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(p.bookingQ)}&checkin=${p.inDate}&checkout=${p.outDate}&group_adults=2&no_rooms=1&group_children=0`;
 
 /* ---------- shared helpers (no need to edit) ---------- */
 const img = q => "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(q);
