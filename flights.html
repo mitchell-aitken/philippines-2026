@@ -74,6 +74,8 @@
   .book{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin-top:6px;font:500 10.5px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
   .book a{font:500 12.5px/1.4 var(--sans);text-transform:none;letter-spacing:0;color:var(--blue);text-decoration:none;padding:2px 9px;border:1px solid var(--line);border-radius:999px;background:#fff}
   .book a:hover{border-color:var(--blue)}
+  .src.booked{background:var(--ink);color:#fff}
+  .book.booked-note{color:#16733F;font:500 12.5px/1.4 var(--sans);text-transform:none;letter-spacing:0}
   .tz{display:inline-block;margin-left:6px;font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);vertical-align:2px}
   .opt-card .note{margin:-6px 0 0;font-size:13.5px;color:var(--ink-2)}
   .verdict{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--soft);font-size:14.5px;color:var(--ink-2)}
@@ -256,18 +258,18 @@ function render(cfg, live) {
     }
     return { id, o: null, price: est(leg), live: false };
   };
-  const step = (k, title, small, price, live) => `<li><span class="k">${k}</span><div><b>${title}</b><small>${small}</small></div>${price != null ? `<div class="sp">${fmt(price)}${live === undefined ? "" : `<span class="src ${live ? "live" : "est"}">${live ? "Live" : "Est."}</span>`}</div>` : `<div class="sp"></div>`}</li>`;
+  const step = (k, title, small, price, live) => `<li><span class="k">${k}</span><div><b>${title}</b><small>${small}</small></div>${price != null ? `<div class="sp">${fmt(price)}${live === undefined ? "" : `<span class="src ${live === "booked" ? "booked" : live ? "live" : "est"}">${live === "booked" ? "Booked" : live ? "Live" : "Est."}</span>`}</div>` : `<div class="sp"></div>`}</li>`;
 
   /* ---------- the flights you'll book ---------- */
   const intl = L["intl-mnl"], t = ticket(intl, D["intl-mnl"]);
   const mt = legCost("mnl-tag"), te = legCost("tag-eni"), fe = legCost("eni-crn"), uc = legCost("usu-crk"), bus = legCost("crk-mnl"), um = legCost("usu-mnl");
   const ferryEC = L["eni-crn"].departures[0];
-  const intlPrice = t ? t.price : est(intl);
+  const intlPrice = intl.booked ? intl.booked.price : (t ? t.price : est(intl));
   const total = intlPrice + mt.price + te.price + fe.price + uc.price + bus.price;
 
   const steps = [
     t?.out
-      ? step(day(t.out.depart), `${hm(t.out.depart)} Calgary → Manila ${hm(t.out.arrive)} <span class="tz">Calgary time out · Manila time in</span>`, `${esc(t.out.airlines.join(" + "))} ${esc(t.out.flights.join(" · "))} · ${dur(t.out.minutes)} · ${esc(via(t.out))} · lands ${day(t.out.arrive)}`, intlPrice, true)
+      ? step(day(t.out.depart), `${hm(t.out.depart)} Calgary → Manila ${hm(t.out.arrive)} <span class="tz">Calgary time out · Manila time in</span>`, `${esc(t.out.airlines.join(" + "))} ${esc(t.out.flights.join(" · "))} · ${dur(t.out.minutes)} · ${esc(via(t.out))} · lands ${day(t.out.arrive)}`, intlPrice, intl.booked ? "booked" : true)
       : step("Fri Nov 13", "19:10 Calgary → Manila 05:30", "WestJet WS 127 + Philippine Airlines PR 117 · via Vancouver", intlPrice, false),
     mt.o ? step(day(mt.o.depart), `${hm(mt.o.depart)} Manila → Panglao ${hm(mt.o.arrive)}`, `${esc(mt.o.airlines.join(" + "))} ${esc(mt.o.flights.join(" · "))} · separate ticket · move from Terminal 1 to Terminal 3`, mt.price, true)
          : step("Sun Nov 15", "Manila → Panglao", "Morning Cebu Pacific flight", mt.price, false),
@@ -289,6 +291,7 @@ function render(cfg, live) {
   };
   const bookHTML = id => {
     const leg = L[id];
+    if (leg.booked) return `<span class="book booked-note">✓ Booked ${esc(day(leg.booked.date))} · C$${leg.booked.price.toFixed(2)} round trip</span>`;
     const links = [...(leg.kind === "flight" ? [["Google Flights", gf(id)]] : []), ...(leg.book || [])];
     return links.length ? `<span class="book">Book: ${links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join("")}</span>` : "";
   };
@@ -304,7 +307,7 @@ function render(cfg, live) {
       <div><span class="eyebrow">Back in Calgary</span><b>${t?.ret ? `${day(t.ret.arrive)} · ${hm(t.ret.arrive)}` : `${day(intl.return)} · 23:00`}</b><small>Calgary time</small></div>
     </div>
     <ul class="steps">${steps.join("")}</ul>
-    <div class="opt-foot"><span>Round trip ${fmt(intlPrice)} for the WestJet / Philippine Airlines flights${t ? "" : " (estimate)"}</span><a href="${esc(D["intl-mnl"]?.googleUrl || "https://www.google.com/travel/flights?hl=en&curr=CAD")}" target="_blank" rel="noopener">Book on Google Flights ↗</a></div>`;
+    <div class="opt-foot"><span>${intl.booked ? `Round trip booked: C$${intl.booked.price.toFixed(2)} (WestJet / Philippine Airlines)` : `Round trip ${fmt(intlPrice)} for the WestJet / Philippine Airlines flights${t ? "" : " (estimate)"}`}</span><span>Still to book: Manila → Panglao, Bohol → El Nido, the ferry, Coron → Clark</span></div>`;
 
   /* ---------- Coron → Manila: two ways ---------- */
   const clarkTotal = uc.price + bus.price;

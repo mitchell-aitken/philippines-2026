@@ -2,8 +2,13 @@ name: Update flight prices
 
 on:
   schedule:
-    - cron: "17 13 * * *"   # daily, about 7:17 am in Calgary (6 searches per run, ~185/month)
+    - cron: "17 13 * * *"   # daily, about 7:17 am in Calgary (4 flight searches a day + 18 hostel searches a week, ~200/month)
   workflow_dispatch:         # "Run workflow" button for an instant refresh
+    inputs:
+      force_hostels:
+        description: "Refresh hostel prices now (normally weekly)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,12 +31,13 @@ jobs:
         run: node scripts/fetch-flights.mjs
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          FORCE_HOSTELS: ${{ inputs.force_hostels && '1' || '0' }}
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/flights.json
+          git add data/flights.json data/hostel-prices.json 2>/dev/null || git add data/flights.json
           if git diff --cached --quiet; then
             echo "No price changes."
           else

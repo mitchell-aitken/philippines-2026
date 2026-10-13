@@ -382,23 +382,23 @@ const STAY_PICKS = {
   pgl: {
     hostelworld: "https://www.hostelworld.com/hostels/asia/philippines/panglao-island/f/private-rooms/",
     picks: [
-      { name: "Red Picnic Hostel", where: "Near Dumaluan Beach", why: "Pool and bar, social without being a party hostel. Private rooms.", url: "https://www.hostelworld.com/hostels/p/314478/red-picnic-hostel/" },
-      { name: "Bohol Coco Farm", where: "Inland Panglao, on a 3-hectare farm", why: "Chill, hammocks, organic meals, very well reviewed (9.7). Private rooms.", url: "https://www.hostelworld.com/hostels/p/67761/bohol-coco-farm/" },
-      { name: "Mad Monkey Panglao", where: "Danao Beach", why: "Pool, bar and a social crowd. Private rooms with their own bathroom.", url: "https://www.hostelz.com/hostel/486560-Mad-Monkey" },
+      { id: "red-picnic", name: "Red Picnic Hostel", where: "Near Dumaluan Beach", why: "Pool and bar, social without being a party hostel. Private rooms.", url: "https://www.hostelworld.com/hostels/p/314478/red-picnic-hostel/" },
+      { id: "coco-farm", name: "Bohol Coco Farm", where: "Inland Panglao, on a 3-hectare farm", why: "Chill, hammocks, organic meals, very well reviewed (9.7). Private rooms.", url: "https://www.hostelworld.com/hostels/p/67761/bohol-coco-farm/" },
+      { id: "mad-monkey-panglao", name: "Mad Monkey Panglao", where: "Danao Beach", why: "Pool, bar and a social crowd. Private rooms with their own bathroom.", url: "https://www.hostelz.com/hostel/486560-Mad-Monkey" },
     ] },
   eni: {
     hostelworld: "https://www.hostelworld.com/hostels/asia/philippines/el-nido/f/private-rooms/",
     picks: [
-      { name: "SPIN Designer Hostel", where: "El Nido town, a minute from the beach", why: "Clean, well run and central for boat tours. Private rooms.", url: "https://www.hostelworld.com/hostels/p/99361/spin-designer-hostel/" },
-      { name: "Outpost Beach Hostel", where: "Corong-Corong, 5 min south of town", why: "On the beach with sunset views, social bar; quiet hours from 11 pm. Private rooms.", url: "https://www.hostelworld.com/hostels/p/272882/outpost-beach-hostel/" },
-      { name: "Frendz Hostel El Nido", where: "El Nido town", why: "Lively, rooftop pool, DJs. Standard double private rooms.", url: "https://www.hostelworld.com/hostels/p/293897/frendz-hostel-el-nido/" },
+      { id: "spin", name: "SPIN Designer Hostel", where: "El Nido town, a minute from the beach", why: "Clean, well run and central for boat tours. Private rooms.", url: "https://www.hostelworld.com/hostels/p/99361/spin-designer-hostel/" },
+      { id: "outpost-eni", name: "Outpost Beach Hostel", where: "Corong-Corong, 5 min south of town", why: "On the beach with sunset views, social bar; quiet hours from 11 pm. Private rooms.", url: "https://www.hostelworld.com/hostels/p/272882/outpost-beach-hostel/" },
+      { id: "frendz", name: "Frendz Hostel El Nido", where: "El Nido town", why: "Lively, rooftop pool, DJs. Standard double private rooms.", url: "https://www.hostelworld.com/hostels/p/293897/frendz-hostel-el-nido/" },
     ] },
   crn: {
     hostelworld: "https://www.hostelworld.com/hostels/asia/philippines/coron/",
     picks: [
-      { name: "Hop Hostel", where: "Central Coron town, at the foot of Mt Tapyas", why: "Top rated (9.3), rooftop over Coron Bay, daily activities. Private rooms.", url: "https://www.hostelz.com/hostel/378411-Hop-Hostel" },
-      { name: "Outpost Hostel Coron", where: "Waterfront, a few minutes from town", why: "Pool, rooftop and sea-view private rooms. Social.", url: "https://www.hostelworld.com/hostels/p/306653/outpost-hostel-coron/" },
-      { name: "Joval Homestay", where: "Quiet spot just outside town", why: "Small, family-run, cheap private rooms; the owner helps book tours.", url: "https://www.hostelz.com/hostel/387461-Joval-Homestay" },
+      { id: "hop", name: "Hop Hostel", where: "Central Coron town, at the foot of Mt Tapyas", why: "Top rated (9.3), rooftop over Coron Bay, daily activities. Private rooms.", url: "https://www.hostelz.com/hostel/378411-Hop-Hostel" },
+      { id: "outpost-crn", name: "Outpost Hostel Coron", where: "Waterfront, a few minutes from town", why: "Pool, rooftop and sea-view private rooms. Social.", url: "https://www.hostelworld.com/hostels/p/306653/outpost-hostel-coron/" },
+      { id: "joval", name: "Joval Homestay", where: "Quiet spot just outside town", why: "Small, family-run, cheap private rooms; the owner helps book tours.", url: "https://www.hostelz.com/hostel/387461-Joval-Homestay" },
     ] },
 };
 const bookingSearch = p => `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(p.bookingQ)}&checkin=${p.inDate}&checkout=${p.outDate}&group_adults=2&no_rooms=1&group_children=0`;

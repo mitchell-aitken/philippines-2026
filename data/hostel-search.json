@@ -1,0 +1,15 @@
+{
+  "refreshDays": 7,
+  "note": "Hostel prices from Google Hotels for the exact nights. 'one' = 1 guest (usually a dorm bed), 'two' = 2 guests (usually a private room).",
+  "hostels": [
+    { "id": "red-picnic",   "name": "Red Picnic Hostel",    "match": "Red Picnic",     "query": "Red Picnic Hostel Panglao Bohol",      "checkIn": "2026-11-15", "checkOut": "2026-11-20" },
+    { "id": "coco-farm",    "name": "Bohol Coco Farm",      "match": "Coco Farm",      "query": "Bohol Coco Farm Panglao",              "checkIn": "2026-11-15", "checkOut": "2026-11-20" },
+    { "id": "mad-monkey-panglao", "name": "Mad Monkey Panglao", "match": "Mad Monkey", "query": "Mad Monkey Hostel Panglao Bohol",      "checkIn": "2026-11-15", "checkOut": "2026-11-20" },
+    { "id": "spin",         "name": "SPIN Designer Hostel", "match": "SPIN",           "query": "Spin Designer Hostel El Nido",         "checkIn": "2026-11-20", "checkOut": "2026-11-25" },
+    { "id": "outpost-eni",  "name": "Outpost Beach Hostel", "match": "Outpost",        "query": "Outpost Beach Hostel El Nido",         "checkIn": "2026-11-20", "checkOut": "2026-11-25" },
+    { "id": "frendz",       "name": "Frendz Hostel El Nido","match": "Frendz",         "query": "Frendz Hostel El Nido",                "checkIn": "2026-11-20", "checkOut": "2026-11-25" },
+    { "id": "hop",          "name": "Hop Hostel",           "match": "Hop Hostel",     "query": "Hop Hostel Coron Palawan",             "checkIn": "2026-11-25", "checkOut": "2026-12-01" },
+    { "id": "outpost-crn",  "name": "Outpost Hostel Coron", "match": "Outpost",        "query": "Outpost Hostel Coron",                 "checkIn": "2026-11-25", "checkOut": "2026-12-01" },
+    { "id": "joval",        "name": "Joval Homestay",       "match": "Joval",          "query": "Joval Homestay Coron",                 "checkIn": "2026-11-25", "checkOut": "2026-12-01" }
+  ]
+}

@@ -47,7 +47,12 @@
           "WestJet",
           "https://www.westjet.com/"
         ]
-      ]
+      ],
+      "booked": {
+        "price": 1560.12,
+        "date": "2026-10-13",
+        "note": "Booked: WS 127 + PR 117 out, PR 116 + WS 126 home"
+      }
     },
     {
       "id": "mnl-tag",

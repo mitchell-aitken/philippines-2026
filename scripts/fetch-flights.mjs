@@ -112,6 +112,7 @@ for (const leg of cfg.legs.filter(l => l.kind === "flight")) {
   const old = prev.legs?.[leg.id];
   const firstDate = leg.outbound || leg.segments?.[0]?.date;
   if (firstDate < today) { if (old) out.legs[leg.id] = old; console.log(`skip ${leg.id}: date has passed`); continue; }
+  if (leg.booked) { if (old) out.legs[leg.id] = old; console.log(`skip ${leg.id}: booked`); continue; }
   try {
     const data = await search(leg);
     const summary = summarize(leg, data, old);
@@ -141,4 +142,45 @@ for (const leg of cfg.legs.filter(l => l.kind === "flight")) {
 
 await writeFile(OUT, JSON.stringify(out, null, 2) + "\n");
 console.log(`Wrote ${OUT}: ${ok} ok, ${failed} failed`);
+
+/* ---------- hostel prices (Google Hotels via SerpApi), refreshed weekly ---------- */
+const HCFG = "data/hostel-search.json", HOUT = "data/hostel-prices.json";
+let hcfg = null; try { hcfg = JSON.parse(await readFile(HCFG, "utf8")); } catch { /* no hostels configured */ }
+if (hcfg) {
+  let hprev = { hostels: {} }; try { hprev = JSON.parse(await readFile(HOUT, "utf8")); } catch {}
+  const ageDays = hprev.updated ? (Date.now() - new Date(hprev.updated)) / 864e5 : Infinity;
+  if (process.env.FORCE_HOSTELS !== "1" && ageDays < (hcfg.refreshDays || 7)) {
+    console.log(`hostels: last checked ${ageDays.toFixed(1)} days ago, skipping`);
+  } else {
+    const norm = x => String(x || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const hotel = async (h, adults) => {
+      if (MOCK_DIR) return JSON.parse(await readFile(`${MOCK_DIR}/hotel-${h.id}-${adults}.json`, "utf8"));
+      const params = new URLSearchParams({ engine: "google_hotels", q: h.query, check_in_date: h.checkIn, check_out_date: h.checkOut,
+        adults: String(adults), currency: cfg.currency, gl: "ca", hl: "en", api_key: KEY });
+      const res = await fetch(`https://serpapi.com/search.json?${params}`);
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.error) throw new Error(data.error || `HTTP ${res.status}`);
+      return data;
+    };
+    const price = (data, h) => {
+      // a direct property page, or a list of properties to match by name
+      let p = (data.rate_per_night || data.type === "hotel" || data.type === "vacation rental") && data.name ? data : null;
+      if (!p) { const want = norm(h.match || h.name); p = (data.properties || []).find(x => norm(x.name).includes(want) || want.includes(norm(x.name))) || null; }
+      if (!p) return { error: "not found on Google Hotels" };
+      return { name: p.name, perNight: p.rate_per_night?.extracted_lowest ?? null, total: p.total_rate?.extracted_lowest ?? null,
+        rating: p.overall_rating ?? null, link: p.link || null };
+    };
+    const hout = { updated: new Date().toISOString(), currency: cfg.currency, source: "Google Hotels via SerpApi", hostels: {} };
+    for (const h of hcfg.hostels) {
+      const r = { ...(hprev.hostels?.[h.id] || {}) };
+      for (const [key, adults] of [["one", 1], ["two", 2]]) {
+        try { r[key] = price(await hotel(h, adults), h); }
+        catch (e) { r[key] = { ...(r[key] || {}), error: e.message }; }
+      }
+      hout.hostels[h.id] = r;
+      console.log(`hostel ${h.id}: 1 guest ${r.one?.perNight ?? r.one?.error}, 2 guests ${r.two?.perNight ?? r.two?.error}`);
+    }
+    await writeFile(HOUT, JSON.stringify(hout, null, 2) + "\n");
+  }
+}
 if (ok === 0 && failed > 0) process.exit(1);
