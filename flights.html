@@ -270,7 +270,7 @@ function render(cfg, live) {
     mt.o ? step(day(mt.o.depart), `${hm(mt.o.depart)} Manila → Panglao ${hm(mt.o.arrive)}`, `${esc(mt.o.airlines.join(" + "))} ${esc(mt.o.flights.join(" · "))} · separate ticket · move from Terminal 1 to Terminal 3`, mt.price, true)
          : step("Sun Nov 15", "Manila → Panglao", "Morning Cebu Pacific flight", mt.price, false),
     te.o ? step(day(te.o.depart), `${hm(te.o.depart)} Bohol → El Nido ${hm(te.o.arrive)}`, `${esc(te.o.airlines.join(" + "))} ${esc(te.o.flights.join(" · "))} · nonstop`, te.price, true)
-         : step("Thu Nov 19", "Bohol → El Nido", "Cebgo nonstop, mid-afternoon", te.price, false),
+         : step(day(L["tag-eni"].outbound), "Bohol → El Nido", "Cebgo nonstop, mid-afternoon", te.price, false),
     step(day(L["eni-crn"].date), `${ferryEC.dep} El Nido → Coron ${ferryEC.arr}`, `${esc(ferryEC.op)} fast ferry · ${esc(ferryEC.fare)}`, fe.price, false),
     uc.o ? step(day(uc.o.depart), `${hm(uc.o.depart)} Coron → Clark ${hm(uc.o.arrive)}`, `${esc(uc.o.airlines.join(" + "))} ${esc(uc.o.flights.join(" · "))} · separate ticket · earliest flight, for a safe buffer`, uc.price, true)
          : step(day(L["usu-crk"].outbound), "Coron → Clark", "Morning nonstop", uc.price, false),

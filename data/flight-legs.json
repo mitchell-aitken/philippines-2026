@@ -87,15 +87,15 @@
       "from": "TAG",
       "to": "ENI",
       "type": "oneway",
-      "outbound": "2026-11-19",
+      "outbound": "2026-11-20",
       "fit": {
-        "departAfter": "2026-11-19 11:00",
-        "why": "check out of Panglao in the morning"
+        "departAfter": "2026-11-20 11:00",
+        "why": "keeps the last morning on Panglao"
       },
       "estimate": {
-        "low": 180,
+        "low": 190,
         "high": 280,
-        "source": "Live check Oct 11 2026: C$209 on Thu Nov 19"
+        "source": "Live check Oct 13 2026: C$208 on Fri Nov 20"
       },
       "book": [
         [
@@ -111,7 +111,7 @@
       "total": true,
       "title": "El Nido → Coron fast ferry",
       "note": "About 3–4 hrs. Check in at El Nido port an hour before and bring a printed ticket.",
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "departures": [
         {
           "op": "Phimal",
@@ -229,48 +229,6 @@
           "https://www.cebupacificair.com/"
         ]
       ]
-    },
-    {
-      "id": "probe-tag-eni-20",
-      "kind": "flight",
-      "group": "domestic",
-      "total": true,
-      "title": "Bohol → El Nido",
-      "note": "One way, nonstop on Cebgo, landing late afternoon. It only runs some days of the week, so the plan is built around this flight.",
-      "from": "TAG",
-      "to": "ENI",
-      "type": "oneway",
-      "outbound": "2026-11-20",
-      "fit": {
-        "departAfter": "2026-11-20 09:00",
-        "why": ""
-      },
-      "estimate": {
-        "low": 180,
-        "high": 280,
-        "source": "Live check Oct 11 2026: C$209 on Thu Nov 19"
-      }
-    },
-    {
-      "id": "probe-tag-eni-21",
-      "kind": "flight",
-      "group": "domestic",
-      "total": true,
-      "title": "Bohol → El Nido",
-      "note": "One way, nonstop on Cebgo, landing late afternoon. It only runs some days of the week, so the plan is built around this flight.",
-      "from": "TAG",
-      "to": "ENI",
-      "type": "oneway",
-      "outbound": "2026-11-21",
-      "fit": {
-        "departAfter": "2026-11-21 09:00",
-        "why": ""
-      },
-      "estimate": {
-        "low": 180,
-        "high": 280,
-        "source": "Live check Oct 11 2026: C$209 on Thu Nov 19"
-      }
     }
   ]
 }

@@ -114,24 +114,41 @@ const DAYS = [
   {
     date: 19,
     dow: "Thu",
-    region: "El Nido",
-    pin: [9.62, 123.8],
-    title: "Cave swim, then fly to El Nido",
-    lede: "A slow morning on Panglao, then the direct afternoon flight to El Nido. You land in time for dinner in town.",
+    region: "Bohol",
+    pin: [9.615, 123.765],
+    title: "Napaling sardine run",
+    lede: "Snorkel straight off the cliffs at Napaling Reef into a swirling wall of sardines, 15 minutes from Alona Beach. Then cool off in a cave pool.",
     plan: [
-      ["Morning", "Swim in Hinagdanan Cave, a lit limestone cave with a clear pool, then check out."],
+      ["Early", "Napaling Reef: steps and a ramp lead down from the cliff into a roped-off area. The sardines gather along the reef wall; float still and they surround you. Allow 2 hrs."],
+      ["Afternoon", "Swim in Hinagdanan Cave, a lit limestone cave with a clear pool."],
+      ["Sunset", "Dinner on Alona Beach."],
+    ],
+    move: "Tricycle · about 15 min from Alona Beach",
+    stay: "pgl",
+    tip: "Entry plus a guide is about ₱300 each and the guide isn't optional. Bring your own snorkel and mask if you can; rentals are hit or miss. Go early, before the tour groups.",
+    photos: [["Napaling sardine run", "Napaling Reef sardine run Panglao"], ["Hinagdanan Cave", "Hinagdanan Cave Panglao"]]  // [label, image search]
+  },
+  {
+    date: 20,
+    dow: "Fri",
+    region: "El Nido",
+    pin: [9.567, 123.77],
+    title: "Fly Bohol → El Nido",
+    lede: "A slow last morning on Panglao, then the direct afternoon flight to El Nido. You land in time for dinner in town.",
+    plan: [
+      ["Morning", "Last swim on Panglao, check out by noon."],
       ["13:30", "At Bohol-Panglao airport (TAG), 15 min from most Panglao hotels."],
       ["15:50", "Cebgo DG 6888 nonstop to El Nido, landing about 17:35."],
       ["Evening", "Tricycle into town (20 min), dinner, book tours for the next days."],
     ],
     move: "Direct flight TAG → ENI · tricycle to town",
     stay: "eni",
-    tip: "This nonstop only runs on some days of the week (Thursday is one), so don't move this day without checking. It's a small ATR plane: book early and add checked bags when you buy.",
-    photos: [["Hinagdanan Cave", "Hinagdanan Cave Panglao"], ["El Nido", "El Nido Palawan limestone cliffs"]]  // [label, image search]
+    tip: "This nonstop only runs on some days of the week (Friday is one), so don't move this day without checking. It's a small ATR plane: book early and add checked bags when you buy.",
+    photos: [["El Nido", "El Nido Palawan limestone cliffs"], ["Panglao", "Panglao Island Bohol beach"]]  // [label, image search]
   },
   {
-    date: 20,
-    dow: "Fri",
+    date: 21,
+    dow: "Sat",
     region: "El Nido",
     pin: [11.137, 119.318],
     title: "Island hopping: lagoons",
@@ -145,8 +162,8 @@ const DAYS = [
     photos: [["Big Lagoon", "El Nido Big Lagoon kayak"], ["Small Lagoon", "El Nido Small Lagoon"]]  // [label, image search]
   },
   {
-    date: 21,
-    dow: "Sat",
+    date: 22,
+    dow: "Sun",
     region: "El Nido",
     pin: [11.197, 119.402],
     title: "Taraw Cliff climb",
@@ -162,8 +179,8 @@ const DAYS = [
     photos: [["Taraw Cliff", "Taraw Cliff El Nido view"], ["Cadlao Island", "Cadlao Island El Nido kayak"], ["Las Cabanas", "Las Cabanas beach El Nido sunset"]]  // [label, image search]
   },
   {
-    date: 22,
-    dow: "Sun",
+    date: 23,
+    dow: "Mon",
     region: "El Nido",
     pin: [11.165, 119.275],
     title: "Tour C: sea cave, shrine and cliffs",
@@ -179,8 +196,8 @@ const DAYS = [
     photos: [["Hidden Beach", "Hidden Beach El Nido Matinloc"], ["Matinloc Shrine", "Matinloc Shrine viewpoint El Nido"], ["Helicopter Island", "Helicopter Island El Nido"]]  // [label, image search]
   },
   {
-    date: 23,
-    dow: "Mon",
+    date: 24,
+    dow: "Tue",
     region: "El Nido",
     pin: [11.163, 119.385],
     title: "Free day in El Nido",
@@ -196,8 +213,8 @@ const DAYS = [
     photos: [["Las Cabanas zipline", "Las Cabanas zipline El Nido"], ["Cathedral Cave", "Cathedral Cave El Nido"]]  // [label, image search]
   },
   {
-    date: 24,
-    dow: "Tue",
+    date: 25,
+    dow: "Wed",
     region: "Coron",
     pin: [11.985, 120.25],
     title: "Ferry to Coron, Maquinit Hot Springs",
@@ -214,8 +231,8 @@ const DAYS = [
     photos: [["Maquinit Hot Springs", "Maquinit Hot Springs Coron"], ["Mt Tapyas", "Mt Tapyas Coron sunset"], ["El Nido to Coron ferry", "El Nido to Coron fast ferry"]]  // [label, image search]
   },
   {
-    date: 25,
-    dow: "Wed",
+    date: 26,
+    dow: "Thu",
     region: "Coron",
     pin: [11.94, 120.24],
     title: "Coron Island lakes and lagoons",
@@ -231,8 +248,8 @@ const DAYS = [
     photos: [["Kayangan Lake", "Kayangan Lake Coron viewpoint"], ["Twin Lagoon", "Twin Lagoon Coron"], ["Barracuda Lake", "Barracuda Lake Coron"]]  // [label, image search]
   },
   {
-    date: 26,
-    dow: "Thu",
+    date: 27,
+    dow: "Fri",
     region: "Coron",
     pin: [12.06, 120.15],
     title: "Mt Tundalara hike",
@@ -248,8 +265,8 @@ const DAYS = [
     photos: [["Mt Tundalara", "Mt Tundalara Coron hike"], ["Kingfisher Park", "Kingfisher Park Coron fireflies"]]  // [label, image search]
   },
   {
-    date: 27,
-    dow: "Fri",
+    date: 28,
+    dow: "Sat",
     region: "Coron",
     pin: null,
     title: "Beach-hopping boat day",
@@ -261,23 +278,6 @@ const DAYS = [
     stay: "crn",
     tip: "Ask for a private boat if you can split it; you can set your own pace.",
     photos: [["Malcapuya Island", "Malcapuya Island Coron"], ["Bulog Dos", "Bulog Dos Island Coron"]]  // [label, image search]
-  },
-  {
-    date: 28,
-    dow: "Sat",
-    region: "Coron",
-    pin: null,
-    title: "Free day in Coron",
-    lede: "An open day, and your buffer if weather delayed the ferry. Pick whatever you liked most, or rest before the trip home.",
-    plan: [
-      ["Option", "Kayak the mangroves and Siete Pecados."],
-      ["Option", "Rest, a long lunch, and a second evening soak at Maquinit Hot Springs."],
-      ["Option", "Sunset from Mt Tapyas one more time."],
-    ],
-    move: "Local",
-    stay: "crn",
-    tip: "If the ferry from El Nido slipped a day, this is the day that absorbs it.",
-    photos: [["Malcapuya Island", "Malcapuya Island Coron"], ["Siete Pecados", "Siete Pecados Coron"]]  // [label, image search]
   },
   {
     date: 29,
@@ -336,20 +336,20 @@ const DAYS = [
 ];
 
 const STAYS = {
-  pgl: { name: "", link: "", area: "Panglao Island, Bohol", nights: "Nov 15–18 · 4 nights",
-        hint: "Alona Beach is lively and walkable; Dumaluan and Danao beach are quieter. All are 15 min from the airport." },
-  eni: { name: "", link: "", area: "El Nido town or Corong-Corong", nights: "Nov 19–23 · 5 nights",
+  pgl: { name: "", link: "", area: "Panglao Island, Bohol", nights: "Nov 15–19 · 5 nights",
+        hint: "Alona Beach is lively and walkable; Dumaluan and Danao beach are quieter. All are 15 min from the airport and Napaling." },
+  eni: { name: "", link: "", area: "El Nido town or Corong-Corong", nights: "Nov 20–24 · 5 nights",
         hint: "Town is central for boat tours and the ferry port; Corong-Corong is calmer with better sunsets. Check for twin beds." },
-  crn: { name: "", link: "", area: "Coron town", nights: "Nov 24–30 · 7 nights",
+  crn: { name: "", link: "", area: "Coron town", nights: "Nov 25–30 · 6 nights",
         hint: "Stay in town, near the pier. Boat tours and tricycles leave from here; the airport is 40 min away." },
 };
 
 /* Legs group the days in the list */
 const LEGS = [
   { name: "Getting there", sub: "Calgary → Manila → Bohol",             region: "In transit", days: [13, 14] },
-  { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · canyons", region: "Bohol",      days: [15, 16, 17, 18] },
-  { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves", region: "El Nido",    days: [19, 20, 21, 22, 23] },
-  { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [24, 25, 26, 27, 28, 29, 30] },
+  { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · sardine run", region: "Bohol",      days: [15, 16, 17, 18, 19] },
+  { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves", region: "El Nido",    days: [20, 21, 22, 23, 24] },
+  { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [25, 26, 27, 28, 29, 30] },
   { name: "Heading home",  sub: "Coron → Clark → Manila → Calgary",     region: "In transit", days: [1] }
 ];
 
@@ -370,12 +370,12 @@ const MONTH = "Nov";
    Picks have private rooms (twin/double) for two. Prices are rough
    "from" rates seen in Oct 2026; check before booking. */
 const PLACES = [
-  { key: "pgl", place: "Bohol (Panglao)", nights: 4, inDate: "2026-11-15", outDate: "2026-11-19", region: "Bohol",
-    days: "Sun Nov 15 → Thu Nov 19 (fly out 15:50)", bookingQ: "Panglao, Bohol" },
-  { key: "eni", place: "El Nido", nights: 5, inDate: "2026-11-19", outDate: "2026-11-24", region: "El Nido",
-    days: "Thu Nov 19 evening → Tue Nov 24 (ferry 08:20)", bookingQ: "El Nido, Palawan" },
-  { key: "crn", place: "Coron", nights: 7, inDate: "2026-11-24", outDate: "2026-12-01", region: "Coron",
-    days: "Tue Nov 24 midday → Tue Dec 1 (flight 08:00)", bookingQ: "Coron, Palawan" },
+  { key: "pgl", place: "Bohol (Panglao)", nights: 5, inDate: "2026-11-15", outDate: "2026-11-20", region: "Bohol",
+    days: "Sun Nov 15 → Fri Nov 20 (fly out 15:50)", bookingQ: "Panglao, Bohol" },
+  { key: "eni", place: "El Nido", nights: 5, inDate: "2026-11-20", outDate: "2026-11-25", region: "El Nido",
+    days: "Fri Nov 20 evening → Wed Nov 25 (ferry 08:20)", bookingQ: "El Nido, Palawan" },
+  { key: "crn", place: "Coron", nights: 6, inDate: "2026-11-25", outDate: "2026-12-01", region: "Coron",
+    days: "Wed Nov 25 midday → Tue Dec 1 (flight 08:00)", bookingQ: "Coron, Palawan" },
 ];
 
 const STAY_PICKS = {
