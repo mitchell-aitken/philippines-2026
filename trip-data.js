@@ -134,12 +134,12 @@ const DAYS = [
     region: "El Nido",
     pin: [9.567, 123.77],
     title: "Fly Bohol → El Nido",
-    lede: "A slow last morning on Panglao, then the direct afternoon flight to El Nido. You land in time for dinner in town.",
+    lede: "An early check-out and the late-morning direct flight to El Nido. You land at lunchtime with the whole afternoon free.",
     plan: [
-      ["Morning", "Last swim on Panglao, check out by noon."],
-      ["13:30", "At Bohol-Panglao airport (TAG), 15 min from most Panglao hotels."],
-      ["15:50", "Cebgo DG 6888 nonstop to El Nido, landing about 17:35."],
-      ["Evening", "Tricycle into town (20 min), dinner, book tours for the next days."],
+      ["08:30", "At Bohol-Panglao airport (TAG), 15 min from most Panglao hotels."],
+      ["10:30", "Cebgo DG 6886 nonstop to El Nido, landing 12:15."],
+      ["Afternoon", "Tricycle into town (20 min), lunch, book tours for the next days."],
+      ["Sunset", "Las Cabanas Beach."],
     ],
     move: "Direct flight TAG → ENI · tricycle to town",
     stay: "eni",
@@ -347,7 +347,7 @@ const STAYS = {
 /* Legs group the days in the list */
 const LEGS = [
   { name: "Getting there", sub: "Calgary → Manila → Bohol",             region: "In transit", days: [13, 14] },
-  { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · sardine run", region: "Bohol",      days: [15, 16, 17, 18, 19] },
+  { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · canyons", region: "Bohol",      days: [15, 16, 17, 18, 19] },
   { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves", region: "El Nido",    days: [20, 21, 22, 23, 24] },
   { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [25, 26, 27, 28, 29, 30] },
   { name: "Heading home",  sub: "Coron → Clark → Manila → Calgary",     region: "In transit", days: [1] }
@@ -371,9 +371,9 @@ const MONTH = "Nov";
    "from" rates seen in Oct 2026; check before booking. */
 const PLACES = [
   { key: "pgl", place: "Bohol (Panglao)", nights: 5, inDate: "2026-11-15", outDate: "2026-11-20", region: "Bohol",
-    days: "Sun Nov 15 → Fri Nov 20 (fly out 15:50)", bookingQ: "Panglao, Bohol" },
+    days: "Sun Nov 15 → Fri Nov 20 (fly out 10:30)", bookingQ: "Panglao, Bohol" },
   { key: "eni", place: "El Nido", nights: 5, inDate: "2026-11-20", outDate: "2026-11-25", region: "El Nido",
-    days: "Fri Nov 20 evening → Wed Nov 25 (ferry 08:20)", bookingQ: "El Nido, Palawan" },
+    days: "Fri Nov 20 midday → Wed Nov 25 (ferry 08:20)", bookingQ: "El Nido, Palawan" },
   { key: "crn", place: "Coron", nights: 6, inDate: "2026-11-25", outDate: "2026-12-01", region: "Coron",
     days: "Wed Nov 25 midday → Tue Dec 1 (flight 08:00)", bookingQ: "Coron, Palawan" },
 ];

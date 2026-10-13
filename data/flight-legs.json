@@ -83,14 +83,14 @@
       "group": "domestic",
       "total": true,
       "title": "Bohol → El Nido",
-      "note": "One way, nonstop on Cebgo, landing late afternoon. It only runs some days of the week, so the plan is built around this flight.",
+      "note": "One way, nonstop on Cebgo, the 10:30 departure. It only runs some days of the week.",
       "from": "TAG",
       "to": "ENI",
       "type": "oneway",
       "outbound": "2026-11-20",
       "fit": {
-        "departAfter": "2026-11-20 11:00",
-        "why": "keeps the last morning on Panglao"
+        "departAfter": "2026-11-20 08:00",
+        "why": ""
       },
       "estimate": {
         "low": 190,
@@ -102,6 +102,9 @@
           "Cebu Pacific (Cebgo)",
           "https://www.cebupacificair.com/"
         ]
+      ],
+      "preferFlights": [
+        "DG 6886"
       ]
     },
     {
