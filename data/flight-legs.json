@@ -229,6 +229,48 @@
           "https://www.cebupacificair.com/"
         ]
       ]
+    },
+    {
+      "id": "probe-tag-eni-20",
+      "kind": "flight",
+      "group": "domestic",
+      "total": true,
+      "title": "Bohol → El Nido",
+      "note": "One way, nonstop on Cebgo, landing late afternoon. It only runs some days of the week, so the plan is built around this flight.",
+      "from": "TAG",
+      "to": "ENI",
+      "type": "oneway",
+      "outbound": "2026-11-20",
+      "fit": {
+        "departAfter": "2026-11-20 09:00",
+        "why": ""
+      },
+      "estimate": {
+        "low": 180,
+        "high": 280,
+        "source": "Live check Oct 11 2026: C$209 on Thu Nov 19"
+      }
+    },
+    {
+      "id": "probe-tag-eni-21",
+      "kind": "flight",
+      "group": "domestic",
+      "total": true,
+      "title": "Bohol → El Nido",
+      "note": "One way, nonstop on Cebgo, landing late afternoon. It only runs some days of the week, so the plan is built around this flight.",
+      "from": "TAG",
+      "to": "ENI",
+      "type": "oneway",
+      "outbound": "2026-11-21",
+      "fit": {
+        "departAfter": "2026-11-21 09:00",
+        "why": ""
+      },
+      "estimate": {
+        "low": 180,
+        "high": 280,
+        "source": "Live check Oct 11 2026: C$209 on Thu Nov 19"
+      }
     }
   ]
 }
