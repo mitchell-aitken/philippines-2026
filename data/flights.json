@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T20:16:43.617Z",
+  "updated": "2026-10-14T18:00:19.605Z",
   "currency": "CAD",
   "source": "Google Flights via SerpApi",
   "legs": {
@@ -274,7 +274,7 @@
       ]
     },
     "mnl-tag": {
-      "checked": "2026-10-13T20:16:43.617Z",
+      "checked": "2026-10-14T18:00:19.605Z",
       "lowest": 97,
       "priceLevel": "high",
       "typicalRange": [
@@ -321,7 +321,7 @@
         },
         {
           "price": 115,
-          "best": true,
+          "best": false,
           "airlines": [
             "Cebu Pacific"
           ],
@@ -333,24 +333,6 @@
           "depart": "2026-11-15 05:15",
           "arrive": "2026-11-15 06:50",
           "minutes": 95,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        },
-        {
-          "price": 115,
-          "best": true,
-          "airlines": [
-            "Cebu Pacific"
-          ],
-          "flights": [
-            "5J 617"
-          ],
-          "from": "MNL",
-          "to": "TAG",
-          "depart": "2026-11-15 09:50",
-          "arrive": "2026-11-15 11:35",
-          "minutes": 105,
           "stops": 0,
           "via": [],
           "overnight": false
@@ -377,8 +359,29 @@
           "overnight": false
         },
         {
-          "price": 133,
-          "best": true,
+          "price": 132,
+          "best": false,
+          "airlines": [
+            "Philippine Airlines"
+          ],
+          "flights": [
+            "PR 2813",
+            "PR 2372"
+          ],
+          "from": "MNL",
+          "to": "TAG",
+          "depart": "2026-11-15 08:30",
+          "arrive": "2026-11-15 12:50",
+          "minutes": 260,
+          "stops": 1,
+          "via": [
+            "DVO"
+          ],
+          "overnight": false
+        },
+        {
+          "price": 135,
+          "best": false,
           "airlines": [
             "Philippine Airlines"
           ],
@@ -407,11 +410,15 @@
         {
           "date": "2026-10-13",
           "low": 97
+        },
+        {
+          "date": "2026-10-14",
+          "low": 97
         }
       ]
     },
     "tag-eni": {
-      "checked": "2026-10-13T20:16:43.617Z",
+      "checked": "2026-10-14T18:00:19.605Z",
       "lowest": 208,
       "priceLevel": "typical",
       "typicalRange": [
@@ -469,11 +476,15 @@
         {
           "date": "2026-10-13",
           "low": 208
+        },
+        {
+          "date": "2026-10-14",
+          "low": 208
         }
       ]
     },
     "usu-crk": {
-      "checked": "2026-10-13T20:16:43.617Z",
+      "checked": "2026-10-14T18:00:19.605Z",
       "lowest": 80,
       "priceLevel": "typical",
       "typicalRange": [
@@ -507,24 +518,6 @@
             "Sunlight Air"
           ],
           "flights": [
-            "2R 602"
-          ],
-          "from": "USU",
-          "to": "CRK",
-          "depart": "2026-12-01 13:20",
-          "arrive": "2026-12-01 14:40",
-          "minutes": 80,
-          "stops": 0,
-          "via": [],
-          "overnight": false
-        },
-        {
-          "price": 101,
-          "best": false,
-          "airlines": [
-            "Sunlight Air"
-          ],
-          "flights": [
             "2R 604"
           ],
           "from": "USU",
@@ -537,7 +530,25 @@
           "overnight": false
         },
         {
-          "price": 105,
+          "price": 101,
+          "best": true,
+          "airlines": [
+            "Sunlight Air"
+          ],
+          "flights": [
+            "2R 602"
+          ],
+          "from": "USU",
+          "to": "CRK",
+          "depart": "2026-12-01 13:20",
+          "arrive": "2026-12-01 14:40",
+          "minutes": 80,
+          "stops": 0,
+          "via": [],
+          "overnight": false
+        },
+        {
+          "price": 106,
           "best": true,
           "airlines": [
             "Cebgo"
@@ -603,11 +614,15 @@
         {
           "date": "2026-10-13",
           "low": 80
+        },
+        {
+          "date": "2026-10-14",
+          "low": 80
         }
       ]
     },
     "usu-mnl": {
-      "checked": "2026-10-13T20:16:43.617Z",
+      "checked": "2026-10-14T18:00:19.605Z",
       "lowest": 150,
       "priceLevel": "typical",
       "typicalRange": [
@@ -638,7 +653,7 @@
           "overnight": false
         },
         {
-          "price": 152,
+          "price": 153,
           "best": true,
           "airlines": [
             "Philippine Airlines"
@@ -757,6 +772,10 @@
         },
         {
           "date": "2026-10-13",
+          "low": 150
+        },
+        {
+          "date": "2026-10-14",
           "low": 150
         }
       ]
