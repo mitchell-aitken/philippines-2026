@@ -44,7 +44,7 @@ const DAYS = [
     date: 15,
     dow: "Sun",
     region: "Bohol",
-    pin: [9.567, 123.77],
+    pin: [9.5505, 123.8135],
     title: "Arrive in Bohol",
     lede: "",
     plan: [
@@ -61,7 +61,7 @@ const DAYS = [
     date: 16,
     dow: "Mon",
     region: "Bohol",
-    pin: [9.687, 123.95],
+    pin: [9.6872, 123.9505],
     title: "Tarsiers & Loboc River",
     lede: "",
     plan: [
@@ -78,7 +78,7 @@ const DAYS = [
     date: 17,
     dow: "Tue",
     region: "Bohol",
-    pin: [9.83, 124.16],
+    pin: [9.9167, 124.1703],
     title: "Chocolate Hills",
     lede: "",
     plan: [
@@ -95,7 +95,7 @@ const DAYS = [
     date: 18,
     dow: "Wed",
     region: "Bohol",
-    pin: [9.96, 124.22],
+    pin: [10.0262, 124.2309],
     title: "EAT Danao adventure park",
     lede: "",
     plan: [
@@ -112,7 +112,7 @@ const DAYS = [
     date: 19,
     dow: "Thu",
     region: "Bohol",
-    pin: [9.615, 123.765],
+    pin: [9.6125, 123.7645],
     title: "Napaling sardine run",
     lede: "",
     plan: [
@@ -128,7 +128,7 @@ const DAYS = [
     date: 20,
     dow: "Fri",
     region: "El Nido",
-    pin: [9.567, 123.77],
+    pin: [11.1449, 119.3835],
     title: "Fly to El Nido",
     lede: "",
     plan: [
@@ -145,7 +145,7 @@ const DAYS = [
     date: 21,
     dow: "Sat",
     region: "El Nido",
-    pin: [11.137, 119.318],
+    pin: [11.1655, 119.3218],
     title: "Tour A: lagoons",
     lede: "",
     plan: [
@@ -160,7 +160,7 @@ const DAYS = [
     date: 22,
     dow: "Sun",
     region: "El Nido",
-    pin: [11.197, 119.402],
+    pin: [11.1838, 119.3946],
     title: "Taraw Cliff climb",
     lede: "",
     plan: [
@@ -176,7 +176,7 @@ const DAYS = [
     date: 23,
     dow: "Mon",
     region: "El Nido",
-    pin: [11.165, 119.275],
+    pin: [11.1495, 119.2635],
     title: "Tour C: caves and shrine",
     lede: "",
     plan: [
@@ -193,7 +193,7 @@ const DAYS = [
     date: 24,
     dow: "Tue",
     region: "El Nido",
-    pin: [11.163, 119.385],
+    pin: [11.11, 119.345],
     title: "Free day in El Nido",
     lede: "",
     plan: [
@@ -208,7 +208,7 @@ const DAYS = [
     date: 25,
     dow: "Wed",
     region: "Coron",
-    pin: [11.985, 120.25],
+    pin: [11.9708, 120.2482],
     title: "Ferry to Coron, hot springs",
     lede: "",
     plan: [
@@ -225,7 +225,7 @@ const DAYS = [
     date: 26,
     dow: "Thu",
     region: "Coron",
-    pin: [11.94, 120.24],
+    pin: [11.9535, 120.2290],
     title: "Coron Island lakes",
     lede: "",
     plan: [
@@ -242,7 +242,7 @@ const DAYS = [
     date: 27,
     dow: "Fri",
     region: "Coron",
-    pin: [12.06, 120.15],
+    pin: [12.0600, 120.1500],
     title: "Mt Tundalara hike",
     lede: "",
     plan: [
@@ -258,7 +258,7 @@ const DAYS = [
     date: 28,
     dow: "Sat",
     region: "Coron",
-    pin: null,
+    pin: [11.9060, 120.3460],
     title: "Beach-hopping",
     lede: "",
     plan: [
@@ -273,7 +273,7 @@ const DAYS = [
     date: 29,
     dow: "Sun",
     region: "Coron",
-    pin: [12.3, 119.88],
+    pin: [12.3000, 119.8800],
     title: "Calauit Safari (optional)",
     lede: "",
     plan: [
@@ -289,7 +289,7 @@ const DAYS = [
     date: 30,
     dow: "Mon",
     region: "Coron",
-    pin: [12.008, 120.21],
+    pin: [12.0045, 120.2075],
     title: "Last day in Coron",
     lede: "",
     plan: [
@@ -305,7 +305,7 @@ const DAYS = [
     date: 1,
     dow: "Tue",
     region: "In transit",
-    pin: [15.186, 120.56],
+    pin: [15.1859, 120.5603],
     title: "Fly home",
     lede: "",
     mon: "Dec",
@@ -324,7 +324,7 @@ const DAYS = [
 
 const STAYS = {
   pgl: { name: "", link: "", area: "Panglao Island, Bohol", nights: "Nov 15–19 · 5 nights",
-        hint: "Alona Beach (lively) or Dumaluan / Danao (quiet)." },
+        hint: "Quiet side of Panglao, away from Alona." },
   eni: { name: "", link: "", area: "El Nido town or Corong-Corong", nights: "Nov 20–24 · 5 nights",
         hint: "Town (central) or Corong-Corong (sunsets)." },
   crn: { name: "", link: "", area: "Coron town", nights: "Nov 25–30 · 6 nights",
@@ -340,14 +340,25 @@ const LEGS = [
   { name: "Heading home",  sub: "Coron → Clark → Manila → Calgary",     region: "In transit", days: [1] }
 ];
 
-/* Travel lines on the map: [lat, lng] points, mode "fly" (dashed arc) or "ground" (solid) */
-const ROUTE = [
-  { mode: "fly",    pts: [[14.51, 121.02], [9.567, 123.77]] },                                   // Manila → Panglao
-  { mode: "fly",    pts: [[9.567, 123.77], [11.18, 119.39]] },                                   // Bohol → El Nido
-  { mode: "ground", pts: [[11.18, 119.39], [11.62, 119.86], [12.00, 120.205]] },                 // ferry El Nido → Coron
-  { mode: "ground", pts: [[12.00, 120.205], [12.12, 120.04]] },                                  // Coron town → Busuanga airport
-  { mode: "fly",    pts: [[12.12, 120.04], [15.186, 120.56]] },                                  // Busuanga → Clark
-  { mode: "ground", pts: [[15.186, 120.56], [14.51, 121.02]] }                                   // bus Clark → Manila airport
+/* Airports on the map, with how far they are from where you stay */
+const AIRPORTS = {
+  MNL: { name: "Manila (NAIA)", at: [14.5086, 121.0194], note: "Land T1, walk/shuttle to T3" },
+  TAG: { name: "Bohol-Panglao", at: [9.5664, 123.7745], note: "15–25 min to hostels" },
+  ENI: { name: "El Nido (Lio)", at: [11.2025, 119.4164], note: "7 km, 20 min to town" },
+  USU: { name: "Busuanga (Coron)", at: [12.1215, 120.1000], note: "23 km, 40 min to Coron town" },
+  CRK: { name: "Clark", at: [15.1859, 120.5603], note: "2–3 h bus to Manila airport", hide: true }
+};
+
+/* Trip in order. Each step: a day ({day}) or airport ({air}); "by" = how you got there from the step before. */
+const FLOW = [
+  { air: "MNL" },
+  { air: "TAG", by: "fly" }, { day: 15, by: "road" }, { day: 16, by: "road" }, { day: 17, by: "road" }, { day: 18, by: "road" }, { day: 19, by: "road" },
+  { air: "TAG", by: "road" },
+  { air: "ENI", by: "fly" }, { day: 20, by: "road" }, { day: 21, by: "boat" }, { day: 22, by: "road" }, { day: 23, by: "boat" }, { day: 24, by: "boat" },
+  { day: 25, by: "boat", via: [[11.179, 119.389], [11.24, 119.37], [11.45, 119.47], [11.62, 119.86], [11.93, 120.17], [11.995, 120.205]] },
+  { day: 26, by: "boat" }, { day: 27, by: "road" }, { day: 28, by: "boat" }, { day: 29, by: "road" }, { day: 30, by: "road" },
+  { air: "USU", by: "road" },
+  { air: "CRK", by: "fly" }, { air: "MNL", by: "road" }
 ];
 
 const COLORS = { "Coron": "#0038A8", "El Nido": "#0038A8", "Bohol": "#CE1126", "Cebu": "#0B0B0C", "In transit": "#0B0B0C" };
@@ -369,23 +380,23 @@ const STAY_PICKS = {
   pgl: {
     hostelworld: "https://www.hostelworld.com/hostels/asia/philippines/panglao-island/f/private-rooms/",
     picks: [
-      { id: "red-picnic", name: "Red Picnic Hostel", where: "Dumaluan Beach", why: "Pool, social", url: "https://www.hostelworld.com/hostels/p/314478/red-picnic-hostel/" },
-      { id: "coco-farm", name: "Bohol Coco Farm", where: "Inland Panglao", why: "Chill farm stay", url: "https://www.hostelworld.com/hostels/p/67761/bohol-coco-farm/" },
-      { id: "mad-monkey-panglao", name: "Mad Monkey Panglao", where: "Danao Beach", why: "Pool, social", url: "https://www.hostelz.com/hostel/486560-Mad-Monkey" },
+      { id: "coco-farm", name: "Bohol Coco Farm", where: "Inland Panglao", why: "Quiet farm stay", url: "https://www.hostelworld.com/hostels/p/67761/bohol-coco-farm/" },
+      { id: "nautilus", name: "Nautilus Hostel & Hammocks", where: "Tawala, by Napaling", why: "Chill, hammocks", url: "https://www.hostelworld.com/hostels/p/317359/nautilus-resort-hostel-and-hammocks/" },
+      { id: "mayas", name: "Mayas Guesthouse", where: "South Panglao", why: "Garden, AC rooms", url: "https://www.google.com/maps/search/Mayas+Guesthouse+Panglao" },
     ] },
   eni: {
     hostelworld: "https://www.hostelworld.com/hostels/asia/philippines/el-nido/f/private-rooms/",
     picks: [
-      { id: "spin", name: "SPIN Designer Hostel", where: "El Nido town", why: "Central, clean", url: "https://www.hostelworld.com/hostels/p/99361/spin-designer-hostel/" },
-      { id: "outpost-eni", name: "Outpost Beach Hostel", where: "Corong-Corong", why: "Beachfront, sunsets", url: "https://www.hostelworld.com/hostels/p/272882/outpost-beach-hostel/" },
-      { id: "frendz", name: "Frendz Hostel El Nido", where: "El Nido town", why: "Lively, rooftop pool", url: "https://www.hostelworld.com/hostels/p/293897/frendz-hostel-el-nido/" },
+      { id: "spin", name: "SPIN Designer Hostel", where: "El Nido town", why: "Calm, not a party spot", url: "https://www.hostelworld.com/hostels/p/99361/spin-designer-hostel/" },
+      { id: "beach-house-eni", name: "The Beach House", where: "El Nido town beach", why: "Says “not a party hostel”", url: "https://www.hostelworld.com/hostels/p/318303/the-beach-house/" },
+      { id: "outpost-eni", name: "Outpost Beach Hostel", where: "Corong-Corong", why: "Quieter beach, sunsets", url: "https://www.hostelworld.com/hostels/p/272882/outpost-beach-hostel/" },
     ] },
   crn: {
     hostelworld: "https://www.hostelworld.com/hostels/asia/philippines/coron/",
     picks: [
       { id: "hop", name: "Hop Hostel", where: "Coron town", why: "Top rated, rooftop", url: "https://www.hostelz.com/hostel/378411-Hop-Hostel" },
-      { id: "outpost-crn", name: "Outpost Hostel Coron", where: "Coron waterfront", why: "Waterfront, pool", url: "https://www.hostelworld.com/hostels/p/306653/outpost-hostel-coron/" },
-      { id: "joval", name: "Joval Homestay", where: "Edge of Coron town", why: "Quiet, cheapest", url: "https://www.hostelz.com/hostel/387461-Joval-Homestay" },
+      { id: "michelinn", name: "Michel'inn Coron", where: "Coron town", why: "Quiet, central", url: "https://www.google.com/maps/search/Michel%27inn+Coron" },
+      { id: "ecocio", name: "Ecocio Hostel", where: "Jungle garden, 10 min out", why: "Quiet nature stay", url: "https://www.google.com/maps/search/Ecocio+Hostel+Coron" },
     ] },
 };
 const bookingSearch = p => `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(p.bookingQ)}&checkin=${p.inDate}&checkout=${p.outDate}&group_adults=2&no_rooms=1&group_children=0`;
