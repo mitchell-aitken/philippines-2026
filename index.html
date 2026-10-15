@@ -185,7 +185,7 @@ function popupHTML(d) {
   return `<div class="pop" style="--c:${COLORS[d.region]}">
     <div class="eyebrow"><i></i>Day ${dayNum(d)} · ${d.dow} ${d.mon || MONTH} ${d.date} · ${esc(d.region)}</div>
     <h3>${esc(d.title)}</h3>
-    <p>${esc(d.lede)}</p>
+    ${d.lede ? `<p>${esc(d.lede)}</p>` : ""}
     <ul>${d.plan.map(([w, t]) => `<li><span>${esc(w)}</span>${esc(t)}</li>`).join("")}</ul>
     <div class="facts">
       <div><b>Getting around</b>${esc(d.move)}</div>
