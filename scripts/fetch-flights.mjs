@@ -113,7 +113,7 @@ for (const leg of cfg.legs.filter(l => l.kind === "flight")) {
   const old = prev.legs?.[leg.id];
   const firstDate = leg.outbound || leg.segments?.[0]?.date;
   if (firstDate < today) { if (old) out.legs[leg.id] = old; console.log(`skip ${leg.id}: date has passed`); continue; }
-  if (leg.paused) { if (old) out.legs[leg.id] = old; console.log(`skip ${leg.id}: paused`); continue; }
+  if (leg.booked || leg.paused) { if (old) out.legs[leg.id] = old; console.log(`skip ${leg.id}: ${leg.booked ? "booked" : "paused"}`); continue; }
   try {
     const data = await search(leg);
     const summary = summarize(leg, data, old);

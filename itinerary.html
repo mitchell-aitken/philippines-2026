@@ -116,6 +116,42 @@
     .stats{gap:18px}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  /* ---------- Philippine theme ---------- */
+  .ph-flag{width:42px;height:21px;flex:0 0 auto;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 2px 6px rgba(0,56,168,.25)}
+  .nav3{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#EEF2FB;border:1px solid #DCE4F5}
+  .nav3 a{padding:7px 14px;border-radius:999px;font-size:13px;font-weight:500;color:#26324D;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+  .nav3 a:hover{background:#fff;color:var(--blue)}
+  .nav3 a[aria-current="page"]{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(0,56,168,.35)}
+  header .flag{height:5px;grid-template-columns:2fr 1fr 2fr}
+  header .flag::before{content:"";background:var(--blue)}
+  header .flag i:first-child{background:var(--gold)} header .flag i:last-child{background:var(--red)}
+  .hero-band{position:relative;overflow:hidden;margin-top:24px;border-radius:22px;padding:36px clamp(20px,4vw,40px) 34px!important;color:#fff;
+    background:radial-gradient(120% 140% at 0% 0%,#1B4FC4 0%,#0038A8 45%,#0A2A78 100%);box-shadow:0 18px 40px -18px rgba(0,56,168,.55);border-bottom:0!important}
+  .hero-band::before{content:"";position:absolute;right:-70px;top:-70px;width:300px;height:300px;opacity:.22;pointer-events:none;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Cg fill='%23FCD116'%3E%3Ccircle r='16'/%3E%3Cpath id='r' d='M0-48 5-22H-5Z'/%3E%3Cuse href='%23r' transform='rotate(45)'/%3E%3Cuse href='%23r' transform='rotate(90)'/%3E%3Cuse href='%23r' transform='rotate(135)'/%3E%3Cuse href='%23r' transform='rotate(180)'/%3E%3Cuse href='%23r' transform='rotate(225)'/%3E%3Cuse href='%23r' transform='rotate(270)'/%3E%3Cuse href='%23r' transform='rotate(315)'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;animation:spin 120s linear infinite}
+  .hero-band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--red) 0 70%,var(--gold) 70% 100%)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.hero-band::before{animation:none}}
+  .hero-band h1{color:#fff}
+  .hero-band p,.hero-band .stat span,.hero-band .eyebrow{color:rgba(255,255,255,.78)!important}
+  .hero-band .stat b{color:#fff}
+  .hero-band .route span{background:rgba(255,255,255,.14);color:#fff}
+  .hero-band .route em{color:var(--gold)}
+  .hero-band .status{color:rgba(255,255,255,.85)}
+  .hero-band .nights a{background:#fff;color:var(--ink)}
+  .hero-band .nights a:hover{background:#F4F7FF}
+  .hero-band > *{position:relative}
+  .leg-head{border-bottom:3px solid var(--c)}
+  .leg-head h2 i{box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 18%,transparent)}
+  @media (max-width:600px){.nav3 a{padding:6px 10px;font-size:12px}}
+  header .bar{flex-wrap:wrap}
+  @media (max-width:600px){
+    header .bar{gap:10px}
+    header .brand{width:100%}
+    header .nav3{width:100%}
+    header .nav3 a{flex:1;text-align:center}
+  }
 </style>
 </head>
 <body>
@@ -124,15 +160,15 @@
   <div class="flag" aria-hidden="true"><i></i><i></i></div>
   <div class="bar">
     <div class="brand">
-      <svg class="sun" viewBox="-50 -50 100 100" aria-hidden="true"><g fill="#FCD116"><circle r="17"/><path id="ray" d="M0-48 5-24H-5Z"/><use href="#ray" transform="rotate(45)"/><use href="#ray" transform="rotate(90)"/><use href="#ray" transform="rotate(135)"/><use href="#ray" transform="rotate(180)"/><use href="#ray" transform="rotate(225)"/><use href="#ray" transform="rotate(270)"/><use href="#ray" transform="rotate(315)"/></g></svg>
+      <svg class="ph-flag" viewBox="0 0 1200 600" role="img" aria-label="Flag of the Philippines"><rect width="1200" height="300" fill="#0038A8"/><rect y="300" width="1200" height="300" fill="#CE1126"/><path d="M0 0L519.6 300L0 600Z" fill="#FFF"/><g fill="#FCD116"><circle cx="180" cy="300" r="46"/><path d="M171.0,250.8L169.6,220.7L176.0,250.2ZM177.5,250.1L180.0,204.0L182.5,250.1ZM184.0,250.2L190.4,220.7L189.0,250.8ZM208.5,258.9L228.8,236.6L212.4,261.9ZM213.5,262.9L247.9,232.1L217.1,266.5ZM218.1,267.6L243.4,251.2L221.1,271.5ZM229.2,291.0L259.3,289.6L229.8,296.0ZM229.9,297.5L276.0,300.0L229.9,302.5ZM229.8,304.0L259.3,310.4L229.2,309.0ZM221.1,328.5L243.4,348.8L218.1,332.4ZM217.1,333.5L247.9,367.9L213.5,337.1ZM212.4,338.1L228.8,363.4L208.5,341.1ZM189.0,349.2L190.4,379.3L184.0,349.8ZM182.5,349.9L180.0,396.0L177.5,349.9ZM176.0,349.8L169.6,379.3L171.0,349.2ZM151.5,341.1L131.2,363.4L147.6,338.1ZM146.5,337.1L112.1,367.9L142.9,333.5ZM141.9,332.4L116.6,348.8L138.9,328.5ZM130.8,309.0L100.7,310.4L130.2,304.0ZM130.1,302.5L84.0,300.0L130.1,297.5ZM130.2,296.0L100.7,289.6L130.8,291.0ZM138.9,271.5L116.6,251.2L141.9,267.6ZM142.9,266.5L112.1,232.1L146.5,262.9ZM147.6,261.9L131.2,236.6L151.5,258.9Z"/><path d="M52.0,28.0L58.7,48.7L80.5,48.7L62.9,61.5L69.6,82.3L52.0,69.5L34.4,82.3L41.1,61.5L23.5,48.7L45.3,48.7Z"/><path d="M52.0,512.0L58.7,532.7L80.5,532.7L62.9,545.5L69.6,566.3L52.0,553.5L34.4,566.3L41.1,545.5L23.5,532.7L45.3,532.7Z"/><path d="M455.0,270.0L461.7,290.7L483.5,290.7L465.9,303.5L472.6,324.3L455.0,311.5L437.4,324.3L444.1,303.5L426.5,290.7L448.3,290.7Z"/></g></svg>
       <div><b>Philippines 2026</b><small>Itinerary</small></div>
     </div>
-    <nav style="display:flex;gap:8px"><a class="btn" href="flights.html" style="background:#fff;color:var(--ink);border:1px solid var(--line)">Flights &amp; costs</a><a class="btn" href="index.html">← Map</a></nav>
+    <nav class="nav3" aria-label="Pages"><a href="index.html">Map</a><a href="itinerary.html" aria-current="page">Itinerary</a><a href="flights.html">Flights &amp; costs</a></nav>
   </div>
 </header>
 
 <main>
-  <section class="intro">
+  <section class="intro hero-band">
     <h1>Two weeks of hills, lagoons and limestone</h1>
     <p>Fly into Manila and straight on to Bohol for the tarsiers and Chocolate Hills, fly direct to El Nido, ferry north to Coron, then fly to Clark and bus to Manila for the flight home.</p>
     <div class="stats">

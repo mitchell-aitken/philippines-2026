@@ -2,7 +2,7 @@ name: Update flight prices
 
 on:
   schedule:
-    - cron: "17 13 * * *"   # daily, about 7:17 am in Calgary (5 flight searches a day + 18 hostel searches every 2 weeks, ~195/month)
+    - cron: "17 13 * * *"   # daily, about 7:17 am in Calgary (booked flights are skipped; hostel prices every 2 weeks)
   workflow_dispatch:         # "Run workflow" button for an instant refresh
     inputs:
       force_hostels:
