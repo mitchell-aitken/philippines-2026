@@ -129,7 +129,23 @@
       ],
       "preferFlights": [
         "DG 6886"
-      ]
+      ],
+      "booked": {
+        "price": 275,
+        "date": "2026-10-15",
+        "note": "C$550 for both of you, covering this flight and Coron → Clark",
+        "flight": {
+          "airlines": [
+            "Cebgo"
+          ],
+          "flights": [
+            "DG 6886"
+          ],
+          "depart": "2026-11-20 10:30",
+          "arrive": "2026-11-20 12:15",
+          "minutes": 105
+        }
+      }
     },
     {
       "id": "eni-crn",
@@ -198,7 +214,23 @@
           "Cebu Pacific (Cebgo)",
           "https://www.cebupacificair.com/"
         ]
-      ]
+      ],
+      "booked": {
+        "price": 0,
+        "date": "2026-10-15",
+        "note": "included in the C$550 Cebgo booking with Bohol → El Nido",
+        "flight": {
+          "airlines": [
+            "Cebgo"
+          ],
+          "flights": [
+            "DG 6042"
+          ],
+          "depart": "2026-12-01 08:00",
+          "arrive": "2026-12-01 09:25",
+          "minutes": 85
+        }
+      }
     },
     {
       "id": "crk-mnl",
@@ -255,7 +287,8 @@
           "Cebu Pacific",
           "https://www.cebupacificair.com/"
         ]
-      ]
+      ],
+      "paused": true
     }
   ]
 }

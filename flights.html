@@ -259,7 +259,7 @@ function render(cfg, live) {
     }
     return { id, o: null, price: est(leg), live: false };
   };
-  const step = (k, title, small, price, live) => `<li><span class="k">${k}</span><div><b>${title}</b><small>${small}</small></div>${price != null ? `<div class="sp">${fmt(price)}${live === undefined ? "" : `<span class="src ${live === "booked" ? "booked" : live ? "live" : "est"}">${live === "booked" ? "Booked" : live ? "Live" : "Est."}</span>`}</div>` : `<div class="sp"></div>`}</li>`;
+  const step = (k, title, small, price, live) => `<li><span class="k">${k}</span><div><b>${title}</b><small>${small}</small></div>${price != null ? `<div class="sp">${live === "booked" && price === 0 ? "Incl." : fmt(price)}${live === undefined ? "" : `<span class="src ${live === "booked" ? "booked" : live ? "live" : "est"}">${live === "booked" ? "Booked" : live ? "Live" : "Est."}</span>`}</div>` : `<div class="sp"></div>`}</li>`;
 
   /* ---------- the flights you'll book ---------- */
   const intl = L["intl-mnl"], t = ticket(intl, D["intl-mnl"]);
@@ -292,7 +292,7 @@ function render(cfg, live) {
   };
   const bookHTML = id => {
     const leg = L[id];
-    if (leg.booked) return `<span class="book booked-note">✓ Booked ${esc(day(leg.booked.date))} · C$${leg.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} ${leg.type === "round" ? "round trip" : "per person"}${leg.booked.note ? " · " + esc(leg.booked.note) : ""}</span>`;
+    if (leg.booked) return `<span class="book booked-note">✓ Booked ${esc(day(leg.booked.date))}${leg.booked.price ? ` · C$${leg.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} ${leg.type === "round" ? "round trip" : "per person"}` : ""}${leg.booked.note ? " · " + esc(leg.booked.note) : ""}</span>`;
     const links = [...(leg.kind === "flight" ? [["Google Flights", gf(id)]] : []), ...(leg.book || [])];
     return links.length ? `<span class="book">Book: ${links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join("")}</span>` : "";
   };
@@ -329,8 +329,8 @@ function render(cfg, live) {
   ];
   document.getElementById("options").innerHTML = cards.map(c => `
     <article class="opt-card${c.win ? " win" : ""}">
-      <div class="opt-head"><div><div class="eyebrow">Coron → Manila airport</div><h2>${esc(c.name)}</h2></div>${c.win ? '<span class="badge win">Recommended</span>' : '<span class="badge more">Doesn\'t fit</span>'}</div>
-      <div class="price-big"><b>${c.price != null ? fmt(c.price) : "—"}</b><span>${c.price != null ? "per person" : "no same-day option"}</span></div>
+      <div class="opt-head"><div><div class="eyebrow">Coron → Manila airport</div><h2>${esc(c.name)}</h2></div>${c.win ? `<span class="badge win">${L["usu-crk"].booked ? "Booked" : "Recommended"}</span>` : '<span class="badge more">Doesn\'t fit</span>'}</div>
+      <div class="price-big"><b>${c.price != null ? (c.win && L["usu-crk"].booked ? "Booked" : fmt(c.price)) : "—"}</b><span>${c.price != null ? "per person" : "no same-day option"}</span></div>
       <ul class="steps">${c.rows.join("")}</ul>
     </article>`).join("");
 
