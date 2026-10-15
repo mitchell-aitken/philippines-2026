@@ -254,7 +254,7 @@ function render(cfg, live) {
       const opts = leg.prefer === "earliest" ? [...(D[id]?.options || [])].sort((x, y) => x.depart.localeCompare(y.depart)) : D[id]?.options;
       const want = leg.preferFlights;
       const o = (want && (opts || []).find(x => want.every(n => x.flights.includes(n)))) || pick(opts, x => fitOf(leg, x));
-      if (leg.booked) return { id, o, price: leg.booked.price, live: "booked" };
+      if (leg.booked) return { id, o: leg.booked.flight ? { stops: 0, via: [], ...leg.booked.flight } : o, price: leg.booked.price, live: "booked" };
       return { id, o, price: o ? o.price : est(leg), live: !!o };
     }
     return { id, o: null, price: est(leg), live: false };

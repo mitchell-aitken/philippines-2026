@@ -87,7 +87,18 @@
       "booked": {
         "price": 174.85,
         "date": "2026-10-15",
-        "note": "Cebu Pacific Go Easy, 20 kg bag, seats 30A/30C (C$349.70 for both)"
+        "note": "Cebu Pacific Go Easy, 20 kg bag, seats 30A/30C (C$349.70 for both)",
+        "flight": {
+          "airlines": [
+            "Cebu Pacific"
+          ],
+          "flights": [
+            "5J 617"
+          ],
+          "depart": "2026-11-15 09:50",
+          "arrive": "2026-11-15 11:35",
+          "minutes": 105
+        }
       }
     },
     {
