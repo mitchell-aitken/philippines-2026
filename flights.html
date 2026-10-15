@@ -76,6 +76,9 @@
   .book a:hover{border-color:var(--blue)}
   .src.booked{background:var(--ink);color:#fff}
   .book.booked-note{color:#16733F;font:500 12.5px/1.4 var(--sans);text-transform:none;letter-spacing:0}
+  .book.track{font:500 12.5px/1.4 var(--sans);text-transform:none;letter-spacing:0;color:var(--ink-2)}
+  .book.track b{font-weight:600;color:var(--ink)}
+  .book.track.up{color:var(--red)} .book.track.down{color:#16733F}
   .tz{display:inline-block;margin-left:6px;font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);vertical-align:2px}
   .opt-card .note{margin:-6px 0 0;font-size:13.5px;color:var(--ink-2)}
   .verdict{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--soft);font-size:14.5px;color:var(--ink-2)}
@@ -292,7 +295,17 @@ function render(cfg, live) {
   };
   const bookHTML = id => {
     const leg = L[id];
-    if (leg.booked) return `<span class="book booked-note">✓ Booked ${esc(day(leg.booked.date))}${leg.booked.price ? ` · C$${leg.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} ${leg.type === "round" ? "round trip" : "per person"}` : ""}${leg.booked.note ? " · " + esc(leg.booked.note) : ""}</span>`;
+    if (leg.booked) {
+      const paid = `<span class="book booked-note">✓ Booked ${esc(day(leg.booked.date))}${leg.booked.price ? ` · paid C$${leg.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} ${leg.type === "round" ? "round trip" : "per person"}` : ""}${leg.booked.note ? " · " + esc(leg.booked.note) : ""}</span>`;
+      const l = D[id], want = leg.preferFlights;
+      const cur = want && l?.options ? l.options.find(x => want.every(n => x.flights.includes(n))) : null;
+      if (!cur || !leg.booked.price) return paid;
+      const diff = cur.price - leg.booked.price;
+      const since = (l.history || []).filter(h => h.date >= leg.booked.date && h.pref != null).map(h => h.pref);
+      const lo = since.length ? Math.min(...since) : null, hi = since.length ? Math.max(...since) : null;
+      const cls = Math.abs(diff) < 1 ? "same" : diff > 0 ? "up" : "down";
+      return paid + `<span class="book track ${cls}">Same flight today: <b>${fmt(cur.price)}</b> ${cls === "same" ? "· same as you paid" : `${diff > 0 ? "▲" : "▼"} ${fmt(Math.abs(diff))} vs what you paid`}${since.length > 1 ? ` · range since booking ${fmt(lo)}–${fmt(hi).replace("C$", "")}` : ""}${leg.type === "round" ? "" : " · base fare, no bags"}</span>`;
+    }
     const links = [...(leg.kind === "flight" ? [["Google Flights", gf(id)]] : []), ...(leg.book || [])];
     return links.length ? `<span class="book">Book: ${links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join("")}</span>` : "";
   };

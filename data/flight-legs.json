@@ -133,7 +133,7 @@
       "booked": {
         "price": 275,
         "date": "2026-10-15",
-        "note": "C$550 for both of you, covering this flight and Coron → Clark",
+        "note": "C$550 for both of you",
         "flight": {
           "airlines": [
             "Cebgo"
@@ -216,9 +216,9 @@
         ]
       ],
       "booked": {
-        "price": 0,
+        "price": 117.27,
         "date": "2026-10-15",
-        "note": "included in the C$550 Cebgo booking with Bohol → El Nido",
+        "note": "C$234.53 for both of you",
         "flight": {
           "airlines": [
             "Cebgo"
@@ -230,7 +230,10 @@
           "arrive": "2026-12-01 09:25",
           "minutes": 85
         }
-      }
+      },
+      "preferFlights": [
+        "DG 6042"
+      ]
     },
     {
       "id": "crk-mnl",
