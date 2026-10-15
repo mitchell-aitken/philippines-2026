@@ -340,6 +340,9 @@ const LEGS = [
   { name: "Heading home",  sub: "Coron → Clark → Manila → Calgary",     region: "In transit", days: [1] }
 ];
 
+/* older cached copies of the map page still look for ROUTE; keep it so they don't break */
+const ROUTE = [];
+
 /* Airports on the map, with how far they are from where you stay */
 const AIRPORTS = {
   MNL: { name: "Manila (NAIA)", at: [14.5086, 121.0194], note: "Land T1, walk/shuttle to T3" },
