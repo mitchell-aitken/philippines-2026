@@ -51,7 +51,7 @@
       "booked": {
         "price": 1560.12,
         "date": "2026-10-13",
-        "note": "Booked: WS 127 + PR 117 out, PR 116 + WS 126 home"
+        "note": ""
       }
     },
     {
@@ -80,7 +80,15 @@
           "Cebu Pacific",
           "https://www.cebupacificair.com/"
         ]
-      ]
+      ],
+      "preferFlights": [
+        "5J 617"
+      ],
+      "booked": {
+        "price": 174.85,
+        "date": "2026-10-15",
+        "note": "Cebu Pacific Go Easy, 20 kg bag, seats 30A/30C (C$349.70 for both)"
+      }
     },
     {
       "id": "tag-eni",

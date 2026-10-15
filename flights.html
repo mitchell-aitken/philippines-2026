@@ -254,6 +254,7 @@ function render(cfg, live) {
       const opts = leg.prefer === "earliest" ? [...(D[id]?.options || [])].sort((x, y) => x.depart.localeCompare(y.depart)) : D[id]?.options;
       const want = leg.preferFlights;
       const o = (want && (opts || []).find(x => want.every(n => x.flights.includes(n)))) || pick(opts, x => fitOf(leg, x));
+      if (leg.booked) return { id, o, price: leg.booked.price, live: "booked" };
       return { id, o, price: o ? o.price : est(leg), live: !!o };
     }
     return { id, o: null, price: est(leg), live: false };
@@ -271,13 +272,13 @@ function render(cfg, live) {
     t?.out
       ? step(day(t.out.depart), `${hm(t.out.depart)} Calgary → Manila ${hm(t.out.arrive)} <span class="tz">Calgary time out · Manila time in</span>`, `${esc(t.out.airlines.join(" + "))} ${esc(t.out.flights.join(" · "))} · ${dur(t.out.minutes)} · ${esc(via(t.out))} · lands ${day(t.out.arrive)}`, intlPrice, intl.booked ? "booked" : true)
       : step("Fri Nov 13", "19:10 Calgary → Manila 05:30", "WestJet WS 127 + Philippine Airlines PR 117 · via Vancouver", intlPrice, false),
-    mt.o ? step(day(mt.o.depart), `${hm(mt.o.depart)} Manila → Panglao ${hm(mt.o.arrive)}`, `${esc(mt.o.airlines.join(" + "))} ${esc(mt.o.flights.join(" · "))} · separate ticket · move from Terminal 1 to Terminal 3`, mt.price, true)
-         : step("Sun Nov 15", "Manila → Panglao", "Morning Cebu Pacific flight", mt.price, false),
-    te.o ? step(day(te.o.depart), `${hm(te.o.depart)} Bohol → El Nido ${hm(te.o.arrive)}`, `${esc(te.o.airlines.join(" + "))} ${esc(te.o.flights.join(" · "))} · nonstop`, te.price, true)
-         : step(day(L["tag-eni"].outbound), "Bohol → El Nido", "Cebgo DG 6886 nonstop, 10:30", te.price, false),
+    mt.o ? step(day(mt.o.depart), `${hm(mt.o.depart)} Manila → Panglao ${hm(mt.o.arrive)}`, `${esc(mt.o.airlines.join(" + "))} ${esc(mt.o.flights.join(" · "))} · separate ticket · move from Terminal 1 to Terminal 3`, mt.price, mt.live)
+         : step("Sun Nov 15", "Manila → Panglao", "Morning Cebu Pacific flight", mt.price, mt.live),
+    te.o ? step(day(te.o.depart), `${hm(te.o.depart)} Bohol → El Nido ${hm(te.o.arrive)}`, `${esc(te.o.airlines.join(" + "))} ${esc(te.o.flights.join(" · "))} · nonstop`, te.price, te.live)
+         : step(day(L["tag-eni"].outbound), "Bohol → El Nido", "Cebgo DG 6886 nonstop, 10:30", te.price, te.live),
     step(day(L["eni-crn"].date), `${ferryEC.dep} El Nido → Coron ${ferryEC.arr}`, `${esc(ferryEC.op)} fast ferry · ${esc(ferryEC.fare)}`, fe.price, false),
-    uc.o ? step(day(uc.o.depart), `${hm(uc.o.depart)} Coron → Clark ${hm(uc.o.arrive)}`, `${esc(uc.o.airlines.join(" + "))} ${esc(uc.o.flights.join(" · "))} · separate ticket · earliest flight, for a safe buffer`, uc.price, true)
-         : step(day(L["usu-crk"].outbound), "Coron → Clark", "Morning nonstop", uc.price, false),
+    uc.o ? step(day(uc.o.depart), `${hm(uc.o.depart)} Coron → Clark ${hm(uc.o.arrive)}`, `${esc(uc.o.airlines.join(" + "))} ${esc(uc.o.flights.join(" · "))} · separate ticket · earliest flight, for a safe buffer`, uc.price, uc.live)
+         : step(day(L["usu-crk"].outbound), "Coron → Clark", "Morning nonstop", uc.price, uc.live),
     step(day(L["crk-mnl"].date), "Bus Clark → Manila airport", "Genesis P2P from Clark Airport, 2–3 hrs", bus.price, false),
     t?.ret
       ? step(day(t.ret.depart), `${hm(t.ret.depart)} Manila → Calgary ${hm(t.ret.arrive)} <span class="tz">Manila time out · Calgary time in</span>`, `${esc(t.ret.airlines.join(" + "))} ${esc(t.ret.flights.join(" · "))} · ${dur(t.ret.minutes)} · ${esc(via(t.ret))} · home ${day(t.ret.arrive)}`, null)
@@ -291,7 +292,7 @@ function render(cfg, live) {
   };
   const bookHTML = id => {
     const leg = L[id];
-    if (leg.booked) return `<span class="book booked-note">✓ Booked ${esc(day(leg.booked.date))} · C$${leg.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} round trip</span>`;
+    if (leg.booked) return `<span class="book booked-note">✓ Booked ${esc(day(leg.booked.date))} · C$${leg.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} ${leg.type === "round" ? "round trip" : "per person"}${leg.booked.note ? " · " + esc(leg.booked.note) : ""}</span>`;
     const links = [...(leg.kind === "flight" ? [["Google Flights", gf(id)]] : []), ...(leg.book || [])];
     return links.length ? `<span class="book">Book: ${links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join("")}</span>` : "";
   };
@@ -307,7 +308,7 @@ function render(cfg, live) {
       <div><span class="eyebrow">Back in Calgary</span><b>${t?.ret ? `${day(t.ret.arrive)} · ${hm(t.ret.arrive)}` : `${day(intl.return)} · 23:00`}</b><small>Calgary time</small></div>
     </div>
     <ul class="steps">${steps.join("")}</ul>
-    <div class="opt-foot"><span>${intl.booked ? `Round trip booked: C$${intl.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} (WestJet / Philippine Airlines)` : `Round trip ${fmt(intlPrice)} for the WestJet / Philippine Airlines flights${t ? "" : " (estimate)"}`}</span><span>Still to book: Manila → Panglao, Bohol → El Nido, the ferry, Coron → Clark</span></div>`;
+    <div class="opt-foot"><span>${intl.booked ? `Round trip booked: C$${intl.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} (WestJet / Philippine Airlines)` : `Round trip ${fmt(intlPrice)} for the WestJet / Philippine Airlines flights${t ? "" : " (estimate)"}`}</span><span>${(() => { const left = [["mnl-tag","Manila → Panglao"],["tag-eni","Bohol → El Nido"],["eni-crn","the ferry"],["usu-crk","Coron → Clark"]].filter(([id]) => !L[id].booked).map(([, n]) => n); return left.length ? "Still to book: " + left.join(", ") : "Everything is booked"; })()}</span></div>`;
 
   /* ---------- Coron → Manila: two ways ---------- */
   const clarkTotal = uc.price + bus.price;
@@ -316,7 +317,7 @@ function render(cfg, live) {
   const cards = [
     { name: "Fly to Clark, bus to Manila", win: true, price: clarkTotal,
       rows: [
-        uc.o ? step(hm(uc.o.depart), `Coron → Clark, lands ${hm(uc.o.arrive)}`, `${esc(uc.o.airlines.join(" + "))} ${esc(uc.o.flights.join(" · "))}`, uc.price, true) : step("Morning", "Coron → Clark", "Cebgo or Sunlight Air", uc.price, false),
+        uc.o ? step(hm(uc.o.depart), `Coron → Clark, lands ${hm(uc.o.arrive)}`, `${esc(uc.o.airlines.join(" + "))} ${esc(uc.o.flights.join(" · "))}`, uc.price, uc.live) : step("Morning", "Coron → Clark", "Cebgo or Sunlight Air", uc.price, uc.live),
         step("+2–3 hrs", "Bus to Manila airport", "Genesis P2P, ₱450", bus.price, false),
         step("At NAIA", `About ${clarkIn}`, `${uc.o ? "About 8 hours before" : "Hours before"} the 21:05 flight home. Later flights at 12:20–13:20 still make it if this one is cancelled.`, null),
       ] },
