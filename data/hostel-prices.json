@@ -1,150 +1,134 @@
 {
-  "updated": "2026-10-13T20:16:44.028Z",
+  "updated": "2026-10-15T18:35:03.912Z",
   "currency": "CAD",
   "source": "Google Hotels via SerpApi",
   "hostels": {
-    "red-picnic": {
-      "one": {
-        "name": "Red picnic hostel",
-        "perNight": 13,
-        "total": 65,
-        "rating": 4.7,
-        "link": "https://redpicnichostel.com/"
-      },
-      "two": {
-        "name": "Red picnic hostel",
-        "perNight": 34,
-        "total": 172,
-        "rating": 4.7,
-        "link": "https://redpicnichostel.com/"
-      }
-    },
     "coco-farm": {
       "one": {
         "name": "Bohol Coco Farm Hostel",
-        "perNight": 26,
-        "total": 130,
+        "perNight": 28,
+        "total": 142,
         "rating": 4.7,
         "link": "http://bit.ly/boholcocofarmhostel"
       },
       "two": {
         "name": "Bohol Coco Farm Hostel",
         "perNight": 34,
-        "total": 170,
+        "total": 169,
         "rating": 4.7,
         "link": "http://bit.ly/boholcocofarmhostel"
       }
     },
-    "mad-monkey-panglao": {
+    "nautilus": {
       "one": {
-        "name": "Mad Monkey Panglao",
-        "perNight": 14,
-        "total": 69,
-        "rating": 4.6,
-        "link": "https://madmonkeyhostels.com/destination/panglao"
+        "error": "not found on Google Hotels"
       },
       "two": {
-        "name": "Mad Monkey Panglao",
-        "perNight": 29,
-        "total": 145,
-        "rating": 4.6,
-        "link": "https://madmonkeyhostels.com/destination/panglao"
+        "error": "not found on Google Hotels"
+      }
+    },
+    "mayas": {
+      "one": {
+        "name": "Mayas Guesthouse",
+        "perNight": null,
+        "total": null,
+        "rating": 4.4,
+        "link": null
+      },
+      "two": {
+        "error": "Google Hotels hasn't returned any results for this query."
       }
     },
     "spin": {
       "one": {
         "name": "Spin Designer Hostel",
-        "perNight": 30,
-        "total": 150,
+        "perNight": 32,
+        "total": 158,
         "rating": 4.5,
         "link": "https://www.spinhostel.com/"
       },
       "two": {
         "name": "Spin Designer Hostel",
-        "perNight": 64,
-        "total": 319,
+        "perNight": 63,
+        "total": 317,
         "rating": 4.5,
         "link": "https://www.spinhostel.com/"
+      }
+    },
+    "beach-house-eni": {
+      "one": {
+        "name": "The Beach House El Nido",
+        "perNight": 20,
+        "total": 99,
+        "rating": 4,
+        "link": "https://thebeachhouse.ph/"
+      },
+      "two": {
+        "name": "The Beach House El Nido",
+        "perNight": 40,
+        "total": 198,
+        "rating": 4,
+        "link": "https://thebeachhouse.ph/"
       }
     },
     "outpost-eni": {
       "one": {
         "name": "Outpost Beach Hostel",
-        "perNight": 21,
-        "total": 103,
+        "perNight": 23,
+        "total": 115,
         "rating": 4.5,
         "link": "https://outposthostels.com/"
       },
       "two": {
         "name": "Outpost Beach Hostel",
         "perNight": 46,
-        "total": 231,
+        "total": 230,
         "rating": 4.5,
         "link": "https://outposthostels.com/"
-      }
-    },
-    "frendz": {
-      "one": {
-        "name": "Frendz Hostel El Nido",
-        "perNight": 31,
-        "total": 155,
-        "rating": 4.5,
-        "link": "https://frendzresorthostels.com/el-nido/"
-      },
-      "two": {
-        "name": "Frendz Hostel El Nido",
-        "perNight": 62,
-        "total": 309,
-        "rating": 4.5,
-        "link": "https://frendzresorthostels.com/el-nido/"
       }
     },
     "hop": {
       "one": {
         "name": "Hop Hostel",
-        "perNight": 27,
-        "total": 161,
+        "perNight": 29,
+        "total": 173,
         "rating": 4.7,
         "link": "http://hophostel.com.ph/"
       },
       "two": {
         "name": "Hop Hostel",
         "perNight": 58,
-        "total": 349,
+        "total": 346,
         "rating": 4.7,
         "link": "http://hophostel.com.ph/"
       }
     },
-    "outpost-crn": {
+    "michelinn": {
       "one": {
-        "name": "Outpost Hostel",
-        "perNight": 18,
-        "total": 109,
-        "rating": 4.6,
-        "link": "http://www.outposthostels.com/"
+        "name": "Michel Inn Coron",
+        "perNight": 17,
+        "total": 102,
+        "rating": 4.1,
+        "link": null
       },
       "two": {
-        "name": "Outpost Hostel",
-        "perNight": 42,
-        "total": 252,
-        "rating": 4.6,
-        "link": "http://www.outposthostels.com/"
+        "name": "Michel Inn Coron",
+        "perNight": null,
+        "total": null,
+        "rating": 4.1,
+        "link": null
       }
     },
-    "joval": {
+    "ecocio": {
       "one": {
-        "name": "Joval Homestay",
-        "perNight": 10,
-        "total": 61,
-        "rating": 4.5,
-        "link": "https://jovalhomestay.com/"
+        "name": "Ecocio jungle Retreat",
+        "perNight": 12,
+        "total": 72,
+        "rating": 4.1,
+        "link": "https://www.ecocio.org/"
       },
       "two": {
-        "name": "Joval Homestay",
-        "perNight": 20,
-        "total": 122,
-        "rating": 4.5,
-        "link": "https://jovalhomestay.com/"
+        "error": "Google Hotels hasn't returned any results for this query."
       }
     }
   }
