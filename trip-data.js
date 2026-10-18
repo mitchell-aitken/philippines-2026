@@ -411,7 +411,7 @@ const bk = (q, a, b) => `https://www.booking.com/searchresults.html?ss=${encodeU
 const bkHotel = (slug, a, b) => `https://www.booking.com/hotel/ph/${slug}.html?checkin=${a}&checkout=${b}&group_adults=2&no_rooms=1&group_children=0`;
 const ACCOM = [
   { id: "panglao-1", area: "Panglao", region: "Bohol", from: "2026-11-15", to: "2026-11-17", picks: "pgl",
-    note: "Can still change (maybe just Nov 15–16).",
+    note: "Can still change: maybe only the night of Nov 15, and spend 1 extra night inland on Bohol instead.",
     options: [
       { id: "palms-cove", name: "Palms Cove Resort", where: "Danao, 5 min walk to Alona Beach", rating: "8.8 · Booking.com",
         url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2, cancellable: true } }

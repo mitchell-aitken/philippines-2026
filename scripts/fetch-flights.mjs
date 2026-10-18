@@ -223,6 +223,23 @@ if (hcfg) {
       hout.hostels[h.id] = r;
       console.log(`hostel ${h.id}: 1 guest ${r.one?.perNight ?? r.one?.error}, 2 guests ${r.two?.perNight ?? r.two?.error}`);
     }
+    // area searches: every property Google lists for a query, with prices (to find new options)
+    hout.areas = {};
+    for (const a of hcfg.areas || []) {
+      try {
+        const props = [];
+        let d = await hotel({ ...a, id: "area-" + a.id }, 2, a.extra || {});
+        props.push(...(d.properties || []));
+        if (d.serpapi_pagination?.next_page_token && props.length < 40) {
+          try { const d2 = await hotel({ ...a, id: "area-" + a.id }, 2, { ...(a.extra || {}), next_page_token: d.serpapi_pagination.next_page_token }); props.push(...(d2.properties || [])); } catch {}
+        }
+        hout.areas[a.id] = props.map(p => ({ name: p.name, type: p.type || null, perNight: p.rate_per_night?.extracted_lowest ?? null,
+          perNightBeforeTax: p.rate_per_night?.extracted_before_taxes_fees ?? null, total: p.total_rate?.extracted_lowest ?? null,
+          rating: p.overall_rating ?? null, reviews: p.reviews ?? null, hotelClass: p.extracted_hotel_class ?? null,
+          gps: p.gps_coordinates || null, link: p.link || null, amenities: (p.amenities || []).slice(0, 8) }));
+        console.log(`area ${a.id}: ${hout.areas[a.id].length} places`);
+      } catch (e) { hout.areas[a.id] = { error: e.message }; }
+    }
     await writeFile(HOUT, JSON.stringify(hout, null, 2) + "\n");
   }
 }

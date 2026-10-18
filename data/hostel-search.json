@@ -161,5 +161,25 @@
         "Palms Cove Resort Alona Panglao"
       ]
     }
+  ],
+  "areas": [
+    {
+      "id": "loboc",
+      "query": "resorts in Loboc Bohol",
+      "checkIn": "2026-11-17",
+      "checkOut": "2026-11-19"
+    },
+    {
+      "id": "chocolate-hills",
+      "query": "resorts near Chocolate Hills Carmen Bohol",
+      "checkIn": "2026-11-17",
+      "checkOut": "2026-11-19"
+    },
+    {
+      "id": "bilar-sevilla",
+      "query": "resorts in Bilar Sevilla Batuan Bohol",
+      "checkIn": "2026-11-17",
+      "checkOut": "2026-11-19"
+    }
   ]
 }
