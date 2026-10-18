@@ -188,6 +188,7 @@
   .opts{display:grid;gap:10px;margin-top:12px}
   .opt{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff}
   .opt.booked{border-color:#BFE3CC;background:#F6FBF8}
+  .opt.held{border-color:#F0DC8C;background:#FFFCEF}
   .opt.preferred{border-color:#B9C9EE;box-shadow:0 0 0 3px #EEF2FB}
   .opt-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
   .opt-top a{font-weight:600;font-size:16px;color:var(--ink);text-decoration:none}
@@ -274,26 +275,21 @@ function optHTML(o, b) {
   const also = others.length ? `<div class="also">${o.booked ? "Cheapest now" : "Also"}: ${others.map(s => {
       const t = s.total ?? s.perNight * n, x = `${esc(s.source)} ${money(t)}`;
       return s.link ? `<a href="${esc(s.link)}" ${rel}>${x}</a>` : x; }).join(" · ")}</div>` : "";
-  return `<div class="opt${o.booked ? " booked" : ""}${o.preferred ? " preferred" : ""}">
+  return `<div class="opt${o.booked && !o.booked.cancellable ? " booked" : ""}${o.booked?.cancellable ? " held" : ""}${o.preferred ? " preferred" : ""}">
     <div class="opt-top"><a href="${esc(o.url)}" ${rel}>${esc(o.name)} ↗</a>
-      ${o.booked ? `<span class="tag ok">✓ Booked</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}</div>
+      ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
     <div class="prices">${P.join("")}</div>${also}</div>`;
 }
 
 function render() {
   document.getElementById("blocks").innerHTML = ACCOM.map(b => {
-    const p = accomPick(b), SP = b.picks && STAY_PICKS[b.picks];
-    const tag = p?.booked ? `<span class="tag ok">Booked</span>` : b.maybe ? `<span class="tag maybe">Maybe</span>` : `<span class="tag">Not booked</span>`;
-    const hostels = SP && b.id !== "panglao-1" ? `<details class="hostels"><summary>Cheaper hostels nearby</summary><div class="picks">${SP.picks.map(h => {
-        const x = LIVE[h.id], one = x?.one?.perNight, two = x?.two?.perNight;
-        return `<div class="pick"><a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.name)} ↗</a><small>${esc(h.where)}</small>
-          <div class="hp">${one != null ? `<span>Dorm bed <b>${money(one)}</b></span>` : ""}${two != null ? `<span>2 people <b>${money(two)}</b>/night</span>` : ""}${one == null && two == null ? "No price for your dates" : ""}</div></div>`;
-      }).join("")}</div></details>` : "";
+    const p = accomPick(b);
+    const tag = p?.booked ? `<span class="tag ${p.booked.cancellable ? "maybe" : "ok"}">${p.booked.cancellable ? "Booked · cancellable" : "Booked"}</span>` : b.maybe ? `<span class="tag maybe">Maybe</span>` : `<span class="tag">Not booked</span>`;
     return `<section class="blk" id="${b.id}" style="--c:${COLORS[b.region]}">
       <div class="blk-head"><h2>${esc(b.area)}</h2><span class="when">${esc(accomRange(b))}</span>${tag}</div>
       ${b.note ? `<p class="blk-note">${esc(b.note)}</p>` : ""}
-      <div class="opts">${b.options.map(o => optHTML(o, b)).join("")}</div>${hostels}</section>`;
+      <div class="opts">${b.options.map(o => optHTML(o, b)).join("")}</div></section>`;
   }).join("");
 
   // rough total each: booked, else preferred, else cheapest known

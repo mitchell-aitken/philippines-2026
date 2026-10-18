@@ -411,10 +411,10 @@ const bk = (q, a, b) => `https://www.booking.com/searchresults.html?ss=${encodeU
 const bkHotel = (slug, a, b) => `https://www.booking.com/hotel/ph/${slug}.html?checkin=${a}&checkout=${b}&group_adults=2&no_rooms=1&group_children=0`;
 const ACCOM = [
   { id: "panglao-1", area: "Panglao", region: "Bohol", from: "2026-11-15", to: "2026-11-17", picks: "pgl",
-    note: "Booked Nov 15–17, can still change (maybe just Nov 15–16).",
+    note: "Can still change (maybe just Nov 15–16).",
     options: [
       { id: "palms-cove", name: "Palms Cove Resort", where: "Danao, 5 min walk to Alona Beach", rating: "8.8 · Booking.com",
-        url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2 } }
+        url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2, cancellable: true } }
     ] },
   { id: "loboc", area: "Loboc", region: "Bohol", from: "2026-11-17", to: "2026-11-19", maybe: true,
     note: "Maybe. Close to the Chocolate Hills and EAT Danao. Still looking.",
@@ -453,7 +453,7 @@ const accomPick = b => b.options.find(o => o.booked) || b.options.find(o => o.pr
 const accomFor = d => { if (d.mon && d.mon !== MONTH) return null;
   const iso = `2026-11-${String(d.date).padStart(2, "0")}`; return ACCOM.find(b => b.from <= iso && iso < b.to) || null; };
 const accomLabel = b => { const p = accomPick(b);
-  if (p?.booked) return `${p.name} ✓ booked`;
+  if (p?.booked) return `${p.name} ${p.booked.cancellable ? "(booked, cancellable)" : "✓ booked"}`;
   if (p) return `${p.name} (preferred)`;
   return b.options.map(o => o.name).join(" or ") + (b.maybe ? " (maybe)" : " (not booked)"); };
 
