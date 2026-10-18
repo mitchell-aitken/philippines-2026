@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T20:17:47.093Z",
+  "updated": "2026-10-18T20:28:25.871Z",
   "currency": "CAD",
   "source": "Google Hotels via SerpApi",
   "hostels": {
@@ -675,111 +675,6 @@
             "source": "Agoda",
             "name": "Family Room",
             "perNight": 119
-          }
-        ]
-      }
-    },
-    "vienna": {
-      "two": {
-        "name": "Vienna Hotel",
-        "perNight": 79,
-        "total": 471,
-        "rating": 3.3,
-        "link": "https://hannahlovestotravel.com/vienna-philippines",
-        "cheapest": {
-          "source": "Vienna Hotel",
-          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszlXirAN1usHc93DJJgnzAYuwV5qy33_Pzo8wZ3M4yds3kGh98_LUo7rLLKfgfMkrpwMKKx50TSIUdb84VZVkOFFsyIqZQYbd8T-prlVXKnXdO15aFlRBctGSZxHwlTg4Od2hzz96sRpLJJ_mQ0oBW1m0SpyL9z7_FweulC71TFexLz1160i6aE7STUuQ&pcurl=https://book.securebookings.net/roomrate?id%3D939583b3-e309-1723434773-41ed-bdaa-f6a70ad7a87b%26rateplan_id%3D62bbb01b-8922-1727425567-43af-a08a-e9ebe84d5715%26check_in%3D25-11-2026%26check_out%3D01-12-2026%26affId%3DGoogleFreeLinks%26filter_adult%3D2%26filter_child%3D0%26lang%3Den%26currency%3DPHP%26google_promotion_id%3D&s=AD1XQnmMib0Nt7DSaYDs21D8bc4d&ap=1",
-          "total": 471,
-          "totalBeforeTax": null,
-          "perNight": 79,
-          "perNightBeforeTax": null
-        },
-        "sites": [
-          {
-            "source": "Vienna Hotel",
-            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszlXirAN1usHc93DJJgnzAYuwV5qy33_Pzo8wZ3M4yds3kGh98_LUo7rLLKfgfMkrpwMKKx50TSIUdb84VZVkOFFsyIqZQYbd8T-prlVXKnXdO15aFlRBctGSZxHwlTg4Od2hzz96sRpLJJ_mQ0oBW1m0SpyL9z7_FweulC71TFexLz1160i6aE7STUuQ&pcurl=https://book.securebookings.net/roomrate?id%3D939583b3-e309-1723434773-41ed-bdaa-f6a70ad7a87b%26rateplan_id%3D62bbb01b-8922-1727425567-43af-a08a-e9ebe84d5715%26check_in%3D25-11-2026%26check_out%3D01-12-2026%26affId%3DGoogleFreeLinks%26filter_adult%3D2%26filter_child%3D0%26lang%3Den%26currency%3DPHP%26google_promotion_id%3D&s=AD1XQnmMib0Nt7DSaYDs21D8bc4d&ap=1",
-            "total": 471,
-            "totalBeforeTax": null,
-            "perNight": 79,
-            "perNightBeforeTax": null
-          },
-          {
-            "source": "Booking.com",
-            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiV4uTZscSXAxVbNQgFHUGsA_IYACICCAEQBxoCbWQ&co=1&gclid=EAIaIQobChMIleLk2bHElwMVWzUIBR1BrAPyEAoYASABEgJkWvD_BwE&cid=CAASugHkaPJhNO3nhDnuO8JaK1JTIgjqzf1lsyShDesrvqFKjcPlAXWiSsNwQd1Yej8_524VIcZIPdsYJ_nldQ0_kCmZomB6qmkyksTZSo7rl1QcOgpHchoUhhEQ1KZnFkDW4Nwq7gNlKD_AMFjes3py_x4YPRgWWCX8ENp07KUI7PWzhf7mNHbBxctb-yhcra0NQKoJxtF_rfZBZM7Kgu2ZoE8NkxtpOmmko_F7ACKSCgD0z7IZHntEltkb_88&sig=AOD64_2BCoUNsNYiaUyY4snOP8LLTxdvyA&adurl",
-            "total": 480,
-            "totalBeforeTax": 428,
-            "perNight": 80,
-            "perNightBeforeTax": 71,
-            "rooms": [
-              {
-                "name": "Standard Double or Twin Room",
-                "perNight": 80,
-                "total": 480,
-                "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiV4uTZscSXAxVbNQgFHUGsA_IYACICCAEQCRoCbWQ&co=1&gclid=EAIaIQobChMIleLk2bHElwMVWzUIBR1BrAPyEAoYASADEgJ0LPD_BwE&cid=CAASugHkaPJhNO3nhDnuO8JaK1JTIgjqzf1lsyShDesrvqFKjcPlAXWiSsNwQd1Yej8_524VIcZIPdsYJ_nldQ0_kCmZomB6qmkyksTZSo7rl1QcOgpHchoUhhEQ1KZnFkDW4Nwq7gNlKD_AMFjes3py_x4YPRgWWCX8ENp07KUI7PWzhf7mNHbBxctb-yhcra0NQKoJxtF_rfZBZM7Kgu2ZoE8NkxtpOmmko_F7ACKSCgD0z7IZHntEltkb_88&sig=AOD64_2YfXjzPbiOOMaFOpsGggld2UIedw&adurl",
-                "guests": 2
-              }
-            ]
-          },
-          {
-            "source": "Priceline",
-            "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw9p1QF_8WsCILrmiaVjH-jjQOWknd_MJTioYkIF24vzULbvltA5B5fl0PPbI3kpQsWyBdM7YrvvGSw1owTobdT_Y7_UCNSC_SX45SkFhvWyPZTkIodA9EBMZ_YrNTUcvYgRnnP4VDt7lliuzKuJPkMpvdwMNyxuuotynasYhv0kQr8bAGMdG8_3IsdB6usb20&pcurl=https://www.priceline.com/r/?channel%3Dmeta%26product%3Dhotel%26theme%3DGoogle-L%26refid%3DPLGOOGLEMSS%26refclickid%3DCA_HP%257C80239805_localuniversal_6%257C20261125%257Cdesktop%257Cuserdate%7Cpublic%7C%7C%7C37%257C2%257C0%7C0%7CEN%26hotelid%3D80239805%26checkin%3D20261125%26checkout%3D20261201%26rooms%3D1%26cur%3DCAD%26POSCountryCode%3DCA%26taxDisplayMode%3DBP%26cityID%3D5000027004%26adults%3D2%26land%3DL%26metaid%3DLRN4IlkGaR8sOu7Nf1dgF1Ej7qMhk2d-X4sPdOukC_QvEphdUPKEXSMdEpoKilRCGcNTkl4FTBwo40hDJJ7lDUWQWcv5Nq01FFkvB3u0wDnHfRfPM5pPI5fwNf3XZWIFhsE5BhJoF9O4aRKoIrw572iH28S4pxbVvqJ27uHnK8_PKOGh5WEEYq1vMA-zWxapcmY6wyBP2vd6ZkYJficJXhEpqz1QvF6tMqA-vuRcyPpww5zWCffkpKb3pd_PKLqvCGqz7sN9eY7izhm0-24EKGseiWvMtHpiFr_KfkGz-kUPiQZoigmd_pI3pBTzjYx2eAQb4sZ6Vfb_e39grKhCrDoi0-fdxKUTd96u_cDYvyMaOL-ht8pt-bjQTFOgCIjzjGcqnD95WVA8_2wCmM6Bzi7-g6qe6fejydfuhir78F_1fSHT-H4NgYHxQxwrJolBkq8XvNPOaR7EhoCFqLLYXIdPa4NI70bTd773tux-r0pmVbHtB7oNrEiZz3ZOlK0v%26dblcnt%3Dtrue%26hc%3D1%26pdtax%3D109.28%26pdf%3D43.72%26pdt%3D571.60%26locale%3Den-us%26ad-src%3D%26numChild%3D0%26aid%3D%26selAdults%3D2&s=AD1XQnnAb2zBw-5BSwUj-ngEmUGC&ap=1",
-            "total": 572,
-            "totalBeforeTax": 506,
-            "perNight": 95,
-            "perNightBeforeTax": 84
-          },
-          {
-            "source": "Expedia.ca",
-            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiV4uTZscSXAxVbNQgFHUGsA_IYACICCAEQARoCbWQ&co=1&gclid=EAIaIQobChMIleLk2bHElwMVWzUIBR1BrAPyEAoYAiABEgKr-PD_BwE&cid=CAASugHkaPJhNO3nhDnuO8JaK1JTIgjqzf1lsyShDesrvqFKjcPlAXWiSsNwQd1Yej8_524VIcZIPdsYJ_nldQ0_kCmZomB6qmkyksTZSo7rl1QcOgpHchoUhhEQ1KZnFkDW4Nwq7gNlKD_AMFjes3py_x4YPRgWWCX8ENp07KUI7PWzhf7mNHbBxctb-yhcra0NQKoJxtF_rfZBZM7Kgu2ZoE8NkxtpOmmko_F7ACKSCgD0z7IZHntEltkb_88&sig=AOD64_0PRfMJx7oqVL2TPh3qQbRdvOPhpg&adurl",
-            "total": 607,
-            "totalBeforeTax": 547,
-            "perNight": 101,
-            "perNightBeforeTax": 91,
-            "rooms": [
-              {
-                "name": "Standard Room",
-                "perNight": 101,
-                "total": 607,
-                "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiV4uTZscSXAxVbNQgFHUGsA_IYACICCAEQAhoCbWQ&co=1&gclid=EAIaIQobChMIleLk2bHElwMVWzUIBR1BrAPyEAoYAiACEgINB_D_BwE&cid=CAASugHkaPJhNO3nhDnuO8JaK1JTIgjqzf1lsyShDesrvqFKjcPlAXWiSsNwQd1Yej8_524VIcZIPdsYJ_nldQ0_kCmZomB6qmkyksTZSo7rl1QcOgpHchoUhhEQ1KZnFkDW4Nwq7gNlKD_AMFjes3py_x4YPRgWWCX8ENp07KUI7PWzhf7mNHbBxctb-yhcra0NQKoJxtF_rfZBZM7Kgu2ZoE8NkxtpOmmko_F7ACKSCgD0z7IZHntEltkb_88&sig=AOD64_3KQ0_t3R9USabcrcwLo9EZO7p1tw&adurl",
-                "guests": 2
-              },
-              {
-                "name": "Superior Twin Room",
-                "perNight": 111,
-                "total": 663,
-                "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiV4uTZscSXAxVbNQgFHUGsA_IYACICCAEQBBoCbWQ&co=1&gclid=EAIaIQobChMIleLk2bHElwMVWzUIBR1BrAPyEAoYAiAEEgIjYPD_BwE&cid=CAASugHkaPJhNO3nhDnuO8JaK1JTIgjqzf1lsyShDesrvqFKjcPlAXWiSsNwQd1Yej8_524VIcZIPdsYJ_nldQ0_kCmZomB6qmkyksTZSo7rl1QcOgpHchoUhhEQ1KZnFkDW4Nwq7gNlKD_AMFjes3py_x4YPRgWWCX8ENp07KUI7PWzhf7mNHbBxctb-yhcra0NQKoJxtF_rfZBZM7Kgu2ZoE8NkxtpOmmko_F7ACKSCgD0z7IZHntEltkb_88&sig=AOD64_1S87qaiDQYwI0az5qPtTmprYhp-Q&adurl",
-                "guests": 2
-              },
-              {
-                "name": "Deluxe Room",
-                "perNight": 157,
-                "total": 941,
-                "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiV4uTZscSXAxVbNQgFHUGsA_IYACICCAEQBRoCbWQ&co=1&gclid=EAIaIQobChMIleLk2bHElwMVWzUIBR1BrAPyEAoYAiAFEgIcT_D_BwE&cid=CAASugHkaPJhNO3nhDnuO8JaK1JTIgjqzf1lsyShDesrvqFKjcPlAXWiSsNwQd1Yej8_524VIcZIPdsYJ_nldQ0_kCmZomB6qmkyksTZSo7rl1QcOgpHchoUhhEQ1KZnFkDW4Nwq7gNlKD_AMFjes3py_x4YPRgWWCX8ENp07KUI7PWzhf7mNHbBxctb-yhcra0NQKoJxtF_rfZBZM7Kgu2ZoE8NkxtpOmmko_F7ACKSCgD0z7IZHntEltkb_88&sig=AOD64_2NB56dtx5nV4xBJOQah3ic6UDIAw&adurl",
-                "guests": 2
-              }
-            ]
-          }
-        ],
-        "rawRooms": [
-          {
-            "source": "Booking.com",
-            "name": "Standard Double or Twin Room",
-            "perNight": 80
-          },
-          {
-            "source": "Expedia.ca",
-            "name": "Standard Room",
-            "perNight": 101
-          },
-          {
-            "source": "Expedia.ca",
-            "name": "Superior Twin Room",
-            "perNight": 111
-          },
-          {
-            "source": "Expedia.ca",
-            "name": "Deluxe Room",
-            "perNight": 157
           }
         ]
       }
@@ -1631,6 +1526,89 @@
             "source": "Booking.com",
             "name": "Family Room",
             "perNight": 165
+          }
+        ]
+      }
+    },
+    "la-natura": {
+      "two": {
+        "name": "La Natura Resort",
+        "perNight": 90,
+        "total": 539,
+        "rating": 4.4,
+        "link": "http://www.lanaturaresort.com/",
+        "cheapest": {
+          "source": "KAYAK.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxkG4uttIqs37dGFfiBTy8f-4Brmx5Sf5ChzuW9XRPAdywtieK5ufHTpKcIIVTdEJ4hUWvye3NeGibi0fwFBnzHXuk_QXpKyfs0NzlvJf-9dqsMclSIYxXE6tjwnaxnoGjC6bpY1qe7kAcKP3nZNoAr783uq8RTUFGwaEQdexK0KHRBjHneQvyrdA&pcurl=https://www.kayak.com/semi/ha/hotel_ads/489370/en.html?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D489370%26adType%3D0%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26ci%3D2026-11-25%26co%3D2026-12-01%26gs%3Dlocaluniversal%26l%3D6%26pc%3DUSD%26rid%3D%26pdtax%3D97.68%26pdtotal%3D539.34%26rpid%3D%26uc%3DUS%26ucuc%3DCAD%26d%3Ddesktop%26lc%3Den%26v%3Dfalse%26rrid%3DUFJJQ0VMSU5FQ09SRQ%26k_pc%3D~UENMTkhPVEVMV0hJU0tZ%26k_rt%3D%26k_sid%3D2IBkMcsYBy%26k_kct%3D1792287641%26k_gct%3D1792310818%26g%3D2%26r%3D1%26ac%3D2%26k_cc%3Dus%26dt%3Dselected%26cmpid%3D%26cmptrack%3D&s=AD1XQnlCf9Ky5vLQf1hQEqkfK5VU&ap=1",
+          "total": 539,
+          "totalBeforeTax": 488,
+          "perNight": 90,
+          "perNightBeforeTax": 81
+        },
+        "sites": [
+          {
+            "source": "KAYAK.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxkG4uttIqs37dGFfiBTy8f-4Brmx5Sf5ChzuW9XRPAdywtieK5ufHTpKcIIVTdEJ4hUWvye3NeGibi0fwFBnzHXuk_QXpKyfs0NzlvJf-9dqsMclSIYxXE6tjwnaxnoGjC6bpY1qe7kAcKP3nZNoAr783uq8RTUFGwaEQdexK0KHRBjHneQvyrdA&pcurl=https://www.kayak.com/semi/ha/hotel_ads/489370/en.html?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D489370%26adType%3D0%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26ci%3D2026-11-25%26co%3D2026-12-01%26gs%3Dlocaluniversal%26l%3D6%26pc%3DUSD%26rid%3D%26pdtax%3D97.68%26pdtotal%3D539.34%26rpid%3D%26uc%3DUS%26ucuc%3DCAD%26d%3Ddesktop%26lc%3Den%26v%3Dfalse%26rrid%3DUFJJQ0VMSU5FQ09SRQ%26k_pc%3D~UENMTkhPVEVMV0hJU0tZ%26k_rt%3D%26k_sid%3D2IBkMcsYBy%26k_kct%3D1792287641%26k_gct%3D1792310818%26g%3D2%26r%3D1%26ac%3D2%26k_cc%3Dus%26dt%3Dselected%26cmpid%3D%26cmptrack%3D&s=AD1XQnlCf9Ky5vLQf1hQEqkfK5VU&ap=1",
+            "total": 539,
+            "totalBeforeTax": 488,
+            "perNight": 90,
+            "perNightBeforeTax": 81
+          },
+          {
+            "source": "Hotelscombined.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osy78aG_7qDr6d9iEmZBdm9YU1TBIuIzRrennvMZd2BZVFMD75p_4CjXbhAqXGrSBgWPwuxMa0Xm0kqVTNbkDShKwGREpezuQEVT_5PWy0NxZ1u1_7lmK3m9nYdHUq1-hRdtX1VopwkKoaIAd200LtO7NGPKF9kpvOviauHFGUdvVhAWc_arN4pLDpDjnJ2T9bugoA&pcurl=https://www.hotelscombined.com/semi/ha/hotel_ads/489370/en.html?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D489370%26adType%3D0%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26ci%3D2026-11-25%26co%3D2026-12-01%26gs%3Dlocaluniversal%26l%3D6%26pc%3DUSD%26rid%3D%26pdtax%3D97.68%26pdtotal%3D539.34%26rpid%3D%26uc%3DUS%26ucuc%3DCAD%26d%3Ddesktop%26lc%3Den%26v%3Dfalse%26rrid%3DUFJJQ0VMSU5FQ09SRQ%26k_pc%3D~UENMTkhPVEVMV0hJU0tZ%26k_rt%3D%26k_sid%3D2IAELPPBMv%26k_kct%3D1792287641%26k_gct%3D1792310869%26g%3D2%26r%3D1%26ac%3D2%26k_cc%3Dus%26dt%3Dselected%26cmpid%3D%26cmptrack%3D&s=AD1XQnlLDlEwSA22TADaFcaI5EER&ap=1",
+            "total": 539,
+            "totalBeforeTax": 488,
+            "perNight": 90,
+            "perNightBeforeTax": 81
+          },
+          {
+            "source": "momondo.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswcrBOuWq-yJcYjvN5i4TJqL8eu2mXoABdQ59tSd7OJdy3nAmzpkKAMHhEfEwFkBOSSuNFXfbXuK-_9v-GnBwrptTPn1_O_LD27j16-_IIhzjr70xOh90T2xOD7ALG0DoUPE1AGlbrweLKAQjoUjYn-MwnVOjA4KZQUexLjcglMqPKc_YYBbQ&pcurl=https://www.momondo.com/semi/ha/hotel_ads/489370/en.html?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D489370%26adType%3D0%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26ci%3D2026-11-25%26co%3D2026-12-01%26gs%3Dlocaluniversal%26l%3D6%26pc%3DUSD%26rid%3D%26pdtax%3D97.68%26pdtotal%3D539.34%26rpid%3D%26uc%3DUS%26ucuc%3DCAD%26d%3Ddesktop%26lc%3Den%26v%3Dfalse%26rrid%3DUFJJQ0VMSU5FQ09SRQ%26k_pc%3D~UENMTkhPVEVMV0hJU0tZ%26k_rt%3D%26k_sid%3D2IBkJRcodg%26k_kct%3D1792287641%26k_gct%3D1792311088%26g%3D2%26r%3D1%26ac%3D2%26k_cc%3Dus%26dt%3Dselected%26cmpid%3D%26cmptrack%3D&s=AD1XQnnJrB2WogQUnF6tfqs5LVss&ap=1",
+            "total": 539,
+            "totalBeforeTax": 488,
+            "perNight": 90,
+            "perNightBeforeTax": 81
+          },
+          {
+            "source": "Priceline",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiYr_Prs8SXAxVBtyAFHbp4GA4YACICCAEQBhoCbWQ&co=1&ase=2&gclid=EAIaIQobChMImK_z67PElwMVQbcgBR26eBgOEAoYAiABEgIirvD_BwE&cid=CAASugHkaNLX9DWgj5qTxiW3_uoFRu5dm9Koa1_QbHNfoYoHS_0wsa_4al9n8UcFAm1d1FR5dRTp0jEQGZwrHsj1SYnrw_x4mo77Pz__D3jiSlrTFbbIKXlFgj7o6-El2RcXD6dvxGvVRm1mmBPJS6IWTP5nfLAM2wix7SV1l_rgjMatbr9oJZoBMbwk1BlL5JeiTu7ColAVOxh8lrZ8IHsusgCsAcrBHb4Ji-hPdyXnGBh3dTQ55wtARnKAPDE&category=acrcp_v1_48&sig=AOD64_2GROOu1CHGWa09EKP9YlMDVtcgWw&adurl",
+            "total": 541,
+            "totalBeforeTax": 490,
+            "perNight": 90,
+            "perNightBeforeTax": 82,
+            "rooms": [
+              {
+                "name": "Standard King Room with Garden View",
+                "perNight": 90,
+                "total": 541,
+                "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiYr_Prs8SXAxVBtyAFHbp4GA4YACICCAEQBxoCbWQ&co=1&ase=2&gclid=EAIaIQobChMImK_z67PElwMVQbcgBR26eBgOEAoYAiACEgLGaPD_BwE&cid=CAASugHkaNLX9DWgj5qTxiW3_uoFRu5dm9Koa1_QbHNfoYoHS_0wsa_4al9n8UcFAm1d1FR5dRTp0jEQGZwrHsj1SYnrw_x4mo77Pz__D3jiSlrTFbbIKXlFgj7o6-El2RcXD6dvxGvVRm1mmBPJS6IWTP5nfLAM2wix7SV1l_rgjMatbr9oJZoBMbwk1BlL5JeiTu7ColAVOxh8lrZ8IHsusgCsAcrBHb4Ji-hPdyXnGBh3dTQ55wtARnKAPDE&category=acrcp_v1_48&sig=AOD64_2IwmWLTk4dYcnBO69Sdsa7nGxAVQ&adurl",
+                "guests": 2
+              }
+            ]
+          },
+          {
+            "source": "Reservation Day",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsyN9pdLsZ0BcwMSjmsp3JG4Wr_z4i9dizYmyKvKyPdTLNqzecNrG0CGhbKRpczl_lnUteYWOlJ95RFv7tD81CoAdZmCtpsplQ_cmc4N2BzOGZrCG6w-4THq7ktl3eAetCjyLZAxI-Zt9VFlJXqFcPXR0nzZA1NdVwU3XiCG_DUI0xpMAEQz35Pf9mIh06bCNHk2-2pHTXmu&pcurl=https://www.reservationday.com/transition/?data%3Dprice%3D411.44%2526total_price%3D437.23%2526request_id%3D10089822516776740864%2526ps%3D22273116%2526pb%3D0-slAkZlDjP06IhVxwa_7Jd5-kPbiwFwvI6OhMdsiHF_rciZ9fdATkf_LmsWAPuqbcF5OjoxZ_ZcnVAKeIPjgCbYL_fk0_s0H28LPSbqt2AQbs9yjeZFxgD-YR2MTjk1LVgPrvkNdedp63OmHaF2U2iU9qYcoOQxMPA1-3qfUMM%25253D%2526gha_rd_pull_request%3DTrue%2526alwd_rand%3Dfalse%2526gt%3D1792322095%2526sg%3DDC5eJ%2526ib%3Dfalse%2526all_inclusive%3Dfalse%26utm_source%3Dgha_rd%26utm_content%3Dlocaluniversal%26currency%3DUSD%26user_country%3DUS%26verification%3Dfalse%26rate_rule_ids%3D%26date_type%3Dselected%26rate_rule_id%3Dsignedout_desktop%26display_currency%3DCAD%26display_all_inclusive_price%3D617.86%26checkin_at%3D2026-11-25%26checkout_at%3D2026-12-01%26provider_hotel_id%3D10004491397%26provider%3Dhtl%26num_adults%3D2%26children%3D%5B%5D%26hotel_campaign%3D%26user_locale%3Den-US%26user_list_id%3D%26utm_medium%3Dorganic%26utm_id%3Dgha_organic_rd&s=AD1XQnnJZeQKdOSOkDWipB_yds-C&ap=1",
+            "total": 618,
+            "totalBeforeTax": 581,
+            "perNight": 103,
+            "perNightBeforeTax": 97
+          },
+          {
+            "source": "Booking.com",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiYr_Prs8SXAxVBtyAFHbp4GA4YACICCAEQARoCbWQ&co=1&ase=2&gclid=EAIaIQobChMImK_z67PElwMVQbcgBR26eBgOEAoYASABEgL7F_D_BwE&cid=CAASugHkaNLX9DWgj5qTxiW3_uoFRu5dm9Koa1_QbHNfoYoHS_0wsa_4al9n8UcFAm1d1FR5dRTp0jEQGZwrHsj1SYnrw_x4mo77Pz__D3jiSlrTFbbIKXlFgj7o6-El2RcXD6dvxGvVRm1mmBPJS6IWTP5nfLAM2wix7SV1l_rgjMatbr9oJZoBMbwk1BlL5JeiTu7ColAVOxh8lrZ8IHsusgCsAcrBHb4Ji-hPdyXnGBh3dTQ55wtARnKAPDE&category=acrcp_v1_48&sig=AOD64_3244FB5qZUzbgTw3e37FyY2iHJ-g&adurl",
+            "total": 799,
+            "totalBeforeTax": 712,
+            "perNight": 133,
+            "perNightBeforeTax": 119
+          }
+        ],
+        "rawRooms": [
+          {
+            "source": "Priceline",
+            "name": "Standard King Room with Garden View",
+            "perNight": 90
           }
         ]
       }
