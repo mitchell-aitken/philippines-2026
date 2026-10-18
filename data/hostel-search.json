@@ -208,6 +208,19 @@
       "checkIn": "2026-11-25",
       "checkOut": "2026-12-01",
       "twoOnly": true
+    },
+    {
+      "id": "bella-athena",
+      "name": "Bella Athena Gardens",
+      "match": "Bella Athena",
+      "query": "Bella Athena Gardens El Nido",
+      "alt": [
+        "Bella Athena Gardens El Nido Palawan",
+        "Bella Athena Garden El Nido"
+      ],
+      "checkIn": "2026-11-20",
+      "checkOut": "2026-11-25",
+      "twoOnly": true
     }
   ],
   "areas": [
