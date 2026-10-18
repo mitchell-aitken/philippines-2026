@@ -154,10 +154,10 @@ if (hcfg) {
     console.log(`hostels: last checked ${ageDays.toFixed(1)} days ago, skipping`);
   } else {
     const norm = x => String(x || "").toLowerCase().replace(/[^a-z0-9]/g, "");
-    const hotel = async (h, adults) => {
-      if (MOCK_DIR) return JSON.parse(await readFile(`${MOCK_DIR}/hotel-${h.id}-${adults}.json`, "utf8"));
+    const hotel = async (h, adults, extra = {}) => {
+      if (MOCK_DIR) return JSON.parse(await readFile(`${MOCK_DIR}/hotel-${h.id}-${adults}${extra.property_token ? "-detail" : ""}.json`, "utf8"));
       const params = new URLSearchParams({ engine: "google_hotels", q: h.query, check_in_date: h.checkIn, check_out_date: h.checkOut,
-        adults: String(adults), currency: cfg.currency, gl: "ca", hl: "en", api_key: KEY });
+        adults: String(adults), currency: cfg.currency, gl: "ca", hl: "en", api_key: KEY, ...extra });
       const res = await fetch(`https://serpapi.com/search.json?${params}`);
       const data = await res.json().catch(() => ({}));
       if (!res.ok || data.error) throw new Error(data.error || `HTTP ${res.status}`);
@@ -172,8 +172,50 @@ if (hcfg) {
         rating: p.overall_rating ?? null, link: p.link || null };
     };
     const hout = { updated: new Date().toISOString(), currency: cfg.currency, source: "Google Hotels via SerpApi", hostels: {} };
+    // hotels: every booking site Google lists, cheapest first (total incl. taxes, plus the before-tax price)
+    const sites = d => {
+      const best = {};
+      for (const x of [...(d.featured_prices || []), ...(d.prices || [])]) {
+        const s = { source: x.source, link: x.link || null,
+          total: x.total_rate?.extracted_lowest ?? null, totalBeforeTax: x.total_rate?.extracted_before_taxes_fees ?? null,
+          perNight: x.rate_per_night?.extracted_lowest ?? null, perNightBeforeTax: x.rate_per_night?.extracted_before_taxes_fees ?? null };
+        if (!s.source || (s.total == null && s.perNight == null)) continue;
+        const k = s.total ?? s.perNight * 99;
+        if (!best[s.source] || k < (best[s.source].total ?? best[s.source].perNight * 99)) best[s.source] = s;
+      }
+      return Object.values(best).sort((a, b) => (a.total ?? a.perNight * 99) - (b.total ?? b.perNight * 99));
+    };
+    const hotelSites = async h => {
+      const tried = [], saw = [];
+      for (const q of [h.query, ...(h.alt || [])]) {
+        const hq = { ...h, query: q }; tried.push(q);
+        let d, prop = null;
+        try { d = await hotel(hq, 2); } catch (e) { saw.push("(" + e.message.slice(0, 60) + ")"); continue; }
+        if (d.name && (d.prices || d.featured_prices || d.rate_per_night)) prop = d;
+        else {
+          const want = norm(h.match || h.name);
+          const m = (d.properties || []).find(x => norm(x.name).includes(want) || want.includes(norm(x.name)));
+          saw.push(...(d.properties || []).slice(0, 5).map(x => x.name));
+          if (m?.property_token) { try { prop = await hotel(hq, 2, { property_token: m.property_token }); } catch { prop = null; } if (!prop?.name) prop = m; }
+          else if (m) prop = m;
+        }
+        if (prop) {
+          const list = sites(prop);
+          return { name: prop.name, perNight: list[0]?.perNight ?? prop.rate_per_night?.extracted_lowest ?? null,
+            total: list[0]?.total ?? prop.total_rate?.extracted_lowest ?? null, rating: prop.overall_rating ?? null,
+            link: prop.link || null, cheapest: list[0] || null, sites: list.slice(0, 6) };
+        }
+      }
+      return { error: "not found on Google Hotels", tried, saw: [...new Set(saw)].slice(0, 8) };
+    };
     for (const h of hcfg.hostels) {
       const r = { ...(hprev.hostels?.[h.id] || {}) };
+      if (h.twoOnly) {
+        try { r.two = await hotelSites(h); } catch (e) { r.two = { ...(r.two || {}), error: e.message }; }
+        hout.hostels[h.id] = r;
+        console.log(`hotel ${h.id}: ${r.two?.cheapest ? r.two.cheapest.source + " " + r.two.cheapest.total : r.two?.error}`);
+        continue;
+      }
       for (const [key, adults] of (h.twoOnly ? [["two", 2]] : [["one", 1], ["two", 2]])) {
         try { r[key] = price(await hotel(h, adults), h); }
         catch (e) { r[key] = { ...(r[key] || {}), error: e.message }; }

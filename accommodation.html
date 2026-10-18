@@ -195,7 +195,12 @@
   .opt small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
   .prices{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
   .prices span{display:inline-flex;align-items:baseline;gap:5px;padding:4px 10px;border-radius:8px;background:var(--soft);font-size:13px;color:var(--ink-2)}
-  .prices span.main{background:var(--ink);color:#fff}
+  .prices .main{display:inline-flex;align-items:baseline;gap:5px;padding:4px 10px;border-radius:8px;background:var(--ink);color:#fff;font-size:13px;text-decoration:none}
+  .prices a.main:hover{background:var(--blue)}
+  .prices .main b{color:#fff}
+  .prices .main em{color:rgba(255,255,255,.7)}
+  .also{margin-top:8px;font-size:12.5px;color:var(--muted)}
+  .also a{color:var(--ink-2)}
   .prices span.main b{color:#fff}
   .prices b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
   .prices em{font-style:normal;color:var(--muted);font-size:12px}
@@ -237,34 +242,43 @@
     <div class="hero-stats" id="stats"></div>
   </section>
   <div id="blocks"></div>
-  <footer>“Each” = per person per night, for 2 sharing a room. Booking.com prices include taxes. Google Hotels prices are for your exact dates and refresh every 2 weeks.</footer>
+  <footer>“Each” = per person per night, for 2 sharing a room. Prices are for your dates, compared across booking sites via Google Hotels, and refresh every 2 weeks.</footer>
 </main>
 
 <script>document.write('<script src="trip-data.js?v=' + Date.now() + '"><\/script>');</script>
 <script>
 const money = (n, c = 0) => "C$" + n.toLocaleString("en-CA", { minimumFractionDigits: c, maximumFractionDigits: c });
-const perNightOf = o => o.booked ? o.booked.total / o.booked.nights : o.seen ? o.seen.total / o.seen.nights : null;
+const perNightOf = (o, n) => { if (o.booked) return o.booked.total / o.booked.nights; const c = LIVE[o.id]?.two?.cheapest;
+  if (c) return c.total != null ? c.total / n : c.perNight; return o.seen ? o.seen.total / o.seen.nights : null; };
 let LIVE = {};
 
 function optHTML(o, b) {
-  const n = nightsOf(b), live = LIVE[o.id]?.two, P = [];
+  const n = nightsOf(b), live = LIVE[o.id]?.two, c = live?.cheapest, P = [];
+  const rel = 'target="_blank" rel="noopener"';
   if (o.booked) {
     const pn = o.booked.total / o.booked.nights;
     P.push(`<span class="main">Paid <b>${money(o.booked.total, 2)}</b><em>${o.booked.nights} nights, both</em></span>`,
            `<span><b>${money(pn, 2)}</b>/night</span>`, `<span><b>${money(pn / 2, 2)}</b> each/night</span>`);
+  } else if (c) {
+    const tot = c.total ?? c.perNight * n, pn = tot / n, pre = c.totalBeforeTax ?? (c.perNightBeforeTax != null ? c.perNightBeforeTax * n : null);
+    const main = `Cheapest: ${esc(c.source)} <b>${money(tot)}</b><em>${pre != null ? `${money(pre)} + ${money(tot - pre)} taxes · ` : "incl. taxes · "}${n} night${n > 1 ? "s" : ""}</em>`;
+    P.push(c.link ? `<a class="main" href="${esc(c.link)}" ${rel}>${main} ↗</a>` : `<span class="main">${main}</span>`,
+           `<span><b>${money(pn)}</b>/night</span>`, `<span><b>${money(pn / 2)}</b> each/night</span>`);
   } else if (o.seen) {
     const pn = o.seen.total / o.seen.nights;
-    P.push(`<span class="main"><b>${money(pn / 2)}</b> each/night</span>`, `<span><b>${money(pn)}</b>/night</span>`,
-           `<span>Booking.com <b>${money(o.seen.total)}</b><em>${o.seen.nights} nights, ${esc(o.seen.dates)}</em></span>`);
+    P.push(`<span class="main">Booking.com <b>${money(o.seen.total)}</b><em>incl. taxes · ${o.seen.nights} nights, ${esc(o.seen.dates)}</em></span>`,
+           `<span><b>${money(pn)}</b>/night</span>`, `<span><b>${money(pn / 2)}</b> each/night</span>`);
   }
-  if (!o.booked && live?.perNight != null)
-    P.push(`<span>Google, your dates <b>${money(live.perNight)}</b>/night<em>${money(live.perNight / 2)} each</em></span>`);
-  if (!P.length) P.push(`<span>${o.live && !LIVE[o.id] ? "Checking price…" : "No price yet · check link"}</span>`);
+  if (!P.length) P.push(`<span>${o.live && !LIVE[o.id] ? "Checking prices…" : "No price yet · check link"}</span>`);
+  const others = (live?.sites || []).filter(s => !(o.booked ? false : s === c || s.source === c?.source)).slice(0, 4);
+  const also = others.length ? `<div class="also">${o.booked ? "Cheapest now" : "Also"}: ${others.map(s => {
+      const t = s.total ?? s.perNight * n, x = `${esc(s.source)} ${money(t)}`;
+      return s.link ? `<a href="${esc(s.link)}" ${rel}>${x}</a>` : x; }).join(" · ")}</div>` : "";
   return `<div class="opt${o.booked ? " booked" : ""}${o.preferred ? " preferred" : ""}">
-    <div class="opt-top"><a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.name)} ↗</a>
+    <div class="opt-top"><a href="${esc(o.url)}" ${rel}>${esc(o.name)} ↗</a>
       ${o.booked ? `<span class="tag ok">✓ Booked</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
-    <div class="prices">${P.join("")}</div></div>`;
+    <div class="prices">${P.join("")}</div>${also}</div>`;
 }
 
 function render() {
@@ -287,7 +301,7 @@ function render() {
   ACCOM.forEach(b => {
     const n = nightsOf(b);
     if (accomPick(b)?.booked) booked += n;
-    const choices = (accomPick(b) ? [accomPick(b)] : b.options).map(o => perNightOf(o) ?? LIVE[o.id]?.two?.perNight).filter(x => x != null);
+    const choices = (accomPick(b) ? [accomPick(b)] : b.options).map(o => perNightOf(o, n)).filter(x => x != null);
     if (choices.length) { total += Math.min(...choices) * n / 2; priced += n; }
   });
   document.getElementById("stats").innerHTML = `<div><b>${booked}/${all}</b><span>nights booked</span></div><div><b>~${money(total)}</b><span>each · ${priced} of ${all} nights priced</span></div><div><b>~${money(priced ? total / priced : 0)}</b><span>each per night</span></div>`;

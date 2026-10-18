@@ -81,7 +81,12 @@
       "query": "Busai Dream Falls Resort Loboc Bohol",
       "checkIn": "2026-11-17",
       "checkOut": "2026-11-19",
-      "twoOnly": true
+      "twoOnly": true,
+      "alt": [
+        "Busai Dreamfalls Resort Sevilla Bohol",
+        "Busai Dream Falls Resort",
+        "Busai Falls Resort Loboc"
+      ]
     },
     {
       "id": "palms-cove-19",
@@ -90,7 +95,10 @@
       "query": "Palms Cove Resort Panglao",
       "checkIn": "2026-11-19",
       "checkOut": "2026-11-20",
-      "twoOnly": true
+      "twoOnly": true,
+      "alt": [
+        "Palms Cove Resort Alona Panglao"
+      ]
     },
     {
       "id": "j-boutique",
@@ -99,7 +107,10 @@
       "query": "J Boutique Hotel El Nido",
       "checkIn": "2026-11-20",
       "checkOut": "2026-11-25",
-      "twoOnly": true
+      "twoOnly": true,
+      "alt": [
+        "J Boutique El Nido Managed by H Hospitality"
+      ]
     },
     {
       "id": "lunara",
@@ -108,7 +119,11 @@
       "query": "Lunara Villas El Nido",
       "checkIn": "2026-11-20",
       "checkOut": "2026-11-25",
-      "twoOnly": true
+      "twoOnly": true,
+      "alt": [
+        "Lunara Villas El Nido Palawan",
+        "Lunara Villas"
+      ]
     },
     {
       "id": "kokosnuss",
@@ -117,7 +132,10 @@
       "query": "Kokosnuss Garden Resort Coron",
       "checkIn": "2026-11-25",
       "checkOut": "2026-12-01",
-      "twoOnly": true
+      "twoOnly": true,
+      "alt": [
+        "KokosNuss Garden Resort Coron Palawan"
+      ]
     },
     {
       "id": "vienna",
@@ -126,7 +144,22 @@
       "query": "Vienna Hotel Coron",
       "checkIn": "2026-11-25",
       "checkOut": "2026-12-01",
-      "twoOnly": true
+      "twoOnly": true,
+      "alt": [
+        "Vienna Hotel Coron Palawan"
+      ]
+    },
+    {
+      "id": "palms-cove",
+      "name": "Palms Cove Resort",
+      "match": "Palms Cove",
+      "query": "Palms Cove Resort Panglao",
+      "checkIn": "2026-11-15",
+      "checkOut": "2026-11-17",
+      "twoOnly": true,
+      "alt": [
+        "Palms Cove Resort Alona Panglao"
+      ]
     }
   ]
 }
