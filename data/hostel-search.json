@@ -138,18 +138,6 @@
       ]
     },
     {
-      "id": "vienna",
-      "name": "Vienna Hotel",
-      "match": "Vienna",
-      "query": "Vienna Hotel Coron",
-      "checkIn": "2026-11-25",
-      "checkOut": "2026-12-01",
-      "twoOnly": true,
-      "alt": [
-        "Vienna Hotel Coron Palawan"
-      ]
-    },
-    {
       "id": "palms-cove",
       "name": "Palms Cove Resort",
       "match": "Palms Cove",
@@ -203,6 +191,19 @@
       "query": "Fernvale Leisure Club and Resort Coron",
       "alt": [
         "Fernvale Leisure Club Coron Palawan"
+      ],
+      "checkIn": "2026-11-25",
+      "checkOut": "2026-12-01",
+      "twoOnly": true
+    },
+    {
+      "id": "la-natura",
+      "name": "La Natura Resort",
+      "match": "La Natura",
+      "query": "La Natura Resort Coron",
+      "alt": [
+        "La Natura Resort Coron Palawan",
+        "La Natura Resort Busuanga"
       ],
       "checkIn": "2026-11-25",
       "checkOut": "2026-12-01",

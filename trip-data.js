@@ -443,14 +443,14 @@ const ACCOM = [
   { id: "coron", area: "Coron", region: "Coron", from: "2026-11-25", to: "2026-12-01", picks: "crn",
     note: "",
     options: [
+      { id: "fernvale", name: "Fernvale Leisure Club and Resort", where: "Coron", rating: "4.0 · Google",
+        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-25", "2026-12-01"), live: true },
+      { id: "la-natura", name: "La Natura Resort", where: "Coron",
+        url: bk("La Natura Resort Coron", "2026-11-25", "2026-12-01"), live: true },
       { id: "kokosnuss", name: "Kokosnuss Garden Resort", where: "1.2 km from centre", rating: "8.0 · 642 reviews",
         url: bk("Kokosnuss Garden Resort Coron", "2026-11-25", "2026-12-01"), seen: { total: 440, nights: 6, dates: "Nov 24–30" }, live: true },
-      { id: "vienna", name: "Vienna Hotel", where: "Coron town, 300 m from centre", rating: "8.0 · 561 reviews",
-        url: bkHotel("vienna", "2026-11-25", "2026-12-01"), seen: { total: 489, nights: 6, dates: "Nov 24–30" }, live: true },
       { id: "lagoon-coron", name: "Lagoon Coron (Mo2)", where: "Coron town", rating: "4.2 · Google",
-        url: bk("Mo2 Lagoon Coron", "2026-11-25", "2026-12-01"), live: true },
-      { id: "fernvale", name: "Fernvale Leisure Club and Resort", where: "Coron", rating: "4.0 · Google",
-        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-25", "2026-12-01"), live: true }
+        url: bk("Mo2 Lagoon Coron", "2026-11-25", "2026-12-01"), live: true }
     ] }
 ];
 const nightsOf = b => Math.round((new Date(b.to) - new Date(b.from)) / 864e5);
