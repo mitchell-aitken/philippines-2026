@@ -184,6 +184,7 @@
   .tag.ok{background:var(--green-bg);color:var(--green)}
   .tag.maybe{background:#FFF6D6;color:#7A5B00}
   .tag.pref{background:#E8EEFB;color:var(--blue)}
+  .blk-note b{color:var(--ink);font-weight:600}
   .blk-note{margin:8px 0 0;color:var(--muted);font-size:13.5px}
   .opts{display:grid;gap:10px;margin-top:12px}
   .opt{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff}
@@ -320,7 +321,7 @@ function render() {
     const tag = p?.booked ? `<span class="tag ${p.booked.cancellable ? "maybe" : "ok"}">${p.booked.cancellable ? "Booked · cancellable" : "Booked"}</span>` : b.maybe ? `<span class="tag maybe">Maybe</span>` : `<span class="tag">Not booked</span>`;
     return `<section class="blk" id="${b.id}" style="--c:${COLORS[b.region]}">
       <div class="blk-head"><h2>${esc(b.area)}</h2><span class="when">${esc(accomRange(b))}</span>${tag}</div>
-      ${b.note ? `<p class="blk-note">${esc(b.note)}</p>` : ""}
+      ${b.note ? `<p class="blk-note">${b.noteBold ? `<b>${esc(b.note)}</b>` : esc(b.note)}</p>` : ""}
       <div class="opts">${b.options.map(o => optHTML(o, b)).join("")}</div></section>`;
   }).join("");
 

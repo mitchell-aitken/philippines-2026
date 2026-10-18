@@ -421,10 +421,10 @@ const ACCOM = [
     options: [
       { id: "busai", name: "Busai Dream Falls Resort", where: "By Busai Falls, Loboc / Sevilla", rating: "9.1 · 29 reviews",
         why: "7 rooms, breakfast, walk to the falls", url: bk("Busai Dream Falls Resort", "2026-11-17", "2026-11-19"), live: true },
-      { id: "stefanie-grace", name: "Stefanie Grace Inn", where: "Loboc", rating: "4.4 · 398 reviews", why: "Outdoor pool",
-        url: bk("Stefanie Grace Inn Loboc Bohol", "2026-11-17", "2026-11-19"), live: true },
       { id: "fox-firefly", name: "Fox & The Firefly Cottages", where: "Loboc River, near the wharf", rating: "4.5 · 624 reviews", why: "Looks the nicest. Full for both nights in one room, but open night by night", nightly: "fox-firefly", full: true,
-        url: bk("Fox and The Firefly Cottages Loboc", "2026-11-17", "2026-11-19"), live: true }
+        url: bk("Fox and The Firefly Cottages Loboc", "2026-11-17", "2026-11-19"), live: true },
+      { id: "stefanie-grace", name: "Stefanie Grace Inn", where: "Loboc", rating: "4.4 · 398 reviews", why: "Outdoor pool",
+        url: bk("Stefanie Grace Inn Loboc Bohol", "2026-11-17", "2026-11-19"), live: true }
     ] },
   { id: "panglao-2", area: "Panglao", region: "Bohol", from: "2026-11-19", to: "2026-11-20", picks: "pgl",
     note: "Back on Panglao for the sardines and the 10:30 flight. Not booked.",
@@ -433,7 +433,7 @@ const ACCOM = [
         url: bk("Palms Cove Resort Panglao", "2026-11-19", "2026-11-20"), live: true }
     ] },
   { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-25", picks: "eni",
-    note: "Mitchell is least happy with these options. Logan to do more research if you want.",
+    note: "Least happy with these options. Logan to do more research if you want.", noteBold: true,
     options: [
       { id: "j-boutique", name: "J Boutique Hotel El Nido", where: "El Nido town, 350 m from centre", rating: "8.8 · 796 reviews",
         url: bkHotel("j-hostel-el-nido", "2026-11-20", "2026-11-25"), seen: { total: 277, nights: 5, dates: "Nov 19–24" }, live: true },
