@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-15T18:35:03.912Z",
+  "updated": "2026-10-18T17:34:32.170Z",
   "currency": "CAD",
   "source": "Google Hotels via SerpApi",
   "hostels": {
     "coco-farm": {
       "one": {
         "name": "Bohol Coco Farm Hostel",
-        "perNight": 28,
-        "total": 142,
+        "perNight": 23,
+        "total": 114,
         "rating": 4.7,
         "link": "http://bit.ly/boholcocofarmhostel"
       },
       "two": {
         "name": "Bohol Coco Farm Hostel",
-        "perNight": 34,
-        "total": 169,
+        "perNight": 46,
+        "total": 229,
         "rating": 4.7,
         "link": "http://bit.ly/boholcocofarmhostel"
       }
@@ -30,13 +30,17 @@
     "mayas": {
       "one": {
         "name": "Mayas Guesthouse",
-        "perNight": null,
-        "total": null,
+        "perNight": 34,
+        "total": 170,
         "rating": 4.4,
         "link": null
       },
       "two": {
-        "error": "Google Hotels hasn't returned any results for this query."
+        "name": "Mayas Guesthouse",
+        "perNight": 34,
+        "total": 170,
+        "rating": 4.4,
+        "link": null
       }
     },
     "spin": {
@@ -50,7 +54,7 @@
       "two": {
         "name": "Spin Designer Hostel",
         "perNight": 63,
-        "total": 317,
+        "total": 316,
         "rating": 4.5,
         "link": "https://www.spinhostel.com/"
       }
@@ -65,8 +69,8 @@
       },
       "two": {
         "name": "The Beach House El Nido",
-        "perNight": 40,
-        "total": 198,
+        "perNight": 39,
+        "total": 197,
         "rating": 4,
         "link": "https://thebeachhouse.ph/"
       }
@@ -90,15 +94,15 @@
     "hop": {
       "one": {
         "name": "Hop Hostel",
-        "perNight": 29,
-        "total": 173,
+        "perNight": 27,
+        "total": 160,
         "rating": 4.7,
         "link": "http://hophostel.com.ph/"
       },
       "two": {
         "name": "Hop Hostel",
-        "perNight": 58,
-        "total": 346,
+        "perNight": 53,
+        "total": 320,
         "rating": 4.7,
         "link": "http://hophostel.com.ph/"
       }
@@ -113,8 +117,8 @@
       },
       "two": {
         "name": "Michel Inn Coron",
-        "perNight": null,
-        "total": null,
+        "perNight": 34,
+        "total": 204,
         "rating": 4.1,
         "link": null
       }
@@ -128,7 +132,57 @@
         "link": "https://www.ecocio.org/"
       },
       "two": {
-        "error": "Google Hotels hasn't returned any results for this query."
+        "name": "Ecocio jungle Retreat",
+        "perNight": 24,
+        "total": 145,
+        "rating": 4.1,
+        "link": "https://www.ecocio.org/"
+      }
+    },
+    "busai": {
+      "two": {
+        "error": "not found on Google Hotels"
+      }
+    },
+    "palms-cove-19": {
+      "two": {
+        "name": "PALMS COVE RESORT ALONA PANGLAO BOHOL",
+        "perNight": 53,
+        "total": 53,
+        "rating": 4.4,
+        "link": "https://www.paradisepalmscove.com/"
+      }
+    },
+    "j-boutique": {
+      "two": {
+        "name": "J Boutique Hotel El Nido",
+        "perNight": 43,
+        "total": 215,
+        "rating": 4.5,
+        "link": null
+      }
+    },
+    "lunara": {
+      "two": {
+        "error": "not found on Google Hotels"
+      }
+    },
+    "kokosnuss": {
+      "two": {
+        "name": "KokosNuss",
+        "perNight": 43,
+        "total": 258,
+        "rating": 4,
+        "link": "http://www.kokosnuss.info/"
+      }
+    },
+    "vienna": {
+      "two": {
+        "name": "Vienna Hotel",
+        "perNight": 80,
+        "total": 481,
+        "rating": 3.3,
+        "link": "https://hannahlovestotravel.com/vienna-philippines"
       }
     }
   }
