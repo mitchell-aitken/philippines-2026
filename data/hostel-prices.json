@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T17:41:04.308Z",
+  "updated": "2026-10-18T17:54:02.779Z",
   "currency": "CAD",
   "source": "Google Hotels via SerpApi",
   "hostels": {
@@ -553,5 +553,2178 @@
         ]
       }
     }
+  },
+  "areas": {
+    "loboc": [
+      {
+        "name": "Loboc River Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.5,
+        "reviews": 1115,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6268414,
+          "longitude": 124.01991979999998
+        },
+        "link": "https://www.lobocriverresort.com/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Bar",
+          "Restaurant",
+          "Room service"
+        ]
+      },
+      {
+        "name": "Marqis Sunrise Sunset Resort and Spa",
+        "type": "hotel",
+        "perNight": 92,
+        "perNightBeforeTax": 82,
+        "total": 185,
+        "rating": 4.6,
+        "reviews": 235,
+        "hotelClass": 4,
+        "gps": {
+          "latitude": 9.6326386,
+          "longitude": 123.934009
+        },
+        "link": null,
+        "amenities": [
+          "Breakfast",
+          "Free Wi-Fi",
+          "Parking",
+          "Outdoor pool",
+          "Hot tub",
+          "Air conditioning",
+          "Bar",
+          "Restaurant"
+        ]
+      },
+      {
+        "name": "Fox & The Firefly Cottages",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.5,
+        "reviews": 624,
+        "hotelClass": 4,
+        "gps": {
+          "latitude": 9.6336815,
+          "longitude": 124.0261421
+        },
+        "link": "http://www.foxandthefireflycottages.com/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Pools",
+          "Bar",
+          "Restaurant",
+          "Airport shuttle",
+          "Accessible"
+        ]
+      },
+      {
+        "name": "Astoria Bohol Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.5,
+        "reviews": 277,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.624744999999999,
+          "longitude": 123.89435590000001
+        },
+        "link": "http://www.astoriabohol.com/?utm_source=GooglePlusLocal&utm_medium=Local&utm_campaign=GooglePlusInitiative",
+        "amenities": [
+          "Free Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Pet-friendly",
+          "Fitness center",
+          "Spa",
+          "Beach access"
+        ]
+      },
+      {
+        "name": "Bamboo Beachvilla Beachhouse Bohol",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.1,
+        "reviews": 77,
+        "hotelClass": 4,
+        "gps": {
+          "latitude": 9.5993631,
+          "longitude": 124.1365343
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Airport shuttle",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "MS Mountain Cabin",
+        "type": "hotel",
+        "perNight": 91,
+        "perNightBeforeTax": 80,
+        "total": 182,
+        "rating": 4.5,
+        "reviews": 58,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6445244,
+          "longitude": 124.01102100000001
+        },
+        "link": null,
+        "amenities": [
+          "Free breakfast",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Bar",
+          "Restaurant",
+          "Room service",
+          "Airport shuttle"
+        ]
+      },
+      {
+        "name": "Loboc Cool River Resort",
+        "type": "hotel",
+        "perNight": 32,
+        "perNightBeforeTax": 28,
+        "total": 64,
+        "rating": 4.3,
+        "reviews": 107,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6329538,
+          "longitude": 124.02698919999999
+        },
+        "link": null,
+        "amenities": [
+          "Free Wi-Fi",
+          "Free parking",
+          "Restaurant",
+          "Airport shuttle",
+          "Full-service laundry"
+        ]
+      },
+      {
+        "name": "3-bedroom villa with private pool in Lila, Bohol",
+        "type": "vacation rental",
+        "perNight": 141,
+        "perNightBeforeTax": 124,
+        "total": 281,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.592219352722168,
+          "longitude": 124.07666778564453
+        },
+        "link": "https://www.agoda.com",
+        "amenities": [
+          "Kitchen",
+          "Outdoor grill",
+          "Oven stove",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "Lila Bitoon Resthouse",
+        "type": "hotel",
+        "perNight": 259,
+        "perNightBeforeTax": 212,
+        "total": 518,
+        "rating": 4.6,
+        "reviews": 9,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.5883992,
+          "longitude": 124.0876459
+        },
+        "link": "https://www.facebook.com/bitoonresthouse?mibextid=ZbWKwL",
+        "amenities": []
+      },
+      {
+        "name": "Alta Bohol Resort & Convention Center",
+        "type": "hotel",
+        "perNight": 80,
+        "perNightBeforeTax": 71,
+        "total": 160,
+        "rating": 3.9,
+        "reviews": 219,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6341457,
+          "longitude": 123.89531699999998
+        },
+        "link": null,
+        "amenities": [
+          "Free Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Restaurant",
+          "Room service",
+          "Airport shuttle",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "MJS Camp Site and Mountain Resort",
+        "type": "hotel",
+        "perNight": 34,
+        "perNightBeforeTax": 27,
+        "total": 68,
+        "rating": 4.7,
+        "reviews": 116,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.7774375,
+          "longitude": 124.0014375
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Air conditioning"
+        ]
+      },
+      {
+        "name": "Concordia's Country Resort- Villa Maria",
+        "type": "vacation rental",
+        "perNight": 82,
+        "perNightBeforeTax": 73,
+        "total": 165,
+        "rating": 5,
+        "reviews": 8,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.602116584777832,
+          "longitude": 124.11644744873047
+        },
+        "link": "https://www.agoda.com",
+        "amenities": [
+          "Balcony",
+          "Kitchen",
+          "Microwave",
+          "Outdoor grill",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "Bamboo Beachhouse Bungalow",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6183683,
+          "longitude": 123.92609859999997
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Water to Forest Ecolodge",
+        "type": "hotel",
+        "perNight": 32,
+        "perNightBeforeTax": 29,
+        "total": 65,
+        "rating": 4.5,
+        "reviews": 195,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.6325061,
+          "longitude": 124.0156863
+        },
+        "link": "http://watertoforestecolodge.com/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Bar",
+          "Restaurant",
+          "Room service",
+          "Full-service laundry",
+          "Accessible"
+        ]
+      },
+      {
+        "name": "Ka-Juan Private Resort and Events Place",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 5,
+        "reviews": 1,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.5915199,
+          "longitude": 124.07687130000001
+        },
+        "link": "https://www.facebook.com/kajuanlila.bohol/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Kitchen in some rooms",
+          "Accessible",
+          "Smoke-free property"
+        ]
+      },
+      {
+        "name": "Green AA Garden Resort",
+        "type": "hotel",
+        "perNight": 28,
+        "perNightBeforeTax": 23,
+        "total": 56,
+        "rating": 3.9,
+        "reviews": 28,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6890392,
+          "longitude": 123.9585708
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Bohol White House Bed & Breakfast",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.9,
+        "reviews": 42,
+        "hotelClass": 4,
+        "gps": {
+          "latitude": 9.598239999999999,
+          "longitude": 124.109158
+        },
+        "link": "http://www.boholwhitehouse.com/",
+        "amenities": [
+          "Wi-Fi",
+          "Outdoor pool",
+          "Air conditioning",
+          "Pet-friendly",
+          "Restaurant",
+          "Airport shuttle",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Mountain Meets The Sea Hidden Resort",
+        "type": "hotel",
+        "perNight": 46,
+        "perNightBeforeTax": 40,
+        "total": 91,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6161318,
+          "longitude": 123.86816929999999
+        },
+        "link": "https://www.mountainmeetstheseabohol.com/",
+        "amenities": [
+          "Free Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Beach access",
+          "Smoke-free property"
+        ]
+      },
+      {
+        "name": "Eight Breeze Resort",
+        "type": "hotel",
+        "perNight": 29,
+        "perNightBeforeTax": 25,
+        "total": 57,
+        "rating": 4,
+        "reviews": 36,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6257963,
+          "longitude": 123.8990748
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Aghao Family Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.8,
+        "reviews": 11,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.7696829,
+          "longitude": 123.88336779999999
+        },
+        "link": null,
+        "amenities": [
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Eight Breeze Resort",
+        "type": "hotel",
+        "perNight": 26,
+        "perNightBeforeTax": null,
+        "total": 52,
+        "rating": 4,
+        "reviews": 36,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6257963,
+          "longitude": 123.8990748
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Aghao Family Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.8,
+        "reviews": 11,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.7696829,
+          "longitude": 123.88336779999999
+        },
+        "link": null,
+        "amenities": [
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Bohol Guesthouse",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.3,
+        "reviews": 3,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.633277999999999,
+          "longitude": 124.028268
+        },
+        "link": "http://boholnipahuts.com/",
+        "amenities": [
+          "Pet-friendly"
+        ]
+      },
+      {
+        "name": "Villa Limpia Beach Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.4,
+        "reviews": 91,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.6013077,
+          "longitude": 124.0028619
+        },
+        "link": "https://www.facebook.com/pages/Villa-Limpia-Beach-Resort/247503665283135",
+        "amenities": [
+          "Airport shuttle",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "OYO 435 La Veranda Beach Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.2,
+        "reviews": 57,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.6085677,
+          "longitude": 123.86925400000001
+        },
+        "link": "https://www.oyorooms.com/h/84157?utm_source=Google_gmb_PP&utm_medium=Organic&utm_campaign=PP_PANG003&latitude=9.60869&longitude=123.8687&locale=en",
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Pool",
+          "Beach access",
+          "Restaurant",
+          "Airport shuttle"
+        ]
+      },
+      {
+        "name": "RedDoorz Plus @ Catarman Dauis",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.5,
+        "reviews": 91,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6086897,
+          "longitude": 123.86872930000001
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Pool",
+          "Air conditioning",
+          "Beach access",
+          "Restaurant",
+          "Airport shuttle",
+          "Full-service laundry"
+        ]
+      },
+      {
+        "name": "Villa Alzhun Tourist Inn And Restaurant",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.7,
+        "reviews": 76,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.632523599999999,
+          "longitude": 123.86629970000001
+        },
+        "link": "https://www.facebook.com/profile.php?id=100085105974795&mibextid=ZbWKwL",
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Pool",
+          "Pet-friendly",
+          "Restaurant",
+          "Room service",
+          "Airport shuttle",
+          "Full-service laundry"
+        ]
+      },
+      {
+        "name": "Tambayan Rooms and Cottages by SMS Hospitality",
+        "type": "hotel",
+        "perNight": 16,
+        "perNightBeforeTax": null,
+        "total": 32,
+        "rating": 3.8,
+        "reviews": 10,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.6007903,
+          "longitude": 124.00286120000001
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Hts Lodge",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.7,
+        "reviews": 12,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6169826,
+          "longitude": 123.93075339999999
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Bohol Island Coop Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 2.9,
+        "reviews": 15,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.610044499999999,
+          "longitude": 124.18463550000001
+        },
+        "link": null,
+        "amenities": [
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "BambooBeachVilla1 AC New OCEANFRONT POOL sunsetview garden kitchen SATELLITE STARLINK WI-FI",
+        "type": "vacation rental",
+        "perNight": 135,
+        "perNightBeforeTax": null,
+        "total": 271,
+        "rating": 4.7,
+        "reviews": 72,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.598858833312988,
+          "longitude": 124.13702392578125
+        },
+        "link": "https://stays.dogfriendlyretreats.com/hotel/london/bamboobeachvilla1-ac-new-oceanfront-pool-sunsetview-garden-kitchen-satellite-starlink-wi-fi",
+        "amenities": [
+          "Air conditioning",
+          "Fitness center",
+          "Outdoor pool",
+          "Pet-friendly",
+          "Free parking",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "Baclayon Baybreeze Hotel",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4,
+        "reviews": 2,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6254146,
+          "longitude": 123.89203669999999
+        },
+        "link": null,
+        "amenities": [
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "3-bedroom villa with private pool in Bohol Philippines",
+        "type": "vacation rental",
+        "perNight": 162,
+        "perNightBeforeTax": null,
+        "total": 324,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.591538429260254,
+          "longitude": 124.07687377929688
+        },
+        "link": "https://www.booking.com/hotel/ph/3-bedroom-villa-with-private-pool-in-bohol-philippines.en-gb.html?aid=2068758&utm_source=seogooglelocal&utm_medium=description&utm_term=hotel-17136440&utm_campaign=en-gb&label=seogooglelocal-link-imagesaow-hotel-17136440_grp-0_gendate-20261014",
+        "amenities": [
+          "Air conditioning",
+          "Kitchen",
+          "Smoke-free",
+          "Washer"
+        ]
+      },
+      {
+        "name": "Water to Forest Ecolodge - Tree house with private bathroom",
+        "type": "vacation rental",
+        "perNight": 36,
+        "perNightBeforeTax": null,
+        "total": 72,
+        "rating": 5,
+        "reviews": 8,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.632180213928223,
+          "longitude": 124.01551055908203
+        },
+        "link": "https://www.bluepillow.com/search/5a84f56f7c00cb0e04259778?dest=bkng&cat=House&lat=9.63218&lng=124.01551&language=en",
+        "amenities": [
+          "Airport shuttle",
+          "Kid-friendly",
+          "Indoor pool",
+          "Smoke-free",
+          "Cable TV",
+          "Free parking"
+        ]
+      },
+      {
+        "name": "Vacation House with Pool and Garden for 14 pax",
+        "type": "vacation rental",
+        "perNight": 126,
+        "perNightBeforeTax": null,
+        "total": 251,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.739720344543457,
+          "longitude": 123.88485717773438
+        },
+        "link": "https://www.bluepillow.com/search/655202c11811a9820ec15047?dest=ago&cat=Villa&lat=9.73972&lng=123.88486&language=en",
+        "amenities": [
+          "Air conditioning",
+          "Kitchen",
+          "Free parking",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "Spacious Villa",
+        "type": "vacation rental",
+        "perNight": 125,
+        "perNightBeforeTax": null,
+        "total": 249,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.626326560974121,
+          "longitude": 123.89833068847656
+        },
+        "link": "https://www.booking.com/hotel/ph/spacious-villa.en-gb.html?aid=2068758&utm_source=seogooglelocal&utm_medium=description&utm_term=hotel-16220202&utm_campaign=en-gb&label=seogooglelocal-link-imagesaow-hotel-16220202_grp-2_gendate-20261014",
+        "amenities": [
+          "Air conditioning",
+          "Kitchen",
+          "Washer"
+        ]
+      },
+      {
+        "name": "Riverside Native House",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.2,
+        "reviews": 40,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6371898,
+          "longitude": 124.02290339999999
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Pet-friendly",
+          "Airport shuttle",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "The Peacock Garden Bohol",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.5,
+        "reviews": 142,
+        "hotelClass": 4,
+        "gps": {
+          "latitude": 9.6222542,
+          "longitude": 123.9394233
+        },
+        "link": null,
+        "amenities": [
+          "Breakfast",
+          "Air conditioning",
+          "Airport shuttle",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Sobral Rice Terraces View",
+        "type": "vacation rental",
+        "perNight": 26,
+        "perNightBeforeTax": null,
+        "total": 52,
+        "rating": 5,
+        "reviews": 2,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.658590316772461,
+          "longitude": 124.14855194091797
+        },
+        "link": null,
+        "amenities": [
+          "Microwave",
+          "Washer",
+          "Free parking",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "BambooBeachVilla1 AC New OCEANFRONT POOL sunsetview garden kitchen SATELLITE STARLINK WI-FI - One-Bedroom Villa",
+        "type": "vacation rental",
+        "perNight": 136,
+        "perNightBeforeTax": null,
+        "total": 271,
+        "rating": 5,
+        "reviews": 8,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.59885025024414,
+          "longitude": 124.13701629638672
+        },
+        "link": "https://www.freecancellations.com/search/F2cjQQEGGiUHV1BVXlkEEggLD080RF1F?lat=9.59885&lng=124.13702&language=en",
+        "amenities": [
+          "Air conditioning",
+          "Kid-friendly",
+          "Ironing board",
+          "Kitchen",
+          "Pet-friendly",
+          "Smoke-free",
+          "Cable TV",
+          "Washer"
+        ]
+      }
+    ],
+    "chocolate-hills": [
+      {
+        "name": "MS Mountain Cabin",
+        "type": "hotel",
+        "perNight": 91,
+        "perNightBeforeTax": 80,
+        "total": 182,
+        "rating": 4.5,
+        "reviews": 58,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6445244,
+          "longitude": 124.01102100000001
+        },
+        "link": null,
+        "amenities": [
+          "Free breakfast",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Bar",
+          "Restaurant",
+          "Room service",
+          "Airport shuttle"
+        ]
+      },
+      {
+        "name": "MJS Camp Site and Mountain Resort",
+        "type": "hotel",
+        "perNight": 34,
+        "perNightBeforeTax": 27,
+        "total": 68,
+        "rating": 4.7,
+        "reviews": 116,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.7774375,
+          "longitude": 124.0014375
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Air conditioning"
+        ]
+      },
+      {
+        "name": "LHOYJEAN GARDEN HOSTEL",
+        "type": "hotel",
+        "perNight": 13,
+        "perNightBeforeTax": 11,
+        "total": 25,
+        "rating": 5,
+        "reviews": 253,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.7891491,
+          "longitude": 124.13639189999999
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Pet-friendly"
+        ]
+      },
+      {
+        "name": "Loboc River Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.5,
+        "reviews": 1115,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6269147,
+          "longitude": 124.02001419999999
+        },
+        "link": "https://www.lobocriverresort.com/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Bar",
+          "Restaurant",
+          "Room service"
+        ]
+      },
+      {
+        "name": "Khloe’s Serenity Guest House",
+        "type": "hotel",
+        "perNight": 12,
+        "perNightBeforeTax": 10,
+        "total": 24,
+        "rating": 4.9,
+        "reviews": 75,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.7910386,
+          "longitude": 124.1350552
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Loboc Cool River Resort",
+        "type": "hotel",
+        "perNight": 32,
+        "perNightBeforeTax": 28,
+        "total": 64,
+        "rating": 4.3,
+        "reviews": 107,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6329538,
+          "longitude": 124.02698919999999
+        },
+        "link": null,
+        "amenities": [
+          "Free Wi-Fi",
+          "Free parking",
+          "Restaurant",
+          "Airport shuttle",
+          "Full-service laundry"
+        ]
+      },
+      {
+        "name": "Truth be Found Ministry Resort",
+        "type": "hotel",
+        "perNight": 20,
+        "perNightBeforeTax": 18,
+        "total": 40,
+        "rating": 4,
+        "reviews": 7,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6284498,
+          "longitude": 124.3512648
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "THE ACACIA GLAMPING PARK",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.7,
+        "reviews": 25,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.796953499999999,
+          "longitude": 124.15963269999999
+        },
+        "link": null,
+        "amenities": [
+          "Breakfast ($)",
+          "Air conditioning",
+          "Restaurant",
+          "Room service"
+        ]
+      },
+      {
+        "name": "Bohol Hammock Hostel",
+        "type": "hotel",
+        "perNight": 16,
+        "perNightBeforeTax": 14,
+        "total": 31,
+        "rating": 4.8,
+        "reviews": 245,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.807471699999999,
+          "longitude": 124.1187268
+        },
+        "link": null,
+        "amenities": [
+          "Free Wi-Fi",
+          "Parking",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Water to Forest Ecolodge",
+        "type": "hotel",
+        "perNight": 31,
+        "perNightBeforeTax": 27,
+        "total": 61,
+        "rating": 4.5,
+        "reviews": 195,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.6325061,
+          "longitude": 124.0156863
+        },
+        "link": "http://watertoforestecolodge.com/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Bar",
+          "Restaurant",
+          "Room service",
+          "Full-service laundry",
+          "Accessible"
+        ]
+      },
+      {
+        "name": "Fox & The Firefly Cottages",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.5,
+        "reviews": 624,
+        "hotelClass": 4,
+        "gps": {
+          "latitude": 9.6336815,
+          "longitude": 124.0261421
+        },
+        "link": "http://www.foxandthefireflycottages.com/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Pools",
+          "Bar",
+          "Restaurant",
+          "Airport shuttle",
+          "Accessible"
+        ]
+      },
+      {
+        "name": "Paradise Hills Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.3,
+        "reviews": 4,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.7507878,
+          "longitude": 124.30565919999998
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "BARRIL GREEN HOMESTAY",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.7,
+        "reviews": 17,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.7916109,
+          "longitude": 124.13799560000001
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Bamboo Beach House",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.610514,
+          "longitude": 124.29069339999998
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Home stay rizalina",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.8,
+        "reviews": 12,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.808501699999999,
+          "longitude": 124.11010279999999
+        },
+        "link": "http://bit.ly/3FzK3J1-rizalina",
+        "amenities": [
+          "Airport shuttle"
+        ]
+      },
+      {
+        "name": "JUNJAL's Backpackers Hostel",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.8,
+        "reviews": 37,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.8061566,
+          "longitude": 124.12242520000001
+        },
+        "link": null,
+        "amenities": [
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Riverside Native House",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.2,
+        "reviews": 40,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6371898,
+          "longitude": 124.02290339999999
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Pet-friendly",
+          "Airport shuttle",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Batuan Hammock Hostel",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.8,
+        "reviews": 48,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.8075079,
+          "longitude": 124.11862810000001
+        },
+        "link": null,
+        "amenities": [
+          "Breakfast",
+          "Wi-Fi",
+          "Air conditioning",
+          "Pet-friendly",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Batuan Hammock Hostel",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.8,
+        "reviews": 48,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.8075079,
+          "longitude": 124.11862810000001
+        },
+        "link": null,
+        "amenities": [
+          "Breakfast",
+          "Wi-Fi",
+          "Air conditioning",
+          "Pet-friendly",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Bohol Guesthouse",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.3,
+        "reviews": 3,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.633277999999999,
+          "longitude": 124.028268
+        },
+        "link": "http://boholnipahuts.com/",
+        "amenities": [
+          "Pet-friendly"
+        ]
+      },
+      {
+        "name": "Geras Apartment",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 5,
+        "reviews": 1,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6407565,
+          "longitude": 124.01481419999999
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "JMD Semi Mountain Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3,
+        "reviews": 2,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.9057969,
+          "longitude": 124.1036806
+        },
+        "link": null,
+        "amenities": [
+          "Free Wi-Fi",
+          "Free parking",
+          "Air conditioning",
+          "Smoke-free property"
+        ]
+      }
+    ],
+    "bilar-sevilla": [
+      {
+        "name": "MS Mountain Cabin",
+        "type": "hotel",
+        "perNight": 91,
+        "perNightBeforeTax": 80,
+        "total": 182,
+        "rating": 4.5,
+        "reviews": 58,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6445244,
+          "longitude": 124.01102100000001
+        },
+        "link": null,
+        "amenities": [
+          "Free breakfast",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Bar",
+          "Restaurant",
+          "Room service",
+          "Airport shuttle"
+        ]
+      },
+      {
+        "name": "Bamboo Beachvilla Beachhouse Bohol",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.1,
+        "reviews": 77,
+        "hotelClass": 4,
+        "gps": {
+          "latitude": 9.5993631,
+          "longitude": 124.1365343
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Airport shuttle",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "MJS Camp Site and Mountain Resort",
+        "type": "hotel",
+        "perNight": 34,
+        "perNightBeforeTax": 27,
+        "total": 68,
+        "rating": 4.7,
+        "reviews": 116,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.7774375,
+          "longitude": 124.0014375
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Air conditioning"
+        ]
+      },
+      {
+        "name": "Fox & The Firefly Cottages",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.5,
+        "reviews": 624,
+        "hotelClass": 4,
+        "gps": {
+          "latitude": 9.6336815,
+          "longitude": 124.0261421
+        },
+        "link": "http://www.foxandthefireflycottages.com/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Pools",
+          "Bar",
+          "Restaurant",
+          "Airport shuttle",
+          "Accessible"
+        ]
+      },
+      {
+        "name": "Loboc River Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.5,
+        "reviews": 1115,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6268414,
+          "longitude": 124.01991979999998
+        },
+        "link": "https://www.lobocriverresort.com/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Bar",
+          "Restaurant",
+          "Room service"
+        ]
+      },
+      {
+        "name": "Lila Bitoon Resthouse",
+        "type": "hotel",
+        "perNight": 259,
+        "perNightBeforeTax": 212,
+        "total": 518,
+        "rating": 4.6,
+        "reviews": 9,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.5883992,
+          "longitude": 124.0876459
+        },
+        "link": "https://www.facebook.com/bitoonresthouse?mibextid=ZbWKwL",
+        "amenities": []
+      },
+      {
+        "name": "Water to Forest Ecolodge",
+        "type": "hotel",
+        "perNight": 32,
+        "perNightBeforeTax": 29,
+        "total": 65,
+        "rating": 4.5,
+        "reviews": 195,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.6325061,
+          "longitude": 124.0156863
+        },
+        "link": "http://watertoforestecolodge.com/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Bar",
+          "Restaurant",
+          "Room service",
+          "Full-service laundry",
+          "Accessible"
+        ]
+      },
+      {
+        "name": "Durbans View Hotel/Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.3,
+        "reviews": 30,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6065857,
+          "longitude": 124.21069829999999
+        },
+        "link": "https://www.facebook.com/durbansviewvalencia",
+        "amenities": [
+          "Breakfast ($)",
+          "Wi-Fi",
+          "Free parking",
+          "Pool",
+          "Bar",
+          "Restaurant",
+          "Room service"
+        ]
+      },
+      {
+        "name": "THE ACACIA GLAMPING PARK",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.7,
+        "reviews": 25,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.796953499999999,
+          "longitude": 124.15963269999999
+        },
+        "link": null,
+        "amenities": [
+          "Breakfast ($)",
+          "Air conditioning",
+          "Restaurant",
+          "Room service"
+        ]
+      },
+      {
+        "name": "Loboc Cool River Resort",
+        "type": "hotel",
+        "perNight": 32,
+        "perNightBeforeTax": 28,
+        "total": 64,
+        "rating": 4.3,
+        "reviews": 107,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6329538,
+          "longitude": 124.02698919999999
+        },
+        "link": null,
+        "amenities": [
+          "Free Wi-Fi",
+          "Free parking",
+          "Restaurant",
+          "Airport shuttle",
+          "Full-service laundry"
+        ]
+      },
+      {
+        "name": "Nipa Hut Village",
+        "type": "hotel",
+        "perNight": 31,
+        "perNightBeforeTax": 24,
+        "total": 61,
+        "rating": 4.1,
+        "reviews": 101,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.6327582,
+          "longitude": 124.0163105
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Pet-friendly",
+          "Restaurant",
+          "Airport shuttle",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Stefanie Grace Inn",
+        "type": "hotel",
+        "perNight": 18,
+        "perNightBeforeTax": 18,
+        "total": 36,
+        "rating": 4.4,
+        "reviews": 398,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.632285,
+          "longitude": 124.03023579999999
+        },
+        "link": "https://book-directonline.com/properties/stefaniegraceinn",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Restaurant",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Green AA Garden Resort",
+        "type": "hotel",
+        "perNight": 28,
+        "perNightBeforeTax": 23,
+        "total": 56,
+        "rating": 3.9,
+        "reviews": 28,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6890392,
+          "longitude": 123.9585708
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "relax and recharge after a long day adventure!",
+        "type": "vacation rental",
+        "perNight": 20,
+        "perNightBeforeTax": 18,
+        "total": 40,
+        "rating": 4.9,
+        "reviews": 8,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.807999610900879,
+          "longitude": 124.11199951171875
+        },
+        "link": null,
+        "amenities": [
+          "Kid-friendly",
+          "Crib",
+          "Kitchen",
+          "Smoke-free",
+          "Cable TV",
+          "Washer",
+          "Wheelchair accessible",
+          "Free parking"
+        ]
+      },
+      {
+        "name": "Riverside Native House",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.2,
+        "reviews": 40,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6371898,
+          "longitude": 124.02290339999999
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Pet-friendly",
+          "Airport shuttle",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Bohol White House Bed & Breakfast",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.9,
+        "reviews": 42,
+        "hotelClass": 4,
+        "gps": {
+          "latitude": 9.598239999999999,
+          "longitude": 124.109158
+        },
+        "link": "http://www.boholwhitehouse.com/",
+        "amenities": [
+          "Wi-Fi",
+          "Outdoor pool",
+          "Air conditioning",
+          "Pet-friendly",
+          "Restaurant",
+          "Airport shuttle",
+          "Full-service laundry",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Ka-Juan Private Resort and Events Place",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 5,
+        "reviews": 1,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.5915199,
+          "longitude": 124.07687130000001
+        },
+        "link": "https://www.facebook.com/kajuanlila.bohol/",
+        "amenities": [
+          "Breakfast ($)",
+          "Free Wi-Fi",
+          "Free parking",
+          "Outdoor pool",
+          "Air conditioning",
+          "Kitchen in some rooms",
+          "Accessible",
+          "Smoke-free property"
+        ]
+      },
+      {
+        "name": "Paradise Hills Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.3,
+        "reviews": 4,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.7507866,
+          "longitude": 124.3056502
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Casa Alegria - Bohol",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 4.7,
+        "reviews": 7,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.6025191,
+          "longitude": 123.97965400000001
+        },
+        "link": null,
+        "amenities": [
+          "Free Wi-Fi",
+          "Free parking",
+          "Air conditioning",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "BambooBeachVilla2 AC NEW OCEANFRONT POOL sunsetview garden kitchen SATELLITE STARLINK WI-FI",
+        "type": "vacation rental",
+        "perNight": 234,
+        "perNightBeforeTax": 188,
+        "total": 468,
+        "rating": 4.382353,
+        "reviews": 34,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.599010467529297,
+          "longitude": 124.13683319091797
+        },
+        "link": null,
+        "amenities": [
+          "Air conditioning",
+          "Kitchen",
+          "Outdoor grill",
+          "Outdoor pool",
+          "Oven stove",
+          "Patio",
+          "Pet-friendly",
+          "Smoke-free"
+        ]
+      },
+      {
+        "name": "Bamboo Beach House",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.6104837,
+          "longitude": 124.29070619999999
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Bohol Guesthouse",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.3,
+        "reviews": 3,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.633277999999999,
+          "longitude": 124.028268
+        },
+        "link": "http://boholnipahuts.com/",
+        "amenities": [
+          "Pet-friendly"
+        ]
+      },
+      {
+        "name": "Bohol Island Coop Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 2.9,
+        "reviews": 15,
+        "hotelClass": 3,
+        "gps": {
+          "latitude": 9.610044499999999,
+          "longitude": 124.18463550000001
+        },
+        "link": null,
+        "amenities": [
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Tambayan Rooms and Cottages by SMS Hospitality",
+        "type": "hotel",
+        "perNight": 16,
+        "perNightBeforeTax": 14,
+        "total": 32,
+        "rating": 3.8,
+        "reviews": 10,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.6007903,
+          "longitude": 124.00286120000001
+        },
+        "link": null,
+        "amenities": []
+      },
+      {
+        "name": "Villa Limpia Beach Resort",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.4,
+        "reviews": 91,
+        "hotelClass": 2,
+        "gps": {
+          "latitude": 9.6013077,
+          "longitude": 124.0028619
+        },
+        "link": "https://www.facebook.com/pages/Villa-Limpia-Beach-Resort/247503665283135",
+        "amenities": [
+          "Airport shuttle",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "The Monina RM Midtown Inn & Restaurant",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.5,
+        "reviews": 120,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.9507702,
+          "longitude": 123.9641958
+        },
+        "link": null,
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Pool",
+          "Restaurant",
+          "Kid-friendly"
+        ]
+      },
+      {
+        "name": "Ligaya's Pension House",
+        "type": "hotel",
+        "perNight": null,
+        "perNightBeforeTax": null,
+        "total": null,
+        "rating": 3.3,
+        "reviews": 39,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.9472694,
+          "longitude": 123.9626617
+        },
+        "link": "https://hotel-ph.com/",
+        "amenities": [
+          "Wi-Fi",
+          "Free parking",
+          "Air conditioning"
+        ]
+      },
+      {
+        "name": "3-bedroom villa with private pool in Lila, Bohol",
+        "type": "vacation rental",
+        "perNight": 141,
+        "perNightBeforeTax": 124,
+        "total": 281,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.592219352722168,
+          "longitude": 124.07666778564453
+        },
+        "link": "https://www.agoda.com",
+        "amenities": [
+          "Kitchen",
+          "Outdoor grill",
+          "Oven stove",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "Concordia's Country Resort- Villa Maria",
+        "type": "vacation rental",
+        "perNight": 82,
+        "perNightBeforeTax": 73,
+        "total": 165,
+        "rating": 5,
+        "reviews": 8,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.602116584777832,
+          "longitude": 124.11644744873047
+        },
+        "link": "https://www.agoda.com",
+        "amenities": [
+          "Balcony",
+          "Kitchen",
+          "Microwave",
+          "Outdoor grill",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "Jazz Ferme Inn Batuan Bohol Camper Chalet",
+        "type": "vacation rental",
+        "perNight": 16,
+        "perNightBeforeTax": 16,
+        "total": 31,
+        "rating": 4.3,
+        "reviews": 91,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.787980079650879,
+          "longitude": 124.14552307128906
+        },
+        "link": null,
+        "amenities": [
+          "Kitchen",
+          "Pet-friendly",
+          "Smoke-free",
+          "Free parking",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "BambooBeachVilla2 AC NEW OCEANFRONT POOL sunsetview garden kitchen SATELLITE STARLINK WI-FI",
+        "type": "vacation rental",
+        "perNight": 233,
+        "perNightBeforeTax": 177,
+        "total": 466,
+        "rating": 4.45,
+        "reviews": 32,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.599010467529297,
+          "longitude": 124.13683319091797
+        },
+        "link": "https://stays.dogfriendlyretreats.com/hotel/london/bamboobeachvilla2-ac-new-oceanfront-pool-sunsetview-garden-kitchen-satellite-starlink-wi-fi",
+        "amenities": [
+          "Air conditioning",
+          "Outdoor pool",
+          "Pet-friendly",
+          "Wheelchair accessible",
+          "Free parking",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "Balai Kalipay at Chocolate Hills",
+        "type": "vacation rental",
+        "perNight": 122,
+        "perNightBeforeTax": 122,
+        "total": 244,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.817693710327148,
+          "longitude": 124.1732177734375
+        },
+        "link": "https://www.vrbo.com/pdp/lo/124837013?MDPCID=VRBO-META.HPA.WEB-ORGANIC.VR",
+        "amenities": [
+          "Balcony",
+          "Ironing board",
+          "Kitchen",
+          "Smoke-free",
+          "Cable TV",
+          "Free parking",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "BambooBeachVilla1 AC New OCEANFRONT POOL sunsetview garden kitchen SATELLITE STARLINK WI-FI - One-Bedroom Villa",
+        "type": "vacation rental",
+        "perNight": 136,
+        "perNightBeforeTax": 123,
+        "total": 271,
+        "rating": 5,
+        "reviews": 8,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.598859786987305,
+          "longitude": 124.13703155517578
+        },
+        "link": "https://www.bluepillow.com/search/65cabda1671b07d23c6f7fd5?dest=bkng&cat=Villa&lat=9.59886&lng=124.13703&language=en",
+        "amenities": [
+          "Air conditioning",
+          "Airport shuttle",
+          "Kid-friendly",
+          "Crib",
+          "Elevator",
+          "Ironing board",
+          "Kitchen",
+          "Outdoor grill"
+        ]
+      },
+      {
+        "name": "Jazz Ferme Inn Batuan Bohol - Deluxe Family Room",
+        "type": "vacation rental",
+        "perNight": 48,
+        "perNightBeforeTax": 43,
+        "total": 95,
+        "rating": 5,
+        "reviews": 8,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.787639617919922,
+          "longitude": 124.14556121826172
+        },
+        "link": "https://www.bluepillow.com/search/6398be08c551970d3c72406c/586597205?dest=bkng&cat=Villa&lat=9.78764&lng=124.14556&language=en",
+        "amenities": [
+          "Air conditioning",
+          "Kid-friendly",
+          "Crib",
+          "Indoor pool",
+          "Kitchen",
+          "Outdoor grill",
+          "Patio",
+          "Pet-friendly"
+        ]
+      },
+      {
+        "name": "BambooBeachVilla1 AC New OCEANFRONT POOL sunsetview garden kitchen SATELLITE STARLINK WI-FI",
+        "type": "vacation rental",
+        "perNight": 136,
+        "perNightBeforeTax": 109,
+        "total": 272,
+        "rating": 4.6,
+        "reviews": 69,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.598858833312988,
+          "longitude": 124.13702392578125
+        },
+        "link": "https://www.booking.com/hotel/ph/bamboobeachvilla1a-c-new-oceanfront-pool-sunsetview-garden-kitchen.en-gb.html?aid=2068758&utm_source=seogooglelocal&utm_medium=description&utm_term=hotel-9268542&utm_campaign=en-gb&label=seogooglelocal-link-imagesaow-hotel-9268542_grp-2_gendate-20261014",
+        "amenities": [
+          "Air conditioning",
+          "Kitchen",
+          "Outdoor grill",
+          "Oven stove",
+          "Patio",
+          "Pet-friendly",
+          "Smoke-free",
+          "Cable TV"
+        ]
+      },
+      {
+        "name": "Concordia’s Country Resort- Villa Agripina",
+        "type": "vacation rental",
+        "perNight": 189,
+        "perNightBeforeTax": 166,
+        "total": 377,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.601789474487305,
+          "longitude": 124.11651611328125
+        },
+        "link": null,
+        "amenities": [
+          "Air conditioning",
+          "Crib",
+          "Elevator",
+          "Kitchen",
+          "Microwave",
+          "Outdoor grill",
+          "Outdoor pool",
+          "Oven stove"
+        ]
+      },
+      {
+        "name": "Water to Forest Ecolodge - Tree house with private bathroom",
+        "type": "vacation rental",
+        "perNight": 36,
+        "perNightBeforeTax": 36,
+        "total": 72,
+        "rating": 5,
+        "reviews": 8,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.632180213928223,
+          "longitude": 124.01551055908203
+        },
+        "link": "https://www.freecancellations.com/search/FD5-RgNQGCVWDVNVDw5REVlbXBtoQlJK?lat=9.63218&lng=124.01551&language=en",
+        "amenities": [
+          "Airport shuttle",
+          "Indoor pool",
+          "Smoke-free",
+          "Free parking",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "Bedspacer for 8pax",
+        "type": "vacation rental",
+        "perNight": 80,
+        "perNightBeforeTax": 80,
+        "total": 161,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.931440353393555,
+          "longitude": 124.04651641845703
+        },
+        "link": "https://www.bluepillow.com/search/65e2337193553be8f5580c14?dest=ago&cat=Vacation+rental+(other)&lat=9.93144&lng=124.04652&language=en",
+        "amenities": [
+          "Air conditioning",
+          "Ironing board",
+          "Kitchen",
+          "Pet-friendly",
+          "Free parking",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "name": "3-bedroom villa with private pool in Bohol Philippines",
+        "type": "vacation rental",
+        "perNight": 162,
+        "perNightBeforeTax": 144,
+        "total": 324,
+        "rating": null,
+        "reviews": null,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.591538429260254,
+          "longitude": 124.07687377929688
+        },
+        "link": "https://www.booking.com/hotel/ph/3-bedroom-villa-with-private-pool-in-bohol-philippines.en-gb.html?aid=2068758&utm_source=seogooglelocal&utm_medium=description&utm_term=hotel-17136440&utm_campaign=en-gb&label=seogooglelocal-link-imagesaow-hotel-17136440_grp-0_gendate-20261014",
+        "amenities": [
+          "Air conditioning",
+          "Kitchen",
+          "Smoke-free",
+          "Washer"
+        ]
+      },
+      {
+        "name": "Jazz Ferme Inn Batuan Bohol | Family Room 2",
+        "type": "vacation rental",
+        "perNight": 15,
+        "perNightBeforeTax": 13,
+        "total": 29,
+        "rating": 5,
+        "reviews": 6,
+        "hotelClass": null,
+        "gps": {
+          "latitude": 9.787657737731934,
+          "longitude": 124.14556884765625
+        },
+        "link": "https://www.agoda.com",
+        "amenities": [
+          "Balcony",
+          "Kitchen",
+          "Pet-friendly",
+          "Free Wi-Fi"
+        ]
+      }
+    ]
   }
 }
