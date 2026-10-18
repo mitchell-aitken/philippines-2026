@@ -88,7 +88,7 @@ const DAYS = [
     ],
     move: "Hired driver · 1 h 45 m each way",
     stay: "pgl",
-    tip: "Your hotel can book a driver.",
+    tip: "Hotels can book a driver.",
     photos: [["Chocolate Hills", "Chocolate Hills Bohol"], ["Chocolate Hills ATV", "Chocolate Hills ATV ride"], ["Bilar forest", "Bilar man-made forest Bohol"]]  // [label, image search]
   },
   {
@@ -121,7 +121,7 @@ const DAYS = [
     ],
     move: "Tricycle · 15 min",
     stay: "pgl",
-    tip: "₱300 entry with guide. Bring your own mask.",
+    tip: "₱300 entry with guide. Bring a mask.",
     photos: [["Napaling sardine run", "Napaling Reef sardine run Panglao"], ["Hinagdanan Cave", "Hinagdanan Cave Panglao"]]  // [label, image search]
   },
   {

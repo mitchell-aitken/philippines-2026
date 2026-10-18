@@ -200,6 +200,9 @@
   .prices a.main:hover{background:var(--blue)}
   .prices .main b{color:#fff}
   .prices .main em{color:rgba(255,255,255,.7)}
+  .prices a.cheap{display:inline-flex;align-items:baseline;gap:5px;padding:4px 10px;border-radius:8px;background:#EEF2FB;color:var(--blue);font-size:13px;text-decoration:none}
+  .prices a.cheap:hover{background:#E1E8FA}
+  .prices a.cheap em{color:#5A6E9E}
   .also{margin-top:8px;font-size:12.5px;color:var(--muted)}
   .also a{color:var(--ink-2)}
   .prices span.main b{color:#fff}
@@ -217,8 +220,9 @@
   .pick .hp{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;font-size:12.5px;color:var(--muted)}
   .pick .hp span{padding:2px 8px;border-radius:6px;background:var(--soft);color:var(--ink-2)}
   .pick .hp b{color:var(--ink);font-weight:600}
-  .hero-stats{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:14px}
+  .hero-stats{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 28px;margin-top:14px}
   .hero-stats div{display:flex;flex-direction:column}
+  .hero-stats .big b{font-size:34px}
   .hero-stats b{font-size:22px;color:#fff;font-variant-numeric:tabular-nums}
   .hero-stats span{font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.75)}
 </style>
@@ -243,7 +247,7 @@
     <div class="hero-stats" id="stats"></div>
   </section>
   <div id="blocks"></div>
-  <footer>“Each” = per person per night, for 2 sharing a room. Prices are for your dates, compared across booking sites via Google Hotels, and refresh every 2 weeks.</footer>
+  <footer>“Each” = per person, 2 sharing a room. Prices are for the trip dates, compared across booking sites via Google Hotels, refreshed every 2 weeks.</footer>
 </main>
 
 <script>document.write('<script src="trip-data.js?v=' + Date.now() + '"><\/script>');</script>
@@ -257,23 +261,24 @@ function optHTML(o, b) {
   const n = nightsOf(b), live = LIVE[o.id]?.two, c = live?.cheapest, P = [];
   const rel = 'target="_blank" rel="noopener"';
   if (o.booked) {
-    const pn = o.booked.total / o.booked.nights;
-    P.push(`<span class="main">Paid <b>${money(o.booked.total, 2)}</b><em>${o.booked.nights} nights, both</em></span>`,
-           `<span><b>${money(pn, 2)}</b>/night</span>`, `<span><b>${money(pn / 2, 2)}</b> each/night</span>`);
+    const tot = o.booked.total, pn = tot / o.booked.nights;
+    P.push(`<span class="main">Paid <b>${money(tot / 2, 2)}</b> each<em>${o.booked.nights} nights</em></span>`,
+           `<span><b>${money(pn / 2, 2)}</b> each/night</span>`, `<span>${money(tot, 2)} for both</span>`);
   } else if (c) {
     const tot = c.total ?? c.perNight * n, pn = tot / n, pre = c.totalBeforeTax ?? (c.perNightBeforeTax != null ? c.perNightBeforeTax * n : null);
-    const main = `Cheapest: ${esc(c.source)} <b>${money(tot)}</b><em>${pre != null ? `${money(pre)} + ${money(tot - pre)} taxes · ` : "incl. taxes · "}${n} night${n > 1 ? "s" : ""}</em>`;
-    P.push(c.link ? `<a class="main" href="${esc(c.link)}" ${rel}>${main} ↗</a>` : `<span class="main">${main}</span>`,
-           `<span><b>${money(pn)}</b>/night</span>`, `<span><b>${money(pn / 2)}</b> each/night</span>`);
+    const where = `Cheapest on ${esc(c.source)}: ${money(tot)} for both<em>${pre != null ? `${money(pre)} + ${money(tot - pre)} taxes` : "incl. taxes"}</em>`;
+    P.push(`<span class="main"><b>${money(tot / 2)}</b> each<em>${n} night${n > 1 ? "s" : ""}</em></span>`,
+           `<span><b>${money(pn / 2)}</b> each/night</span>`,
+           c.link ? `<a class="cheap" href="${esc(c.link)}" ${rel}>${where} ↗</a>` : `<span>${where}</span>`);
   } else if (o.seen) {
     const pn = o.seen.total / o.seen.nights;
-    P.push(`<span class="main">Booking.com <b>${money(o.seen.total)}</b><em>incl. taxes · ${o.seen.nights} nights, ${esc(o.seen.dates)}</em></span>`,
-           `<span><b>${money(pn)}</b>/night</span>`, `<span><b>${money(pn / 2)}</b> each/night</span>`);
+    P.push(`<span class="main"><b>${money(pn * n / 2)}</b> each<em>${n} nights · estimate</em></span>`, `<span><b>${money(pn / 2)}</b> each/night</span>`,
+           `<span>Booking.com ${money(o.seen.total)} for both<em>incl. taxes · ${esc(o.seen.dates)}</em></span>`);
   }
   if (!P.length) P.push(`<span>${o.live && !LIVE[o.id] ? "Checking prices…" : "No price yet · check link"}</span>`);
   const others = (live?.sites || []).filter(s => !(o.booked ? false : s === c || s.source === c?.source)).slice(0, 4);
   const also = others.length ? `<div class="also">${o.booked ? "Cheapest now" : "Also"}: ${others.map(s => {
-      const t = s.total ?? s.perNight * n, x = `${esc(s.source)} ${money(t)}`;
+      const t = s.total ?? s.perNight * n, x = `${esc(s.source)} ${money(t / 2)} each`;
       return s.link ? `<a href="${esc(s.link)}" ${rel}>${x}</a>` : x; }).join(" · ")}</div>` : "";
   return `<div class="opt${o.booked && !o.booked.cancellable ? " booked" : ""}${o.booked?.cancellable ? " held" : ""}${o.preferred ? " preferred" : ""}">
     <div class="opt-top"><a href="${esc(o.url)}" ${rel}>${esc(o.name)} ↗</a>
@@ -297,10 +302,10 @@ function render() {
   ACCOM.forEach(b => {
     const n = nightsOf(b);
     if (accomPick(b)?.booked) booked += n;
-    const choices = (accomPick(b) ? [accomPick(b)] : b.options).map(o => perNightOf(o, n)).filter(x => x != null);
+    const pk = accomPick(b), choices = (pk && !pk.preferred ? [pk] : pk ? [pk] : b.options).map(o => perNightOf(o, n)).filter(x => x != null);
     if (choices.length) { total += Math.min(...choices) * n / 2; priced += n; }
   });
-  document.getElementById("stats").innerHTML = `<div><b>${booked}/${all}</b><span>nights booked</span></div><div><b>~${money(total)}</b><span>each · ${priced} of ${all} nights priced</span></div><div><b>~${money(priced ? total / priced : 0)}</b><span>each per night</span></div>`;
+  document.getElementById("stats").innerHTML = `<div class="big"><b>~${money(total)}</b><span>per person · all ${all} nights${priced < all ? ` (${priced} priced)` : ""}</span></div><div><b>~${money(priced ? total / priced : 0)}</b><span>per person / night</span></div><div><b>~${money(total * 2)}</b><span>for both</span></div><div><b>${booked}/${all}</b><span>nights booked</span></div>`;
   if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
 }
 render();

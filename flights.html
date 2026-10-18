@@ -342,7 +342,7 @@ function render(cfg, live) {
   stepIds.forEach((id, n) => { steps[n] = steps[n].replace("</small></div>", `</small>${bookHTML(id)}</div>`); });
   document.getElementById("plan").innerHTML = `
     <div class="plan-head">
-      <div><div class="eyebrow">Your flights</div><h2>Calgary → Manila → Bohol → El Nido → Coron → Clark → Manila → Calgary</h2></div>
+      <div><div class="eyebrow">Flights</div><h2>Calgary → Manila → Bohol → El Nido → Coron → Clark → Manila → Calgary</h2></div>
       <div class="price-big"><b>${fmt(total)}</b><span>per person, all flights, the ferry and the bus</span></div>
     </div>
     <div class="clock">

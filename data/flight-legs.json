@@ -23,7 +23,7 @@
       "returnFit": {
         "departAfter": "2026-12-01 16:00",
         "arriveBy": "2026-12-01 23:59",
-        "why": "you fly in from Coron and ride from Clark that day"
+        "why": "flying in from Coron and riding from Clark that day"
       },
       "estimate": {
         "low": 1500,
@@ -133,7 +133,7 @@
       "booked": {
         "price": 275,
         "date": "2026-10-15",
-        "note": "C$550 for both of you",
+        "note": "C$550 for both",
         "flight": {
           "airlines": [
             "Cebgo"
@@ -218,7 +218,7 @@
       "booked": {
         "price": 117.27,
         "date": "2026-10-15",
-        "note": "C$234.53 for both of you",
+        "note": "C$234.53 for both",
         "flight": {
           "airlines": [
             "Cebgo"
