@@ -203,6 +203,11 @@
   .prices a.cheap{display:inline-flex;align-items:baseline;gap:5px;padding:4px 10px;border-radius:8px;background:#EEF2FB;color:var(--blue);font-size:13px;text-decoration:none}
   .prices a.cheap:hover{background:#E1E8FA}
   .prices a.cheap em{color:#5A6E9E}
+  .split{margin-top:10px;padding:10px 12px;border-radius:10px;background:#FFFCEF;border:1px solid #F0DC8C;font-size:13px;color:var(--ink-2)}
+  .split div{padding:2px 0}
+  .split b{display:inline-block;min-width:52px;font-family:var(--mono);font-size:12px}
+  .split a{color:var(--blue)}
+  .split p{margin:6px 0 0;color:var(--muted);font-size:12.5px}
   .also{margin-top:8px;font-size:12.5px;color:var(--muted)}
   .also a{color:var(--ink-2)}
   .prices span.main b{color:#fff}
@@ -253,9 +258,9 @@
 <script>document.write('<script src="trip-data.js?v=' + Date.now() + '"><\/script>');</script>
 <script>
 const money = (n, c = 0) => "C$" + n.toLocaleString("en-CA", { minimumFractionDigits: c, maximumFractionDigits: c });
-const perNightOf = (o, n) => { if (o.booked) return o.booked.total / o.booked.nights; const c = LIVE[o.id]?.two?.cheapest;
+const perNightOf = (o, n) => { if (o._splitTotal) return o._splitTotal / n; if (o.booked) return o.booked.total / o.booked.nights; const c = LIVE[o.id]?.two?.cheapest;
   if (c) return c.total != null ? c.total / n : c.perNight; return o.seen ? o.seen.total / o.seen.nights : null; };
-let LIVE = {};
+let LIVE = {}, NIGHTLY = {};
 
 function optHTML(o, b) {
   const n = nightsOf(b), live = LIVE[o.id]?.two, c = live?.cheapest, P = [];
@@ -275,6 +280,26 @@ function optHTML(o, b) {
     P.push(`<span class="main"><b>${money(pn * n / 2)}</b> each<em>${n} nights · estimate</em></span>`, `<span><b>${money(pn / 2)}</b> each/night</span>`,
            `<span>Booking.com ${money(o.seen.total)} for both<em>incl. taxes · ${esc(o.seen.dates)}</em></span>`);
   }
+  // full for the whole stay, but free night by night: switch rooms
+  let split = "";
+  const NN = o.nightly && NIGHTLY[o.nightly];
+  if (!P.length && NN) {
+    const nights = []; for (let t = new Date(b.from + "T12:00Z"); t < new Date(b.to + "T12:00Z"); t = new Date(+t + 864e5)) nights.push(t.toISOString().slice(0, 10));
+    const per = nights.map(n => { const r = NN[n], c = r?.cheapest; if (!c) return null;
+      const rooms = (r.rawRooms || []).filter(x => x.perNight != null).sort((x, y) => x.perNight - y.perNight);
+      return { n, c, room: rooms.find(x => x.source === c.source)?.name?.trim() || rooms[0]?.name?.trim() || null }; });
+    if (per.every(Boolean)) {
+      const tot = per.reduce((t, x) => t + (x.c.total ?? x.c.perNight), 0), pre = per.every(x => x.c.totalBeforeTax != null) ? per.reduce((t, x) => t + x.c.totalBeforeTax, 0) : null;
+      P.push(`<span class="main"><b>${money(tot / 2)}</b> each<em>${n} nights, switching rooms</em></span>`, `<span><b>${money(tot / n / 2)}</b> each/night</span>`,
+             `<span>${money(tot)} for both<em>${pre != null ? `${money(pre)} + ${money(tot - pre)} taxes` : "incl. taxes"}</em></span>`);
+      split = `<div class="split">${per.map(x => `<div><b>${shortDate(x.n)}</b> ${x.room ? esc(x.room) : "room type not listed"} · ${x.c.link ? `<a href="${esc(x.c.link)}" ${rel}>${esc(x.c.source)} ${money((x.c.total ?? x.c.perNight) / 2)} each ↗</a>` : `${esc(x.c.source)} ${money((x.c.total ?? x.c.perNight) / 2)} each`}</div>`).join("")}
+        <p>Book each night as its own booking and ask the front desk to hold bags between rooms. No twin room free on these nights, only double beds.</p></div>`;
+      o._splitTotal = tot;
+    } else {
+      const open = per.filter(Boolean).map(x => shortDate(x.n)), closed = nights.filter((n, i) => !per[i]).map(shortDate);
+      split = `<div class="split"><p>Free on ${open.join(", ") || "none"}, full on ${closed.join(", ")}.</p></div>`;
+    }
+  }
   if (!P.length) P.push(o.full ? `<span>Fully booked for these nights · check back in case a room opens up</span>` : `<span>${o.live && !LIVE[o.id] ? "Checking prices…" : "No price yet · check link"}</span>`);
   const others = (live?.sites || []).filter(s => !(o.booked ? false : s === c || s.source === c?.source)).slice(0, 4);
   const also = others.length ? `<div class="also">${o.booked ? "Cheapest now" : "Also"}: ${others.map(s => {
@@ -282,9 +307,9 @@ function optHTML(o, b) {
       return s.link ? `<a href="${esc(s.link)}" ${rel}>${x}</a>` : x; }).join(" · ")}</div>` : "";
   return `<div class="opt${o.booked && !o.booked.cancellable ? " booked" : ""}${o.booked?.cancellable ? " held" : ""}${o.preferred ? " preferred" : ""}">
     <div class="opt-top"><a href="${esc(o.url)}" ${rel}>${esc(o.name)} ↗</a>
-      ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">Fully booked</span>` : ""}</div>
+      ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Fully booked"}</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
-    <div class="prices">${P.join("")}</div>${also}</div>`;
+    <div class="prices">${P.join("")}</div>${split}${also}</div>`;
 }
 
 function render() {
@@ -310,7 +335,7 @@ function render() {
 }
 render();
 fetch("data/hostel-prices.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
-  .then(H => { LIVE = H?.hostels || {}; ACCOM.forEach(b => b.options.forEach(o => { if (!LIVE[o.id]) o.live = false; })); render(); });
+  .then(H => { LIVE = H?.hostels || {}; NIGHTLY = H?.nightly || {}; ACCOM.forEach(b => b.options.forEach(o => { if (!LIVE[o.id]) o.live = false; })); render(); });
 </script>
 </body>
 </html>
