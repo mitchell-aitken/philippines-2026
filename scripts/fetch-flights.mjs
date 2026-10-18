@@ -179,6 +179,8 @@ if (hcfg) {
         const s = { source: x.source, link: x.link || null,
           total: x.total_rate?.extracted_lowest ?? null, totalBeforeTax: x.total_rate?.extracted_before_taxes_fees ?? null,
           perNight: x.rate_per_night?.extracted_lowest ?? null, perNightBeforeTax: x.rate_per_night?.extracted_before_taxes_fees ?? null };
+        if (x.rooms?.length) s.rooms = x.rooms.map(r => ({ name: r.name || null, perNight: r.rate_per_night?.extracted_lowest ?? null,
+          total: r.total_rate?.extracted_lowest ?? null, link: r.link || null, guests: r.num_guests ?? null }));
         if (!s.source || (s.total == null && s.perNight == null)) continue;
         const k = s.total ?? s.perNight * 99;
         if (!best[s.source] || k < (best[s.source].total ?? best[s.source].perNight * 99)) best[s.source] = s;
@@ -203,7 +205,8 @@ if (hcfg) {
           const list = sites(prop);
           return { name: prop.name, perNight: list[0]?.perNight ?? prop.rate_per_night?.extracted_lowest ?? null,
             total: list[0]?.total ?? prop.total_rate?.extracted_lowest ?? null, rating: prop.overall_rating ?? null,
-            link: prop.link || null, cheapest: list[0] || null, sites: list.slice(0, 6) };
+            link: prop.link || null, cheapest: list[0] || null, sites: list.slice(0, 6),
+            rawRooms: (prop.featured_prices || []).flatMap(x => (x.rooms || []).map(r => ({ source: x.source, name: r.name, perNight: r.rate_per_night?.extracted_lowest ?? null }))).slice(0, 20) };
         }
       }
       return { error: "not found on Google Hotels", tried, saw: [...new Set(saw)].slice(0, 8) };
@@ -222,6 +225,18 @@ if (hcfg) {
       }
       hout.hostels[h.id] = r;
       console.log(`hostel ${h.id}: 1 guest ${r.one?.perNight ?? r.one?.error}, 2 guests ${r.two?.perNight ?? r.two?.error}`);
+    }
+    // night-by-night checks (to see if a full place has rooms free on some nights)
+    hout.nightly = {};
+    for (const nn of hcfg.nightly || []) {
+      const base = hcfg.hostels.find(h => h.id === nn.base) || nn, out = {};
+      for (const night of nn.nights) {
+        const next = new Date(new Date(night + "T12:00Z").getTime() + 864e5).toISOString().slice(0, 10);
+        try { out[night] = await hotelSites({ ...base, id: `${nn.id}-${night}`, checkIn: night, checkOut: next }); }
+        catch (e) { out[night] = { error: e.message }; }
+        console.log(`nightly ${nn.id} ${night}: ${out[night].cheapest ? out[night].cheapest.source + " " + out[night].cheapest.total : out[night].error || "no prices"}`);
+      }
+      hout.nightly[nn.id] = out;
     }
     // area searches: every property Google lists for a query, with prices (to find new options)
     hout.areas = {};

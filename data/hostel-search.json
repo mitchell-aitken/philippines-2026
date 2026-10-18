@@ -177,7 +177,11 @@
       "query": "Fox and The Firefly Cottages Loboc",
       "checkIn": "2026-11-17",
       "checkOut": "2026-11-19",
-      "twoOnly": true
+      "twoOnly": true,
+      "alt": [
+        "Fox & The Firefly Cottages Loboc Bohol",
+        "Fox and the Firefly Loboc"
+      ]
     }
   ],
   "areas": [
@@ -198,6 +202,18 @@
       "query": "resorts in Bilar Sevilla Batuan Bohol",
       "checkIn": "2026-11-17",
       "checkOut": "2026-11-19"
+    }
+  ],
+  "nightly": [
+    {
+      "id": "fox-firefly",
+      "base": "fox-firefly",
+      "nights": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18"
+      ]
     }
   ]
 }
