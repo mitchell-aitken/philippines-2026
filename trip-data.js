@@ -417,10 +417,18 @@ const ACCOM = [
         url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2, cancellable: true } }
     ] },
   { id: "loboc", area: "Loboc", region: "Bohol", from: "2026-11-17", to: "2026-11-19", maybe: true,
-    note: "Maybe. Close to the Chocolate Hills and EAT Danao. Still looking.",
+    note: "Maybe. Close to the Chocolate Hills and EAT Danao. All under C$40 each/night; check for a twin room.",
     options: [
       { id: "busai", name: "Busai Dream Falls Resort", where: "By Busai Falls, Loboc / Sevilla", rating: "9.1 · 29 reviews",
-        why: "7 rooms, breakfast, walk to the falls", url: bk("Busai Dream Falls Resort", "2026-11-17", "2026-11-19"), live: true }
+        why: "7 rooms, breakfast, walk to the falls", url: bk("Busai Dream Falls Resort", "2026-11-17", "2026-11-19"), live: true },
+      { id: "water-forest", name: "Water to Forest Ecolodge", where: "Loboc riverside jungle", rating: "4.5 · 195 reviews", why: "Eco-lodge, treehouse rooms",
+        url: bk("Water to Forest Ecolodge Loboc Bohol", "2026-11-17", "2026-11-19"), live: true },
+      { id: "loboc-cool-river", name: "Loboc Cool River Resort", where: "On the Loboc River", rating: "4.3 · 107 reviews", why: "Riverside resort",
+        url: bk("Loboc Cool River Resort Bohol", "2026-11-17", "2026-11-19"), live: true },
+      { id: "stefanie-grace", name: "Stefanie Grace Inn", where: "Loboc", rating: "4.4 · 398 reviews", why: "Outdoor pool",
+        url: bk("Stefanie Grace Inn Loboc Bohol", "2026-11-17", "2026-11-19"), live: true },
+      { id: "fox-firefly", name: "Fox & The Firefly Cottages", where: "Loboc River, near the wharf", rating: "4.5 · 624 reviews", why: "Native cottages, SUP + firefly tours",
+        url: bk("Fox and The Firefly Cottages Loboc", "2026-11-17", "2026-11-19"), live: true }
     ] },
   { id: "panglao-2", area: "Panglao", region: "Bohol", from: "2026-11-19", to: "2026-11-20", picks: "pgl",
     note: "Back on Panglao for the sardines and the 10:30 flight. Not booked.",

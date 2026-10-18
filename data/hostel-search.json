@@ -160,6 +160,42 @@
       "alt": [
         "Palms Cove Resort Alona Panglao"
       ]
+    },
+    {
+      "id": "water-forest",
+      "name": "Water to Forest Ecolodge",
+      "match": "Water to Forest",
+      "query": "Water to Forest Ecolodge Loboc Bohol",
+      "checkIn": "2026-11-17",
+      "checkOut": "2026-11-19",
+      "twoOnly": true
+    },
+    {
+      "id": "loboc-cool-river",
+      "name": "Loboc Cool River Resort",
+      "match": "Loboc Cool River",
+      "query": "Loboc Cool River Resort Bohol",
+      "checkIn": "2026-11-17",
+      "checkOut": "2026-11-19",
+      "twoOnly": true
+    },
+    {
+      "id": "stefanie-grace",
+      "name": "Stefanie Grace Inn",
+      "match": "Stefanie Grace",
+      "query": "Stefanie Grace Inn Loboc Bohol",
+      "checkIn": "2026-11-17",
+      "checkOut": "2026-11-19",
+      "twoOnly": true
+    },
+    {
+      "id": "fox-firefly",
+      "name": "Fox & The Firefly Cottages",
+      "match": "Fox",
+      "query": "Fox and The Firefly Cottages Loboc",
+      "checkIn": "2026-11-17",
+      "checkOut": "2026-11-19",
+      "twoOnly": true
     }
   ],
   "areas": [
