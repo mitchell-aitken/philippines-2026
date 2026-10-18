@@ -221,6 +221,19 @@
       "checkIn": "2026-11-20",
       "checkOut": "2026-11-25",
       "twoOnly": true
+    },
+    {
+      "id": "calathea",
+      "name": "Calathea Suites",
+      "match": "Calathea",
+      "query": "Calathea Suites El Nido",
+      "alt": [
+        "Calathea Suites El Nido Palawan",
+        "Calathea El Nido"
+      ],
+      "checkIn": "2026-11-20",
+      "checkOut": "2026-11-25",
+      "twoOnly": true
     }
   ],
   "areas": [
