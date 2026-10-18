@@ -324,15 +324,16 @@ function render() {
       <div class="opts">${b.options.map(o => optHTML(o, b)).join("")}</div></section>`;
   }).join("");
 
-  // rough total each: booked, else preferred, else cheapest known
-  let total = 0, booked = 0, priced = 0, all = 16;
+  // range each: booked stays fixed, otherwise cheapest → priciest option in each place
+  let lo = 0, hi = 0, booked = 0, priced = 0, all = 16;
   ACCOM.forEach(b => {
-    const n = nightsOf(b);
-    if (accomPick(b)?.booked) booked += n;
-    const pk = accomPick(b), choices = (pk && !pk.preferred ? [pk] : pk ? [pk] : b.options).map(o => perNightOf(o, n)).filter(x => x != null);
-    if (choices.length) { total += Math.min(...choices) * n / 2; priced += n; }
+    const n = nightsOf(b), pk = accomPick(b);
+    if (pk?.booked) booked += n;
+    const choices = (pk ? [pk] : b.options).map(o => perNightOf(o, n)).filter(x => x != null);
+    if (choices.length) { lo += Math.min(...choices) * n / 2; hi += Math.max(...choices) * n / 2; priced += n; }
   });
-  document.getElementById("stats").innerHTML = `<div class="big"><b>~${money(total)}</b><span>per person · all ${all} nights${priced < all ? ` (${priced} priced)` : ""}</span></div><div><b>~${money(priced ? total / priced : 0)}</b><span>per person / night</span></div><div><b>~${money(total * 2)}</b><span>for both</span></div><div><b>${booked}/${all}</b><span>nights booked</span></div>`;
+  const rng = (a, c) => Math.round(a) === Math.round(c) ? money(a) : `${money(a)}–${money(c).slice(2)}`;
+  document.getElementById("stats").innerHTML = `<div class="big"><b>${rng(lo, hi)}</b><span>per person · all ${all} nights${priced < all ? ` (${priced} priced)` : ""} · cheapest to priciest</span></div><div><b>${rng(lo / priced, hi / priced)}</b><span>per person / night</span></div><div><b>${rng(lo * 2, hi * 2)}</b><span>for both</span></div><div><b>${booked}/${all}</b><span>nights booked</span></div>`;
   if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
 }
 render();
