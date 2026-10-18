@@ -275,14 +275,14 @@ function optHTML(o, b) {
     P.push(`<span class="main"><b>${money(pn * n / 2)}</b> each<em>${n} nights · estimate</em></span>`, `<span><b>${money(pn / 2)}</b> each/night</span>`,
            `<span>Booking.com ${money(o.seen.total)} for both<em>incl. taxes · ${esc(o.seen.dates)}</em></span>`);
   }
-  if (!P.length) P.push(`<span>${o.live && !LIVE[o.id] ? "Checking prices…" : "No price yet · check link"}</span>`);
+  if (!P.length) P.push(o.full ? `<span>Fully booked for these nights · check back in case a room opens up</span>` : `<span>${o.live && !LIVE[o.id] ? "Checking prices…" : "No price yet · check link"}</span>`);
   const others = (live?.sites || []).filter(s => !(o.booked ? false : s === c || s.source === c?.source)).slice(0, 4);
   const also = others.length ? `<div class="also">${o.booked ? "Cheapest now" : "Also"}: ${others.map(s => {
       const t = s.total ?? s.perNight * n, x = `${esc(s.source)} ${money(t / 2)} each`;
       return s.link ? `<a href="${esc(s.link)}" ${rel}>${x}</a>` : x; }).join(" · ")}</div>` : "";
   return `<div class="opt${o.booked && !o.booked.cancellable ? " booked" : ""}${o.booked?.cancellable ? " held" : ""}${o.preferred ? " preferred" : ""}">
     <div class="opt-top"><a href="${esc(o.url)}" ${rel}>${esc(o.name)} ↗</a>
-      ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}</div>
+      ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">Fully booked</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
     <div class="prices">${P.join("")}</div>${also}</div>`;
 }
