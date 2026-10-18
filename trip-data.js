@@ -435,7 +435,7 @@ const ACCOM = [
   { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-25", picks: "eni",
     note: "",
     options: [
-      { id: "j-boutique", name: "J Boutique Hotel El Nido", preferred: true, where: "El Nido town, 350 m from centre", rating: "8.8 · 796 reviews",
+      { id: "j-boutique", name: "J Boutique Hotel El Nido", where: "El Nido town, 350 m from centre", rating: "8.8 · 796 reviews",
         url: bkHotel("j-hostel-el-nido", "2026-11-20", "2026-11-25"), seen: { total: 277, nights: 5, dates: "Nov 19–24" }, live: true },
       { id: "lunara", name: "Lunara Villas", where: "5.4 km from centre", rating: "8.8 · 10 reviews",
         url: bk("Lunara Villas El Nido", "2026-11-20", "2026-11-25"), seen: { total: 389, nights: 5, dates: "Nov 19–24" }, live: true }
