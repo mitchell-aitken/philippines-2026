@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T20:34:17.541Z",
+  "updated": "2026-10-18T20:54:55.162Z",
   "currency": "CAD",
   "source": "Google Hotels via SerpApi",
   "hostels": {
@@ -1724,6 +1724,50 @@
             "perNight": 144
           }
         ]
+      }
+    },
+    "calathea": {
+      "two": {
+        "name": "Calathea Suites",
+        "perNight": 171,
+        "total": 857,
+        "rating": 4.5,
+        "link": null,
+        "cheapest": {
+          "source": "Booking.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswjT4JMaKg93OcIDuPbBgNXuMnr91X3M5T2_EH22ajFeM6o3XyUl5vt4PFJ5EAY2g3iRjwpSp6WGZt-ydzHqeTDor9UA5VqFA4bx9C2lSoxJ-ZBrQpZZxdHPNcPvGoOwnBZQfNshWocB6MSg4o9mjcqwzuSpwJZjO7ZDkCTnpbmjoJ0DB3_KPO5PxuRFlhTLYGzOA&pcurl=https://www.booking.com/searchresults.en.html?dest_id%3D15082975%26highlighted_hotels%3D15082975%26dest_type%3Dhotel%26checkin%3D2026-11-20%26checkout%3D2026-11-25%26group_adults%3D2%26req_adults%3D2%26show_room%3D1508297501_422583938_0_2_0%26lang%3Den%26selected_currency%3DCAD%26exrt%3D0.02243594%26ext_price_total%3D856.92%26ext_price_tax%3D92.66%26xfc%3DPHP%26hca%3Dm%26group_children%3D0%26req_children%3D0%26%26ts%3D1792301911%26no_rooms%3D1%26edgtid%3Dae0BkoTLRuGzdcGE3k0vQQ%26efpc%3DNAZbkKOBlbEKdA%26utm_source%3Dmetagha%26utm_medium%3Dlocaluniversal%26utm_campaign%3DRU%26utm_term%3Dhotel-15082975%26utm_content%3Ddev-desktop_los-5_bw-32_dow-Friday_defdate-0_room-0_gstadt-2_rateid-0_aud-0_gacid-_mcid-50_bc-AOYl3w_ppa-0_clrid-ein1P_ad-0_gstkid-0_checkin-20261120_ppt-B%26aid%3D2127614%26label%3Dmetagha-link-LURU-hotel-15082975_dev-desktop_los-5_bw-32_dow-Friday_defdate-0_room-0_gstadt-2_rateid-0_aud-0_gacid-_mcid-50_bc-AOYl3w_ppa-0_clrid-ein1P_ad-0_gstkid-0_checkin-20261120_ppt-B&s=AD1XQnnKJmgEs4If8njP_eGm36PQ&ap=1",
+          "total": 857,
+          "totalBeforeTax": null,
+          "perNight": 171,
+          "perNightBeforeTax": null
+        },
+        "sites": [
+          {
+            "source": "Booking.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswjT4JMaKg93OcIDuPbBgNXuMnr91X3M5T2_EH22ajFeM6o3XyUl5vt4PFJ5EAY2g3iRjwpSp6WGZt-ydzHqeTDor9UA5VqFA4bx9C2lSoxJ-ZBrQpZZxdHPNcPvGoOwnBZQfNshWocB6MSg4o9mjcqwzuSpwJZjO7ZDkCTnpbmjoJ0DB3_KPO5PxuRFlhTLYGzOA&pcurl=https://www.booking.com/searchresults.en.html?dest_id%3D15082975%26highlighted_hotels%3D15082975%26dest_type%3Dhotel%26checkin%3D2026-11-20%26checkout%3D2026-11-25%26group_adults%3D2%26req_adults%3D2%26show_room%3D1508297501_422583938_0_2_0%26lang%3Den%26selected_currency%3DCAD%26exrt%3D0.02243594%26ext_price_total%3D856.92%26ext_price_tax%3D92.66%26xfc%3DPHP%26hca%3Dm%26group_children%3D0%26req_children%3D0%26%26ts%3D1792301911%26no_rooms%3D1%26edgtid%3Dae0BkoTLRuGzdcGE3k0vQQ%26efpc%3DNAZbkKOBlbEKdA%26utm_source%3Dmetagha%26utm_medium%3Dlocaluniversal%26utm_campaign%3DRU%26utm_term%3Dhotel-15082975%26utm_content%3Ddev-desktop_los-5_bw-32_dow-Friday_defdate-0_room-0_gstadt-2_rateid-0_aud-0_gacid-_mcid-50_bc-AOYl3w_ppa-0_clrid-ein1P_ad-0_gstkid-0_checkin-20261120_ppt-B%26aid%3D2127614%26label%3Dmetagha-link-LURU-hotel-15082975_dev-desktop_los-5_bw-32_dow-Friday_defdate-0_room-0_gstadt-2_rateid-0_aud-0_gacid-_mcid-50_bc-AOYl3w_ppa-0_clrid-ein1P_ad-0_gstkid-0_checkin-20261120_ppt-B&s=AD1XQnnKJmgEs4If8njP_eGm36PQ&ap=1",
+            "total": 857,
+            "totalBeforeTax": null,
+            "perNight": 171,
+            "perNightBeforeTax": null
+          },
+          {
+            "source": "Agoda",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80Oswsr_k2QkhgP10YIYyTg7j6ipWzs16CyZQ3GvHjRjYi0CMwY1CcR7_WTLwo_RKy6hla8CCpt5EWCRLLCgJPq5651MGmqsRtzu67WUrLC0h36O7U3l8ZKxgjekSIhGEI4yHLhtP4b-b9Ez8tmsN02UTwtY2j3yp9yt45HPsTX_wK6gI3WmDTnaDchEYVvw&pcurl=https://www.agoda.com/partners/partnersearch.aspx?site_id%3D1917614%26CkInDay%3D20%26CkInMonth%3D11%26CkInYear%3D2026%26CkOutDay%3D25%26campaignid%3D%26CkOutMonth%3D11%26CkOutYear%3D2026%26SearchDateType%3Dselected%26NumberOfAdults%3D2%26LT%3D32%26NumberOfChildren%3D0%26childages%3D%26NumberOfRooms%3D1%26gsite%3Dlocaluniversal%26los%3D5%26PartnerCurrency%3DPHP%26hid%3D81077824%26RoomID%3D1272312572%26masterRoomId%3D1272312572%26PriceTotal%3D864.64%26PriceTax%3D92.62%26PriceFee%3D0.00%26RatePlan%3Da2fd6678-f184-75f5-3060-2029c47a2554%26UserCountry%3DRU%26Currency%3DCAD%26UserDevice%3Ddesktop%26Verif%3Dfalse%26rr%3Drow_desktop%26audience_list%3D%26mcid%3D3038%26booking_source%3Dcpc%26adType%3D0%26mpt%3DWFBmekxrb1dCOCt6anNlQjErYllqWklHUnJCK3RGbXN3YlNpVm4zMHlSZWR4ZFhEa0N2bWhkWjEyaTZ1TDdkU3h2QVFjL2NJZ3B3bmlBPT0%26original_rr%3Dnon20_0c41a3519d%26gaClickSrc%3D%26clickType%3Dhotel%26lang%3Den%26pkgId%3DNoBreakfast_NoDinner_false&s=AD1XQnnYxpY0SK5FbHzpqIWiKjIR&ap=1",
+            "total": 865,
+            "totalBeforeTax": null,
+            "perNight": 173,
+            "perNightBeforeTax": null
+          },
+          {
+            "source": "Bluepillow.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswY9vUOg0pkKzehF8sQlQ6u0lZ4HDEky9UTXJf2yAWHDf1bAGO53aXjD7qxocQSNpEgTIpAyoGAf1GXsGzwqKD4dovvYzxEey4uaQxrRAR7t1xsaW1emYoPdGgYSpxPkUDbzEnfbWWeYCWZKKtqS3N2FmNzS0sl2uugiJ8G7HME89Tt9TaZGLnLUg&pcurl=https://www.bluepillow.com/search/69f96df3a8387c9ba639ac4a?begin%3D2026-11-20%26end%3D2026-11-25%26block_id%3D-b,WlowJzmb0L7scCewL66NHxj1hJNzzj9O3uB8Mwprubw_6SxQ7mQ7d5NnrQgKmrACO4MtU8fKXSwPZSjlmHBapg,-bkng-Hotel%26fees%3D0.00%26tax%3D92.65%26total%3D864.85%26adults%3D2%26childs%3D0%26infants%3D0%26childrens%3D0%26country%3DRU%26currency%3DCAD%26language%3Den%26source%3Dlocaluniversal%26utm_campaign%3Dhotel%26prid%3Dforeign&s=AD1XQnkfw-GlsR1F6DGf3C9jSyxX&ap=1",
+            "total": 865,
+            "totalBeforeTax": null,
+            "perNight": 173,
+            "perNightBeforeTax": null
+          }
+        ],
+        "rawRooms": []
       }
     }
   },
