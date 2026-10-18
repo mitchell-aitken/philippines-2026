@@ -207,6 +207,7 @@
   .split div{padding:2px 0}
   .split b{display:inline-block;min-width:52px;font-family:var(--mono);font-size:12px}
   .split a{color:var(--blue)}
+  .split p.nope{color:#9A3412;font-weight:500}
   .split p{margin:6px 0 0;color:var(--muted);font-size:12.5px}
   .also{margin-top:8px;font-size:12.5px;color:var(--muted)}
   .also a{color:var(--ink-2)}
@@ -293,6 +294,7 @@ function optHTML(o, b) {
       P.push(`<span class="main"><b>${money(tot / 2)}</b> each<em>${n} nights, switching rooms</em></span>`, `<span><b>${money(tot / n / 2)}</b> each/night</span>`,
              `<span>${money(tot)} for both<em>${pre != null ? `${money(pre)} + ${money(tot - pre)} taxes` : "incl. taxes"}</em></span>`);
       split = `<div class="split">${per.map(x => `<div><b>${shortDate(x.n)}</b> ${x.room ? esc(x.room) : "room type not listed"} · ${x.c.link ? `<a href="${esc(x.c.link)}" ${rel}>${esc(x.c.source)} ${money((x.c.total ?? x.c.perNight) / 2)} each ↗</a>` : `${esc(x.c.source)} ${money((x.c.total ?? x.c.perNight) / 2)} each`}</div>`).join("")}
+        ${(() => { const full = Object.keys(NN).filter(k => !nights.includes(k) && !NN[k]?.cheapest).map(shortDate); return full.length ? `<p class="nope">Not available ${full.join(", ")}, so no extra night here if Panglao is cut to Nov 15.</p>` : ""; })()}
         <p>Book each night as its own booking and ask the front desk to hold bags between rooms. No twin room free on these nights, only double beds.</p></div>`;
       o._splitTotal = tot;
     } else {
