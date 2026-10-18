@@ -443,12 +443,12 @@ const ACCOM = [
         url: bk("Bella Athena Gardens El Nido", "2026-11-20", "2026-11-25"), live: true }
     ] },
   { id: "coron", area: "Coron", region: "Coron", from: "2026-11-25", to: "2026-12-01", picks: "crn",
-    note: "",
+    note: "Both Fernvale and La Natura booked with free cancellation. Keep one.",
     options: [
       { id: "fernvale", name: "Fernvale Leisure Club and Resort", where: "Coron", rating: "4.0 · Google",
-        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-25", "2026-12-01"), live: true },
+        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-25", "2026-12-01"), live: true, booked: { total: 598, nights: 6, cancellable: true } },
       { id: "la-natura", name: "La Natura Resort", where: "Coron", rating: "4.4 · Google",
-        url: bk("La Natura Resort Coron", "2026-11-25", "2026-12-01"), live: true },
+        url: bk("La Natura Resort Coron", "2026-11-25", "2026-12-01"), live: true, booked: { total: 720, nights: 6, cancellable: true } },
       { id: "kokosnuss", name: "Kokosnuss Garden Resort", where: "1.2 km from centre", rating: "8.0 · 642 reviews",
         url: bk("Kokosnuss Garden Resort Coron", "2026-11-25", "2026-12-01"), seen: { total: 440, nights: 6, dates: "Nov 24–30" }, live: true },
       { id: "lagoon-coron", name: "Lagoon Coron (Mo2)", where: "Coron town", rating: "4.2 · Google",
@@ -463,6 +463,8 @@ const accomPick = b => b.options.find(o => o.booked) || b.options.find(o => o.pr
 const accomFor = d => { if (d.mon && d.mon !== MONTH) return null;
   const iso = `2026-11-${String(d.date).padStart(2, "0")}`; return ACCOM.find(b => b.from <= iso && iso < b.to) || null; };
 const accomLabel = b => { const p = accomPick(b);
+  const bo = b.options.filter(o => o.booked);
+  if (bo.length > 1) return bo.map(o => o.name).join(" or ") + " (both booked, cancellable)";
   if (p?.booked) return `${p.name} ${p.booked.cancellable ? "(booked, cancellable)" : "✓ booked"}`;
   if (p) return `${p.name} (preferred)`;
   return b.options.map(o => o.name).join(" or ") + (b.maybe ? " (maybe)" : " (not booked)"); };

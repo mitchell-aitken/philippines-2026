@@ -329,7 +329,7 @@ function render() {
   ACCOM.forEach(b => {
     const n = nightsOf(b), pk = accomPick(b);
     if (pk?.booked) booked += n;
-    const choices = (pk ? [pk] : b.options).map(o => perNightOf(o, n)).filter(x => x != null);
+    const bo = b.options.filter(o => o.booked), choices = (bo.length ? bo : pk ? [pk] : b.options).map(o => perNightOf(o, n)).filter(x => x != null);
     if (choices.length) { lo += Math.min(...choices) * n / 2; hi += Math.max(...choices) * n / 2; priced += n; }
   });
   const rng = (a, c) => Math.round(a) === Math.round(c) ? money(a) : `${money(a)}–${money(c).slice(2)}`;
