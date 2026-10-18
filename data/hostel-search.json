@@ -113,19 +113,6 @@
       ]
     },
     {
-      "id": "lunara",
-      "name": "Lunara Villas",
-      "match": "Lunara",
-      "query": "Lunara Villas El Nido",
-      "checkIn": "2026-11-20",
-      "checkOut": "2026-11-25",
-      "twoOnly": true,
-      "alt": [
-        "Lunara Villas El Nido Palawan",
-        "Lunara Villas"
-      ]
-    },
-    {
       "id": "kokosnuss",
       "name": "Kokosnuss Garden Resort",
       "match": "Kokosnuss",
