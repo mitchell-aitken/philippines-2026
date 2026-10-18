@@ -73,6 +73,60 @@
       "query": "Ecocio Hostel Coron",
       "checkIn": "2026-11-25",
       "checkOut": "2026-12-01"
+    },
+    {
+      "id": "busai",
+      "name": "Busai Dream Falls Resort",
+      "match": "Busai",
+      "query": "Busai Dream Falls Resort Loboc Bohol",
+      "checkIn": "2026-11-17",
+      "checkOut": "2026-11-19",
+      "twoOnly": true
+    },
+    {
+      "id": "palms-cove-19",
+      "name": "Palms Cove Resort",
+      "match": "Palms Cove",
+      "query": "Palms Cove Resort Panglao",
+      "checkIn": "2026-11-19",
+      "checkOut": "2026-11-20",
+      "twoOnly": true
+    },
+    {
+      "id": "j-boutique",
+      "name": "J Boutique Hotel El Nido",
+      "match": "J Boutique",
+      "query": "J Boutique Hotel El Nido",
+      "checkIn": "2026-11-20",
+      "checkOut": "2026-11-25",
+      "twoOnly": true
+    },
+    {
+      "id": "lunara",
+      "name": "Lunara Villas",
+      "match": "Lunara",
+      "query": "Lunara Villas El Nido",
+      "checkIn": "2026-11-20",
+      "checkOut": "2026-11-25",
+      "twoOnly": true
+    },
+    {
+      "id": "kokosnuss",
+      "name": "Kokosnuss Garden Resort",
+      "match": "Kokosnuss",
+      "query": "Kokosnuss Garden Resort Coron",
+      "checkIn": "2026-11-25",
+      "checkOut": "2026-12-01",
+      "twoOnly": true
+    },
+    {
+      "id": "vienna",
+      "name": "Vienna Hotel",
+      "match": "Vienna",
+      "query": "Vienna Hotel Coron",
+      "checkIn": "2026-11-25",
+      "checkOut": "2026-12-01",
+      "twoOnly": true
     }
   ]
 }

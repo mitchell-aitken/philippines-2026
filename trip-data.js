@@ -371,7 +371,7 @@ const MONTH = "Nov";
    Picks have private rooms (twin/double) for two. Prices are rough
    "from" rates seen in Oct 2026; check before booking. */
 const PLACES = [
-  { key: "pgl", place: "Bohol (Panglao)", nights: 5, inDate: "2026-11-15", outDate: "2026-11-20", region: "Bohol",
+  { key: "pgl", place: "Bohol", nights: 5, inDate: "2026-11-15", outDate: "2026-11-20", region: "Bohol",
     days: "Sun Nov 15 → Fri Nov 20 (fly out 10:30)", bookingQ: "Panglao, Bohol" },
   { key: "eni", place: "El Nido", nights: 5, inDate: "2026-11-20", outDate: "2026-11-25", region: "El Nido",
     days: "Fri Nov 20 midday → Wed Nov 25 (ferry 08:20)", bookingQ: "El Nido, Palawan" },
@@ -404,6 +404,59 @@ const STAY_PICKS = {
 };
 const bookingSearch = p => `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(p.bookingQ)}&checkin=${p.inDate}&checkout=${p.outDate}&group_adults=2&no_rooms=1&group_children=0`;
 
+/* ---------- accommodation (Accommodation page) ----------
+   Each block = one place for a run of nights (from = check-in, to = check-out).
+   Option prices: booked = what you paid · seen = price you saw on Booking.com (incl. taxes) · live = Google Hotels, your dates. */
+const bk = (q, a, b) => `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(q)}&checkin=${a}&checkout=${b}&group_adults=2&no_rooms=1&group_children=0`;
+const bkHotel = (slug, a, b) => `https://www.booking.com/hotel/ph/${slug}.html?checkin=${a}&checkout=${b}&group_adults=2&no_rooms=1&group_children=0`;
+const ACCOM = [
+  { id: "panglao-1", area: "Panglao", region: "Bohol", from: "2026-11-15", to: "2026-11-17", picks: "pgl",
+    note: "Booked Nov 15–17, can still change (maybe just Nov 15–16).",
+    options: [
+      { id: "palms-cove", name: "Palms Cove Resort", where: "Danao, 5 min walk to Alona Beach", rating: "8.8 · Booking.com",
+        url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2 } }
+    ] },
+  { id: "loboc", area: "Loboc", region: "Bohol", from: "2026-11-17", to: "2026-11-19", maybe: true,
+    note: "Maybe. Close to the Chocolate Hills and EAT Danao. Still looking.",
+    options: [
+      { id: "busai", name: "Busai Dream Falls Resort", where: "By Busai Falls, Loboc / Sevilla", rating: "9.1 · 29 reviews",
+        why: "7 rooms, breakfast, walk to the falls", url: bk("Busai Dream Falls Resort", "2026-11-17", "2026-11-19"), live: true }
+    ] },
+  { id: "panglao-2", area: "Panglao", region: "Bohol", from: "2026-11-19", to: "2026-11-20", picks: "pgl",
+    note: "Back on Panglao for the sardines and the 10:30 flight. Not booked.",
+    options: [
+      { id: "palms-cove-19", name: "Palms Cove Resort", where: "Same place again", rating: "8.8 · Booking.com",
+        url: bk("Palms Cove Resort Panglao", "2026-11-19", "2026-11-20"), live: true }
+    ] },
+  { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-25", picks: "eni",
+    note: "",
+    options: [
+      { id: "j-boutique", name: "J Boutique Hotel El Nido", preferred: true, where: "El Nido town, 350 m from centre", rating: "8.8 · 796 reviews",
+        url: bkHotel("j-hostel-el-nido", "2026-11-20", "2026-11-25"), seen: { total: 277, nights: 5, dates: "Nov 19–24" }, live: true },
+      { id: "lunara", name: "Lunara Villas", where: "5.4 km from centre", rating: "8.8 · 10 reviews",
+        url: bk("Lunara Villas El Nido", "2026-11-20", "2026-11-25"), seen: { total: 389, nights: 5, dates: "Nov 19–24" }, live: true }
+    ] },
+  { id: "coron", area: "Coron", region: "Coron", from: "2026-11-25", to: "2026-12-01", picks: "crn",
+    note: "",
+    options: [
+      { id: "kokosnuss", name: "Kokosnuss Garden Resort", where: "1.2 km from centre", rating: "8.0 · 642 reviews",
+        url: bk("Kokosnuss Garden Resort Coron", "2026-11-25", "2026-12-01"), seen: { total: 440, nights: 6, dates: "Nov 24–30" }, live: true },
+      { id: "vienna", name: "Vienna Hotel", where: "Coron town, 300 m from centre", rating: "8.0 · 561 reviews",
+        url: bkHotel("vienna", "2026-11-25", "2026-12-01"), seen: { total: 489, nights: 6, dates: "Nov 24–30" }, live: true }
+    ] }
+];
+const nightsOf = b => Math.round((new Date(b.to) - new Date(b.from)) / 864e5);
+const shortDate = iso => new Date(iso + "T12:00").toLocaleDateString("en-CA", { month: "short", day: "numeric" });
+const accomRange = b => { const n = nightsOf(b), last = new Date(new Date(b.to + "T12:00") - 864e5).toISOString().slice(0, 10);
+  return `${shortDate(b.from)}${n > 1 ? "–" + (last.slice(5, 7) === b.from.slice(5, 7) ? +last.slice(8) : shortDate(last)) : ""} · ${n} night${n > 1 ? "s" : ""}`; };
+const accomPick = b => b.options.find(o => o.booked) || b.options.find(o => o.preferred) || null;
+const accomFor = d => { if (d.mon && d.mon !== MONTH) return null;
+  const iso = `2026-11-${String(d.date).padStart(2, "0")}`; return ACCOM.find(b => b.from <= iso && iso < b.to) || null; };
+const accomLabel = b => { const p = accomPick(b);
+  if (p?.booked) return `${p.name} ✓ booked`;
+  if (p) return `${p.name} (preferred)`;
+  return b.options.map(o => o.name).join(" or ") + (b.maybe ? " (maybe)" : " (not booked)"); };
+
 /* ---------- shared helpers (no need to edit) ---------- */
 const img = q => "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(q);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -412,7 +465,9 @@ const ICON_CAM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
 const ICON_MOVE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const photosHTML = d => d.photos.length
   ? `<div class="photos">${d.photos.map(([label, q]) => `<a href="${img(q)}" target="_blank" rel="noopener">${ICON_CAM}${esc(label)} ↗</a>`).join("")}</div>` : "";
-const stayText = key => {
+const stayText = (key, d) => {
+  const b = d && accomFor(d);
+  if (b) return accomLabel(b) + " · " + b.area;
   if (!key) return "On the plane";
   const s = STAYS[key];
   return s.name ? s.name : `Not booked yet · ${s.area}`;

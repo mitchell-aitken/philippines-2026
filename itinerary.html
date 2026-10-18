@@ -120,7 +120,7 @@
   /* ---------- Philippine theme ---------- */
   .ph-flag{width:42px;height:21px;flex:0 0 auto;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 2px 6px rgba(0,56,168,.25)}
   .nav3{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#EEF2FB;border:1px solid #DCE4F5}
-  .nav3 a{padding:7px 14px;border-radius:999px;font-size:13px;font-weight:500;color:#26324D;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+  .nav3 a{padding:7px 11px;border-radius:999px;font-size:13px;font-weight:500;color:#26324D;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
   .nav3 a:hover{background:#fff;color:var(--blue)}
   .nav3 a[aria-current="page"]{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(0,56,168,.35)}
   header .flag{height:5px;grid-template-columns:2fr 1fr 2fr}
@@ -163,7 +163,7 @@
       <svg class="ph-flag" viewBox="0 0 1200 600" role="img" aria-label="Flag of the Philippines"><rect width="1200" height="300" fill="#0038A8"/><rect y="300" width="1200" height="300" fill="#CE1126"/><path d="M0 0L519.6 300L0 600Z" fill="#FFF"/><g fill="#FCD116"><circle cx="180" cy="300" r="46"/><path d="M171.0,250.8L169.6,220.7L176.0,250.2ZM177.5,250.1L180.0,204.0L182.5,250.1ZM184.0,250.2L190.4,220.7L189.0,250.8ZM208.5,258.9L228.8,236.6L212.4,261.9ZM213.5,262.9L247.9,232.1L217.1,266.5ZM218.1,267.6L243.4,251.2L221.1,271.5ZM229.2,291.0L259.3,289.6L229.8,296.0ZM229.9,297.5L276.0,300.0L229.9,302.5ZM229.8,304.0L259.3,310.4L229.2,309.0ZM221.1,328.5L243.4,348.8L218.1,332.4ZM217.1,333.5L247.9,367.9L213.5,337.1ZM212.4,338.1L228.8,363.4L208.5,341.1ZM189.0,349.2L190.4,379.3L184.0,349.8ZM182.5,349.9L180.0,396.0L177.5,349.9ZM176.0,349.8L169.6,379.3L171.0,349.2ZM151.5,341.1L131.2,363.4L147.6,338.1ZM146.5,337.1L112.1,367.9L142.9,333.5ZM141.9,332.4L116.6,348.8L138.9,328.5ZM130.8,309.0L100.7,310.4L130.2,304.0ZM130.1,302.5L84.0,300.0L130.1,297.5ZM130.2,296.0L100.7,289.6L130.8,291.0ZM138.9,271.5L116.6,251.2L141.9,267.6ZM142.9,266.5L112.1,232.1L146.5,262.9ZM147.6,261.9L131.2,236.6L151.5,258.9Z"/><path d="M52.0,28.0L58.7,48.7L80.5,48.7L62.9,61.5L69.6,82.3L52.0,69.5L34.4,82.3L41.1,61.5L23.5,48.7L45.3,48.7Z"/><path d="M52.0,512.0L58.7,532.7L80.5,532.7L62.9,545.5L69.6,566.3L52.0,553.5L34.4,566.3L41.1,545.5L23.5,532.7L45.3,532.7Z"/><path d="M455.0,270.0L461.7,290.7L483.5,290.7L465.9,303.5L472.6,324.3L455.0,311.5L437.4,324.3L444.1,303.5L426.5,290.7L448.3,290.7Z"/></g></svg>
       <div><b>Philippines 2026</b><small>Itinerary</small></div>
     </div>
-    <nav class="nav3" aria-label="Pages"><a href="index.html">Map</a><a href="itinerary.html" aria-current="page">Itinerary</a><a href="flights.html">Flights &amp; costs</a></nav>
+    <nav class="nav3" aria-label="Pages"><a href="index.html">Map</a><a href="itinerary.html" aria-current="page">Itinerary</a><a href="flights.html">Flights</a><a href="accommodation.html">Accommodation</a></nav>
   </div>
 </header>
 
@@ -192,22 +192,13 @@ document.getElementById("nights").innerHTML = PLACES.map(p => `
 const legsEl = document.getElementById("legs");
 LEGS.forEach(leg => {
   const days = leg.days.map(n => DAYS.find(d => d.date === n));
-  const stayKeys = [...new Set(days.map(d => d.stay).filter(Boolean))];
   const sec = document.createElement("section");
   sec.className = "leg"; sec.style.setProperty("--c", COLORS[leg.region]);
   sec.innerHTML = `
     <div class="leg-head"><h2><i></i>${esc(leg.name)}</h2><span>${esc(leg.sub)}</span></div>
-    ${stayKeys.map(k => {
-      const s = STAYS[k], set = !!s.name;
-      const v = set
-        ? (s.link ? `<a class="v" href="${esc(s.link)}" target="_blank" rel="noopener">${esc(s.name)} ↗<small>${esc(s.area)}</small></a>` : `<div class="v">${esc(s.name)}<small>${esc(s.area)}</small></div>`)
-        : `<div class="v">Not booked yet<small>${esc(s.area)} · ${esc(s.hint)}</small></div>`;
-      const P = PLACES.find(p => p.key === k), SP = STAY_PICKS[k];
-      const picks = SP ? `
-        <div class="pick-head"><span>Hostels · prices for your dates (Google Hotels)</span>
-          <div class="pick-links"><a href="${esc(SP.hostelworld)}" target="_blank" rel="noopener">Hostelworld ↗</a>${P ? `<a href="${esc(bookingSearch(P))}" target="_blank" rel="noopener">Booking.com, your dates ↗</a>` : ""}</div></div>
-        <div class="picks">${SP.picks.map(p => `<div class="pick"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)} ↗</a><small>${esc(p.where)}</small><p>${esc(p.why)}</p><div class="hp" data-hostel="${esc(p.id)}">Checking prices…</div></div>`).join("")}</div>` : "";
-      return `<div class="stay${set ? " set" : ""}"><div class="k">Stay</div>${v}<div class="n">${esc(s.nights)}</div></div>${picks}`;
+    ${ACCOM.filter(bl => days.some(d => accomFor(d) === bl)).map(bl => {
+      const p = accomPick(bl), set = !!p?.booked;
+      return `<div class="stay${set ? " set" : ""}"><div class="k">Stay</div><a class="v" href="accommodation.html#${bl.id}">${esc(accomLabel(bl))}<small>${esc(bl.area)}</small></a><div class="n">${esc(accomRange(bl))}</div></div>`;
     }).join("")}
     ${days.map(d => `
       <article class="day" id="day-${d.date}" style="--c:${COLORS[d.region]}">
@@ -225,22 +216,6 @@ LEGS.forEach(leg => {
         </div>
       </article>`).join("")}`;
   legsEl.appendChild(sec);
-});
-/* hostel prices for your dates (Google Hotels, refreshed weekly by the price job) */
-fetch("data/hostel-prices.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null).then(H => {
-  const money = n => "C$" + Math.round(n).toLocaleString("en-CA");
-  document.querySelectorAll(".hp").forEach(el => {
-    const h = H?.hostels?.[el.dataset.hostel];
-    if (!h) { el.textContent = "Price not checked yet"; return; }
-    const one = h.one?.perNight, two = h.two?.perNight;
-    const parts = [];
-    if (one != null) parts.push(`<span>1 person <b>${money(one)}</b>/night</span>`);
-    if (two != null) {
-      const r = one ? two / one : null;
-      parts.push(`<span>2 people <b>${money(two)}</b>/night${r == null ? "" : r >= 1.8 ? " · prob. 2 dorm beds" : " · prob. private room"}</span>`);
-    }
-    el.innerHTML = parts.length ? parts.join("") : "No price for your dates";
-  });
 });
 /* jump to a day linked from the map, e.g. itinerary.html#day-25 */
 if (location.hash) { const el = document.querySelector(location.hash); if (el) setTimeout(() => el.scrollIntoView(), 50); }

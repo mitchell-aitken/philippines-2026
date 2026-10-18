@@ -174,7 +174,7 @@ if (hcfg) {
     const hout = { updated: new Date().toISOString(), currency: cfg.currency, source: "Google Hotels via SerpApi", hostels: {} };
     for (const h of hcfg.hostels) {
       const r = { ...(hprev.hostels?.[h.id] || {}) };
-      for (const [key, adults] of [["one", 1], ["two", 2]]) {
+      for (const [key, adults] of (h.twoOnly ? [["two", 2]] : [["one", 1], ["two", 2]])) {
         try { r[key] = price(await hotel(h, adults), h); }
         catch (e) { r[key] = { ...(r[key] || {}), error: e.message }; }
       }

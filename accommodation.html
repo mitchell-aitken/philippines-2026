@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Philippines 2026 · Accommodation</title>
+<meta name="description" content="Where we sleep on the Nov 13 – Dec 1, 2026 Philippines trip.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --blue:#0038A8; --red:#CE1126; --gold:#FCD116; --green:#16733F; --green-bg:#E6F4EC;
+    --ink:#0B0B0C; --ink-2:#3A3A3F; --muted:#76767C; --line:#E8E8EB; --soft:#F5F5F6; --bg:#FFFFFF;
+    --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  .flag{height:4px;display:grid;grid-template-columns:1fr 1fr}
+  .flag i:first-child{background:var(--blue)} .flag i:last-child{background:var(--red)}
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{max-width:920px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .sun{width:26px;height:26px;flex:0 0 auto}
+  .brand b{display:block;font-size:17px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
+  .brand small{font:500 10.5px/1.3 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .nav{display:flex;gap:8px}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--line);background:#fff;white-space:nowrap}
+  .btn:hover{border-color:var(--ink)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}
+
+  main{max-width:920px;margin:0 auto;padding:0 20px 80px}
+  .eyebrow{font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .intro{padding:40px 0 8px}
+  .intro h1{margin:6px 0 8px;font-size:clamp(30px,5vw,42px);font-weight:600;letter-spacing:-.035em;line-height:1.05}
+  .intro p{margin:0;color:var(--ink-2);max-width:62ch}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);margin-top:12px}
+  .status i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+  .status.live i{background:#1F9D55;box-shadow:0 0 0 3px rgba(31,157,85,.15)}
+
+  /* ---------- the two options ---------- */
+  .options2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+  .opt-card{border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:16px;background:#fff}
+  .opt-card.win{border:2px solid var(--ink);padding:19px}
+  .opt-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .opt-head h2{margin:2px 0 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+  .badge{font:500 10.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:5px 8px;border-radius:999px;white-space:nowrap}
+  .badge.win{background:var(--gold);color:var(--ink)}
+  .badge.more{background:var(--soft);color:var(--ink-2)}
+  .price-big b{display:block;font-size:40px;font-weight:600;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+  .price-big span{font-size:13.5px;color:var(--ink-2)}
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+  .steps li{display:grid;grid-template-columns:86px minmax(0,1fr);gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .steps li span.k{font:500 10.5px/1.8 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .steps li small{display:block;color:var(--muted);font-size:12.5px}
+  .steps li b{font-weight:600}
+  .opt-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:auto}
+  .opt-foot a{color:var(--blue);font-weight:500;text-decoration:none;font-size:13px}
+  .opt-foot a:hover{text-decoration:underline}
+  .plan-card{margin-top:24px;gap:18px}
+  .plan-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 24px;flex-wrap:wrap}
+  .plan-head h2{margin:2px 0 0;font-size:16px;font-weight:500;letter-spacing:-.01em;color:var(--ink-2);max-width:40ch}
+  .plan-head .price-big{text-align:right}
+  .clock{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .clock>div{background:var(--soft);border-radius:12px;padding:12px 14px;display:grid;gap:2px}
+  .clock b{font-size:20px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .clock small{font-size:12px;color:var(--muted)}
+  .steps li{grid-template-columns:86px minmax(0,1fr) auto!important}
+  .steps .sp{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;font-size:14px}
+  .book{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin-top:6px;font:500 10.5px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .book a{font:500 12.5px/1.4 var(--sans);text-transform:none;letter-spacing:0;color:var(--blue);text-decoration:none;padding:2px 9px;border:1px solid var(--line);border-radius:999px;background:#fff}
+  .book a:hover{border-color:var(--blue)}
+  .src.booked{background:var(--ink);color:#fff}
+  .book.booked-note{color:#16733F;font:500 12.5px/1.4 var(--sans);text-transform:none;letter-spacing:0}
+  .book.track{font:500 12.5px/1.4 var(--sans);text-transform:none;letter-spacing:0;color:var(--ink-2)}
+  .book.track b{font-weight:600;color:var(--ink)}
+  .book.track.up{color:var(--red)} .book.track.down{color:#16733F}
+  .tz{display:inline-block;margin-left:6px;font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);vertical-align:2px}
+  .opt-card .note{margin:-6px 0 0;font-size:13.5px;color:var(--ink-2)}
+  .verdict{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--soft);font-size:14.5px;color:var(--ink-2)}
+  .verdict b{color:var(--ink)}
+
+  /* ---------- shared legs ---------- */
+  section.block{padding-top:44px}
+  .block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+  .block-head h2{margin:0;font-size:22px;font-weight:600;letter-spacing:-.025em}
+  .block-head span{font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .shared{width:100%;border-collapse:collapse;font-size:14px}
+  .shared td{padding:14px 12px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .shared td:last-child{text-align:right;padding-right:0;white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums}
+  .shared .d{font:500 11px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);white-space:nowrap;width:92px}
+  .shared small{display:block;color:var(--muted);font-size:12.5px;font-weight:400}
+  .tablewrap{overflow-x:auto}
+  .src{display:inline-block;font:500 9.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:3px 5px;border-radius:3px;margin-left:6px;vertical-align:2px;font-weight:500}
+  .src.live{background:var(--green-bg);color:var(--green)}
+  .src.est{background:var(--soft);color:var(--muted)}
+
+  /* ---------- all options (collapsed) ---------- */
+  details{border-bottom:1px solid var(--line)}
+  details summary{cursor:pointer;list-style:none;padding:14px 0;display:flex;justify-content:space-between;gap:12px;font-weight:600;font-size:15px}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-weight:400;color:var(--muted);font-size:18px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details summary span{font-weight:400;color:var(--muted);font-size:13px;margin-left:auto;margin-right:6px}
+  .sub{margin:6px 0 6px;font:500 10.5px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .list{list-style:none;margin:0 0 16px;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.6fr) 80px;gap:4px 16px;align-items:center;padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px}
+  .row:first-child{border-top:0}
+  .row .air{font-weight:600}
+  .row .air small,.row .t small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+  .row .p{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+  .row.dim{opacity:.5}
+  .fit{display:inline-block;margin-top:3px;font-size:11.5px;padding:2px 8px;border-radius:999px}
+  .fit.ok{background:var(--green-bg);color:var(--green)}
+  .fit.warn{background:#FFF4C2;color:#6B4F00}
+  .fit.bad{background:#FBE9EB;color:var(--red)}
+
+  .setup{margin-top:40px;padding:20px;border-radius:14px;background:var(--soft);font-size:14px;color:var(--ink-2)}
+  .setup h2{margin:0 0 8px;font-size:17px;font-weight:600;color:var(--ink)}
+  .setup ol{margin:8px 0 0;padding-left:20px;display:grid;gap:4px}
+  .setup code{font:12.5px var(--mono);background:#fff;padding:1px 5px;border-radius:4px;border:1px solid var(--line)}
+  footer{padding-top:32px;font-size:12px;color:var(--muted)}
+  .err{color:var(--red)}
+
+  @media (max-width:720px){
+    .options2{grid-template-columns:1fr}
+    .plan-head .price-big{text-align:left}
+    .steps li{grid-template-columns:70px minmax(0,1fr) auto!important}
+    .bar{padding:10px 16px}
+    main{padding:0 16px 60px}
+    .row{grid-template-columns:minmax(0,1fr) auto}
+    .row .t{grid-column:1/-1;grid-row:2}
+    .shared .d{width:auto}
+  }
+
+  /* ---------- Philippine theme ---------- */
+  .ph-flag{width:42px;height:21px;flex:0 0 auto;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 2px 6px rgba(0,56,168,.25)}
+  .nav3{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#EEF2FB;border:1px solid #DCE4F5}
+  .nav3 a{padding:7px 11px;border-radius:999px;font-size:13px;font-weight:500;color:#26324D;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+  .nav3 a:hover{background:#fff;color:var(--blue)}
+  .nav3 a[aria-current="page"]{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(0,56,168,.35)}
+  header .flag{height:5px;grid-template-columns:2fr 1fr 2fr}
+  header .flag::before{content:"";background:var(--blue)}
+  header .flag i:first-child{background:var(--gold)} header .flag i:last-child{background:var(--red)}
+  .hero-band{position:relative;overflow:hidden;margin-top:24px;border-radius:22px;padding:36px clamp(20px,4vw,40px) 34px!important;color:#fff;
+    background:radial-gradient(120% 140% at 0% 0%,#1B4FC4 0%,#0038A8 45%,#0A2A78 100%);box-shadow:0 18px 40px -18px rgba(0,56,168,.55);border-bottom:0!important}
+  .hero-band::before{content:"";position:absolute;right:-70px;top:-70px;width:300px;height:300px;opacity:.22;pointer-events:none;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Cg fill='%23FCD116'%3E%3Ccircle r='16'/%3E%3Cpath id='r' d='M0-48 5-22H-5Z'/%3E%3Cuse href='%23r' transform='rotate(45)'/%3E%3Cuse href='%23r' transform='rotate(90)'/%3E%3Cuse href='%23r' transform='rotate(135)'/%3E%3Cuse href='%23r' transform='rotate(180)'/%3E%3Cuse href='%23r' transform='rotate(225)'/%3E%3Cuse href='%23r' transform='rotate(270)'/%3E%3Cuse href='%23r' transform='rotate(315)'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;animation:spin 120s linear infinite}
+  .hero-band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--red) 0 70%,var(--gold) 70% 100%)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.hero-band::before{animation:none}}
+  .hero-band h1{color:#fff}
+  .hero-band p,.hero-band .stat span,.hero-band .eyebrow{color:rgba(255,255,255,.78)!important}
+  .hero-band .stat b{color:#fff}
+  .hero-band .route span{background:rgba(255,255,255,.14);color:#fff}
+  .hero-band .route em{color:var(--gold)}
+  .hero-band .status{color:rgba(255,255,255,.85)}
+  .hero-band .nights a{background:#fff;color:var(--ink)}
+  .hero-band .nights a:hover{background:#F4F7FF}
+  .hero-band > *{position:relative}
+  .hero-band h1{margin-bottom:4px}
+  .hero-band .status.live i{box-shadow:0 0 0 3px rgba(255,255,255,.25)}
+  .plan-card{border-top:4px solid var(--gold)!important}
+  .src.booked{background:var(--blue)!important}
+  .block-head{border-bottom-color:var(--blue)!important}
+  @media (max-width:720px){.nav3 a{padding:6px 10px;font-size:12px}}
+  header .bar{flex-wrap:wrap}
+  @media (max-width:600px){
+    header .bar{gap:10px}
+    header .brand{width:100%}
+    header .nav3{width:100%}
+    header .nav3 a{flex:1;text-align:center}
+  }
+
+  .blk{margin-top:28px;--c:var(--blue)}
+  .blk-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding-bottom:8px;border-bottom:2px solid var(--c)}
+  .blk-head h2{margin:0;font-size:20px;letter-spacing:-.01em}
+  .blk-head .when{font:500 12px/1.2 var(--mono);color:var(--ink-2)}
+  .tag{font:600 10.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 8px;border-radius:6px;background:var(--soft);color:var(--ink-2)}
+  .tag.ok{background:var(--green-bg);color:var(--green)}
+  .tag.maybe{background:#FFF6D6;color:#7A5B00}
+  .tag.pref{background:#E8EEFB;color:var(--blue)}
+  .blk-note{margin:8px 0 0;color:var(--muted);font-size:13.5px}
+  .opts{display:grid;gap:10px;margin-top:12px}
+  .opt{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff}
+  .opt.booked{border-color:#BFE3CC;background:#F6FBF8}
+  .opt.preferred{border-color:#B9C9EE;box-shadow:0 0 0 3px #EEF2FB}
+  .opt-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+  .opt-top a{font-weight:600;font-size:16px;color:var(--ink);text-decoration:none}
+  .opt-top a:hover{color:var(--blue)}
+  .opt small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+  .prices{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .prices span{display:inline-flex;align-items:baseline;gap:5px;padding:4px 10px;border-radius:8px;background:var(--soft);font-size:13px;color:var(--ink-2)}
+  .prices span.main{background:var(--ink);color:#fff}
+  .prices span.main b{color:#fff}
+  .prices b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+  .prices em{font-style:normal;color:var(--muted);font-size:12px}
+  .prices span.main em{color:rgba(255,255,255,.7)}
+  details.hostels{margin-top:10px}
+  details.hostels summary{cursor:pointer;font-size:13px;font-weight:500;color:var(--blue)}
+  .picks{margin:8px 0 0;display:grid;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .pick{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 14px;padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px}
+  .pick:first-child{border-top:0}
+  .pick a{font-weight:600;color:var(--ink);text-decoration:none}
+  .pick a:hover{color:var(--blue)}
+  .pick small{color:var(--muted);font-size:12.5px}
+  .pick .hp{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;font-size:12.5px;color:var(--muted)}
+  .pick .hp span{padding:2px 8px;border-radius:6px;background:var(--soft);color:var(--ink-2)}
+  .pick .hp b{color:var(--ink);font-weight:600}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:14px}
+  .hero-stats div{display:flex;flex-direction:column}
+  .hero-stats b{font-size:22px;color:#fff;font-variant-numeric:tabular-nums}
+  .hero-stats span{font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.75)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="flag" aria-hidden="true"><i></i><i></i></div>
+  <div class="bar">
+    <div class="brand">
+      <svg class="ph-flag" viewBox="0 0 1200 600" role="img" aria-label="Flag of the Philippines"><rect width="1200" height="300" fill="#0038A8"/><rect y="300" width="1200" height="300" fill="#CE1126"/><path d="M0 0L519.6 300L0 600Z" fill="#FFF"/><g fill="#FCD116"><circle cx="180" cy="300" r="46"/><path d="M171.0,250.8L169.6,220.7L176.0,250.2ZM177.5,250.1L180.0,204.0L182.5,250.1ZM184.0,250.2L190.4,220.7L189.0,250.8ZM208.5,258.9L228.8,236.6L212.4,261.9ZM213.5,262.9L247.9,232.1L217.1,266.5ZM218.1,267.6L243.4,251.2L221.1,271.5ZM229.2,291.0L259.3,289.6L229.8,296.0ZM229.9,297.5L276.0,300.0L229.9,302.5ZM229.8,304.0L259.3,310.4L229.2,309.0ZM221.1,328.5L243.4,348.8L218.1,332.4ZM217.1,333.5L247.9,367.9L213.5,337.1ZM212.4,338.1L228.8,363.4L208.5,341.1ZM189.0,349.2L190.4,379.3L184.0,349.8ZM182.5,349.9L180.0,396.0L177.5,349.9ZM176.0,349.8L169.6,379.3L171.0,349.2ZM151.5,341.1L131.2,363.4L147.6,338.1ZM146.5,337.1L112.1,367.9L142.9,333.5ZM141.9,332.4L116.6,348.8L138.9,328.5ZM130.8,309.0L100.7,310.4L130.2,304.0ZM130.1,302.5L84.0,300.0L130.1,297.5ZM130.2,296.0L100.7,289.6L130.8,291.0ZM138.9,271.5L116.6,251.2L141.9,267.6ZM142.9,266.5L112.1,232.1L146.5,262.9ZM147.6,261.9L131.2,236.6L151.5,258.9Z"/><path d="M52.0,28.0L58.7,48.7L80.5,48.7L62.9,61.5L69.6,82.3L52.0,69.5L34.4,82.3L41.1,61.5L23.5,48.7L45.3,48.7Z"/><path d="M52.0,512.0L58.7,532.7L80.5,532.7L62.9,545.5L69.6,566.3L52.0,553.5L34.4,566.3L41.1,545.5L23.5,532.7L45.3,532.7Z"/><path d="M455.0,270.0L461.7,290.7L483.5,290.7L465.9,303.5L472.6,324.3L455.0,311.5L437.4,324.3L444.1,303.5L426.5,290.7L448.3,290.7Z"/></g></svg>
+      <div><b>Philippines 2026</b><small>Accommodation</small></div>
+    </div>
+    <nav class="nav3" aria-label="Pages"><a href="index.html">Map</a><a href="itinerary.html">Itinerary</a><a href="flights.html">Flights</a><a href="accommodation.html" aria-current="page">Accommodation</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro hero-band">
+    <div class="eyebrow">Nov 15 – Dec 1 · 16 nights · CAD</div>
+    <h1>Accommodation</h1>
+    <div class="hero-stats" id="stats"></div>
+  </section>
+  <div id="blocks"></div>
+  <footer>“Each” = per person per night, for 2 sharing a room. Booking.com prices include taxes. Google Hotels prices are for your exact dates and refresh every 2 weeks.</footer>
+</main>
+
+<script>document.write('<script src="trip-data.js?v=' + Date.now() + '"><\/script>');</script>
+<script>
+const money = (n, c = 0) => "C$" + n.toLocaleString("en-CA", { minimumFractionDigits: c, maximumFractionDigits: c });
+const perNightOf = o => o.booked ? o.booked.total / o.booked.nights : o.seen ? o.seen.total / o.seen.nights : null;
+let LIVE = {};
+
+function optHTML(o, b) {
+  const n = nightsOf(b), live = LIVE[o.id]?.two, P = [];
+  if (o.booked) {
+    const pn = o.booked.total / o.booked.nights;
+    P.push(`<span class="main">Paid <b>${money(o.booked.total, 2)}</b><em>${o.booked.nights} nights, both</em></span>`,
+           `<span><b>${money(pn, 2)}</b>/night</span>`, `<span><b>${money(pn / 2, 2)}</b> each/night</span>`);
+  } else if (o.seen) {
+    const pn = o.seen.total / o.seen.nights;
+    P.push(`<span class="main"><b>${money(pn / 2)}</b> each/night</span>`, `<span><b>${money(pn)}</b>/night</span>`,
+           `<span>Booking.com <b>${money(o.seen.total)}</b><em>${o.seen.nights} nights, ${esc(o.seen.dates)}</em></span>`);
+  }
+  if (!o.booked && live?.perNight != null)
+    P.push(`<span>Google, your dates <b>${money(live.perNight)}</b>/night<em>${money(live.perNight / 2)} each</em></span>`);
+  if (!P.length) P.push(`<span>${o.live && !LIVE[o.id] ? "Checking price…" : "No price yet · check link"}</span>`);
+  return `<div class="opt${o.booked ? " booked" : ""}${o.preferred ? " preferred" : ""}">
+    <div class="opt-top"><a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.name)} ↗</a>
+      ${o.booked ? `<span class="tag ok">✓ Booked</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}</div>
+    <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
+    <div class="prices">${P.join("")}</div></div>`;
+}
+
+function render() {
+  document.getElementById("blocks").innerHTML = ACCOM.map(b => {
+    const p = accomPick(b), SP = b.picks && STAY_PICKS[b.picks];
+    const tag = p?.booked ? `<span class="tag ok">Booked</span>` : b.maybe ? `<span class="tag maybe">Maybe</span>` : `<span class="tag">Not booked</span>`;
+    const hostels = SP && b.id !== "panglao-1" ? `<details class="hostels"><summary>Cheaper hostels nearby</summary><div class="picks">${SP.picks.map(h => {
+        const x = LIVE[h.id], one = x?.one?.perNight, two = x?.two?.perNight;
+        return `<div class="pick"><a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.name)} ↗</a><small>${esc(h.where)}</small>
+          <div class="hp">${one != null ? `<span>Dorm bed <b>${money(one)}</b></span>` : ""}${two != null ? `<span>2 people <b>${money(two)}</b>/night</span>` : ""}${one == null && two == null ? "No price for your dates" : ""}</div></div>`;
+      }).join("")}</div></details>` : "";
+    return `<section class="blk" id="${b.id}" style="--c:${COLORS[b.region]}">
+      <div class="blk-head"><h2>${esc(b.area)}</h2><span class="when">${esc(accomRange(b))}</span>${tag}</div>
+      ${b.note ? `<p class="blk-note">${esc(b.note)}</p>` : ""}
+      <div class="opts">${b.options.map(o => optHTML(o, b)).join("")}</div>${hostels}</section>`;
+  }).join("");
+
+  // rough total each: booked, else preferred, else cheapest known
+  let total = 0, booked = 0, priced = 0, all = 16;
+  ACCOM.forEach(b => {
+    const n = nightsOf(b);
+    if (accomPick(b)?.booked) booked += n;
+    const choices = (accomPick(b) ? [accomPick(b)] : b.options).map(o => perNightOf(o) ?? LIVE[o.id]?.two?.perNight).filter(x => x != null);
+    if (choices.length) { total += Math.min(...choices) * n / 2; priced += n; }
+  });
+  document.getElementById("stats").innerHTML = `<div><b>${booked}/${all}</b><span>nights booked</span></div><div><b>~${money(total)}</b><span>each · ${priced} of ${all} nights priced</span></div><div><b>~${money(priced ? total / priced : 0)}</b><span>each per night</span></div>`;
+  if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+}
+render();
+fetch("data/hostel-prices.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
+  .then(H => { LIVE = H?.hostels || {}; ACCOM.forEach(b => b.options.forEach(o => { if (!LIVE[o.id]) o.live = false; })); render(); });
+</script>
+</body>
+</html>

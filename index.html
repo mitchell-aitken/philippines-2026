@@ -95,7 +95,7 @@
   /* ---------- Philippine theme ---------- */
   .ph-flag{width:42px;height:21px;flex:0 0 auto;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 2px 6px rgba(0,56,168,.25)}
   .nav3{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#EEF2FB;border:1px solid #DCE4F5}
-  .nav3 a{padding:7px 14px;border-radius:999px;font-size:13px;font-weight:500;color:#26324D;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+  .nav3 a{padding:7px 11px;border-radius:999px;font-size:13px;font-weight:500;color:#26324D;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
   .nav3 a:hover{background:#fff;color:var(--blue)}
   .nav3 a[aria-current="page"]{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(0,56,168,.35)}
   header .flag{height:5px;grid-template-columns:2fr 1fr 2fr}
@@ -127,7 +127,7 @@
       </div>
     </div>
     <div class="actions">
-      <nav class="nav3" aria-label="Pages"><a href="index.html" aria-current="page">Map</a><a href="itinerary.html">Itinerary</a><a href="flights.html">Flights &amp; costs</a></nav>
+      <nav class="nav3" aria-label="Pages"><a href="index.html" aria-current="page">Map</a><a href="itinerary.html">Itinerary</a><a href="flights.html">Flights</a><a href="accommodation.html">Accommodation</a></nav>
     </div>
     <div class="zoomto"><button id="overview" type="button">Whole trip</button><button data-r="Bohol" type="button">Bohol</button><button data-r="El Nido" type="button">El Nido</button><button data-r="Coron" type="button">Coron</button></div>
   </div>
@@ -232,7 +232,7 @@ function popupHTML(d) {
     <ul>${d.plan.map(([w, t]) => `<li><span>${esc(w)}</span>${esc(t)}</li>`).join("")}</ul>
     <div class="facts">
       <div><b>Getting around</b>${esc(d.move)}</div>
-      <div><b>Sleeping</b>${esc(stayText(d.stay))}</div>
+      <div><b>Sleeping</b>${esc(stayText(d.stay, d))}</div>
     </div>
     ${d.tip ? `<p class="tip">${esc(d.tip)}</p>` : ""}
     ${photosHTML(d)}
