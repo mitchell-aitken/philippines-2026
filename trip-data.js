@@ -445,7 +445,7 @@ const ACCOM = [
     options: [
       { id: "fernvale", name: "Fernvale Leisure Club and Resort", where: "Coron", rating: "4.0 · Google",
         url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-25", "2026-12-01"), live: true },
-      { id: "la-natura", name: "La Natura Resort", where: "Coron",
+      { id: "la-natura", name: "La Natura Resort", where: "Coron", rating: "4.4 · Google",
         url: bk("La Natura Resort Coron", "2026-11-25", "2026-12-01"), live: true },
       { id: "kokosnuss", name: "Kokosnuss Garden Resort", where: "1.2 km from centre", rating: "8.0 · 642 reviews",
         url: bk("Kokosnuss Garden Resort Coron", "2026-11-25", "2026-12-01"), seen: { total: 440, nights: 6, dates: "Nov 24–30" }, live: true },
