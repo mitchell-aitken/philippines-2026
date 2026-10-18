@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T20:28:25.871Z",
+  "updated": "2026-10-18T20:34:17.541Z",
   "currency": "CAD",
   "source": "Google Hotels via SerpApi",
   "hostels": {
@@ -1609,6 +1609,119 @@
             "source": "Priceline",
             "name": "Standard King Room with Garden View",
             "perNight": 90
+          }
+        ]
+      }
+    },
+    "bella-athena": {
+      "two": {
+        "name": "Bella Athena Gardens",
+        "perNight": 107,
+        "total": 533,
+        "rating": 4.3,
+        "link": null,
+        "cheapest": {
+          "source": "Booking.com",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQCRoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYASABEgJIn_D_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_2zCN0aKQG3Oz0sfRSrb-FwqFsrKw&adurl",
+          "total": 533,
+          "totalBeforeTax": null,
+          "perNight": 107,
+          "perNightBeforeTax": null,
+          "rooms": [
+            {
+              "name": "Double Room",
+              "perNight": 107,
+              "total": 533,
+              "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQDRoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYASAFEgL3mPD_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_0KNbHKkO7wF_1b9U0zFXJZCVPRtw&adurl",
+              "guests": 2
+            },
+            {
+              "name": "Family Room",
+              "perNight": 142,
+              "total": 711,
+              "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQDxoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYASAHEgJq0_D_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_0j9MY8FkmDTpJdUrOgTXAbcwmPbA&adurl",
+              "guests": 4
+            }
+          ]
+        },
+        "sites": [
+          {
+            "source": "Booking.com",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQCRoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYASABEgJIn_D_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_2zCN0aKQG3Oz0sfRSrb-FwqFsrKw&adurl",
+            "total": 533,
+            "totalBeforeTax": null,
+            "perNight": 107,
+            "perNightBeforeTax": null,
+            "rooms": [
+              {
+                "name": "Double Room",
+                "perNight": 107,
+                "total": 533,
+                "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQDRoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYASAFEgL3mPD_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_0KNbHKkO7wF_1b9U0zFXJZCVPRtw&adurl",
+                "guests": 2
+              },
+              {
+                "name": "Family Room",
+                "perNight": 142,
+                "total": 711,
+                "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQDxoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYASAHEgJq0_D_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_0j9MY8FkmDTpJdUrOgTXAbcwmPbA&adurl",
+                "guests": 4
+              }
+            ]
+          },
+          {
+            "source": "Priceline",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQARoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYAiABEgKrpfD_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_1AvTkk5PLAe4vhiy2hzOJWFNTO6A&adurl",
+            "total": 538,
+            "totalBeforeTax": null,
+            "perNight": 108,
+            "perNightBeforeTax": null,
+            "rooms": [
+              {
+                "name": "Double Room",
+                "perNight": 108,
+                "total": 538,
+                "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQAhoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYAiACEgKi9PD_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_0rv0MvOKC9A4nQzSL2DDL7yUbOww&adurl",
+                "guests": 2
+              },
+              {
+                "name": "Family Room",
+                "perNight": 144,
+                "total": 718,
+                "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQBBoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYAiAEEgIQyPD_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_3sxPnIccRn_eigoXBTO9ZFbsfKfg&adurl",
+                "guests": 4
+              }
+            ]
+          },
+          {
+            "source": "Bluepillow.com",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiIxZuUtcSXAxVOpFoFHZCtF9cYACICCAEQBxoCdnU&co=1&gclid=EAIaIQobChMIiMWblLXElwMVTqRaBR2QrRfXEAoYAyABEgKbT_D_BwE&cid=CAASugHkaOpEQWoJZsvoFOZzUvhBtJfraxS8nGhBkVw-u0wgX9hegeN0Ijuayff5qyfviO9bK6zF0QD6aYespKfY0YMcEnv1LcYT_3FvrX3Fc0PqyRREpnkssXZY83ma820TTdYzCqVyhOB31u9oeQS87ywtXNUAMQFqiQhSfCgGLRDTrPfX_rYMI5UY71HIVDSOSyeG0PKns-g_YZOp3RLvJpBnm3GpZsha91jCUtWyLRNQ6dPNAcfqoCgUimc&sig=AOD64_0AOUsc1MN1KzpE4dtRcyTrp3a2PQ&adurl",
+            "total": 539,
+            "totalBeforeTax": null,
+            "perNight": 108,
+            "perNightBeforeTax": null
+          }
+        ],
+        "rawRooms": [
+          {
+            "source": "Booking.com",
+            "name": "Double Room",
+            "perNight": 107
+          },
+          {
+            "source": "Booking.com",
+            "name": "Family Room",
+            "perNight": 142
+          },
+          {
+            "source": "Priceline",
+            "name": "Double Room",
+            "perNight": 108
+          },
+          {
+            "source": "Priceline",
+            "name": "Family Room",
+            "perNight": 144
           }
         ]
       }
