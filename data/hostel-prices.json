@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T17:54:02.779Z",
+  "updated": "2026-10-18T17:56:10.302Z",
   "currency": "CAD",
   "source": "Google Hotels via SerpApi",
   "hostels": {
@@ -551,6 +551,202 @@
             "perNightBeforeTax": 64
           }
         ]
+      }
+    },
+    "water-forest": {
+      "two": {
+        "name": "Water to Forest Ecolodge",
+        "perNight": 31,
+        "total": 62,
+        "rating": 4.5,
+        "link": "http://watertoforestecolodge.com/",
+        "cheapest": {
+          "source": "Trip.com",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxiuicAQ_HEt9pLZKrpeGBiszjs5DNC6snU-N3gmb7mqm-Utjf0pVKoMVIYGgScnxFvnPCOK2qBI2uSSTyAJ6vZJoqT-Ss1LhjIA_USoSINCiTMNv-ly_NWMwrCwLQhkfuzWbun0vsghv1EumaqxQvnA6ClLqFEssk7chXimO4vvcOj3PE&pcurl=https://us.trip.com/hotels/redirect?hotelid%3D8053414%26city%3D35821%26shoppingid%3DMiaT6r6r3s5y%26adult%3D2%26children%3D0%26ages%3D%26checkin%3D2026-11-17%26checkout%3D2026-11-19%26curr%3DCAD%26Allianceid%3D15214%26Sid%3D1209572%26prid%3DLANG_US%26trip_sub1%3D17_11_2026_2_localuniversal_8053414_US_desktop_selected___0_0-LANG_US-landing%26hpaopts%3Dstand%5BH4sIAAAAAAAA_-Ny42KSYBJi4mCUsuE42_BmIZvFb8EAjhmMy46-Zt7ByHSR0Zbr-uKCWiOHh4zVIuvcH-5ydXjBeHH_7Q-MC1gYF7LG9B_6qhEj6yDF45uZGGJWZFZkXGxaqcCoceTtuWtsHkxBbEbmFhauRlEyXMwBHgGCq89fDXujv9teijk02EXx6QWl2z_3STkksabm6YYGZ-wV62Jk8mBcxcjwiVEA2cB4QzOzSUyMJgAiSKEprwAAAA%5Dfgt%5B1%5D%26br%3D61.53%26tf%3D9.17%26display%3Dexavg%26locale%3Den_us%26crn%3D1%26roomid%3D1681588301%26allianceid%3D15214%26sid%3D1209572&s=AD1XQnlQyZFmZF8-lS8UFWUOhRfM&ap=1",
+          "total": 62,
+          "totalBeforeTax": 55,
+          "perNight": 31,
+          "perNightBeforeTax": 27
+        },
+        "sites": [
+          {
+            "source": "Trip.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxiuicAQ_HEt9pLZKrpeGBiszjs5DNC6snU-N3gmb7mqm-Utjf0pVKoMVIYGgScnxFvnPCOK2qBI2uSSTyAJ6vZJoqT-Ss1LhjIA_USoSINCiTMNv-ly_NWMwrCwLQhkfuzWbun0vsghv1EumaqxQvnA6ClLqFEssk7chXimO4vvcOj3PE&pcurl=https://us.trip.com/hotels/redirect?hotelid%3D8053414%26city%3D35821%26shoppingid%3DMiaT6r6r3s5y%26adult%3D2%26children%3D0%26ages%3D%26checkin%3D2026-11-17%26checkout%3D2026-11-19%26curr%3DCAD%26Allianceid%3D15214%26Sid%3D1209572%26prid%3DLANG_US%26trip_sub1%3D17_11_2026_2_localuniversal_8053414_US_desktop_selected___0_0-LANG_US-landing%26hpaopts%3Dstand%5BH4sIAAAAAAAA_-Ny42KSYBJi4mCUsuE42_BmIZvFb8EAjhmMy46-Zt7ByHSR0Zbr-uKCWiOHh4zVIuvcH-5ydXjBeHH_7Q-MC1gYF7LG9B_6qhEj6yDF45uZGGJWZFZkXGxaqcCoceTtuWtsHkxBbEbmFhauRlEyXMwBHgGCq89fDXujv9teijk02EXx6QWl2z_3STkksabm6YYGZ-wV62Jk8mBcxcjwiVEA2cB4QzOzSUyMJgAiSKEprwAAAA%5Dfgt%5B1%5D%26br%3D61.53%26tf%3D9.17%26display%3Dexavg%26locale%3Den_us%26crn%3D1%26roomid%3D1681588301%26allianceid%3D15214%26sid%3D1209572&s=AD1XQnlQyZFmZF8-lS8UFWUOhRfM&ap=1",
+            "total": 62,
+            "totalBeforeTax": 55,
+            "perNight": 31,
+            "perNightBeforeTax": 27
+          },
+          {
+            "source": "Booking.com",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwiRyZnnkcSXAxUmicIIHQhSL7kYACICCAEQARoCamY&co=1&gclid=EAIaIQobChMIkcmZ55HElwMVJonCCB0IUi-5EAoYASABEgLwxPD_BwE&cid=CAASugHkaDUujc9UmKJBrYcLHvpv45AV9Q1miO-v6bBj41uGHFX8SctrpPO8E1sY2r5-Jh5HSSHHFi_oz87fF0MQLci7FM934Su1m4BCJ79RgQi7hgts02fymLEiYqBrQcgjx1bi9VE3lJ7XJ1qIMbqDoFdP2pPAo4ZY0te5z3sxtE_O73RtVJQpVrgAaALXT5zP8Vk3Mpj2g47C3VpU5quUsxsUl2oPur4vTBtqA6v4mny8pQHEkvHNQuzdgTk&sig=AOD64_3BwxhqoWvGudAQWBKbGYixwLWQtg&adurl",
+            "total": 63,
+            "totalBeforeTax": null,
+            "perNight": 32,
+            "perNightBeforeTax": null
+          },
+          {
+            "source": "Expedia.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswR7lUkN3V9gxc5_5TeU73XdFhYwKDJkbZpf2In83h0DCHYG-1RkMmucPE2ilZMZma8h-XT7-YY8wUReIl_nroSsSPgSlIOAk7-HOxGlkpBs6cOAAzTqf6NVJ2Fg7-s1stQ4JNk3hOGxSiiGJ3nGNDeNo98wsQzALnUWXx4ZIEfoVuiUyyCwtA1dx5_sWn7&pcurl=https://www.expedia.com/Hotel-Search?selected%3D109111878%26startDate%3D2026-11-17%26endDate%3D2026-11-19%26MDPCID%3DUS.META.HPA.HOTEL-ORGANIC-desktop.HOTEL%26MDPDTL%3DHTL.109111878.20261117.20261119.DDF.29.CID..AUDID..RRID.bex_us_desktop%26mctc%3D10%26ct%3Dhotel%26mpg%3DCAD%26mpf%3D64.73%26mpj%3D11.67%26mpr%3D5.30%26mpl%3DUSD%26exp_pg%3Dgoogle%26langid%3Den%26ad%3D2%26tp%3D%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_term%3D109111878%26utm_content%3Dlocaluniversal%26utm_campaign%3DHotelAds%26langid%3D1033%26adults%3D2%26children%3D%26rrid%3Dbex_us_desktop%26rateplanid%3D398129442%26mpm%3D24%26mpn%3D325461298%26mpo%3DEC%26mpe%3D1792317455%26mpp%3D1&s=AD1XQnkx00TUbNuAu6753lPUJXW_&ap=1",
+            "total": 65,
+            "totalBeforeTax": 58,
+            "perNight": 32,
+            "perNightBeforeTax": 29
+          },
+          {
+            "source": "Travelocity.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszxvxPinS_nrXvZ7KnHbw4ck91_Z2_CKlngeyHdM_VxiyjYKpK54nCsfq9YAZZoj6ZDTZCIA1lv3iey_5WdDhOACr2uPwD5d7mWHw5xowuJoNb4RCpjjGggqrpC3W7GI0Moe99bJa_FuEf0xAOneKaNj1K36hEOjqY1QYb7LKoGkhXJABys8Ux2Yy27IFuC&pcurl=https://www.travelocity.com/Hotel-Search?selected%3D109111878%26startDate%3D2026-11-17%26endDate%3D2026-11-19%26adults%3D2%26children%3D%26MDPCID%3Dtravelocity-US.META.HPA.ORGANIC.HOTEL%26MDPDTL%3DHTL.109111878.20261117.20261119.DDF.29.CID..AUDID..localuniversal%26mpg%3DCAD%26mpf%3D64.73%26mpj%3D11.67%26mpr%3D5.30%26mctc%3D10%26rateplanid%3D398129442%26mpm%3D24%26mpn%3D325461298%26mpo%3DEC%26mpe%3D1792317455%26mpp%3D1&s=AD1XQnn8K3Vh_WxnB6HZwPb2qO2s&ap=1",
+            "total": 65,
+            "totalBeforeTax": 58,
+            "perNight": 32,
+            "perNightBeforeTax": 29
+          },
+          {
+            "source": "Orbitz.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswGA8dE8xIZAxDvyCEaahCgRztuPj9Mbo2r-gvi4bGYugD1ypNqo4MboQToeca4sC3Untu-e_NDzf6tYzsPKkOU0xhZtB96kcwU7uVZ_hy5v48s8jjlMp3QRNbXsV8uVkWrnKfcuJWQg87wFDu5neqgyB-CdhlnnwVdxn6K3IwBjcguyp6xXYYC76MKqL8&pcurl=https://www.orbitz.com/Hotel-Search?selected%3D109111878%26startDate%3D2026-11-17%26endDate%3D2026-11-19%26adults%3D2%26children%3D%26MDPCID%3DORBITZ-US.META.HPA.ORGANIC-desktop.HOTEL%26MDPDTL%3Dhtl.109111878.20261117.20261119.DDF.29.CID..AUDID..localuniversal%26mpg%3DCAD%26mpf%3D64.73%26mpj%3D11.67%26mpr%3D5.30%26mctc%3D10%26rateplanid%3D398129442%26mpm%3D24%26mpn%3D325461298%26mpo%3DEC%26mpe%3D1792317455%26mpp%3D1&s=AD1XQnllHapQZhEzdYqXCy77FtqF&ap=1",
+            "total": 65,
+            "totalBeforeTax": 58,
+            "perNight": 32,
+            "perNightBeforeTax": 29
+          },
+          {
+            "source": "eDreams",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswxN2ooGqbvTeOe-JiTAc1av_gxVDySthGDr3zx8_XZOCn1nBVJALanpH9ysqjO-oXTiMFa9VuMZ8Qnz73pBTGhh56haQLla9BnTUbR9OWzz---vSqPrWtQiGcTstG6HwgMZm1kysT__BPPn5LX8xezKjsABFXrAikBduuMAIAS25yo1yl1&pcurl=https://accommodation.edreams.net/Hotel-Search?selected%3D109111878%26startDate%3D2026-11-17%26endDate%3D2026-11-19%26adults%3D2%26children%3D%26mpf%3D64.73%26cur%3DCAD%26mpj%3D11.67%26MDPCID%3DeDreams-US.DPS.Edreams.MetaSearch-GHA.HOTEL%26mpl%3DUSD%26numberOfRooms%3D1%26locale%3Den_US%26rffrid%3Dh4p.hcom.US.ghaodigeo.000.000.kwrd%3D%26pos%3DEDREAMS_US%26rateplanid%3D%26mctc%3D10%26utm_medium%3Dmetasearch%26utm_campaign%3D3492580096%26utm_term%3Dhotel%26utm_source%3DFREEBOOKING&s=AD1XQnlrORcEHA8HWRjZth9fKGbs&ap=1",
+            "total": 65,
+            "totalBeforeTax": 58,
+            "perNight": 32,
+            "perNightBeforeTax": 29
+          }
+        ]
+      }
+    },
+    "loboc-cool-river": {
+      "two": {
+        "name": "Loboc Cool River Resort",
+        "perNight": 32,
+        "total": 63,
+        "rating": 4.3,
+        "link": null,
+        "cheapest": {
+          "source": "Priceline",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjlgebpkcSXAxXJCWgBHTuZBEcYACICCAEQBRoCb2E&co=1&ase=2&gclid=EAIaIQobChMI5YHm6ZHElwMVyQloAR07mQRHEAoYAyABEgI48PD_BwE&cid=CAASugHkaB3EjJZMYbJSNMjxK9bknPFlsmXIlQ5ApjN3_A5CU_tQ_CQ09hrxj9cl4pzZQYV7AXnUu6MMctfjdGEuad63K2yEVcgCPSM15ku56wPtHxU1NC08YYwK6SXq-zpfOJ8pk3zkXEguwjJx9UxvBDsvtMC5-xYpjaQlutN5ySvJcCOP-ghwpi-yUjjw-2OqKJlj84ieRDHhumMePFHA7aj9Jt4iOWc76qizOwTbkibUE0pIblegFhHj9mQ&category=acrcp_v1_48&sig=AOD64_3_jSzKX5UluyRyjUX0rq7HFUQMvA&adurl",
+          "total": 63,
+          "totalBeforeTax": 56,
+          "perNight": 32,
+          "perNightBeforeTax": 28
+        },
+        "sites": [
+          {
+            "source": "Priceline",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjlgebpkcSXAxXJCWgBHTuZBEcYACICCAEQBRoCb2E&co=1&ase=2&gclid=EAIaIQobChMI5YHm6ZHElwMVyQloAR07mQRHEAoYAyABEgI48PD_BwE&cid=CAASugHkaB3EjJZMYbJSNMjxK9bknPFlsmXIlQ5ApjN3_A5CU_tQ_CQ09hrxj9cl4pzZQYV7AXnUu6MMctfjdGEuad63K2yEVcgCPSM15ku56wPtHxU1NC08YYwK6SXq-zpfOJ8pk3zkXEguwjJx9UxvBDsvtMC5-xYpjaQlutN5ySvJcCOP-ghwpi-yUjjw-2OqKJlj84ieRDHhumMePFHA7aj9Jt4iOWc76qizOwTbkibUE0pIblegFhHj9mQ&category=acrcp_v1_48&sig=AOD64_3_jSzKX5UluyRyjUX0rq7HFUQMvA&adurl",
+            "total": 63,
+            "totalBeforeTax": 56,
+            "perNight": 32,
+            "perNightBeforeTax": 28
+          },
+          {
+            "source": "Agoda",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjlgebpkcSXAxXJCWgBHTuZBEcYACICCAEQCBoCb2E&co=1&ase=2&gclid=EAIaIQobChMI5YHm6ZHElwMVyQloAR07mQRHEAoYAiABEgJQK_D_BwE&cid=CAASugHkaB3EjJZMYbJSNMjxK9bknPFlsmXIlQ5ApjN3_A5CU_tQ_CQ09hrxj9cl4pzZQYV7AXnUu6MMctfjdGEuad63K2yEVcgCPSM15ku56wPtHxU1NC08YYwK6SXq-zpfOJ8pk3zkXEguwjJx9UxvBDsvtMC5-xYpjaQlutN5ySvJcCOP-ghwpi-yUjjw-2OqKJlj84ieRDHhumMePFHA7aj9Jt4iOWc76qizOwTbkibUE0pIblegFhHj9mQ&category=acrcp_v1_48&sig=AOD64_2wYVNnVoqdpffvqX_WuQQO5eMOYw&adurl",
+            "total": 64,
+            "totalBeforeTax": 56,
+            "perNight": 32,
+            "perNightBeforeTax": 28
+          },
+          {
+            "source": "Bluepillow.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszKI5Hps27ZBxrykfmgoOb1Xl0xpOU6eQea7qUN1xG81jc1yZq8qvqzigibF1uY0moi-P0lDa5WgmFoZS0BKQK-5WZdDJET1adK_LvNT4HdE6Sd64mqcsA95H8Agbq0BO-vDfK7nhi-2SmcfU9ZbnTbxOuOI-__1wEFNdL0eEwR2cMOAp81bxAh2Q&pcurl=https://www.bluepillow.com/search/67a240a8905c444f2d0a2024?begin%3D2026-11-17%26end%3D2026-11-19%26block_id%3D-b,6VwQzvYdSU8j0H4mF6DKH6BrkOIXYtKIKc1SFVyk1zFNS8BSZDheZSiQSyfINeKD,-bpag-Hotel%26fees%3D12.77%26tax%3D12.77%26total%3D63.85%26adults%3D2%26childs%3D0%26infants%3D0%26childrens%3D0%26country%3DUS%26currency%3DCAD%26language%3Den%26source%3Dlocaluniversal%26utm_campaign%3Dhotel%26prid%3Dforeign&s=AD1XQnkBaZZayaHBcOm5D7oMEqUF&ap=1",
+            "total": 64,
+            "totalBeforeTax": null,
+            "perNight": 32,
+            "perNightBeforeTax": null
+          },
+          {
+            "source": "Booking.com",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjlgebpkcSXAxXJCWgBHTuZBEcYACICCAEQARoCb2E&co=1&ase=2&gclid=EAIaIQobChMI5YHm6ZHElwMVyQloAR07mQRHEAoYASABEgLU7PD_BwE&cid=CAASugHkaB3EjJZMYbJSNMjxK9bknPFlsmXIlQ5ApjN3_A5CU_tQ_CQ09hrxj9cl4pzZQYV7AXnUu6MMctfjdGEuad63K2yEVcgCPSM15ku56wPtHxU1NC08YYwK6SXq-zpfOJ8pk3zkXEguwjJx9UxvBDsvtMC5-xYpjaQlutN5ySvJcCOP-ghwpi-yUjjw-2OqKJlj84ieRDHhumMePFHA7aj9Jt4iOWc76qizOwTbkibUE0pIblegFhHj9mQ&category=acrcp_v1_48&sig=AOD64_3mc0Yt51xAp3sPyyOcPoP40urp_w&adurl",
+            "total": 118,
+            "totalBeforeTax": 104,
+            "perNight": 59,
+            "perNightBeforeTax": 52
+          }
+        ]
+      }
+    },
+    "stefanie-grace": {
+      "two": {
+        "name": "Stefanie Grace Inn",
+        "perNight": 18,
+        "total": 36,
+        "rating": 4.4,
+        "link": "https://book-directonline.com/properties/stefaniegraceinn",
+        "cheapest": {
+          "source": "Stefanie Grace Inn",
+          "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjJpcnqkcSXAxW3JEQIHbLzBPEYACICCAEQQhoCZHo&co=1&gclid=EAIaIQobChMIyaXJ6pHElwMVtyRECB2y8wTxEAoYBCABEgLtDfD_BwE&cid=CAASugHkaDP5gGiP1vDdzCjsNNLM9zZ9yoJv0UItJ41fpN1wZKQzHS5RCLB0C_qaO78X2WxWdDpQxftuwxCiK0uLM007_sdMsnsa39oIxZU_jqq_OTgs6nHCDSXU9hwd1_3ZddYiqoscGEmn-fqvJ9HNWqjMVdjKGSa1AQOp7T2al_oEbE3KIwvuzaZMx2LCJqBmh1xFLbrdBfoYQemkkMZnxfKNJfB-EjeiBuFmit6tXmgRZCwgM-LC5x9Txv4&sig=AOD64_0pk1dBFR9GiZewh1pP6K1F2Bdnew&adurl",
+          "total": 36,
+          "totalBeforeTax": null,
+          "perNight": 18,
+          "perNightBeforeTax": null
+        },
+        "sites": [
+          {
+            "source": "Stefanie Grace Inn",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjJpcnqkcSXAxW3JEQIHbLzBPEYACICCAEQQhoCZHo&co=1&gclid=EAIaIQobChMIyaXJ6pHElwMVtyRECB2y8wTxEAoYBCABEgLtDfD_BwE&cid=CAASugHkaDP5gGiP1vDdzCjsNNLM9zZ9yoJv0UItJ41fpN1wZKQzHS5RCLB0C_qaO78X2WxWdDpQxftuwxCiK0uLM007_sdMsnsa39oIxZU_jqq_OTgs6nHCDSXU9hwd1_3ZddYiqoscGEmn-fqvJ9HNWqjMVdjKGSa1AQOp7T2al_oEbE3KIwvuzaZMx2LCJqBmh1xFLbrdBfoYQemkkMZnxfKNJfB-EjeiBuFmit6tXmgRZCwgM-LC5x9Txv4&sig=AOD64_0pk1dBFR9GiZewh1pP6K1F2Bdnew&adurl",
+            "total": 36,
+            "totalBeforeTax": null,
+            "perNight": 18,
+            "perNightBeforeTax": null
+          },
+          {
+            "source": "Booking.com",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjJpcnqkcSXAxW3JEQIHbLzBPEYACICCAEQARoCZHo&co=1&gclid=EAIaIQobChMIyaXJ6pHElwMVtyRECB2y8wTxEAoYASABEgK34PD_BwE&cid=CAASugHkaDP5gGiP1vDdzCjsNNLM9zZ9yoJv0UItJ41fpN1wZKQzHS5RCLB0C_qaO78X2WxWdDpQxftuwxCiK0uLM007_sdMsnsa39oIxZU_jqq_OTgs6nHCDSXU9hwd1_3ZddYiqoscGEmn-fqvJ9HNWqjMVdjKGSa1AQOp7T2al_oEbE3KIwvuzaZMx2LCJqBmh1xFLbrdBfoYQemkkMZnxfKNJfB-EjeiBuFmit6tXmgRZCwgM-LC5x9Txv4&sig=AOD64_2zCnXdZSzYJEwNbnLrruUqMfqErw&adurl",
+            "total": 37,
+            "totalBeforeTax": null,
+            "perNight": 19,
+            "perNightBeforeTax": null
+          },
+          {
+            "source": "Agoda",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjJpcnqkcSXAxW3JEQIHbLzBPEYACICCAEQNxoCZHo&co=1&gclid=EAIaIQobChMIyaXJ6pHElwMVtyRECB2y8wTxEAoYAiABEgIIuPD_BwE&cid=CAASugHkaDP5gGiP1vDdzCjsNNLM9zZ9yoJv0UItJ41fpN1wZKQzHS5RCLB0C_qaO78X2WxWdDpQxftuwxCiK0uLM007_sdMsnsa39oIxZU_jqq_OTgs6nHCDSXU9hwd1_3ZddYiqoscGEmn-fqvJ9HNWqjMVdjKGSa1AQOp7T2al_oEbE3KIwvuzaZMx2LCJqBmh1xFLbrdBfoYQemkkMZnxfKNJfB-EjeiBuFmit6tXmgRZCwgM-LC5x9Txv4&sig=AOD64_30D7vp4UeFYPVnz3PFAuMhILGHUg&adurl",
+            "total": 42,
+            "totalBeforeTax": null,
+            "perNight": 21,
+            "perNightBeforeTax": null
+          },
+          {
+            "source": "Priceline",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxiPyW6yPb7piul8vQjqHYFrt_XDdneMEYj5i3Z5sm7TF_SzzxE-mXCdzgZ1GcpzFn4zvPenH9GPetJbwlXFjA6rUxzW9I3GvX4shFEfN8YwsTW27s6k1vz-a1ZPnFBv2_Uw758rzmKQIMEwxUgXK6cv32AjZNbLrzil5-7q_keqbpkF2s1v8ERnnBfxTX0OMY&pcurl=https://www.priceline.com/r/?channel%3Dmeta%26product%3Dhotel%26theme%3DGoogle-L%26refid%3DPLGOOGLEMSS%26refclickid%3DUS_HP%257C37618705_localuniversal_2%257C20261117%257Cdesktop%257Cuserdate%7Cpublic%7C%7C%7C29%257C2%257C0%7C0%7CEN%26hotelid%3D37618705%26checkin%3D20261117%26checkout%3D20261119%26rooms%3D1%26cur%3DCAD%26POSCountryCode%3DUS%26taxDisplayMode%3DBP%26cityID%3D5000494536%26adults%3D2%26land%3DL%26metaid%3DLdfcL-1kH3lTY3XWqrldTsaJysylgFEpA_x3Yt4A2_KTacYSUzJY7_23uxpt0YLVGqbyVznmCVQV8QWwfLj8Qnqc1VbMdldhXduGMlbA16Anv6whmqg5P9IrOfzNvmeMdy-r6kJHY6GyRSIw0FF9W0kmcKVAEsxrnaPTskzTuU9GBShBFlVSzS6xZg3pUu2vJG2p_dppSsBrakBD8vMDwep7-_hWca1Yj-oMjgvOmMNsKqK4fHrDPFFyTN2rB5oGxqyZgyEfxXDs1yBA1Xx9oPH_26p1vHG0zdx_zwdhX03L-7lEXtcuMWSa4Ni7ziP-nj1G_BJ3KXKaMBgkswTqbB7xycVCyFSCD-8OHsW4OO3bBVHKSDNRbIhLCOMJCqfYjWJIrBxZemyp4D4NmzKYPruwIGoVDyOl40GWFZLhDS9g-O-2w1nz4pmSTQi7MPl_%26dblcnt%3Dtrue%26hc%3D1%26pdtax%3D0.00%26pdf%3D0.00%26pdt%3D42.06%26locale%3Den-us%26ad-src%3D%26numChild%3D0%26aid%3D%26selAdults%3D2&s=AD1XQnkbyOVy-ldfU-VC1TGqNSUJ&ap=1",
+            "total": 42,
+            "totalBeforeTax": null,
+            "perNight": 21,
+            "perNightBeforeTax": null
+          },
+          {
+            "source": "Bluepillow.com",
+            "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszixbnwkW9_8op9dH55sziS6bf72SK4gBIGGdQMrSuojdzi2uj4ljYQ6LV6WM9G9dWdv7zjXA8jhPbxMVJocEFpfNCexoIH8xKBQk1eQW-ID_D6zErJt-2tou4teGW2UJcUruZiqoBWttU9Sc7UfuL1-bseeq_oS83a3eW_6E2UXBea_B7QcusuLg&pcurl=https://www.bluepillow.com/search/594396c17c00cb0e643be271?begin%3D2026-11-17%26end%3D2026-11-19%26block_id%3D-b,ULKaAt_ecDRPYW4QeagLzbnJj3fJSmewLH5yzgKLPjXHPvJsyvk7mczb8EGBWKHX,-bkng-Hotel%26fees%3D0.00%26tax%3D0.00%26total%3D42.09%26adults%3D2%26childs%3D0%26infants%3D0%26childrens%3D0%26country%3DUS%26currency%3DCAD%26language%3Den%26source%3Dlocaluniversal%26utm_campaign%3Dhotel%26prid%3Dforeign&s=AD1XQnmVRXzpZdV7plQ27RuLSmf4&ap=1",
+            "total": 42,
+            "totalBeforeTax": null,
+            "perNight": 21,
+            "perNightBeforeTax": null
+          },
+          {
+            "source": "Expedia.com",
+            "link": "https://www.google.com/aclk?sa=l&ai=DChsSEwjJpcnqkcSXAxW3JEQIHbLzBPEYACICCAEQChoCZHo&co=1&gclid=EAIaIQobChMIyaXJ6pHElwMVtyRECB2y8wTxEAoYAyABEgLVb_D_BwE&cid=CAASugHkaDP5gGiP1vDdzCjsNNLM9zZ9yoJv0UItJ41fpN1wZKQzHS5RCLB0C_qaO78X2WxWdDpQxftuwxCiK0uLM007_sdMsnsa39oIxZU_jqq_OTgs6nHCDSXU9hwd1_3ZddYiqoscGEmn-fqvJ9HNWqjMVdjKGSa1AQOp7T2al_oEbE3KIwvuzaZMx2LCJqBmh1xFLbrdBfoYQemkkMZnxfKNJfB-EjeiBuFmit6tXmgRZCwgM-LC5x9Txv4&sig=AOD64_2BDfAiqol5Xe04oF7tummg8UeSsw&adurl",
+            "total": 99,
+            "totalBeforeTax": null,
+            "perNight": 50,
+            "perNightBeforeTax": null
+          }
+        ]
+      }
+    },
+    "fox-firefly": {
+      "two": {
+        "name": "Fox & The Firefly Cottages",
+        "perNight": null,
+        "total": null,
+        "rating": 4.5,
+        "link": "http://www.foxandthefireflycottages.com/",
+        "cheapest": null,
+        "sites": []
       }
     }
   },
