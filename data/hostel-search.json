@@ -182,6 +182,31 @@
         "Fox & The Firefly Cottages Loboc Bohol",
         "Fox and the Firefly Loboc"
       ]
+    },
+    {
+      "id": "lagoon-coron",
+      "name": "Lagoon Coron",
+      "match": "Lagoon Coron",
+      "query": "Mo2 Lagoon Coron",
+      "alt": [
+        "Lagoon Coron Palawan",
+        "MO2 Westown Lagoon Coron"
+      ],
+      "checkIn": "2026-11-25",
+      "checkOut": "2026-12-01",
+      "twoOnly": true
+    },
+    {
+      "id": "fernvale",
+      "name": "Fernvale Leisure Club and Resort",
+      "match": "Fernvale",
+      "query": "Fernvale Leisure Club and Resort Coron",
+      "alt": [
+        "Fernvale Leisure Club Coron Palawan"
+      ],
+      "checkIn": "2026-11-25",
+      "checkOut": "2026-12-01",
+      "twoOnly": true
     }
   ],
   "areas": [
