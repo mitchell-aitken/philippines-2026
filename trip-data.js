@@ -441,7 +441,7 @@ const ACCOM = [
         url: bk("Lunara Villas El Nido", "2026-11-20", "2026-11-25"), seen: { total: 389, nights: 5, dates: "Nov 19–24" }, live: true },
       { id: "bella-athena", name: "Bella Athena Gardens", where: "El Nido", rating: "4.3 · Google",
         url: bk("Bella Athena Gardens El Nido", "2026-11-20", "2026-11-25"), live: true },
-      { id: "calathea", name: "Calathea Suites", where: "El Nido",
+      { id: "calathea", name: "Calathea Suites", where: "El Nido", rating: "4.5 · Google",
         url: bk("Calathea Suites El Nido", "2026-11-20", "2026-11-25"), live: true }
     ] },
   { id: "coron", area: "Coron", region: "Coron", from: "2026-11-25", to: "2026-12-01", picks: "crn",
