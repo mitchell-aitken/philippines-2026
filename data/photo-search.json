@@ -1,0 +1,16 @@
+{
+  "note": "Commons search terms per photo key. The Fetch photos workflow saves candidates to images/cand/ for review.",
+  "perTerm": 4,
+  "items": [
+    ["panglao", "Alona Beach Panglao"], ["tarsier", "Philippine tarsier Bohol"], ["loboc-river", "Loboc River"],
+    ["chocolate-hills", "Chocolate Hills Bohol"], ["bilar-forest", "Bilar man-made forest"], ["danao", "Danao Bohol"],
+    ["napaling", "Napaling Panglao"], ["hinagdanan", "Hinagdanan Cave"],
+    ["el-nido", "El Nido Palawan"], ["big-lagoon", "Big Lagoon Miniloc"], ["small-lagoon", "Small Lagoon Miniloc"],
+    ["taraw", "Taraw Cliff"], ["cadlao", "Cadlao Island"], ["las-cabanas", "Las Cabanas El Nido"],
+    ["hidden-beach", "Matinloc Island"], ["helicopter-island", "Helicopter Island El Nido"],
+    ["tao-farm", "Tao Philippines"], ["daracotan", "San Fernando El Nido Palawan"],
+    ["linapacan", "Linapacan"], ["culion", "Culion"], ["ngey-ngey", "Mangenguey Island"], ["busuanga", "Busuanga Island"],
+    ["maquinit", "Maquinit Hot Spring"], ["tapyas", "Mount Tapyas"], ["kayangan", "Kayangan Lake"],
+    ["twin-lagoon", "Twin Lagoon Coron"], ["barracuda", "Barracuda Lake"], ["tundalara", "Tundalara"], ["coron-town", "Coron Palawan town"]
+  ]
+}
