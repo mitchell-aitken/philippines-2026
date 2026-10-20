@@ -157,6 +157,12 @@
   .pics img{display:block;width:100%;height:150px;object-fit:cover;border-radius:10px;background:#eee}
   .pics figcaption{font-size:12px;color:var(--ink-2);margin-top:4px;line-height:1.3}
   .pics figcaption small{display:block;color:var(--muted);font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  details.leg-d > summary{cursor:pointer;list-style:none;position:relative;padding-right:34px}
+  details.leg-d > summary::-webkit-details-marker{display:none}
+  details.leg-d > summary::after{content:"";position:absolute;right:6px;bottom:20px;width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s}
+  details.leg-d[open] > summary::after{transform:rotate(-135deg);bottom:14px}
+  details.leg-d > summary:hover h2{color:var(--c)}
+  .leg{padding-top:28px!important}
 </style>
 </head>
 <body>
@@ -195,12 +201,14 @@
 document.getElementById("nights").innerHTML = PLACES.map(p => `
   <a href="#day-${+p.inDate.slice(8)}" style="--c:${COLORS[p.region]}"><b>${p.nights}<span>nights</span></b><strong>${esc(p.place)}</strong><small>${esc(p.days)}</small></a>`).join("");
 const legsEl = document.getElementById("legs");
+const legDates = ds => { const a = ds[0], b = ds[ds.length - 1], m = d => d.mon || MONTH;
+  return a === b ? `${m(a)} ${a.date}` : m(a) === m(b) ? `${m(a)} ${a.date}–${b.date}` : `${m(a)} ${a.date} – ${m(b)} ${b.date}`; };
 LEGS.forEach(leg => {
   const days = leg.days.map(n => DAYS.find(d => d.date === n));
   const sec = document.createElement("section");
   sec.className = "leg"; sec.style.setProperty("--c", COLORS[leg.region]);
   sec.innerHTML = `
-    <div class="leg-head"><h2><i></i>${esc(leg.name)}</h2><span>${esc(leg.sub)}</span></div>
+    <details class="leg-d"><summary class="leg-head"><h2><i></i>${esc(leg.name)}</h2><span>${esc(legDates(days))} · ${esc(leg.sub)}</span></summary><div class="leg-body">
     ${ACCOM.filter(bl => days.some(d => accomFor(d) === bl)).map(bl => {
       const p = accomPick(bl), set = !!p?.booked;
       return `<div class="stay${set ? " set" : ""}"><div class="k">Stay</div><a class="v" href="accommodation.html#${bl.id}">${esc(accomLabel(bl))}<small>${esc(bl.area)}</small></a><div class="n">${esc(accomRange(bl))}</div></div>`;
@@ -220,11 +228,13 @@ LEGS.forEach(leg => {
             <a class="onmap" href="index.html${d.pin ? "#day-" + d.date : ""}">${d.pin ? "Show on map →" : "See the whole route →"}</a>
           </div>
         </div>
-      </article>`).join("")}`;
+      </article>`).join("")}</div></details>`;
   legsEl.appendChild(sec);
 });
 /* jump to a day linked from the map, e.g. itinerary.html#day-25 */
-if (location.hash) { const el = document.querySelector(location.hash); if (el) setTimeout(() => el.scrollIntoView(), 50); }
+function openHash() { const el = location.hash && document.querySelector(location.hash); if (!el) return;
+  const d = el.closest("details"); if (d) d.open = true; setTimeout(() => el.scrollIntoView(), 50); }
+openHash(); window.addEventListener("hashchange", openHash);
 </script>
 </body>
 </html>

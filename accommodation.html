@@ -216,8 +216,9 @@
   .prices a.web:hover{background:#EEF2FB}
   .prices a.web.alt{border-color:var(--line);color:var(--ink-2)}
   details.deals{margin-top:10px}
-  details.deals summary{cursor:pointer;font-size:13px;font-weight:500;color:var(--blue)}
-  details.deals summary span{color:var(--muted);font-weight:400;margin-left:4px}
+  details.deals summary{cursor:pointer;font-size:13px;font-weight:500;color:var(--blue);justify-content:flex-start;padding:6px 0}
+  details.deals summary::after{margin-left:auto}
+  details.deals summary span{color:var(--muted);font-weight:400;margin:0 0 0 4px}
   details.deals ul{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
   details.deals li{display:grid;grid-template-columns:minmax(90px,1.2fr) auto minmax(0,2fr) auto;gap:4px 12px;align-items:baseline;padding:7px 12px;border-top:1px solid var(--line);font-size:13px}
   details.deals li:first-child{border-top:0;background:#F6FBF8}
@@ -249,6 +250,21 @@
   .hero-stats .sep small{font-size:14px;font-weight:500;opacity:.8}
   .hero-stats b{font-size:22px;color:#fff;font-variant-numeric:tabular-nums}
   .hero-stats span{font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.75)}
+  details.grp{margin-top:18px;border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+  details.grp > summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:6px 12px;padding:16px 48px 16px 18px;position:relative;border-left:5px solid var(--c)}
+  details.grp > summary::-webkit-details-marker{display:none}
+  details.grp > summary::after{content:"";position:absolute;right:20px;top:50%;width:9px;height:9px;margin-top:-7px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s}
+  details.grp[open] > summary::after{transform:rotate(-135deg);margin-top:-2px}
+  details.grp > summary h2{margin:0;font-size:20px;display:flex;align-items:center;gap:8px}
+  details.grp > summary h2 i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+  details.grp > summary .when{font:500 12px/1.2 var(--mono);color:var(--ink-2)}
+  details.grp > summary span{margin:0}
+  details.grp > summary .gp{margin-left:auto!important;font-weight:600;font-variant-numeric:tabular-nums}
+  details.grp[open] > summary{border-bottom:1px solid var(--line)}
+  .grp-body{padding:0 18px 18px}
+  .grp-body .blk{margin-top:18px}
+  .grp-body .blk-head h2{font-size:17px}
+  @media (max-width:560px){details.grp > summary .gp{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -346,14 +362,32 @@ function optHTML(o, b) {
 }
 
 function render() {
-  document.getElementById("blocks").innerHTML = ACCOM.map(b => {
+  const openNow = new Set([...document.querySelectorAll("details.grp[open]")].map(d => d.dataset.g));
+  const groups = [...new Set(ACCOM.map(b => b.region))];
+  document.getElementById("blocks").innerHTML = groups.map(g => {
+    const bs = ACCOM.filter(b => b.region === g);
+    const from = bs[0].from, to = bs[bs.length - 1].to, nights = bs.reduce((t, b) => t + nightsOf(b), 0);
+    let lo = 0, hi = 0, ok = true;
+    bs.forEach(b => { if (b.tao) return; const n = nightsOf(b), pk = accomPick(b), bo = b.options.filter(o => o.booked);
+      const ch = (bo.length ? bo : pk ? [pk] : b.options).map(o => perNightOf(o, n)).filter(x => x != null);
+      if (ch.length) { lo += Math.min(...ch) * n / 2; hi += Math.max(...ch) * n / 2; } else ok = false; });
+    const taoO = bs.find(b => b.tao)?.options[0];
+    const price = taoO ? `US$${taoO.usd} each` : lo ? (Math.round(lo) === Math.round(hi) ? `${money(lo)} each` : `${money(lo)}–${money(hi).slice(2)} each`) + (ok ? "" : "+") : "";
+    const st = bs.map(b => { const p = accomPick(b); return b.tao ? "TAO" : p?.booked ? (p.booked.change ? "change dates" : "booked") : b.maybe ? "maybe" : "open"; });
+    const status = st.every(x => x === "booked") ? `<span class="tag maybe">Booked</span>` : st.includes("change dates") ? `<span class="tag maybe">Booked · change dates</span>` : st.includes("booked") ? `<span class="tag maybe">Part booked</span>` : st.includes("TAO") ? `<span class="tag pref">With TAO</span>` : `<span class="tag">Not booked</span>`;
+    const last = new Date(new Date(to + "T12:00") - 864e5).toISOString().slice(0, 10);
+    return `<details class="grp" data-g="${esc(g)}" style="--c:${COLORS[g]}"${openNow.has(g) ? " open" : ""}>
+      <summary><h2><i></i>${esc(g === "Bohol" ? "Bohol / Panglao" : g === "TAO" ? "TAO expedition" : g)}</h2><span class="when">${shortDate(from)}–${shortDate(last).replace(/^[A-Za-z]+ /, (m) => shortDate(from).startsWith(m) ? "" : m)} · ${nights} nights</span>${status}${price ? `<span class="gp">${price}</span>` : ""}</summary>
+      <div class="grp-body">${bs.map(b => blockHTML(b)).join("")}</div></details>`;
+  }).join("");
+  function blockHTML(b) {
     const p = accomPick(b);
     const tag = b.tao ? `<span class="tag pref">With TAO</span>` : p?.booked ? `<span class="tag ${p.booked.cancellable ? "maybe" : "ok"}">${p.booked.change ? "Booked · change dates" : p.booked.cancellable ? "Booked · cancellable" : "Booked"}</span>` : b.maybe ? `<span class="tag maybe">Maybe</span>` : `<span class="tag">Not booked</span>`;
     return `<section class="blk" id="${b.id}" style="--c:${COLORS[b.region]}">
       <div class="blk-head"><h2>${esc(b.area)}</h2><span class="when">${esc(accomRange(b))}</span>${tag}</div>
       ${b.note ? `<p class="blk-note">${b.noteBold ? `<b>${esc(b.note)}</b>` : esc(b.note)}</p>` : ""}
       <div class="opts">${b.options.map(o => optHTML(o, b)).join("")}</div></section>`;
-  }).join("");
+  }
 
   // range each: booked stays fixed, otherwise cheapest → priciest option in each place
   let lo = 0, hi = 0, booked = 0, priced = 0, all = 16;
@@ -369,7 +403,7 @@ function render() {
   });
   const rng = (a, c) => Math.round(a) === Math.round(c) ? money(a) : `${money(a)}–${money(c).slice(2)}`;
   document.getElementById("stats").innerHTML = `<div class="big"><b>${rng(lo, hi)}</b><span>per person · ${all} nights${priced < all ? ` (${priced} priced)` : ""}${taoN ? ` + ${taoN} on TAO` : ""} · cheapest to priciest</span></div><div><b>${rng(lo / priced, hi / priced)}</b><span>per person / night</span></div><div><b>${rng(lo * 2, hi * 2)}</b><span>for both</span></div><div><b>${booked}/${all}</b><span>nights booked</span></div>${taoUsd ? `<div class="sep"><b>US$${taoUsd} <small>≈ ${money(taoUsd * USD_CAD)}</small></b><span>TAO each · separate</span></div>` : ""}`;
-  if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+  if (location.hash && !render._hashed) { const el = document.querySelector(location.hash); if (el) { el.closest("details")?.setAttribute("open", ""); el.scrollIntoView(); render._hashed = true; } }
 }
 render();
 fetch("data/hostel-prices.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
