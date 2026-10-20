@@ -151,7 +151,7 @@
       "id": "tao",
       "kind": "ferry",
       "group": "domestic",
-      "total": true,
+      "total": false,
       "title": "El Nido → Coron · TAO expedition",
       "note": "4 nights on the boat and basecamps. Food, drinks and island stops included. Briefing Mon Nov 23, 18:00.",
       "date": "2026-11-24",

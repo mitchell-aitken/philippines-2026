@@ -306,7 +306,7 @@ function render(cfg, live) {
   const mt = legCost("mnl-tag"), te = legCost("tag-eni"), fe = legCost("tao"), uc = legCost("usu-crk"), bus = legCost("crk-mnl"), um = legCost("usu-mnl");
   const ferryEC = L["tao"].departures[0];
   const intlPrice = intl.booked ? intl.booked.price : (t ? t.price : est(intl));
-  const total = intlPrice + mt.price + te.price + fe.price + uc.price + bus.price;
+  const total = intlPrice + mt.price + te.price + uc.price + bus.price;
 
   const steps = [
     t?.out
@@ -316,7 +316,7 @@ function render(cfg, live) {
          : step("Sun Nov 15", "Manila → Panglao", "Morning Cebu Pacific flight", mt.price, mt.live),
     te.o ? step(day(te.o.depart), `${hm(te.o.depart)} Bohol → El Nido ${hm(te.o.arrive)}`, `${esc(te.o.airlines.join(" + "))} ${esc(te.o.flights.join(" · "))} · nonstop`, te.price, te.live)
          : step(day(L["tag-eni"].outbound), "Bohol → El Nido", "Cebgo DG 6886 nonstop, 10:30", te.price, te.live),
-    step("Tue Nov 24", `07:30 El Nido → Coron, lands Sat Nov 28 ~12:00`, `TAO expedition · 4 nights on the boat and basecamps, food and everything included · ${esc(ferryEC.fare)} each (≈C$897)${L["tao"].availability ? ` · <span class="warn-t">${esc(L["tao"].availability)}</span>` : ""}`, fe.price, false),
+    step("Tue Nov 24", `07:30 El Nido → Coron, lands Sat Nov 28 ~12:00`, `TAO expedition · 4 nights on the boat and basecamps · ${esc(ferryEC.fare)} each, shown on the <a href="accommodation.html#tao">Accommodation</a> page${L["tao"].availability ? ` · <span class="warn-t">${esc(L["tao"].availability)}</span>` : ""}`, null),
     uc.o ? step(day(uc.o.depart), `${hm(uc.o.depart)} Coron → Clark ${hm(uc.o.arrive)}`, `${esc(uc.o.airlines.join(" + "))} ${esc(uc.o.flights.join(" · "))} · separate ticket · earliest flight, for a safe buffer`, uc.price, uc.live)
          : step(day(L["usu-crk"].outbound), "Coron → Clark", "Morning nonstop", uc.price, uc.live),
     step(day(L["crk-mnl"].date), "Bus Clark → Manila airport", "Genesis P2P from Clark Airport, 2–3 hrs", bus.price, false),
@@ -344,7 +344,7 @@ function render(cfg, live) {
   document.getElementById("plan").innerHTML = `
     <div class="plan-head">
       <div><div class="eyebrow">Flights</div><h2>Calgary → Manila → Bohol → El Nido → Coron → Clark → Manila → Calgary</h2></div>
-      <div class="price-big"><b>${fmt(total)}</b><span>per person, all flights, TAO and the bus</span></div>
+      <div class="price-big"><b>${fmt(total)}</b><span>per person, all flights and the bus</span></div>
     </div>
     <div class="clock">
       <div><span class="eyebrow">Leave Calgary</span><b>${t?.out ? `${day(t.out.depart)} · ${hm(t.out.depart)}` : "Fri Nov 13 · 19:10"}</b><small>Calgary time</small></div>
