@@ -205,7 +205,7 @@ const DAYS = [
     ],
     move: "TAO van + boat",
     stay: null,
-    tip: "No power at camp: bring a headlamp.",
+    tip: "Little power at camp: bring a headlamp.",
     photos: [["TAO expedition", "TAO Philippines expedition boat"], ["TAO Beach Farm", "TAO Beach Farm San Fernando El Nido"]]  // [label, image search]
   },
   {
@@ -484,6 +484,178 @@ const accomLabel = b => { if (b.tao) return "TAO boat + basecamps"; const p = ac
   if (p) return `${p.name} (preferred)`;
   return b.options.map(o => o.name).join(" or ") + (b.maybe ? " (maybe)" : " (not booked)"); };
 
+/* Photos from Wikimedia Commons: [file, caption, credit, source page] per day */
+const PICS = {
+ "15": [
+  [
+   "images/days/panglao-1.jpg",
+   "Alona Beach, Panglao",
+   "Jeroen36 · CC BY 3.0",
+   "https://commons.wikimedia.org/wiki/File:Alona_Beach,_Panglao_-_panoramio.jpg"
+  ]
+ ],
+ "16": [
+  [
+   "images/days/tarsier-2.jpg",
+   "Philippine tarsier",
+   "Charles J. Sharp · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:Philippine_tarsier_(Carlito_syrichta_fraterculus)_Bohol.jpg"
+  ],
+  [
+   "images/days/loboc-river-1.jpg",
+   "Loboc River",
+   "Qaalvin · CC BY-SA 3.0",
+   "https://commons.wikimedia.org/wiki/File:Loboc_river.png"
+  ]
+ ],
+ "17": [
+  [
+   "images/days/chocolate-hills-1.jpg",
+   "Chocolate Hills",
+   "Ramir Borja derivative work: MrPanyGoff · CC BY-SA 3.0",
+   "https://commons.wikimedia.org/wiki/File:Chocolate_Hills_-_edit.jpg"
+  ],
+  [
+   "images/days/bilar-forest-3.jpg",
+   "Bilar mahogany forest",
+   "Lawrence Ruiz · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:Bilar_Man-Made_Forest.jpg"
+  ]
+ ],
+ "19": [
+  [
+   "images/days/hinagdanan-1.jpg",
+   "Hinagdanan Cave",
+   "Deepak-nsk · CC0",
+   "https://commons.wikimedia.org/wiki/File:Snorkeling_in_Hinagdanan_Cave.jpg"
+  ]
+ ],
+ "20": [
+  [
+   "images/days/el-nido-3.jpg",
+   "Bacuit Bay, El Nido",
+   "Vyacheslav Argenberg · CC BY 4.0",
+   "https://commons.wikimedia.org/wiki/File:Limestone_island_in_Bacuit_Bay,_El_Nido,_Palawan,_Philippines.jpg"
+  ],
+  [
+   "images/days/las-cabanas-2.jpg",
+   "Las Cabanas Beach",
+   "Tuderna · CC BY 3.0",
+   "https://commons.wikimedia.org/wiki/File:Las_Cabanas_Beach_-_panoramio_(1).jpg"
+  ]
+ ],
+ "21": [
+  [
+   "images/days/big-lagoon-1.jpg",
+   "Big Lagoon",
+   "Tuderna · CC BY 3.0",
+   "https://commons.wikimedia.org/wiki/File:Big_lagoon_entrance,_Miniloc_island_-_panoramio.jpg"
+  ],
+  [
+   "images/days/el-nido-4.jpg",
+   "Lagoon in Bacuit Bay",
+   "Vyacheslav Argenberg · CC BY 4.0",
+   "https://commons.wikimedia.org/wiki/File:Island_lagoon_in_Bacuit_Bay,_El_Nido,_Palawan,_Philippines.jpg"
+  ]
+ ],
+ "22": [
+  [
+   "images/days/taraw-1.jpg",
+   "Taraw Cliff over El Nido town",
+   "David Stanley from Nanaimo, Canada · CC BY 2.0",
+   "https://commons.wikimedia.org/wiki/File:Taraw_Cliff,_El_Nido.jpg"
+  ],
+  [
+   "images/days/taraw-3.jpg",
+   "El Nido bay from above",
+   "Micluna · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:El_Nido_Town_Beach.jpg"
+  ]
+ ],
+ "23": [
+  [
+   "images/days/helicopter-island-1.jpg",
+   "Helicopter Island",
+   "Patrickroque01 · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:El_Nido_Helicopter_Island_(El_Nido,_Palawan;_08-05-2023).jpg"
+  ]
+ ],
+ "24": [
+  [
+   "images/days/daracotan-1.jpg",
+   "Hills of San Fernando, north El Nido",
+   "Tuderna · CC BY 3.0",
+   "https://commons.wikimedia.org/wiki/File:Over_the_Hills_of_San_Fernando,_North-Palawan_-_panoramio.jpg"
+  ]
+ ],
+ "25": [
+  [
+   "images/days/linapacan-3.jpg",
+   "Dicabaito Island, Linapacan",
+   "Tuderna · CC BY 3.0",
+   "https://commons.wikimedia.org/wiki/File:Dicabaito_Island_Calamian_Group_-_panoramio.jpg"
+  ]
+ ],
+ "26": [
+  [
+   "images/days/culion-1.jpg",
+   "Culion town",
+   "Marsmux · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:Municipality_of_Culion_outlook_from_local_hillside.jpg"
+  ]
+ ],
+ "27": [
+  [
+   "images/days/busuanga-1.jpg",
+   "Busuanga coast (Black Island)",
+   "pablosievert · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:Black_Island,_Busuanga.jpg"
+  ]
+ ],
+ "28": [
+  [
+   "images/days/maquinit-2.jpg",
+   "Maquinit Hot Springs",
+   "Paul Christian B. Yang-ed · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:Maquinit_Hotspring_-_Mainit_na_Bukal_ng_Maquinit_-_Hotspring_in_Coron,_Palawan,_Philippines.jpg"
+  ],
+  [
+   "images/days/tapyas-1.jpg",
+   "Coron town from Mt Tapyas",
+   "lumoplank · CC0",
+   "https://commons.wikimedia.org/wiki/File:Mount_Tapyas_-_Tapyas1700.jpg"
+  ]
+ ],
+ "29": [
+  [
+   "images/days/kayangan-1.jpg",
+   "Kayangan Lake",
+   "Myles Kadusale · CC BY 3.0",
+   "https://commons.wikimedia.org/wiki/File:Coron_Kayangan_Lake_Entrance_(73005283).jpeg"
+  ],
+  [
+   "images/days/twin-lagoon-1.jpg",
+   "Twin Lagoon",
+   "Franz C. Trinidad · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:Twin_Lagoon_Coron_Palawan.jpg"
+  ],
+  [
+   "images/days/barracuda-2.jpg",
+   "Barracuda Lake",
+   "Ronavni · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:Barracuda_Lake_General_View.jpg"
+  ]
+ ],
+ "30": [
+  [
+   "images/days/coron-town-3.jpg",
+   "Coron town and bay",
+   "Patrickroque01 · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:Coron_town_proper_skyline_sea_view_(Coron,_Palawan;_03-16-2024).jpg"
+  ]
+ ]
+};
+
 /* ---------- shared helpers (no need to edit) ---------- */
 const img = q => "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(q);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -492,6 +664,8 @@ const ICON_CAM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
 const ICON_MOVE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const photosHTML = d => d.photos.length
   ? `<div class="photos">${d.photos.map(([label, q]) => `<a href="${img(q)}" target="_blank" rel="noopener">${ICON_CAM}${esc(label)} ↗</a>`).join("")}</div>` : "";
+const picsHTML = d => { const P = (d.mon && d.mon !== MONTH) ? null : PICS[String(d.date)];
+  return P?.length ? `<div class="pics">${P.map(([f, cap, cr, pg]) => `<figure><a href="${esc(pg)}" target="_blank" rel="noopener"><img src="${esc(f)}" alt="${esc(cap)}" loading="lazy"></a><figcaption>${esc(cap)}<small>${esc(cr)}</small></figcaption></figure>`).join("")}</div>` : ""; };
 const stayText = (key, d) => {
   const b = d && accomFor(d);
   if (b) return accomLabel(b) + " · " + b.area;

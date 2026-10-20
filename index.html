@@ -110,6 +110,11 @@
   @media (max-width:600px){.nav3 a{padding:6px 10px;font-size:12px}}
   .card .nav3{flex:1 1 auto}
   .card .nav3 a{flex:1;text-align:center}
+  .pics{display:flex;gap:8px;overflow-x:auto;margin:10px 0 4px;padding-bottom:4px;scroll-snap-type:x mandatory}
+  .pics figure{margin:0;flex:0 0 auto;width:150px;scroll-snap-align:start}
+  .pics img{display:block;width:100%;height:100px;object-fit:cover;border-radius:10px;background:#eee}
+  .pics figcaption{font-size:12px;color:var(--ink-2);margin-top:4px;line-height:1.3}
+  .pics figcaption small{display:block;color:var(--muted);font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style>
 </head>
 <body>
@@ -236,6 +241,7 @@ function popupHTML(d) {
       <div><b>Sleeping</b>${esc(stayText(d.stay, d))}</div>
     </div>
     ${d.tip ? `<p class="tip">${esc(d.tip)}</p>` : ""}
+    ${picsHTML(d)}
     ${photosHTML(d)}
     <a class="more" href="itinerary.html#day-${d.date}">Read in full itinerary →</a>
   </div>`;
