@@ -183,7 +183,7 @@ const DAYS = [
       ["Morning", "Hidden Beach cave swim"],
       ["Midday", "Matinloc Shrine lookout"],
       ["Afternoon", "Secret Beach, Helicopter Island"],
-      ["18:00", "TAO briefing at the El Nido office"],
+      ["18:00", "TAO briefing, office in Corong-Corong"],
     ],
     move: "Boat tour · 8 am – 5 pm",
     stay: "eni",
@@ -194,11 +194,11 @@ const DAYS = [
     date: 24,
     dow: "Tue",
     region: "TAO",
-    pin: [11.33, 119.55],
+    pin: [11.3345, 119.5451],
     title: "TAO day 1: Beach Farm",
     lede: "",
     plan: [
-      ["07:30", "Meet at the TAO office"],
+      ["07:30", "Meet at the TAO office, Corong-Corong"],
       ["Morning", "Van to San Fernando, north El Nido"],
       ["Afternoon", "Daracotan Bay"],
       ["Night", "TAO Beach Farm"],
@@ -212,7 +212,7 @@ const DAYS = [
     date: 25,
     dow: "Wed",
     region: "TAO",
-    pin: [11.47, 119.85],
+    pin: [11.4265, 119.7420],
     title: "TAO day 2: Linapacan",
     lede: "",
     plan: [
@@ -228,7 +228,7 @@ const DAYS = [
     date: 26,
     dow: "Thu",
     region: "TAO",
-    pin: [11.68, 120.00],
+    pin: [11.72, 119.97],
     title: "TAO day 3: to Culion",
     lede: "",
     plan: [
@@ -238,14 +238,14 @@ const DAYS = [
     ],
     move: "TAO boat",
     stay: null,
-    tip: "",
+    tip: "Camp location is approximate; TAO doesn't publish it.",
     photos: [["Culion", "Culion island Palawan"]]  // [label, image search]
   },
   {
     date: 27,
     dow: "Fri",
     region: "TAO",
-    pin: [12.02, 120.03],
+    pin: [12.0094, 119.8710],
     title: "TAO day 4: Camp Ngey Ngey",
     lede: "",
     plan: [
@@ -365,8 +365,8 @@ const FLOW = [
   { air: "TAG", by: "fly" }, { day: 15, by: "road" }, { day: 16, by: "road" }, { day: 17, by: "road" }, { day: 18, by: "road" }, { day: 19, by: "road" },
   { air: "TAG", by: "road" },
   { air: "ENI", by: "fly" }, { day: 20, by: "road" }, { day: 21, by: "boat" }, { day: 22, by: "road" }, { day: 23, by: "boat" },
-  { day: 24, by: "road", via: [[11.179, 119.389]] }, { day: 25, by: "boat" }, { day: 26, by: "boat" }, { day: 27, by: "boat" },
-  { day: 28, by: "boat", via: [[11.97, 120.12], [11.995, 120.205]] }, { day: 29, by: "boat" }, { day: 30, by: "road" },
+  { day: 24, by: "road", via: [[11.1650, 119.3985]] }, { day: 25, by: "boat" }, { day: 26, by: "boat" }, { day: 27, by: "boat" },
+  { day: 28, by: "boat", via: [[11.96, 119.98], [11.97, 120.12], [11.995, 120.205]] }, { day: 29, by: "boat" }, { day: 30, by: "road" },
   { air: "USU", by: "road" },
   { air: "CRK", by: "fly" }, { air: "MNL", by: "road" }
 ];
@@ -452,10 +452,10 @@ const ACCOM = [
         url: bk("Calathea Suites El Nido", "2026-11-20", "2026-11-24"), live: true }
     ] },
   { id: "tao", area: "TAO expedition", region: "TAO", from: "2026-11-24", to: "2026-11-28", tao: true,
-    note: "Huts at TAO basecamps, meals and island stops included. Price is on the Flights & costs page.",
+    note: "Huts at TAO basecamps. Food, drinks and island stops included.",
     options: [
       { id: "tao-trip", name: "TAO Original: El Nido → Coron", where: "Beach Farm · Linapacan · Culion · Camp Ngey Ngey", rating: "",
-        url: "https://www.taophilippines.com/experiences/original-el-nido-to-coron", included: true }
+        url: "https://www.taophilippines.com/experiences/original-el-nido-to-coron", site: "https://www.taophilippines.com/experiences/original-el-nido-to-coron", included: true }
     ] },
   { id: "coron", area: "Coron", region: "Coron", from: "2026-11-28", to: "2026-12-01", picks: "crn",
     note: "Both booked for Nov 25–Dec 1. Change one to Nov 28–Dec 1 (3 nights) and cancel the other.",

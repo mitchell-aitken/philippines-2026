@@ -4,8 +4,11 @@ const cfg = JSON.parse(await readFile("data/photo-search.json", "utf8"));
 await mkdir("images/cand", { recursive: true });
 const UA = { "User-Agent": "philippines-2026-trip-site/1.0 (github.com/mitchell-aitken/philippines-2026)" };
 const strip = s => String(s || "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
-const out = {};
+let out = {}; try { out = JSON.parse(await readFile("data/photo-candidates.json", "utf8")); } catch {}
+const wait = ms => new Promise(r => setTimeout(r, ms));
 for (const [key, term] of cfg.items) {
+  if (Array.isArray(out[key]) && out[key].length) continue;
+  await wait(2500);
   const u = "https://commons.wikimedia.org/w/api.php?" + new URLSearchParams({ action: "query", format: "json", generator: "search",
     gsrsearch: `${term} filetype:bitmap`, gsrnamespace: "6", gsrlimit: String(cfg.perTerm || 4), prop: "imageinfo",
     iiprop: "url|extmetadata|size", iiurlwidth: "800" });
@@ -18,6 +21,7 @@ for (const [key, term] of cfg.items) {
       const ii = p.imageinfo?.[0]; if (!ii?.thumburl) continue;
       const m = ii.extmetadata || {};
       const file = `images/cand/${key}-${++n}.jpg`;
+      await wait(1200);
       const img = await fetch(ii.thumburl, { headers: UA });
       if (!img.ok) continue;
       await writeFile(file, Buffer.from(await img.arrayBuffer()));

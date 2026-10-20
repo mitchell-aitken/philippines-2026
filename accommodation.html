@@ -211,6 +211,19 @@
   .split p.nope{color:#9A3412;font-weight:500}
   .split p{margin:6px 0 0;color:var(--muted);font-size:12.5px}
   .prices .warn{background:#FDECEC;color:#9A3412}
+  .prices a.web{display:inline-flex;align-items:center;padding:4px 10px;border-radius:8px;border:1px solid var(--blue);color:var(--blue);font-size:13px;font-weight:500;text-decoration:none;background:#fff}
+  .prices a.web:hover{background:#EEF2FB}
+  .prices a.web.alt{border-color:var(--line);color:var(--ink-2)}
+  details.deals{margin-top:10px}
+  details.deals summary{cursor:pointer;font-size:13px;font-weight:500;color:var(--blue)}
+  details.deals summary span{color:var(--muted);font-weight:400;margin-left:4px}
+  details.deals ul{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  details.deals li{display:grid;grid-template-columns:minmax(90px,1.2fr) auto minmax(0,2fr) auto;gap:4px 12px;align-items:baseline;padding:7px 12px;border-top:1px solid var(--line);font-size:13px}
+  details.deals li:first-child{border-top:0;background:#F6FBF8}
+  details.deals .s{font-weight:500}
+  details.deals .t{color:var(--muted);font-size:12.5px}
+  details.deals a{color:var(--blue);text-decoration:none;font-weight:500}
+  @media (max-width:560px){details.deals li{grid-template-columns:1fr auto}details.deals .t{grid-column:1/-1}}
   .also{margin-top:8px;font-size:12.5px;color:var(--muted)}
   .also a{color:var(--ink-2)}
   .prices span.main b{color:#fff}
@@ -269,7 +282,7 @@ function optHTML(o, b) {
   const n = nightsOf(b), live = LIVE[o.id]?.two, c = live?.cheapest, P = [];
   const rel = 'target="_blank" rel="noopener"';
   if (o.included) {
-    P.push(`<span class="main">Included in the TAO trip</span>`, `<a class="cheap" href="flights.html">Price on Flights &amp; costs →</a>`);
+    P.push(`<span class="main">Included in the TAO trip</span>`, `<a class="cheap" href="flights.html">US$650 each, all in · Flights &amp; costs →</a>`);
   } else if (o.booked?.change) {
     const tot = o.booked.total, pn = tot / o.booked.nights;
     P.push(`<span class="main">~<b>${money(pn * n / 2)}</b> each<em>${n} nights at the booked rate</em></span>`,
@@ -281,10 +294,8 @@ function optHTML(o, b) {
            `<span><b>${money(pn / 2, 2)}</b> each/night</span>`, `<span>${money(tot, 2)} for both</span>`);
   } else if (c) {
     const tot = c.total ?? c.perNight * n, pn = tot / n, pre = c.totalBeforeTax ?? (c.perNightBeforeTax != null ? c.perNightBeforeTax * n : null);
-    const where = `Cheapest on ${esc(c.source)}: ${money(tot)} for both<em>${pre != null ? `${money(pre)} + ${money(tot - pre)} taxes` : "incl. taxes"}</em>`;
     P.push(`<span class="main"><b>${money(tot / 2)}</b> each<em>${n} night${n > 1 ? "s" : ""}</em></span>`,
-           `<span><b>${money(pn / 2)}</b> each/night</span>`,
-           c.link ? `<a class="cheap" href="${esc(c.link)}" ${rel}>${where} ↗</a>` : `<span>${where}</span>`);
+           `<span><b>${money(pn / 2)}</b> each/night</span>`);
   } else if (o.seen) {
     const pn = o.seen.total / o.seen.nights;
     P.push(`<span class="main"><b>${money(pn * n / 2)}</b> each<em>${n} nights · estimate</em></span>`, `<span><b>${money(pn / 2)}</b> each/night</span>`,
@@ -312,15 +323,18 @@ function optHTML(o, b) {
     }
   }
   if (!P.length) P.push(o.full ? `<span>Fully booked for these nights · check back in case a room opens up</span>` : `<span>${o.live && !LIVE[o.id] ? "Checking prices…" : "No price yet · check link"}</span>`);
-  const others = (live?.sites || []).filter(s => !(o.booked ? false : s === c || s.source === c?.source)).slice(0, 4);
-  const also = others.length ? `<div class="also">${o.booked ? "Cheapest now" : "Also"}: ${others.map(s => {
-      const t = s.total ?? s.perNight * n, x = `${esc(s.source)} ${money(t / 2)} each`;
-      return s.link ? `<a href="${esc(s.link)}" ${rel}>${x}</a>` : x; }).join(" · ")}</div>` : "";
+  // cheapest prices, tucked in a dropdown
+  const sites = (live?.sites || []).slice(0, 6);
+  const rowsHTML = sites.map(s => { const t = s.total ?? s.perNight * n, pre = s.totalBeforeTax ?? (s.perNightBeforeTax != null ? s.perNightBeforeTax * n : null);
+    return `<li><span class="s">${esc(s.source)}</span><span class="e"><b>${money(t / 2)}</b> each</span><span class="t">${money(t)} for both${pre != null ? ` · ${money(pre)} + ${money(t - pre)} taxes` : " · incl. taxes"}</span>${s.link ? `<a href="${esc(s.link)}" ${rel}>Book ↗</a>` : "<span></span>"}</li>`; }).join("");
+  const also = rowsHTML ? `<details class="deals"><summary>${o.booked ? "Cheapest now for these dates" : "Cheapest prices"} <span>from ${money((sites[0].total ?? sites[0].perNight * n) / 2)} each on ${esc(sites[0].source)}</span></summary><ul>${rowsHTML}</ul></details>` : "";
+  const site = o.site || live?.link || null;
+  const web = site ? `<a class="web" href="${esc(site)}" ${rel}>Hotel website ↗</a>` : `<a class="web alt" href="${esc(o.url)}" ${rel}>No own website · Booking.com ↗</a>`;
   return `<div class="opt${o.booked && !o.booked.cancellable ? " booked" : ""}${o.booked?.cancellable ? " held" : ""}${o.preferred ? " preferred" : ""}">
-    <div class="opt-top"><a href="${esc(o.url)}" ${rel}>${esc(o.name)} ↗</a>
+    <div class="opt-top"><a href="${esc(site || o.url)}" ${rel}>${esc(o.name)}</a>
       ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.change ? "Booked · change dates" : o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Fully booked"}</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
-    <div class="prices">${P.join("")}</div>${split}${also}</div>`;
+    <div class="prices">${web}${P.join("")}</div>${split}${also}</div>`;
 }
 
 function render() {

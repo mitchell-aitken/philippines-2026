@@ -153,20 +153,20 @@
       "group": "domestic",
       "total": true,
       "title": "El Nido → Coron · TAO expedition",
-      "note": "4 nights on the boat and basecamps, meals included. Briefing Mon Nov 23, 18:00.",
+      "note": "4 nights on the boat and basecamps. Food, drinks and island stops included. Briefing Mon Nov 23, 18:00.",
       "date": "2026-11-24",
       "departures": [
         {
           "op": "TAO Original",
           "dep": "Tue Nov 24 07:30",
           "arr": "Sat Nov 28 ~12:00",
-          "fare": "~₱35,000"
+          "fare": "US$650"
         }
       ],
       "estimate": {
-        "low": 800,
-        "high": 960,
-        "source": "About ₱35,000+ per person (Seatours 2026 comparison); US$580 in an older review. Confirm with TAO."
+        "low": 897,
+        "high": 897,
+        "source": "TAO: US$650 per person, food and everything included (≈C$897 at 1.38)"
       },
       "availability": "TAO's online calendar shows no November 2026 trips. Confirm the Nov 24 departure with TAO.",
       "link": "https://www.taophilippines.com/experiences/original-el-nido-to-coron",
