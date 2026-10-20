@@ -123,19 +123,20 @@
       <svg class="ph-flag" viewBox="0 0 1200 600" role="img" aria-label="Flag of the Philippines"><rect width="1200" height="300" fill="#0038A8"/><rect y="300" width="1200" height="300" fill="#CE1126"/><path d="M0 0L519.6 300L0 600Z" fill="#FFF"/><g fill="#FCD116"><circle cx="180" cy="300" r="46"/><path d="M171.0,250.8L169.6,220.7L176.0,250.2ZM177.5,250.1L180.0,204.0L182.5,250.1ZM184.0,250.2L190.4,220.7L189.0,250.8ZM208.5,258.9L228.8,236.6L212.4,261.9ZM213.5,262.9L247.9,232.1L217.1,266.5ZM218.1,267.6L243.4,251.2L221.1,271.5ZM229.2,291.0L259.3,289.6L229.8,296.0ZM229.9,297.5L276.0,300.0L229.9,302.5ZM229.8,304.0L259.3,310.4L229.2,309.0ZM221.1,328.5L243.4,348.8L218.1,332.4ZM217.1,333.5L247.9,367.9L213.5,337.1ZM212.4,338.1L228.8,363.4L208.5,341.1ZM189.0,349.2L190.4,379.3L184.0,349.8ZM182.5,349.9L180.0,396.0L177.5,349.9ZM176.0,349.8L169.6,379.3L171.0,349.2ZM151.5,341.1L131.2,363.4L147.6,338.1ZM146.5,337.1L112.1,367.9L142.9,333.5ZM141.9,332.4L116.6,348.8L138.9,328.5ZM130.8,309.0L100.7,310.4L130.2,304.0ZM130.1,302.5L84.0,300.0L130.1,297.5ZM130.2,296.0L100.7,289.6L130.8,291.0ZM138.9,271.5L116.6,251.2L141.9,267.6ZM142.9,266.5L112.1,232.1L146.5,262.9ZM147.6,261.9L131.2,236.6L151.5,258.9Z"/><path d="M52.0,28.0L58.7,48.7L80.5,48.7L62.9,61.5L69.6,82.3L52.0,69.5L34.4,82.3L41.1,61.5L23.5,48.7L45.3,48.7Z"/><path d="M52.0,512.0L58.7,532.7L80.5,532.7L62.9,545.5L69.6,566.3L52.0,553.5L34.4,566.3L41.1,545.5L23.5,532.7L45.3,532.7Z"/><path d="M455.0,270.0L461.7,290.7L483.5,290.7L465.9,303.5L472.6,324.3L455.0,311.5L437.4,324.3L444.1,303.5L426.5,290.7L448.3,290.7Z"/></g></svg>
       <div>
         <h1>Philippines 2026</h1>
-        <p>Nov 13 – Dec 1 · Bohol 5 · El Nido 5 · Coron 6 nights</p>
+        <p>Nov 13 – Dec 1 · Bohol 5 · El Nido 4 · TAO 4 · Coron 3 nights</p>
       </div>
     </div>
     <div class="actions">
       <nav class="nav3" aria-label="Pages"><a href="index.html" aria-current="page">Map</a><a href="itinerary.html">Itinerary</a><a href="flights.html">Flights</a><a href="accommodation.html">Accommodation</a></nav>
     </div>
-    <div class="zoomto"><button id="overview" type="button">Whole trip</button><button data-r="Bohol" type="button">Bohol</button><button data-r="El Nido" type="button">El Nido</button><button data-r="Coron" type="button">Coron</button></div>
+    <div class="zoomto"><button id="overview" type="button">Whole trip</button><button data-r="Bohol" type="button">Bohol</button><button data-r="El Nido" type="button">El Nido</button><button data-r="TAO" type="button">TAO</button><button data-r="Coron" type="button">Coron</button></div>
   </div>
 </div>
 
 <div class="legend" aria-hidden="true">
   <span><i class="dot" style="background:var(--red)"></i>Bohol</span>
   <span><i class="dot" style="background:var(--blue)"></i>Palawan</span>
+  <span><i class="dot" style="background:#0E7C66"></i>TAO</span>
   <span><i class="ln d"></i>Flight</span>
   <span><i class="ln" style="border-color:var(--blue)"></i>Boat</span>
   <span><i class="ln" style="border-top:2px dotted #555"></i>Road</span>
@@ -265,7 +266,7 @@ pinned.forEach(d => {
 const pad = () => window.innerWidth < 600 ? { paddingTopLeft: [30, 170], paddingBottomRight: [30, 60] } : { paddingTopLeft: [420, 60], paddingBottomRight: [60, 60] };
 map.fitBounds(allBounds, pad());
 /* zoomed out: one label per area instead of a pile of day pins */
-const AREAS = [["Bohol", [9.75, 123.98]], ["El Nido", [11.16, 119.35]], ["Coron", [12.0, 120.2]]];
+const AREAS = [["Bohol", [9.75, 123.98]], ["El Nido", [11.16, 119.35]], ["TAO", [11.6, 119.85]], ["Coron", [12.0, 120.2]]];
 const areaMarkers = AREAS.map(([r, at]) => {
   const ds = DAYS.filter(d => d.pin && d.region === r);
   const m = L.marker(at, { icon: L.divIcon({ className: "", iconSize: null,
@@ -283,7 +284,7 @@ function updateDetail() {
 map.on("zoomend", updateDetail);
 updateDetail();
 document.getElementById("overview").addEventListener("click", () => { map.closePopup(); map.flyToBounds(allBounds, { ...pad(), duration: 0.8 }); });
-const regionAir = { "Bohol": ["TAG"], "El Nido": ["ENI"], "Coron": ["USU"] };
+const regionAir = { "Bohol": ["TAG"], "El Nido": ["ENI"], "TAO": [], "Coron": ["USU"] };
 document.querySelectorAll(".zoomto [data-r]").forEach(b => b.addEventListener("click", () => {
   const r = b.dataset.r, pts = DAYS.filter(d => d.pin && d.region === r && !(r === "Coron" && /Calauit/.test(d.title))).map(d => d.pin).concat(regionAir[r].map(c => AIRPORTS[c].at));
   map.closePopup(); map.flyToBounds(L.latLngBounds(pts), { ...pad(), duration: 0.8, maxZoom: 12 });

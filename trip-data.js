@@ -55,7 +55,7 @@ const DAYS = [
     move: "5J 617 · booked",
     stay: "pgl",
     tip: "Get a SIM (Globe or Smart) at the airport.",
-    photos: [["Panglao", "Panglao Island Bohol beach"], ["Cebu to Bohol ferry", "OceanJet Cebu Tagbilaran ferry"]]  // [label, image search]
+    photos: [["Panglao", "Panglao Island Bohol beach"]]  // [label, image search]
   },
   {
     date: 16,
@@ -183,47 +183,100 @@ const DAYS = [
       ["Morning", "Hidden Beach cave swim"],
       ["Midday", "Matinloc Shrine lookout"],
       ["Afternoon", "Secret Beach, Helicopter Island"],
+      ["18:00", "TAO briefing at the El Nido office"],
     ],
     move: "Boat tour · 8 am – 5 pm",
     stay: "eni",
-    tip: "Basic swimming needed for the cave.",
+    tip: "Pack a small bag for TAO; big bags ride in the hold.",
     photos: [["Hidden Beach", "Hidden Beach El Nido Matinloc"], ["Matinloc Shrine", "Matinloc Shrine viewpoint El Nido"], ["Helicopter Island", "Helicopter Island El Nido"]]  // [label, image search]
   },
   {
     date: 24,
     dow: "Tue",
-    region: "El Nido",
-    pin: [11.11, 119.345],
-    title: "Free day in El Nido",
+    region: "TAO",
+    pin: [11.33, 119.55],
+    title: "TAO day 1: Beach Farm",
     lede: "",
     plan: [
-      ["Options", "Tour B caves, Las Cabanas zipline, or rest"],
+      ["07:30", "Meet at the TAO office"],
+      ["Morning", "Van to San Fernando, north El Nido"],
+      ["Afternoon", "Daracotan Bay"],
+      ["Night", "TAO Beach Farm"],
     ],
-    move: "Up to you",
-    stay: "eni",
-    tip: "Buffer if a tour was rained out.",
-    photos: [["Las Cabanas zipline", "Las Cabanas zipline El Nido"], ["Cathedral Cave", "Cathedral Cave El Nido"]]  // [label, image search]
+    move: "TAO van + boat",
+    stay: null,
+    tip: "No power at camp: bring a headlamp.",
+    photos: [["TAO expedition", "TAO Philippines expedition boat"], ["TAO Beach Farm", "TAO Beach Farm San Fernando El Nido"]]  // [label, image search]
   },
   {
     date: 25,
     dow: "Wed",
-    region: "Coron",
-    pin: [11.9708, 120.2482],
-    title: "Ferry to Coron, hot springs",
+    region: "TAO",
+    pin: [11.47, 119.85],
+    title: "TAO day 2: Linapacan",
     lede: "",
     plan: [
-      ["08:20", "Phimal ferry → Coron, about 12:20"],
-      ["Sunset", "Mt Tapyas, 721 steps"],
-      ["Evening", "Maquinit Hot Springs"],
+      ["All day", "Boat to the Linapacan islands, snorkel stops"],
+      ["Night", "TAO basecamp"],
     ],
-    move: "Fast ferry · ₱3,175",
-    stay: "crn",
-    tip: "Book ahead and bring a printed ticket.",
-    photos: [["Maquinit Hot Springs", "Maquinit Hot Springs Coron"], ["Mt Tapyas", "Mt Tapyas Coron sunset"], ["El Nido to Coron ferry", "El Nido to Coron fast ferry"]]  // [label, image search]
+    move: "TAO boat",
+    stay: null,
+    tip: "Clearest water of the trip.",
+    photos: [["Linapacan", "Linapacan Palawan islands"], ["TAO basecamp", "TAO Philippines basecamp huts"]]  // [label, image search]
   },
   {
     date: 26,
     dow: "Thu",
+    region: "TAO",
+    pin: [11.68, 120.00],
+    title: "TAO day 3: to Culion",
+    lede: "",
+    plan: [
+      ["Morning", "More of Linapacan"],
+      ["Afternoon", "Cross to south Culion"],
+      ["Night", "TAO basecamp"],
+    ],
+    move: "TAO boat",
+    stay: null,
+    tip: "",
+    photos: [["Culion", "Culion island Palawan"]]  // [label, image search]
+  },
+  {
+    date: 27,
+    dow: "Fri",
+    region: "TAO",
+    pin: [12.02, 120.03],
+    title: "TAO day 4: Camp Ngey Ngey",
+    lede: "",
+    plan: [
+      ["All day", "Up the Culion coast to west Busuanga"],
+      ["Night", "Camp Ngey Ngey"],
+    ],
+    move: "TAO boat",
+    stay: null,
+    tip: "",
+    photos: [["Camp Ngey Ngey", "Camp Ngey Ngey TAO Busuanga"]]  // [label, image search]
+  },
+  {
+    date: 28,
+    dow: "Sat",
+    region: "Coron",
+    pin: [11.9708, 120.2482],
+    title: "Land in Coron, hot springs",
+    lede: "",
+    plan: [
+      ["~12:00", "TAO lands in Coron town"],
+      ["Sunset", "Mt Tapyas, 721 steps"],
+      ["Evening", "Maquinit Hot Springs"],
+    ],
+    move: "TAO boat, then tricycle",
+    stay: "crn",
+    tip: "",
+    photos: [["Maquinit Hot Springs", "Maquinit Hot Springs Coron"], ["Mt Tapyas", "Mt Tapyas Coron sunset"]]  // [label, image search]
+  },
+  {
+    date: 29,
+    dow: "Sun",
     region: "Coron",
     pin: [11.9535, 120.2290],
     title: "Coron Island lakes",
@@ -239,67 +292,20 @@ const DAYS = [
     photos: [["Kayangan Lake", "Kayangan Lake Coron viewpoint"], ["Twin Lagoon", "Twin Lagoon Coron"], ["Barracuda Lake", "Barracuda Lake Coron"]]  // [label, image search]
   },
   {
-    date: 27,
-    dow: "Fri",
+    date: 30,
+    dow: "Mon",
     region: "Coron",
     pin: [12.0600, 120.1500],
     title: "Mt Tundalara hike",
     lede: "",
     plan: [
       ["06:00", "Guided hike, 3–5 h round trip"],
-      ["Evening", "Firefly tour or rest"],
+      ["Evening", "Last soak at Maquinit"],
     ],
     move: "Tricycle to the trailhead",
     stay: "crn",
-    tip: "Bring plenty of water.",
-    photos: [["Mt Tundalara", "Mt Tundalara Coron hike"], ["Kingfisher Park", "Kingfisher Park Coron fireflies"]]  // [label, image search]
-  },
-  {
-    date: 28,
-    dow: "Sat",
-    region: "Coron",
-    pin: [11.9060, 120.3460],
-    title: "Beach-hopping",
-    lede: "",
-    plan: [
-      ["Full day", "Malcapuya, Banana and Bulog Dos islands"],
-    ],
-    move: "Boat tour",
-    stay: "crn",
-    tip: "",
-    photos: [["Malcapuya Island", "Malcapuya Island Coron"], ["Bulog Dos", "Bulog Dos Island Coron"]]  // [label, image search]
-  },
-  {
-    date: 29,
-    dow: "Sun",
-    region: "Coron",
-    pin: [12.3000, 119.8800],
-    title: "Calauit Safari (optional)",
-    lede: "",
-    plan: [
-      ["05:00", "Giraffes and zebras, 2 h drive each way"],
-      ["Or", "Rest day in town"],
-    ],
-    move: "Van tour",
-    stay: "crn",
-    tip: "",
-    photos: [["Calauit Safari", "Calauit Safari Park giraffes"], ["Calamian deer", "Calamian deer Calauit"]]  // [label, image search]
-  },
-  {
-    date: 30,
-    dow: "Mon",
-    region: "Coron",
-    pin: [12.0045, 120.2075],
-    title: "Last day in Coron",
-    lede: "",
-    plan: [
-      ["Morning", "Mt Tapyas sunrise"],
-      ["Evening", "Last soak at Maquinit"],
-    ],
-    move: "Tricycle",
-    stay: "crn",
     tip: "Book the 06:15 airport van.",
-    photos: [["Coron town", "Coron Palawan town view"], ["Maquinit Hot Springs", "Maquinit Hot Springs Coron night"]]  // [label, image search]
+    photos: [["Mt Tundalara", "Mt Tundalara Coron hike"], ["Coron town", "Coron Palawan town view"]]  // [label, image search]
   },
   {
     date: 1,
@@ -325,9 +331,9 @@ const DAYS = [
 const STAYS = {
   pgl: { name: "", link: "", area: "Panglao Island, Bohol", nights: "Nov 15–19 · 5 nights",
         hint: "Quiet side of Panglao, away from Alona." },
-  eni: { name: "", link: "", area: "El Nido town or Corong-Corong", nights: "Nov 20–24 · 5 nights",
+  eni: { name: "", link: "", area: "El Nido town or Corong-Corong", nights: "Nov 20–23 · 4 nights",
         hint: "Town (central) or Corong-Corong (sunsets)." },
-  crn: { name: "", link: "", area: "Coron town", nights: "Nov 25–30 · 6 nights",
+  crn: { name: "", link: "", area: "Coron town", nights: "Nov 28–30 · 3 nights",
         hint: "Coron town, near the pier." },
 };
 
@@ -335,8 +341,9 @@ const STAYS = {
 const LEGS = [
   { name: "Getting there", sub: "Calgary → Manila → Bohol",             region: "In transit", days: [13, 14] },
   { name: "Bohol",         sub: "Tarsiers · Chocolate Hills · sardine run", region: "Bohol",      days: [15, 16, 17, 18, 19] },
-  { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves", region: "El Nido",    days: [20, 21, 22, 23, 24] },
-  { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [25, 26, 27, 28, 29, 30] },
+  { name: "El Nido",       sub: "Bacuit Bay · Taraw Cliff · sea caves", region: "El Nido",    days: [20, 21, 22, 23] },
+  { name: "TAO expedition", sub: "El Nido → Coron by boat · 4 nights",  region: "TAO",        days: [24, 25, 26, 27] },
+  { name: "Coron",         sub: "Hot springs · lakes · Mt Tundalara",   region: "Coron",      days: [28, 29, 30] },
   { name: "Heading home",  sub: "Coron → Clark → Manila → Calgary",     region: "In transit", days: [1] }
 ];
 
@@ -357,14 +364,14 @@ const FLOW = [
   { air: "MNL" },
   { air: "TAG", by: "fly" }, { day: 15, by: "road" }, { day: 16, by: "road" }, { day: 17, by: "road" }, { day: 18, by: "road" }, { day: 19, by: "road" },
   { air: "TAG", by: "road" },
-  { air: "ENI", by: "fly" }, { day: 20, by: "road" }, { day: 21, by: "boat" }, { day: 22, by: "road" }, { day: 23, by: "boat" }, { day: 24, by: "boat" },
-  { day: 25, by: "boat", via: [[11.179, 119.389], [11.24, 119.37], [11.45, 119.47], [11.62, 119.86], [11.93, 120.17], [11.995, 120.205]] },
-  { day: 26, by: "boat" }, { day: 27, by: "road" }, { day: 28, by: "boat" }, { day: 29, by: "road" }, { day: 30, by: "road" },
+  { air: "ENI", by: "fly" }, { day: 20, by: "road" }, { day: 21, by: "boat" }, { day: 22, by: "road" }, { day: 23, by: "boat" },
+  { day: 24, by: "road", via: [[11.179, 119.389]] }, { day: 25, by: "boat" }, { day: 26, by: "boat" }, { day: 27, by: "boat" },
+  { day: 28, by: "boat", via: [[11.97, 120.12], [11.995, 120.205]] }, { day: 29, by: "boat" }, { day: 30, by: "road" },
   { air: "USU", by: "road" },
   { air: "CRK", by: "fly" }, { air: "MNL", by: "road" }
 ];
 
-const COLORS = { "Coron": "#0038A8", "El Nido": "#0038A8", "Bohol": "#CE1126", "Cebu": "#0B0B0C", "In transit": "#0B0B0C" };
+const COLORS = { "Coron": "#0038A8", "El Nido": "#0038A8", "TAO": "#0E7C66", "Bohol": "#CE1126", "Cebu": "#0B0B0C", "In transit": "#0B0B0C" };
 const MONTH = "Nov";
 
 /* ---------- where to stay: nights per place + hostel picks ----------
@@ -373,10 +380,12 @@ const MONTH = "Nov";
 const PLACES = [
   { key: "pgl", place: "Bohol", nights: 5, inDate: "2026-11-15", outDate: "2026-11-20", region: "Bohol",
     days: "Sun Nov 15 → Fri Nov 20 (fly out 10:30)", bookingQ: "Panglao, Bohol" },
-  { key: "eni", place: "El Nido", nights: 5, inDate: "2026-11-20", outDate: "2026-11-25", region: "El Nido",
-    days: "Fri Nov 20 midday → Wed Nov 25 (ferry 08:20)", bookingQ: "El Nido, Palawan" },
-  { key: "crn", place: "Coron", nights: 6, inDate: "2026-11-25", outDate: "2026-12-01", region: "Coron",
-    days: "Wed Nov 25 midday → Tue Dec 1 (flight 08:00)", bookingQ: "Coron, Palawan" },
+  { key: "eni", place: "El Nido", nights: 4, inDate: "2026-11-20", outDate: "2026-11-24", region: "El Nido",
+    days: "Fri Nov 20 midday → Tue Nov 24 (TAO 07:30)", bookingQ: "El Nido, Palawan" },
+  { key: "tao", place: "TAO boat", nights: 4, inDate: "2026-11-24", outDate: "2026-11-28", region: "TAO",
+    days: "Tue Nov 24 → Sat Nov 28, lands ~noon", bookingQ: "" },
+  { key: "crn", place: "Coron", nights: 3, inDate: "2026-11-28", outDate: "2026-12-01", region: "Coron",
+    days: "Sat Nov 28 noon → Tue Dec 1 (flight 08:00)", bookingQ: "Coron, Palawan" },
 ];
 
 const STAY_PICKS = {
@@ -432,27 +441,33 @@ const ACCOM = [
       { id: "palms-cove-19", name: "Palms Cove Resort", where: "Same place again", rating: "8.8 · Booking.com",
         url: bk("Palms Cove Resort Panglao", "2026-11-19", "2026-11-20"), live: true }
     ] },
-  { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-25", picks: "eni",
+  { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-24", picks: "eni",
     note: "Least happy with these options. Logan to do more research if you want.", noteBold: true,
     options: [
       { id: "j-boutique", name: "J Boutique Hotel El Nido", where: "El Nido town, 350 m from centre", rating: "8.8 · 796 reviews",
-        url: bkHotel("j-hostel-el-nido", "2026-11-20", "2026-11-25"), seen: { total: 277, nights: 5, dates: "Nov 19–24" }, live: true },
+        url: bkHotel("j-hostel-el-nido", "2026-11-20", "2026-11-24"), seen: { total: 277, nights: 5, dates: "Nov 19–24" }, live: true },
       { id: "bella-athena", name: "Bella Athena Gardens", where: "El Nido", rating: "4.3 · Google",
-        url: bk("Bella Athena Gardens El Nido", "2026-11-20", "2026-11-25"), live: true },
+        url: bk("Bella Athena Gardens El Nido", "2026-11-20", "2026-11-24"), live: true },
       { id: "calathea", name: "Calathea Suites", where: "El Nido", rating: "4.5 · Google",
-        url: bk("Calathea Suites El Nido", "2026-11-20", "2026-11-25"), live: true }
+        url: bk("Calathea Suites El Nido", "2026-11-20", "2026-11-24"), live: true }
     ] },
-  { id: "coron", area: "Coron", region: "Coron", from: "2026-11-25", to: "2026-12-01", picks: "crn",
-    note: "Both Fernvale and La Natura booked with free cancellation. Keep one.",
+  { id: "tao", area: "TAO expedition", region: "TAO", from: "2026-11-24", to: "2026-11-28", tao: true,
+    note: "Huts at TAO basecamps, meals and island stops included. Price is on the Flights & costs page.",
+    options: [
+      { id: "tao-trip", name: "TAO Original: El Nido → Coron", where: "Beach Farm · Linapacan · Culion · Camp Ngey Ngey", rating: "",
+        url: "https://www.taophilippines.com/experiences/original-el-nido-to-coron", included: true }
+    ] },
+  { id: "coron", area: "Coron", region: "Coron", from: "2026-11-28", to: "2026-12-01", picks: "crn",
+    note: "Both booked for Nov 25–Dec 1. Change one to Nov 28–Dec 1 (3 nights) and cancel the other.",
     options: [
       { id: "fernvale", name: "Fernvale Leisure Club and Resort", where: "Coron", rating: "4.0 · Google",
-        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-25", "2026-12-01"), live: true, booked: { total: 598, nights: 6, cancellable: true } },
+        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-28", "2026-12-01"), live: true, booked: { total: 598, nights: 6, cancellable: true, dates: "Nov 25–Dec 1", change: true } },
       { id: "la-natura", name: "La Natura Resort", where: "Coron", rating: "4.4 · Google",
-        url: bk("La Natura Resort Coron", "2026-11-25", "2026-12-01"), live: true, booked: { total: 720, nights: 6, cancellable: true } },
+        url: bk("La Natura Resort Coron", "2026-11-28", "2026-12-01"), live: true, booked: { total: 720, nights: 6, cancellable: true, dates: "Nov 25–Dec 1", change: true } },
       { id: "kokosnuss", name: "Kokosnuss Garden Resort", where: "1.2 km from centre", rating: "8.0 · 642 reviews",
-        url: bk("Kokosnuss Garden Resort Coron", "2026-11-25", "2026-12-01"), seen: { total: 440, nights: 6, dates: "Nov 24–30" }, live: true },
+        url: bk("Kokosnuss Garden Resort Coron", "2026-11-28", "2026-12-01"), seen: { total: 440, nights: 6, dates: "Nov 24–30" }, live: true },
       { id: "lagoon-coron", name: "Lagoon Coron (Mo2)", where: "Coron town", rating: "4.2 · Google",
-        url: bk("Mo2 Lagoon Coron", "2026-11-25", "2026-12-01"), live: true }
+        url: bk("Mo2 Lagoon Coron", "2026-11-28", "2026-12-01"), live: true }
     ] }
 ];
 const nightsOf = b => Math.round((new Date(b.to) - new Date(b.from)) / 864e5);
@@ -462,9 +477,9 @@ const accomRange = b => { const n = nightsOf(b), last = new Date(new Date(b.to +
 const accomPick = b => b.options.find(o => o.booked) || b.options.find(o => o.preferred) || null;
 const accomFor = d => { if (d.mon && d.mon !== MONTH) return null;
   const iso = `2026-11-${String(d.date).padStart(2, "0")}`; return ACCOM.find(b => b.from <= iso && iso < b.to) || null; };
-const accomLabel = b => { const p = accomPick(b);
+const accomLabel = b => { if (b.tao) return "TAO boat + basecamps"; const p = accomPick(b);
   const bo = b.options.filter(o => o.booked);
-  if (bo.length > 1) return bo.map(o => o.name).join(" or ") + " (both booked, cancellable)";
+  if (bo.length > 1) return bo.map(o => o.name).join(" or ") + (bo.some(o => o.booked.change) ? " (booked, change dates)" : " (both booked, cancellable)");
   if (p?.booked) return `${p.name} ${p.booked.cancellable ? "(booked, cancellable)" : "✓ booked"}`;
   if (p) return `${p.name} (preferred)`;
   return b.options.map(o => o.name).join(" or ") + (b.maybe ? " (maybe)" : " (not booked)"); };

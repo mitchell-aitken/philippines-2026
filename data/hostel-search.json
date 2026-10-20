@@ -32,7 +32,7 @@
       "match": "SPIN",
       "query": "SPIN Designer Hostel El Nido",
       "checkIn": "2026-11-20",
-      "checkOut": "2026-11-25"
+      "checkOut": "2026-11-24"
     },
     {
       "id": "beach-house-eni",
@@ -40,7 +40,7 @@
       "match": "Beach House",
       "query": "The Beach House hostel El Nido Calle Hama",
       "checkIn": "2026-11-20",
-      "checkOut": "2026-11-25"
+      "checkOut": "2026-11-24"
     },
     {
       "id": "outpost-eni",
@@ -48,14 +48,14 @@
       "match": "Outpost",
       "query": "Outpost Beach Hostel El Nido",
       "checkIn": "2026-11-20",
-      "checkOut": "2026-11-25"
+      "checkOut": "2026-11-24"
     },
     {
       "id": "hop",
       "name": "Hop Hostel",
       "match": "Hop Hostel",
       "query": "Hop Hostel Coron",
-      "checkIn": "2026-11-25",
+      "checkIn": "2026-11-28",
       "checkOut": "2026-12-01"
     },
     {
@@ -63,7 +63,7 @@
       "name": "Michel'inn Coron",
       "match": "Michel",
       "query": "Michel'inn Coron Palawan",
-      "checkIn": "2026-11-25",
+      "checkIn": "2026-11-28",
       "checkOut": "2026-12-01"
     },
     {
@@ -71,7 +71,7 @@
       "name": "Ecocio Hostel",
       "match": "Ecocio",
       "query": "Ecocio Hostel Coron",
-      "checkIn": "2026-11-25",
+      "checkIn": "2026-11-28",
       "checkOut": "2026-12-01"
     },
     {
@@ -106,7 +106,7 @@
       "match": "J Boutique",
       "query": "J Boutique Hotel El Nido",
       "checkIn": "2026-11-20",
-      "checkOut": "2026-11-25",
+      "checkOut": "2026-11-24",
       "twoOnly": true,
       "alt": [
         "J Boutique El Nido Managed by H Hospitality"
@@ -117,7 +117,7 @@
       "name": "Kokosnuss Garden Resort",
       "match": "Kokosnuss",
       "query": "Kokosnuss Garden Resort Coron",
-      "checkIn": "2026-11-25",
+      "checkIn": "2026-11-28",
       "checkOut": "2026-12-01",
       "twoOnly": true,
       "alt": [
@@ -167,7 +167,7 @@
         "Lagoon Coron Palawan",
         "MO2 Westown Lagoon Coron"
       ],
-      "checkIn": "2026-11-25",
+      "checkIn": "2026-11-28",
       "checkOut": "2026-12-01",
       "twoOnly": true
     },
@@ -179,7 +179,7 @@
       "alt": [
         "Fernvale Leisure Club Coron Palawan"
       ],
-      "checkIn": "2026-11-25",
+      "checkIn": "2026-11-28",
       "checkOut": "2026-12-01",
       "twoOnly": true
     },
@@ -192,7 +192,7 @@
         "La Natura Resort Coron Palawan",
         "La Natura Resort Busuanga"
       ],
-      "checkIn": "2026-11-25",
+      "checkIn": "2026-11-28",
       "checkOut": "2026-12-01",
       "twoOnly": true
     },
@@ -206,7 +206,7 @@
         "Bella Athena Garden El Nido"
       ],
       "checkIn": "2026-11-20",
-      "checkOut": "2026-11-25",
+      "checkOut": "2026-11-24",
       "twoOnly": true
     },
     {
@@ -219,7 +219,7 @@
         "Calathea El Nido"
       ],
       "checkIn": "2026-11-20",
-      "checkOut": "2026-11-25",
+      "checkOut": "2026-11-24",
       "twoOnly": true
     }
   ],

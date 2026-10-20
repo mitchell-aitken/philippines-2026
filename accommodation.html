@@ -210,6 +210,7 @@
   .split a{color:var(--blue)}
   .split p.nope{color:#9A3412;font-weight:500}
   .split p{margin:6px 0 0;color:var(--muted);font-size:12.5px}
+  .prices .warn{background:#FDECEC;color:#9A3412}
   .also{margin-top:8px;font-size:12.5px;color:var(--muted)}
   .also a{color:var(--ink-2)}
   .prices span.main b{color:#fff}
@@ -249,7 +250,7 @@
 
 <main>
   <section class="intro hero-band">
-    <div class="eyebrow">Nov 15 – Dec 1 · 16 nights · CAD</div>
+    <div class="eyebrow">Nov 15 – Dec 1 · 16 nights · 4 on TAO · CAD</div>
     <h1>Accommodation</h1>
     <div class="hero-stats" id="stats"></div>
   </section>
@@ -267,7 +268,14 @@ let LIVE = {}, NIGHTLY = {};
 function optHTML(o, b) {
   const n = nightsOf(b), live = LIVE[o.id]?.two, c = live?.cheapest, P = [];
   const rel = 'target="_blank" rel="noopener"';
-  if (o.booked) {
+  if (o.included) {
+    P.push(`<span class="main">Included in the TAO trip</span>`, `<a class="cheap" href="flights.html">Price on Flights &amp; costs →</a>`);
+  } else if (o.booked?.change) {
+    const tot = o.booked.total, pn = tot / o.booked.nights;
+    P.push(`<span class="main">~<b>${money(pn * n / 2)}</b> each<em>${n} nights at the booked rate</em></span>`,
+           `<span><b>${money(pn / 2)}</b> each/night</span>`,
+           `<span class="warn">Booked ${esc(o.booked.dates)} · ${money(tot)} for both · change dates</span>`);
+  } else if (o.booked) {
     const tot = o.booked.total, pn = tot / o.booked.nights;
     P.push(`<span class="main">Paid <b>${money(tot / 2, 2)}</b> each<em>${o.booked.nights} nights</em></span>`,
            `<span><b>${money(pn / 2, 2)}</b> each/night</span>`, `<span>${money(tot, 2)} for both</span>`);
@@ -310,7 +318,7 @@ function optHTML(o, b) {
       return s.link ? `<a href="${esc(s.link)}" ${rel}>${x}</a>` : x; }).join(" · ")}</div>` : "";
   return `<div class="opt${o.booked && !o.booked.cancellable ? " booked" : ""}${o.booked?.cancellable ? " held" : ""}${o.preferred ? " preferred" : ""}">
     <div class="opt-top"><a href="${esc(o.url)}" ${rel}>${esc(o.name)} ↗</a>
-      ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Fully booked"}</span>` : ""}</div>
+      ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.change ? "Booked · change dates" : o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Fully booked"}</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
     <div class="prices">${P.join("")}</div>${split}${also}</div>`;
 }
@@ -318,7 +326,7 @@ function optHTML(o, b) {
 function render() {
   document.getElementById("blocks").innerHTML = ACCOM.map(b => {
     const p = accomPick(b);
-    const tag = p?.booked ? `<span class="tag ${p.booked.cancellable ? "maybe" : "ok"}">${p.booked.cancellable ? "Booked · cancellable" : "Booked"}</span>` : b.maybe ? `<span class="tag maybe">Maybe</span>` : `<span class="tag">Not booked</span>`;
+    const tag = b.tao ? `<span class="tag pref">With TAO</span>` : p?.booked ? `<span class="tag ${p.booked.cancellable ? "maybe" : "ok"}">${p.booked.change ? "Booked · change dates" : p.booked.cancellable ? "Booked · cancellable" : "Booked"}</span>` : b.maybe ? `<span class="tag maybe">Maybe</span>` : `<span class="tag">Not booked</span>`;
     return `<section class="blk" id="${b.id}" style="--c:${COLORS[b.region]}">
       <div class="blk-head"><h2>${esc(b.area)}</h2><span class="when">${esc(accomRange(b))}</span>${tag}</div>
       ${b.note ? `<p class="blk-note">${b.noteBold ? `<b>${esc(b.note)}</b>` : esc(b.note)}</p>` : ""}
@@ -327,14 +335,17 @@ function render() {
 
   // range each: booked stays fixed, otherwise cheapest → priciest option in each place
   let lo = 0, hi = 0, booked = 0, priced = 0, all = 16;
+  const taoN = ACCOM.filter(b => b.tao).reduce((t, b) => t + nightsOf(b), 0);
+  all -= taoN;
   ACCOM.forEach(b => {
+    if (b.tao) return;
     const n = nightsOf(b), pk = accomPick(b);
     if (pk?.booked) booked += n;
     const bo = b.options.filter(o => o.booked), choices = (bo.length ? bo : pk ? [pk] : b.options).map(o => perNightOf(o, n)).filter(x => x != null);
     if (choices.length) { lo += Math.min(...choices) * n / 2; hi += Math.max(...choices) * n / 2; priced += n; }
   });
   const rng = (a, c) => Math.round(a) === Math.round(c) ? money(a) : `${money(a)}–${money(c).slice(2)}`;
-  document.getElementById("stats").innerHTML = `<div class="big"><b>${rng(lo, hi)}</b><span>per person · all ${all} nights${priced < all ? ` (${priced} priced)` : ""} · cheapest to priciest</span></div><div><b>${rng(lo / priced, hi / priced)}</b><span>per person / night</span></div><div><b>${rng(lo * 2, hi * 2)}</b><span>for both</span></div><div><b>${booked}/${all}</b><span>nights booked</span></div>`;
+  document.getElementById("stats").innerHTML = `<div class="big"><b>${rng(lo, hi)}</b><span>per person · ${all} nights${priced < all ? ` (${priced} priced)` : ""}${taoN ? ` + ${taoN} on TAO` : ""} · cheapest to priciest</span></div><div><b>${rng(lo / priced, hi / priced)}</b><span>per person / night</span></div><div><b>${rng(lo * 2, hi * 2)}</b><span>for both</span></div><div><b>${booked}/${all}</b><span>nights booked</span></div>`;
   if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
 }
 render();

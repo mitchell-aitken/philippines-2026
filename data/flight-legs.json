@@ -148,42 +148,36 @@
       }
     },
     {
-      "id": "eni-crn",
+      "id": "tao",
       "kind": "ferry",
       "group": "domestic",
       "total": true,
-      "title": "El Nido → Coron fast ferry",
-      "note": "3–4 hrs. Check in 1 hr early, print ticket.",
-      "date": "2026-11-25",
+      "title": "El Nido → Coron · TAO expedition",
+      "note": "4 nights on the boat and basecamps, meals included. Briefing Mon Nov 23, 18:00.",
+      "date": "2026-11-24",
       "departures": [
         {
-          "op": "Phimal",
-          "dep": "08:20",
-          "arr": "12:20",
-          "fare": "₱3,175"
-        },
-        {
-          "op": "Montenegro",
-          "dep": "12:00",
-          "arr": "16:00",
-          "fare": "₱3,290"
-        },
-        {
-          "op": "Atienza",
-          "dep": "12:30",
-          "arr": "~16:30"
+          "op": "TAO Original",
+          "dep": "Tue Nov 24 07:30",
+          "arr": "Sat Nov 28 ~12:00",
+          "fare": "~₱35,000"
         }
       ],
       "estimate": {
-        "low": 76,
-        "high": 80,
-        "source": "Jonny Melon El Nido–Coron guide: Phimal ₱3,175, Montenegro ₱3,290"
+        "low": 800,
+        "high": 960,
+        "source": "About ₱35,000+ per person (Seatours 2026 comparison); US$580 in an older review. Confirm with TAO."
       },
-      "link": "https://www.jonnymelon.com/el-nido-to-coron/",
+      "availability": "TAO's online calendar shows no November 2026 trips. Confirm the Nov 24 departure with TAO.",
+      "link": "https://www.taophilippines.com/experiences/original-el-nido-to-coron",
       "book": [
         [
-          "12Go (Phimal, Montenegro)",
-          "https://12go.asia/en/travel/el-nido/coron"
+          "TAO Philippines",
+          "https://www.taophilippines.com/experiences/original-el-nido-to-coron"
+        ],
+        [
+          "Email TAO",
+          "mailto:info@taophilippines.com"
         ]
       ]
     },
