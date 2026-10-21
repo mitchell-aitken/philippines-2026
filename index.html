@@ -46,6 +46,20 @@
   .legend .ln{width:22px;border-top:2px solid var(--ink)}
   .legend .ln.d{border-top-style:dashed}
   body.popup-open .legend{opacity:0;pointer-events:none}
+  .legend{bottom:calc(92px + env(safe-area-inset-bottom,0px))!important}
+  .daybar{position:fixed;z-index:1001;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:6px;background:#fff;border-radius:14px;padding:6px;box-shadow:var(--shadow);max-width:min(760px,calc(100vw - 90px))}
+  .daybar .strip{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;scroll-behavior:smooth;min-width:0}
+  .daybar .strip::-webkit-scrollbar{display:none}
+  .daybar .strip button{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:44px;padding:5px 6px;border:0;border-radius:9px;background:transparent;cursor:pointer;font:inherit;color:var(--ink);border-bottom:3px solid var(--c)}
+  .daybar .strip button small{font:500 9.5px/1 var(--mono);text-transform:uppercase;color:var(--muted)}
+  .daybar .strip button b{font-size:14px;font-variant-numeric:tabular-nums}
+  .daybar .strip button:hover{background:#F3F5FA}
+  .daybar .strip button.on{background:var(--c);color:#fff}
+  .daybar .strip button.on small{color:rgba(255,255,255,.8)}
+  .daybar .step{flex:0 0 auto;width:38px;height:44px;border:0;border-radius:10px;background:var(--ink);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+  .daybar .step:disabled{opacity:.3;cursor:default}
+  @media (max-width:600px){.daybar{left:8px;right:8px;transform:none;max-width:none;bottom:calc(8px + env(safe-area-inset-bottom,0px))}.legend{bottom:calc(80px + env(safe-area-inset-bottom,0px))!important}.leaflet-bottom.leaflet-right{bottom:70px}}
+  .leaflet-bottom.leaflet-right{margin-bottom:76px}
 
   /* ---------- pins ---------- */
   .pin{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;padding:5px 9px;border-radius:999px;background:var(--c);color:#fff;font:600 12px/1 var(--sans);font-variant-numeric:tabular-nums;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.25),0 4px 12px rgba(0,0,0,.14);transition:transform .15s ease;cursor:pointer}
@@ -138,6 +152,12 @@
   </div>
 </div>
 
+<nav class="daybar" aria-label="Day by day">
+  <button class="step" id="prevDay" type="button" aria-label="Previous day">‹</button>
+  <div class="strip" id="dayStrip"></div>
+  <button class="step" id="nextDay" type="button" aria-label="Next day">›</button>
+</nav>
+
 <div class="legend" aria-hidden="true">
   <span><i class="dot" style="background:var(--red)"></i>Bohol</span>
   <span><i class="dot" style="background:var(--blue)"></i>Palawan</span>
@@ -225,6 +245,7 @@ Object.entries(AIRPORTS).forEach(([code, a]) => {
 });
 
 /* ---------- day pins ---------- */
+const TOPPAD = Math.round((document.querySelector(".card")?.getBoundingClientRect().bottom || 140) + 14);
 const markers = {};
 let activeDay = null;
 const pinned = DAYS.filter(d => d.pin);
@@ -253,6 +274,7 @@ function setActive(date) {
     el?.classList.remove("on-top"); el?.querySelector(".pin")?.classList.remove("active");
   }
   activeDay = date;
+  syncBar(date);
   if (date !== null && markers[date]) {
     const el = markers[date].getElement();
     el?.classList.add("on-top"); el?.querySelector(".pin")?.classList.add("active");
@@ -262,7 +284,7 @@ function setActive(date) {
 pinned.forEach(d => {
   const icon = L.divIcon({ className: "", html: `<div class="pin" style="--c:${COLORS[d.region]}">${d.mon || MONTH} ${d.date}</div>`, iconSize: null, popupAnchor: [0, -14] });
   const m = L.marker(d.pin, { icon, title: `${d.mon || MONTH} ${d.date}: ${d.title}`, riseOnHover: true }).addTo(map);
-  m.bindPopup(popupHTML(d), { maxWidth: 360, autoPanPaddingTopLeft: [20, 150], autoPanPaddingBottomRight: [20, 20] });
+  m.bindPopup(popupHTML(d), { maxWidth: 360, autoPanPaddingTopLeft: [20, TOPPAD], autoPanPaddingBottomRight: [20, 110] });
   m.bindTooltip(`${d.mon || MONTH} ${d.date} · ${esc(d.title)}`, { direction: "top", offset: [0, -16] });
   m.on("popupopen", () => { m.closeTooltip(); setActive(d.date); document.body.classList.add("popup-open"); history.replaceState(null, "", "#day-" + d.date); });
   m.on("popupclose", () => { if (activeDay === d.date) { setActive(null); document.body.classList.remove("popup-open"); history.replaceState(null, "", location.pathname); } });
@@ -305,6 +327,52 @@ function openFromHash() {
   setTimeout(() => mk.openPopup(), 150);
 }
 openFromHash();
+
+/* ---------- day-by-day bar ---------- */
+const strip = document.getElementById("dayStrip");
+let cur = -1;
+strip.innerHTML = DAYS.map((d, i) => `<button type="button" data-i="${i}" style="--c:${COLORS[d.region]}" title="${esc(d.title)}"><small>${d.dow}</small><b>${d.mon && d.mon !== MONTH ? d.mon + " " : ""}${d.date}</b></button>`).join("");
+function syncBar(date) {
+  if (date === null) { strip.querySelectorAll("button.on").forEach(b => b.classList.remove("on")); return; }
+  const i = DAYS.findIndex(d => +d.date === +date && (+date !== 1 || d.mon));
+  if (i < 0) return;
+  cur = i;
+  strip.querySelectorAll("button").forEach((b, k) => b.classList.toggle("on", k === i));
+  const b = strip.children[i];
+  if (b) b.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  document.getElementById("prevDay").disabled = i <= 0;
+  document.getElementById("nextDay").disabled = i >= DAYS.length - 1;
+}
+let looseP = null;
+function goDay(i) {
+  i = Math.max(0, Math.min(DAYS.length - 1, i));
+  const d = DAYS[i];
+  map.closePopup();
+  if (d.pin && markers[d.date]) {
+    const z = Math.max(map.getZoom(), d.region === "TAO" ? 9 : 11);
+    map.flyTo(d.pin, z, { duration: 0.7 });
+    map.once("moveend", () => { updateDetail(); markers[d.date].openPopup(); });
+  } else {
+    // travel days without a pin: show the day at Manila airport
+    const at = AIRPORTS.MNL.at;
+    map.flyTo(at, 6, { duration: 0.7 });
+    map.once("moveend", () => {
+      looseP = L.popup({ maxWidth: 360, autoPanPaddingTopLeft: [20, TOPPAD], autoPanPaddingBottomRight: [20, 110] }).setLatLng(at).setContent(popupHTML(d)).openOn(map);
+      document.body.classList.add("popup-open"); syncBar(d.date);
+      looseP.on("remove", () => { if (cur === i) { document.body.classList.remove("popup-open"); } });
+    });
+  }
+  syncBar(d.date);
+}
+strip.addEventListener("click", e => { const b = e.target.closest("button"); if (b) goDay(+b.dataset.i); });
+document.getElementById("prevDay").addEventListener("click", () => goDay(cur < 0 ? 0 : cur - 1));
+document.getElementById("nextDay").addEventListener("click", () => goDay(cur < 0 ? 0 : cur + 1));
+document.addEventListener("keydown", e => {
+  if (e.target.closest("input,textarea")) return;
+  if (e.key === "ArrowRight") { e.preventDefault(); goDay(cur < 0 ? 0 : cur + 1); }
+  if (e.key === "ArrowLeft") { e.preventDefault(); goDay(cur < 0 ? 0 : cur - 1); }
+});
+syncBar(activeDay); document.getElementById("prevDay").disabled = true;
 </script>
 </body>
 </html>
