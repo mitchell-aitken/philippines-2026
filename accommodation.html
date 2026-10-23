@@ -339,12 +339,12 @@ function optHTML(o, b) {
       o._splitTotal = tot;
     } else {
       const open = per.filter(Boolean).map(x => shortDate(x.n)), closed = nights.filter((n, i) => !per[i]).map(shortDate);
-      split = `<div class="split"><p>Free on ${open.join(", ") || "none"}, full on ${closed.join(", ")}.</p></div>`;
+      split = open.length ? `<div class="split"><p>Free on ${open.join(", ")}, full on ${closed.join(", ")}.</p></div>` : "";
     }
   }
   const soldOut = !P.length && !o.full && !o.included && LIVE[o.id] && !c && !(live?.sites || []).length;
   if (soldOut) P.push(`<span class="warn">No rooms listed for these dates · looks sold out</span>`);
-  if (!P.length) P.push(o.full ? `<span>Fully booked for these nights · check back in case a room opens up</span>` : `<span>${o.live && !LIVE[o.id] ? "Checking prices…" : "No price yet · check link"}</span>`);
+  if (!P.length) P.push(o.full ? `<span>Check booking, might have to switch rooms</span>` : `<span>${o.live && !LIVE[o.id] ? "Checking prices…" : "No price yet · check link"}</span>`);
   // cheapest prices, tucked in a dropdown
   const sites = (live?.sites || []).slice(0, 6);
   const rowsHTML = sites.map(s => { const t = s.total ?? s.perNight * n, pre = s.totalBeforeTax ?? (s.perNightBeforeTax != null ? s.perNightBeforeTax * n : null);
@@ -356,7 +356,7 @@ function optHTML(o, b) {
   const web = site ? `<a class="web" href="${esc(site)}" ${rel}>${o.included ? "TAO website" : "Hotel website"} ↗</a>` : `<a class="web alt" href="${esc(o.url)}" ${rel}>No own website · Booking.com ↗</a>`;
   return `<div class="opt${o.booked && !o.booked.cancellable ? " booked" : ""}${o.booked?.cancellable ? " held" : ""}${o.preferred ? " preferred" : ""}">
     <div class="opt-top"><a href="${esc(site || o.url)}" ${rel}>${esc(o.name)}</a>
-      ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.change ? "Booked · change dates" : o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Fully booked"}</span>` : ""}${soldOut ? `<span class="tag out">Sold out</span>` : ""}</div>
+      ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.change ? "Booked · change dates" : o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Check booking"}</span>` : ""}${soldOut ? `<span class="tag out">Sold out</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
     <div class="prices">${web}${P.join("")}</div>${split}${also}</div>`;
 }
