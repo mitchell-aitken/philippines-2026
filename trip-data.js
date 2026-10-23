@@ -423,7 +423,7 @@ const ACCOM = [
     note: "Can still change: maybe only the night of Nov 15, and spend 1 extra night inland on Bohol instead.",
     options: [
       { id: "palms-cove", name: "Palms Cove Resort", where: "Danao, 5 min walk to Alona Beach", rating: "8.8 · Booking.com",
-        url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2, cancellable: true } }
+        url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2, cancellable: true, room: "1 × Deluxe Garden or Pool View Room · requested and approved for two twin beds" } }
     ] },
   { id: "loboc", area: "Loboc", region: "Bohol", from: "2026-11-17", to: "2026-11-19", maybe: true,
     note: "Maybe. Close to the Chocolate Hills and EAT Danao. Check for a twin room.",
@@ -461,9 +461,9 @@ const ACCOM = [
     note: "Both booked for Nov 28–Dec 1 with free cancellation. Keep one.",
     options: [
       { id: "fernvale", name: "Fernvale Leisure Club and Resort", where: "Coron", rating: "4.0 · Google",
-        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-28", "2026-12-01"), live: true, booked: { total: 294, nights: 3, cancellable: true, dates: "Nov 28–Dec 1" } },
+        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-28", "2026-12-01"), live: true, booked: { total: 294, nights: 3, cancellable: true, dates: "Nov 28–Dec 1", room: "Premium Room with Pool View · 1 single bed, 1 large double bed" } },
       { id: "la-natura", name: "La Natura Resort", where: "Coron", rating: "4.4 · Google",
-        url: bk("La Natura Resort Coron", "2026-11-28", "2026-12-01"), live: true, booked: { total: 545.19, nights: 3, cancellable: true, dates: "Nov 28–Dec 1" } },
+        url: bk("La Natura Resort Coron", "2026-11-28", "2026-12-01"), live: true, booked: { total: 393, nights: 3, cancellable: true, dates: "Nov 28–Dec 1", room: "King Room with Garden View" } },
       { id: "kokosnuss", name: "Kokosnuss Garden Resort", where: "1.2 km from centre", rating: "8.0 · 642 reviews",
         url: bk("Kokosnuss Garden Resort Coron", "2026-11-28", "2026-12-01"), seen: { total: 440, nights: 6, dates: "Nov 24–30" }, live: true },
       { id: "lagoon-coron", name: "Lagoon Coron (Mo2)", where: "Coron town", rating: "4.2 · Google",
