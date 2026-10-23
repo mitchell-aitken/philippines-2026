@@ -458,12 +458,12 @@ const ACCOM = [
         url: "https://www.taophilippines.com/experiences/original-el-nido-to-coron", site: "https://www.taophilippines.com/experiences/original-el-nido-to-coron", included: true, usd: 650 }
     ] },
   { id: "coron", area: "Coron", region: "Coron", from: "2026-11-28", to: "2026-12-01", picks: "crn",
-    note: "Both booked for Nov 25–Dec 1. Change one to Nov 28–Dec 1 (3 nights) and cancel the other.",
+    note: "Both booked for Nov 28–Dec 1 with free cancellation. Keep one.",
     options: [
       { id: "fernvale", name: "Fernvale Leisure Club and Resort", where: "Coron", rating: "4.0 · Google",
-        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-28", "2026-12-01"), live: true, booked: { total: 598, nights: 6, cancellable: true, dates: "Nov 25–Dec 1", change: true } },
+        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-28", "2026-12-01"), live: true, booked: { total: 294, nights: 3, cancellable: true, dates: "Nov 28–Dec 1" } },
       { id: "la-natura", name: "La Natura Resort", where: "Coron", rating: "4.4 · Google",
-        url: bk("La Natura Resort Coron", "2026-11-28", "2026-12-01"), live: true, booked: { total: 720, nights: 6, cancellable: true, dates: "Nov 25–Dec 1", change: true } },
+        url: bk("La Natura Resort Coron", "2026-11-28", "2026-12-01"), live: true, booked: { total: 545.19, nights: 3, cancellable: true, dates: "Nov 28–Dec 1" } },
       { id: "kokosnuss", name: "Kokosnuss Garden Resort", where: "1.2 km from centre", rating: "8.0 · 642 reviews",
         url: bk("Kokosnuss Garden Resort Coron", "2026-11-28", "2026-12-01"), seen: { total: 440, nights: 6, dates: "Nov 24–30" }, live: true },
       { id: "lagoon-coron", name: "Lagoon Coron (Mo2)", where: "Coron town", rating: "4.2 · Google",
