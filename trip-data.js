@@ -437,10 +437,10 @@ const ACCOM = [
         url: bk("Stefanie Grace Inn Loboc Bohol", "2026-11-17", "2026-11-19"), live: true }
     ] },
   { id: "panglao-2", area: "Panglao", region: "Bohol", from: "2026-11-19", to: "2026-11-20", picks: "pgl",
-    note: "Back on Panglao for the sardines and the 10:30 flight. Not booked.",
+    note: "Back on Panglao for the sardines and the 10:30 flight.",
     options: [
-      { id: "palms-cove-19", name: "Palms Cove Resort", where: "Same place again", rating: "8.8 · Booking.com",
-        url: bk("Palms Cove Resort Panglao", "2026-11-19", "2026-11-20"), live: true }
+      { id: "palms-cove-19", name: "Palms Cove Resort", where: "Danao, 5 min walk to Alona Beach", rating: "8.8 · Booking.com",
+        url: bk("Palms Cove Resort Panglao", "2026-11-19", "2026-11-20"), live: true, booked: { total: 74.73, nights: 1, cancellable: true, room: "1 × Deluxe Garden or Pool View Room · two twin beds" } }
     ] },
   { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-24", picks: "eni",
     note: "Least happy with these options. Logan to do more research if you want.", noteBold: true,
