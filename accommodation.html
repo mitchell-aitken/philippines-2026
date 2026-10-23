@@ -387,7 +387,8 @@ function render() {
     const taoO = bs.find(b => b.tao)?.options[0];
     const price = taoO ? `US$${taoO.usd} each` : lo ? (Math.round(lo) === Math.round(hi) ? `${money(lo)} each` : `${money(lo)}–${money(hi).slice(2)} each`) + (ok ? "" : "+") : "";
     const st = bs.map(b => { const p = accomPick(b); return b.tao ? "TAO" : p?.booked ? (p.booked.change ? "change dates" : "booked") : b.maybe ? "maybe" : "open"; });
-    const status = st.every(x => x === "booked") ? `<span class="tag maybe">Booked</span>` : st.includes("change dates") ? `<span class="tag maybe">Booked · change dates</span>` : st.includes("booked") ? `<span class="tag maybe">Part booked</span>` : st.includes("TAO") ? `<span class="tag pref">With TAO</span>` : `<span class="tag">Not booked</span>`;
+    const canc = bs.some(b => b.options.some(o => o.booked?.cancellable));
+    const status = st.every(x => x === "booked") ? `<span class="tag maybe">${canc ? "Booked · cancellable" : "Booked"}</span>` : st.includes("change dates") ? `<span class="tag maybe">Booked · change dates</span>` : st.includes("booked") ? `<span class="tag maybe">Part booked</span>` : st.includes("TAO") ? `<span class="tag pref">With TAO</span>` : `<span class="tag">Not booked</span>`;
     const last = new Date(new Date(to + "T12:00") - 864e5).toISOString().slice(0, 10);
     return `<details class="grp" data-g="${esc(g)}" style="--c:${COLORS[g]}"${openNow.has(g) ? " open" : ""}>
       <summary><h2><i></i>${esc(g === "Bohol" ? "Bohol / Panglao" : g === "TAO" ? "TAO expedition" : g)}</h2><span class="when">${shortDate(from)}–${shortDate(last).replace(/^[A-Za-z]+ /, (m) => shortDate(from).startsWith(m) ? "" : m)} · ${nights} nights</span>${status}${price ? `<span class="gp">${price}</span>` : ""}</summary>
