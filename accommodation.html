@@ -301,7 +301,7 @@
 <script>document.write('<script src="trip-data.js?v=' + Date.now() + '"><\/script>');</script>
 <script>
 const money = (n, c = 0) => "C$" + n.toLocaleString("en-CA", { minimumFractionDigits: c, maximumFractionDigits: c });
-const perNightOf = (o, n) => { if (o._splitTotal) return o._splitTotal / n; if (o.booked) return o.booked.total / o.booked.nights; const c = LIVE[o.id]?.two?.cheapest;
+const perNightOf = (o, n) => { if (o._splitTotal) return o._splitTotal / n; if (o.est && !o.booked && !LIVE[o.id]?.two?.cheapest) return o.est.perNight; if (o.booked) return o.booked.total / o.booked.nights; const c = LIVE[o.id]?.two?.cheapest;
   if (c) return c.total != null ? c.total / n : c.perNight; return o.seen ? o.seen.total / o.seen.nights : null; };
 let LIVE = {}, NIGHTLY = {};
 const USD_CAD = 1.38;
@@ -324,6 +324,9 @@ function optHTML(o, b) {
     const tot = c.total ?? c.perNight * n, pn = tot / n, pre = c.totalBeforeTax ?? (c.perNightBeforeTax != null ? c.perNightBeforeTax * n : null);
     P.push(`<span class="main"><b>${money(tot / 2)}</b> each<em>${n} night${n > 1 ? "s" : ""}</em></span>`,
            `<span><b>${money(pn / 2)}</b> each/night</span>`);
+  } else if (o.est) {
+    P.push(`<span class="main">~<b>${money(o.est.perNight * n / 2)}</b> each<em>${n} nights · estimate</em></span>`, `<span><b>${money(o.est.perNight / 2)}</b> each/night</span>`,
+           `<span>${esc(o.est.src)} ${money(o.est.perNight)}/night${o.est.note ? ` <em>${esc(o.est.note)}</em>` : ""}</span>`);
   } else if (o.seen) {
     const pn = o.seen.total / o.seen.nights;
     P.push(`<span class="main"><b>${money(pn * n / 2)}</b> each<em>${n} nights · estimate</em></span>`, `<span><b>${money(pn / 2)}</b> each/night</span>`,
@@ -362,7 +365,7 @@ function optHTML(o, b) {
   const nm = x => String(x || "").toLowerCase().replace(/[^a-z0-9]/g, "");
   const own = (live?.sites || []).find(s => s.link && nm(s.source).length > 4 && (nm(o.name).startsWith(nm(s.source).slice(0, 10)) || nm(s.source).startsWith(nm(o.name).slice(0, 10))));
   const site = o.site || live?.link || own?.link || null;
-  const web = site ? `<a class="web" href="${esc(site)}" ${rel}>${o.included ? "TAO website" : "Hotel website"} ↗</a>` : `<a class="web alt" href="${esc(o.url)}" ${rel}>No own website · Booking.com ↗</a>`;
+  const web = site ? `<a class="web" href="${esc(site)}" ${rel}>${o.included ? "TAO website" : "Hotel website"} ↗</a>` : `<a class="web alt" href="${esc(o.url)}" ${rel}>${o.linkLabel ? esc(o.linkLabel) : "Booking.com"} ↗</a>`;
   return `<div class="opt${o.booked && !o.booked.cancellable ? " booked" : ""}${o.booked?.cancellable ? " held" : ""}${o.preferred ? " preferred" : ""}">
     <div class="opt-top"><a href="${esc(site || o.url)}" ${rel}>${esc(o.name)}</a>
       ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.change ? "Booked · change dates" : o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Check booking"}</span>` : ""}${soldOut ? `<span class="tag out">Sold out</span>` : ""}</div>

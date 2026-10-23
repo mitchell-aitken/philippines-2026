@@ -29,18 +29,6 @@
       ]
     },
     {
-      "id": "j-boutique",
-      "name": "J Boutique Hotel El Nido",
-      "match": "J Boutique",
-      "query": "J Boutique Hotel El Nido",
-      "checkIn": "2026-11-20",
-      "checkOut": "2026-11-24",
-      "twoOnly": true,
-      "alt": [
-        "J Boutique El Nido Managed by H Hospitality"
-      ]
-    },
-    {
       "id": "kokosnuss",
       "name": "Kokosnuss Garden Resort",
       "match": "Kokosnuss",
@@ -125,19 +113,6 @@
       "twoOnly": true
     },
     {
-      "id": "bella-athena",
-      "name": "Bella Athena Gardens",
-      "match": "Bella Athena",
-      "query": "Bella Athena Gardens El Nido",
-      "alt": [
-        "Bella Athena Gardens El Nido Palawan",
-        "Bella Athena Garden El Nido"
-      ],
-      "checkIn": "2026-11-20",
-      "checkOut": "2026-11-24",
-      "twoOnly": true
-    },
-    {
       "id": "calathea",
       "name": "Calathea Suites",
       "match": "Calathea",
@@ -146,6 +121,33 @@
         "Calathea Suites El Nido Palawan",
         "Calathea El Nido"
       ],
+      "checkIn": "2026-11-20",
+      "checkOut": "2026-11-24",
+      "twoOnly": true
+    },
+    {
+      "id": "marianne",
+      "name": "Marianne Suites El Nido",
+      "match": "Marianne",
+      "query": "Marianne Suites El Nido",
+      "checkIn": "2026-11-20",
+      "checkOut": "2026-11-24",
+      "twoOnly": true
+    },
+    {
+      "id": "barco",
+      "name": "Barco El Nido Hotel",
+      "match": "Barco",
+      "query": "Barco El Nido Hotel",
+      "checkIn": "2026-11-20",
+      "checkOut": "2026-11-24",
+      "twoOnly": true
+    },
+    {
+      "id": "cuna",
+      "name": "Cuna Hotel",
+      "match": "Cuna",
+      "query": "Cuna Hotel El Nido",
       "checkIn": "2026-11-20",
       "checkOut": "2026-11-24",
       "twoOnly": true

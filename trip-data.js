@@ -443,12 +443,17 @@ const ACCOM = [
         url: bk("Palms Cove Resort Panglao", "2026-11-19", "2026-11-20"), live: true, booked: { total: 74.73, nights: 1, cancellable: true, room: "1 × Deluxe Garden or Pool View Room · two twin beds" } }
     ] },
   { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-24", picks: "eni",
-    note: "Least happy with these options. Logan to do more research if you want.", noteBold: true,
+    note: "Marianne Suites and Barco both booked with free cancellation. Keep one.",
     options: [
-      { id: "j-boutique", name: "J Boutique Hotel El Nido", where: "El Nido town, 350 m from centre", rating: "8.8 · 796 reviews",
-        url: bkHotel("j-hostel-el-nido", "2026-11-20", "2026-11-24"), seen: { total: 277, nights: 5, dates: "Nov 19–24" }, live: true },
-      { id: "bella-athena", name: "Bella Athena Gardens", where: "El Nido", rating: "4.3 · Google",
-        url: bk("Bella Athena Gardens El Nido", "2026-11-20", "2026-11-24"), live: true },
+      { id: "marianne", name: "Marianne Suites El Nido", where: "El Nido", rating: "",
+        url: bk("Marianne Suites El Nido", "2026-11-20", "2026-11-24"), live: true,
+        booked: { total: 303.16, nights: 4, cancellable: true, room: "Twin Room with Private Bathroom · breakfast included" } },
+      { id: "barco", name: "Barco El Nido Hotel", where: "El Nido", rating: "",
+        url: bk("Barco El Nido Hotel", "2026-11-20", "2026-11-24"), live: true,
+        booked: { total: 208.20, nights: 4, cancellable: true, room: "Quadruple Private Room with 2 Double Bunk Beds" } },
+      { id: "cuna", name: "Cuna Hotel", where: "El Nido", why: "Pricier option, two single beds",
+        url: "https://www.agoda.com/cuna-hotel_2/hotel/palawan-ph.html?checkIn=2026-11-20&los=4&adults=2&rooms=1", linkLabel: "Agoda",
+        est: { perNight: 93, src: "Agoda", note: "plus fees" }, live: true },
       { id: "calathea", name: "Calathea Suites", where: "El Nido", rating: "4.5 · Google",
         url: bk("Calathea Suites El Nido", "2026-11-20", "2026-11-24"), live: true }
     ] },
