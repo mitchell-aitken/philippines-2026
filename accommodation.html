@@ -227,6 +227,7 @@
   details.deals a{color:var(--blue);text-decoration:none;font-weight:500}
   @media (max-width:560px){details.deals li{grid-template-columns:1fr auto}details.deals .t{grid-column:1/-1}}
   .room{margin-top:8px;font-size:13.5px;color:var(--ink)}
+  .room .cxl{color:#7A5B00}
   .room b{font:500 10.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-right:8px}
   .also{margin-top:8px;font-size:12.5px;color:var(--muted)}
   .also a{color:var(--ink-2)}
@@ -360,7 +361,7 @@ function optHTML(o, b) {
     <div class="opt-top"><a href="${esc(site || o.url)}" ${rel}>${esc(o.name)}</a>
       ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.change ? "Booked · change dates" : o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Check booking"}</span>` : ""}${soldOut ? `<span class="tag out">Sold out</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
-    ${o.booked?.room ? `<div class="room"><b>Room</b>${esc(o.booked.room)}</div>` : ""}
+    ${o.booked?.room ? `<div class="room"><b>Room</b>${esc(o.booked.room)}${o.booked.cancelBy ? ` · <span class="cxl">free cancellation before ${esc(o.booked.cancelBy)}</span>` : ""}</div>` : ""}
     <div class="prices">${web}${P.join("")}</div>${split}${also}</div>`;
 }
 
