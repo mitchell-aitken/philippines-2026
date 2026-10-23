@@ -223,6 +223,10 @@
   details.deals ul{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
   details.deals li{display:grid;grid-template-columns:minmax(90px,1.2fr) auto minmax(0,2fr) auto;gap:4px 12px;align-items:baseline;padding:7px 12px;border-top:1px solid var(--line);font-size:13px}
   details.deals li:first-child{border-top:0;background:#F6FBF8}
+  details.deals li.mine{background:#FFF6D6!important}
+  details.deals li.mine .s{font-weight:600}
+  details.deals li.hd{display:block;background:#FAFAFB;font:500 10.5px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 12px}
+  details.deals li.mine + li.hd + li{background:transparent}
   details.deals .s{font-weight:500}
   details.deals .t{color:var(--muted);font-size:12.5px}
   details.deals a{color:var(--blue);text-decoration:none;font-weight:500}
@@ -353,7 +357,8 @@ function optHTML(o, b) {
   const sites = (live?.sites || []).slice(0, 6);
   const rowsHTML = sites.map(s => { const t = s.total ?? s.perNight * n, pre = s.totalBeforeTax ?? (s.perNightBeforeTax != null ? s.perNightBeforeTax * n : null);
     return `<li><span class="s">${esc(s.source)}</span><span class="e"><b>${money(t / 2)}</b> each</span><span class="t">${money(t)} for both${pre != null ? ` · ${money(pre)} + ${money(t - pre)} taxes` : " · incl. taxes"}</span>${s.link ? `<a href="${esc(s.link)}" ${rel}>Book ↗</a>` : "<span></span>"}</li>`; }).join("");
-  const also = rowsHTML ? `<details class="deals"><summary>${o.booked ? "Cheapest now for these dates" : "Cheapest prices"} <span>from ${money((sites[0].total ?? sites[0].perNight * n) / 2)} each on ${esc(sites[0].source)}</span></summary><ul>${rowsHTML}</ul></details>` : "";
+  const bk0 = o.booked ? `<li class="mine"><span class="s">Booked price</span><span class="e"><b>${money(o.booked.total / 2, 2)}</b> each</span><span class="t">${money(o.booked.total, 2)} for both · ${o.booked.nights} nights${o.booked.dates ? " · " + esc(o.booked.dates) : ""}</span><span></span></li>${rowsHTML ? `<li class="hd"><span>Other sites, last checked</span></li>` : ""}` : "";
+  const also = (rowsHTML || bk0) ? `<details class="deals"><summary>${o.booked ? "Booked price" : "Cheapest prices"} <span>${o.booked ? `${money(o.booked.total / 2, 2)} each · compare other sites` : `from ${money((sites[0].total ?? sites[0].perNight * n) / 2)} each on ${esc(sites[0].source)}`}</span></summary><ul>${bk0}${rowsHTML}</ul></details>` : "";
   const nm = x => String(x || "").toLowerCase().replace(/[^a-z0-9]/g, "");
   const own = (live?.sites || []).find(s => s.link && nm(s.source).length > 4 && (nm(o.name).startsWith(nm(s.source).slice(0, 10)) || nm(s.source).startsWith(nm(o.name).slice(0, 10))));
   const site = o.site || live?.link || own?.link || null;
