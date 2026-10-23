@@ -201,6 +201,7 @@ if (hcfg) {
           if (m?.property_token) { try { prop = await hotel(hq, 2, { property_token: m.property_token }); } catch { prop = null; } if (!prop?.name) prop = m; }
           else if (m) prop = m;
         }
+        if (prop && (hcfg.debug || []).includes(h.id)) { try { await writeFile(`data/debug-${h.id}.json`, JSON.stringify({ query: q, checkIn: h.checkIn, checkOut: h.checkOut, prop }, null, 1)); } catch {} }
         if (prop) {
           const list = sites(prop);
           return { name: prop.name, perNight: list[0]?.perNight ?? prop.rate_per_night?.extracted_lowest ?? null,
