@@ -3,78 +3,6 @@
   "note": "Hostel prices from Google Hotels for the exact nights. 'one' = 1 guest (usually a dorm bed), 'two' = 2 guests (usually a private room).",
   "hostels": [
     {
-      "id": "coco-farm",
-      "name": "Bohol Coco Farm",
-      "match": "Coco Farm",
-      "query": "Bohol Coco Farm Panglao",
-      "checkIn": "2026-11-15",
-      "checkOut": "2026-11-20"
-    },
-    {
-      "id": "nautilus",
-      "name": "Nautilus Hostel & Hammocks",
-      "match": "Nautilus",
-      "query": "Nautilus Resort Hostel and Hammocks Panglao",
-      "checkIn": "2026-11-15",
-      "checkOut": "2026-11-20"
-    },
-    {
-      "id": "mayas",
-      "name": "Mayas Guesthouse",
-      "match": "Maya",
-      "query": "Mayas Guesthouse Panglao Bohol",
-      "checkIn": "2026-11-15",
-      "checkOut": "2026-11-20"
-    },
-    {
-      "id": "spin",
-      "name": "SPIN Designer Hostel",
-      "match": "SPIN",
-      "query": "SPIN Designer Hostel El Nido",
-      "checkIn": "2026-11-20",
-      "checkOut": "2026-11-24"
-    },
-    {
-      "id": "beach-house-eni",
-      "name": "The Beach House",
-      "match": "Beach House",
-      "query": "The Beach House hostel El Nido Calle Hama",
-      "checkIn": "2026-11-20",
-      "checkOut": "2026-11-24"
-    },
-    {
-      "id": "outpost-eni",
-      "name": "Outpost Beach Hostel",
-      "match": "Outpost",
-      "query": "Outpost Beach Hostel El Nido",
-      "checkIn": "2026-11-20",
-      "checkOut": "2026-11-24"
-    },
-    {
-      "id": "hop",
-      "name": "Hop Hostel",
-      "match": "Hop Hostel",
-      "query": "Hop Hostel Coron",
-      "checkIn": "2026-11-28",
-      "checkOut": "2026-12-01"
-    },
-    {
-      "id": "michelinn",
-      "name": "Michel'inn Coron",
-      "match": "Michel",
-      "query": "Michel'inn Coron Palawan",
-      "checkIn": "2026-11-28",
-      "checkOut": "2026-12-01"
-    },
-    {
-      "id": "ecocio",
-      "name": "Ecocio Hostel",
-      "match": "Ecocio",
-      "query": "Ecocio Hostel Coron",
-      "checkIn": "2026-11-28",
-      "checkOut": "2026-12-01"
-    },
-    {
       "id": "busai",
       "name": "Busai Dream Falls Resort",
       "match": "Busai",
@@ -223,39 +151,14 @@
       "twoOnly": true
     }
   ],
-  "areas": [
-    {
-      "id": "loboc",
-      "query": "resorts in Loboc Bohol",
-      "checkIn": "2026-11-17",
-      "checkOut": "2026-11-19"
-    },
-    {
-      "id": "chocolate-hills",
-      "query": "resorts near Chocolate Hills Carmen Bohol",
-      "checkIn": "2026-11-17",
-      "checkOut": "2026-11-19"
-    },
-    {
-      "id": "bilar-sevilla",
-      "query": "resorts in Bilar Sevilla Batuan Bohol",
-      "checkIn": "2026-11-17",
-      "checkOut": "2026-11-19"
-    }
-  ],
   "nightly": [
     {
       "id": "fox-firefly",
       "base": "fox-firefly",
       "nights": [
-        "2026-11-15",
-        "2026-11-16",
         "2026-11-17",
         "2026-11-18"
       ]
     }
-  ],
-  "debug": [
-    "fox-firefly"
   ]
 }

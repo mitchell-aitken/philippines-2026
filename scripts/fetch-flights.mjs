@@ -210,12 +210,15 @@ if (hcfg) {
             rawRooms: (prop.featured_prices || []).flatMap(x => (x.rooms || []).map(r => ({ source: x.source, name: r.name, perNight: r.rate_per_night?.extracted_lowest ?? null }))).slice(0, 20) };
         }
       }
+      if (saw.length && saw.every(s => s.startsWith("("))) throw new Error(saw[saw.length - 1].slice(1, -1));
       return { error: "not found on Google Hotels", tried, saw: [...new Set(saw)].slice(0, 8) };
     };
+    let quotaOut = false;
     for (const h of hcfg.hostels) {
       const r = { ...(hprev.hostels?.[h.id] || {}) };
+      if (quotaOut) { hout.hostels[h.id] = r; continue; }
       if (h.twoOnly) {
-        try { r.two = await hotelSites(h); } catch (e) { r.two = { ...(r.two || {}), error: e.message }; }
+        try { r.two = { ...(await hotelSites(h)), checked: new Date().toISOString() }; } catch (e) { r.two = { ...(r.two || {}), lastError: e.message, lastErrorAt: new Date().toISOString() }; quotaOut = /run out of searches/i.test(e.message) || quotaOut; }
         hout.hostels[h.id] = r;
         console.log(`hotel ${h.id}: ${r.two?.cheapest ? r.two.cheapest.source + " " + r.two.cheapest.total : r.two?.error}`);
         continue;
@@ -234,12 +237,13 @@ if (hcfg) {
       for (const night of nn.nights) {
         const next = new Date(new Date(night + "T12:00Z").getTime() + 864e5).toISOString().slice(0, 10);
         try { out[night] = await hotelSites({ ...base, id: `${nn.id}-${night}`, checkIn: night, checkOut: next }); }
-        catch (e) { out[night] = { error: e.message }; }
+        catch (e) { out[night] = { ...(hprev.nightly?.[nn.id]?.[night] || {}), lastError: e.message }; }
         console.log(`nightly ${nn.id} ${night}: ${out[night].cheapest ? out[night].cheapest.source + " " + out[night].cheapest.total : out[night].error || "no prices"}`);
       }
       hout.nightly[nn.id] = out;
     }
     // area searches: every property Google lists for a query, with prices (to find new options)
+    if (quotaOut) { hout.updated = hprev.updated; hout.quotaOutAt = new Date().toISOString(); console.log("SerpApi searches used up: kept the previous prices"); }
     hout.areas = {};
     for (const a of hcfg.areas || []) {
       try {

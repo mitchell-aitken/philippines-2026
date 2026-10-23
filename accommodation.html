@@ -407,7 +407,7 @@ function render() {
 }
 render();
 fetch("data/hostel-prices.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
-  .then(H => { LIVE = H?.hostels || {}; NIGHTLY = H?.nightly || {}; ACCOM.forEach(b => b.options.forEach(o => { if (!LIVE[o.id]) o.live = false; })); render(); });
+  .then(H => { LIVE = H?.hostels || {}; NIGHTLY = H?.nightly || {}; const f = document.querySelector("footer"); if (f && H?.updated) f.insertAdjacentHTML("afterbegin", `Prices last checked ${new Date(H.updated).toLocaleDateString("en-CA", { month: "short", day: "numeric" })}. `); ACCOM.forEach(b => b.options.forEach(o => { if (!LIVE[o.id]) o.live = false; })); render(); });
 </script>
 </body>
 </html>
