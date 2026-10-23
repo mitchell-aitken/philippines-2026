@@ -443,7 +443,7 @@ const ACCOM = [
         url: bk("Palms Cove Resort Panglao", "2026-11-19", "2026-11-20"), live: true, booked: { total: 74.73, nights: 1, cancellable: true, room: "1 × Deluxe Garden or Pool View Room · two twin beds" } }
     ] },
   { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-24", picks: "eni",
-    note: "Marianne Suites and Barco both booked with free cancellation. Keep one.",
+    note: "Marianne Suites, Barco and Cuna all booked with free cancellation. Keep one. Cuna must be cancelled by Oct 27!", noteBold: true,
     options: [
       { id: "marianne", name: "Marianne Suites El Nido", where: "El Nido", rating: "",
         url: bk("Marianne Suites El Nido", "2026-11-20", "2026-11-24"), live: true,
@@ -451,9 +451,9 @@ const ACCOM = [
       { id: "barco", name: "Barco El Nido Hotel", where: "El Nido", rating: "",
         url: bk("Barco El Nido Hotel", "2026-11-20", "2026-11-24"), live: true,
         booked: { total: 208.20, nights: 4, cancellable: true, room: "Quadruple Private Room with 2 Double Bunk Beds" } },
-      { id: "cuna", name: "Cuna Hotel", where: "El Nido", why: "Pricier option, two single beds",
-        url: "https://www.agoda.com/cuna-hotel_2/hotel/palawan-ph.html?checkIn=2026-11-20&los=4&adults=2&rooms=1", linkLabel: "Agoda",
-        est: { perNight: 93, src: "Agoda", note: "plus fees" }, live: true },
+      { id: "cuna", name: "Cuna Hotel", where: "El Nido", why: "Agoda flash sale",
+        url: "https://www.agoda.com/cuna-hotel_2/hotel/palawan-ph.html?checkIn=2026-11-20&los=4&adults=2&rooms=1", linkLabel: "Agoda", live: true,
+        booked: { total: 532.96, nights: 4, cancellable: true, room: "Two single beds", cancelBy: "Oct 27, 2026", urgent: true } },
       { id: "calathea", name: "Calathea Suites", where: "El Nido", rating: "4.5 · Google",
         url: bk("Calathea Suites El Nido", "2026-11-20", "2026-11-24"), live: true }
     ] },
@@ -485,7 +485,7 @@ const accomFor = d => { if (d.mon && d.mon !== MONTH) return null;
   const iso = `2026-11-${String(d.date).padStart(2, "0")}`; return ACCOM.find(b => b.from <= iso && iso < b.to) || null; };
 const accomLabel = b => { if (b.tao) return "TAO boat + basecamps"; const p = accomPick(b);
   const bo = b.options.filter(o => o.booked);
-  if (bo.length > 1) return bo.map(o => o.name).join(" or ") + (bo.some(o => o.booked.change) ? " (booked, change dates)" : " (both booked, cancellable)");
+  if (bo.length > 1) return bo.map(o => o.name).join(" or ") + (bo.some(o => o.booked.change) ? " (booked, change dates)" : bo.length > 2 ? " (all booked, cancellable)" : " (both booked, cancellable)");
   if (p?.booked) return `${p.name} ${p.booked.cancellable ? "(booked, cancellable)" : "✓ booked"}`;
   if (p) return `${p.name} (preferred)`;
   return b.options.map(o => o.name).join(" or ") + (b.maybe ? " (maybe)" : " (not booked)"); };
