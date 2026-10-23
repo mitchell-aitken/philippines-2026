@@ -431,6 +431,7 @@ const ACCOM = [
       { id: "busai", name: "Busai Dream Falls Resort", where: "By Busai Falls, Loboc / Sevilla", rating: "9.1 · 29 reviews",
         why: "7 rooms, breakfast, walk to the falls", url: bk("Busai Dream Falls Resort", "2026-11-17", "2026-11-19"), live: true, booked: { total: 130.07, nights: 2, cancellable: true, room: "Family Room, 2 Queen Beds", cancelBy: "Nov 11, 2026" } },
       { id: "fox-firefly", name: "Fox & The Firefly Cottages", where: "Loboc River, near the wharf", rating: "4.5 · 624 reviews", why: "Looks the nicest", nightly: "fox-firefly", full: true,
+        roomPlan: [["Nov 17", "Superior Double Cottage, garden view", "1 queen bed · 24 m²"], ["Nov 18", "Deluxe Double, rice paddy view (optional)", "1 queen bed · 36 m²"]],
         url: bk("Fox and The Firefly Cottages Loboc", "2026-11-17", "2026-11-19"), live: true },
       { id: "stefanie-grace", name: "Stefanie Grace Inn", where: "Loboc", rating: "4.4 · 398 reviews", why: "Outdoor pool",
         url: bk("Stefanie Grace Inn Loboc Bohol", "2026-11-17", "2026-11-19"), live: true }

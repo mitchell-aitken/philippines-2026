@@ -210,6 +210,7 @@
   .split b{display:inline-block;min-width:52px;font-family:var(--mono);font-size:12px}
   .split a{color:var(--blue)}
   .split p.nope{color:#9A3412;font-weight:500}
+  .split .bed{color:var(--muted)}
   .split p{margin:6px 0 0;color:var(--muted);font-size:12.5px}
   .prices .warn{background:#FDECEC;color:#9A3412}
   .prices a.web{display:inline-flex;align-items:center;padding:4px 10px;border-radius:8px;border:1px solid var(--blue);color:var(--blue);font-size:13px;font-weight:500;text-decoration:none;background:#fff}
@@ -362,7 +363,7 @@ function optHTML(o, b) {
       ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.change ? "Booked · change dates" : o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Check booking"}</span>` : ""}${soldOut ? `<span class="tag out">Sold out</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
     ${o.booked?.room ? `<div class="room"><b>Room</b>${esc(o.booked.room)}${o.booked.cancelBy ? ` · <span class="cxl">free cancellation before ${esc(o.booked.cancelBy)}</span>` : ""}</div>` : ""}
-    <div class="prices">${web}${P.join("")}</div>${split}${also}</div>`;
+    <div class="prices">${web}${P.join("")}</div>${!o._splitTotal && o.roomPlan ? `<div class="split">${o.roomPlan.map(([d, r, bed]) => `<div><b>${esc(d)}</b> ${esc(r)} · <span class="bed">${esc(bed)}</span></div>`).join("")}<p>Switch rooms on Nov 18 if we want the Deluxe. No twin beds in either: both have one queen.</p></div>` : split}${also}</div>`;
 }
 
 function render() {
