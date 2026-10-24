@@ -426,10 +426,11 @@ const ACCOM = [
         url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2, cancellable: true, room: "1 × Deluxe Garden or Pool View Room · requested and approved for two twin beds" } }
     ] },
   { id: "loboc", area: "Loboc", region: "Bohol", from: "2026-11-17", to: "2026-11-19",
-    note: "Busai booked, free cancellation before Nov 11. Close to the Chocolate Hills and EAT Danao.",
+    note: "Water to Forest booked. Close to the Chocolate Hills and EAT Danao.",
     options: [
-      { id: "busai", name: "Busai Dream Falls Resort", where: "By Busai Falls, Loboc / Sevilla", rating: "9.1 · 29 reviews",
-        why: "7 rooms, breakfast, walk to the falls", url: bk("Busai Dream Falls Resort", "2026-11-17", "2026-11-19"), live: true, booked: { total: 130.07, nights: 2, cancellable: true, room: "Family Room, 2 Queen Beds", cancelBy: "Nov 11, 2026" } },
+      { id: "water-forest", name: "Water to Forest Ecolodge", where: "Loboc riverside jungle", rating: "4.5 · 195 reviews (Google)", why: "Eco-lodge",
+        url: bk("Water to Forest Ecolodge Loboc", "2026-11-17", "2026-11-19"), live: true,
+        booked: { total: 77.40, nights: 2, room: "Single bed in 6-bed Partitioned Dormitory Room" } },
       { id: "fox-firefly", name: "Fox & The Firefly Cottages", where: "Loboc River, near the wharf", rating: "4.5 · 624 reviews", why: "Looks the nicest", nightly: "fox-firefly", full: true,
         roomPlan: [["Nov 17", "Superior Double Cottage, garden view", "1 queen bed · 24 m²"], ["Nov 18", "Deluxe Double, rice paddy view (optional)", "1 queen bed · 36 m²"]],
         url: bk("Fox and The Firefly Cottages Loboc", "2026-11-17", "2026-11-19"), live: true },
@@ -443,17 +444,11 @@ const ACCOM = [
         url: bk("Palms Cove Resort Panglao", "2026-11-19", "2026-11-20"), live: true, booked: { total: 74.73, nights: 1, cancellable: true, room: "1 × Deluxe Garden or Pool View Room · two twin beds" } }
     ] },
   { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-24", picks: "eni",
-    note: "Marianne Suites, Barco and Cuna all booked with free cancellation. Keep one. Cuna must be cancelled by Oct 27!", noteBold: true,
+    note: "",
     options: [
-      { id: "barco", name: "Barco El Nido Hotel", where: "El Nido", rating: "",
-        url: bk("Barco El Nido Hotel", "2026-11-20", "2026-11-24"), live: true,
-        booked: { total: 208.20, nights: 4, cancellable: true, room: "Quadruple Private Room with 2 Double Bunk Beds" } },
-      { id: "marianne", name: "Marianne Suites El Nido", where: "El Nido", rating: "", why: "Low reviews maybe?",
-        url: bk("Marianne Suites El Nido", "2026-11-20", "2026-11-24"), live: true,
-        booked: { total: 303.16, nights: 4, cancellable: true, room: "Twin Room with Private Bathroom · breakfast included" } },
-      { id: "cuna", name: "Cuna Hotel", where: "El Nido", why: "Agoda flash sale",
-        url: "https://www.agoda.com/cuna-hotel_2/hotel/palawan-ph.html?checkIn=2026-11-20&los=4&adults=2&rooms=1", linkLabel: "Agoda", live: true,
-        booked: { total: 532.96, nights: 4, cancellable: true, room: "Two single beds", cancelBy: "Oct 27, 2026", urgent: true } },
+      { id: "happiness", name: "Happiness Boutique Resort El Nido", where: "El Nido", rating: "",
+        url: bk("Happiness Boutique Resort El Nido", "2026-11-20", "2026-11-24"), live: true,
+        booked: { total: 532.96, nights: 4, room: "1 × Premier King Room" } },
       { id: "calathea", name: "Calathea Suites", where: "El Nido", rating: "4.5 · Google",
         url: bk("Calathea Suites El Nido", "2026-11-20", "2026-11-24"), live: true }
     ] },

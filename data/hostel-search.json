@@ -3,20 +3,6 @@
   "note": "Hostel prices from Google Hotels for the exact nights. 'one' = 1 guest (usually a dorm bed), 'two' = 2 guests (usually a private room).",
   "hostels": [
     {
-      "id": "busai",
-      "name": "Busai Dream Falls Resort",
-      "match": "Busai",
-      "query": "Busai Dream Falls Resort Loboc Bohol",
-      "checkIn": "2026-11-17",
-      "checkOut": "2026-11-19",
-      "twoOnly": true,
-      "alt": [
-        "Busai Dreamfalls Resort Sevilla Bohol",
-        "Busai Dream Falls Resort",
-        "Busai Falls Resort Loboc"
-      ]
-    },
-    {
       "id": "palms-cove-19",
       "name": "Palms Cove Resort",
       "match": "Palms Cove",
@@ -126,30 +112,21 @@
       "twoOnly": true
     },
     {
-      "id": "marianne",
-      "name": "Marianne Suites El Nido",
-      "match": "Marianne",
-      "query": "Marianne Suites El Nido",
+      "id": "happiness",
+      "name": "Happiness Boutique Resort El Nido",
+      "match": "Happiness",
+      "query": "Happiness Boutique Resort El Nido",
       "checkIn": "2026-11-20",
       "checkOut": "2026-11-24",
       "twoOnly": true
     },
     {
-      "id": "barco",
-      "name": "Barco El Nido Hotel",
-      "match": "Barco",
-      "query": "Barco El Nido Hotel",
-      "checkIn": "2026-11-20",
-      "checkOut": "2026-11-24",
-      "twoOnly": true
-    },
-    {
-      "id": "cuna",
-      "name": "Cuna Hotel",
-      "match": "Cuna",
-      "query": "Cuna Hotel El Nido",
-      "checkIn": "2026-11-20",
-      "checkOut": "2026-11-24",
+      "id": "water-forest",
+      "name": "Water to Forest Ecolodge",
+      "match": "Water to Forest",
+      "query": "Water to Forest Ecolodge Loboc Bohol",
+      "checkIn": "2026-11-17",
+      "checkOut": "2026-11-19",
       "twoOnly": true
     }
   ],
