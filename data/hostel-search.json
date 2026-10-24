@@ -128,6 +128,33 @@
       "checkIn": "2026-11-17",
       "checkOut": "2026-11-19",
       "twoOnly": true
+    },
+    {
+      "id": "bathala",
+      "name": "Bathala Resort",
+      "match": "Bathala",
+      "query": "Bathala Resort Panglao Bohol",
+      "checkIn": "2026-11-15",
+      "checkOut": "2026-11-17",
+      "twoOnly": true
+    },
+    {
+      "id": "henann-alona",
+      "name": "Henann Resort Alona Beach",
+      "match": "Henann Resort Alona",
+      "query": "Henann Resort Alona Beach Panglao",
+      "checkIn": "2026-11-15",
+      "checkOut": "2026-11-17",
+      "twoOnly": true
+    },
+    {
+      "id": "bluewater-panglao",
+      "name": "Bluewater Panglao Beach Resort",
+      "match": "Bluewater Panglao",
+      "query": "Bluewater Panglao Beach Resort",
+      "checkIn": "2026-11-15",
+      "checkOut": "2026-11-17",
+      "twoOnly": true
     }
   ],
   "nightly": [
