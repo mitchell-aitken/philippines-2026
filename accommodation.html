@@ -354,7 +354,7 @@ function optHTML(o, b) {
       split = open.length ? `<div class="split"><p>Free on ${open.join(", ")}, full on ${closed.join(", ")}.</p></div>` : "";
     }
   }
-  const soldOut = !P.length && !o.full && !o.included && LIVE[o.id] && !c && !(live?.sites || []).length;
+  const soldOut = !P.length && !o.full && !o.included && !o.booked && live && Array.isArray(live.sites) && !live.sites.length && !c && !live.lastError;
   if (soldOut) P.push(`<span class="warn">No rooms listed for these dates · looks sold out</span>`);
   if (!P.length) P.push(o.full ? `<span>Check booking, might have to switch rooms</span>` : `<span>${o.live && !LIVE[o.id] ? "Checking prices…" : "No price yet · check link"}</span>`);
   // cheapest prices, tucked in a dropdown

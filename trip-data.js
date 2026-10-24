@@ -424,9 +424,9 @@ const ACCOM = [
     options: [
       { id: "palms-cove", name: "Palms Cove Resort", where: "Danao, 5 min walk to Alona Beach", rating: "8.8 · Booking.com",
         url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2, cancellable: true, room: "1 × Deluxe Garden or Pool View Room · requested and approved for two twin beds" } },
-      { id: "bathala", name: "Bathala Resort", where: "Panglao", url: bk("Bathala Resort Panglao", "2026-11-15", "2026-11-17"), live: true },
-      { id: "henann-alona", name: "Henann Resort Alona Beach", where: "Alona Beach", url: bk("Henann Resort Alona Beach", "2026-11-15", "2026-11-17"), live: true },
-      { id: "bluewater-panglao", name: "Bluewater Panglao Beach Resort", where: "Dumaluan Beach", url: bk("Bluewater Panglao Beach Resort", "2026-11-15", "2026-11-17"), live: true }
+      { id: "bathala", name: "Bathala Resort", where: "Panglao", why: "No price found yet", url: bk("Bathala Resort Panglao", "2026-11-15", "2026-11-17"), live: true },
+      { id: "henann-alona", name: "Henann Resort Alona Beach", where: "Alona Beach", rating: "9.1 · 592 reviews (Trip.com)", why: "Trip.com average ~C$449/night, not for our dates", url: bk("Henann Resort Alona Beach", "2026-11-15", "2026-11-17"), live: true },
+      { id: "bluewater-panglao", name: "Bluewater Panglao Beach Resort", where: "Dumaluan Beach", rating: "8.7 · 1,272 reviews (Kayak)", why: "Kayak: from ~US$51, usually US$70–85/night, not for our dates", url: bk("Bluewater Panglao Beach Resort", "2026-11-15", "2026-11-17"), live: true }
     ] },
   { id: "loboc", area: "Loboc", region: "Bohol", from: "2026-11-17", to: "2026-11-19",
     note: "Water to Forest booked. Close to the Chocolate Hills and EAT Danao.",
