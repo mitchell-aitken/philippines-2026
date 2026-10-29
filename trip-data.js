@@ -419,11 +419,9 @@ const bookingSearch = p => `https://www.booking.com/searchresults.html?ss=${enco
 const bk = (q, a, b) => `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(q)}&checkin=${a}&checkout=${b}&group_adults=2&no_rooms=1&group_children=0`;
 const bkHotel = (slug, a, b) => `https://www.booking.com/hotel/ph/${slug}.html?checkin=${a}&checkout=${b}&group_adults=2&no_rooms=1&group_children=0`;
 const ACCOM = [
-  { id: "panglao-1", area: "Panglao", region: "Bohol", from: "2026-11-15", to: "2026-11-17", picks: "pgl",
-    note: "Can still change: maybe only the night of Nov 15, and spend 1 extra night inland on Bohol instead.",
+  { id: "panglao-1", area: "Panglao", region: "Bohol", from: "2026-11-15", to: "2026-11-17", picks: "pgl", looking: true,
+    note: "Still looking for Panglao.", noteBold: true,
     options: [
-      { id: "palms-cove", name: "Palms Cove Resort", where: "Danao, 5 min walk to Alona Beach", rating: "8.8 · Booking.com",
-        url: bk("Palms Cove Resort Panglao", "2026-11-15", "2026-11-17"), booked: { total: 154.81, nights: 2, cancellable: true, room: "1 × Deluxe Garden or Pool View Room · requested and approved for two twin beds" } },
       { id: "bathala", name: "Bathala Resort", where: "Panglao", why: "No price found yet", url: bk("Bathala Resort Panglao", "2026-11-15", "2026-11-17"), live: true },
       { id: "henann-alona", name: "Henann Resort Alona Beach", where: "Alona Beach", rating: "9.1 · 592 reviews (Trip.com)", why: "Trip.com average ~C$449/night, not for our dates", url: bk("Henann Resort Alona Beach", "2026-11-15", "2026-11-17"), live: true },
       { id: "bluewater-panglao", name: "Bluewater Panglao Beach Resort", where: "Dumaluan Beach", rating: "8.7 · 1,272 reviews (Kayak)", why: "Kayak: from ~US$51, usually US$70–85/night, not for our dates", url: bk("Bluewater Panglao Beach Resort", "2026-11-15", "2026-11-17"), live: true }
@@ -440,11 +438,9 @@ const ACCOM = [
       { id: "stefanie-grace", name: "Stefanie Grace Inn", where: "Loboc", rating: "4.4 · 398 reviews", why: "Outdoor pool",
         url: bk("Stefanie Grace Inn Loboc Bohol", "2026-11-17", "2026-11-19"), live: true }
     ] },
-  { id: "panglao-2", area: "Panglao", region: "Bohol", from: "2026-11-19", to: "2026-11-20", picks: "pgl",
-    note: "Back on Panglao for the sardines and the 10:30 flight.",
+  { id: "panglao-2", area: "Panglao", region: "Bohol", from: "2026-11-19", to: "2026-11-20", picks: "pgl", looking: true,
+    note: "Still looking for Panglao. Back here for the sardines and the 10:30 flight.", noteBold: true,
     options: [
-      { id: "palms-cove-19", name: "Palms Cove Resort", where: "Danao, 5 min walk to Alona Beach", rating: "8.8 · Booking.com",
-        url: bk("Palms Cove Resort Panglao", "2026-11-19", "2026-11-20"), live: true, booked: { total: 74.73, nights: 1, cancellable: true, room: "1 × Deluxe Garden or Pool View Room · two twin beds" } }
     ] },
   { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-24", picks: "eni",
     note: "",
@@ -480,6 +476,7 @@ const accomLabel = b => { if (b.tao) return "TAO boat + basecamps"; const p = ac
   if (bo.length > 1) return bo.map(o => o.name).join(" or ") + (bo.some(o => o.booked.change) ? " (booked, change dates)" : bo.length > 2 ? " (all booked, cancellable)" : " (both booked, cancellable)");
   if (p?.booked) return `${p.name} ${p.booked.cancellable ? "(booked, cancellable)" : "✓ booked"}`;
   if (p) return `${p.name} (preferred)`;
+  if (!b.options.length || b.looking) return "Still looking";
   return b.options.map(o => o.name).join(" or ") + (b.maybe ? " (maybe)" : " (not booked)"); };
 
 /* Photos from Wikimedia Commons: [file, caption, credit, source page] per day */
