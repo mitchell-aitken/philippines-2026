@@ -274,6 +274,20 @@
   .grp-body .blk{margin-top:18px}
   .grp-body .blk-head h2{font-size:17px}
   @media (max-width:560px){details.grp > summary .gp{margin-left:0;width:100%}}
+  #confirmed{margin-top:22px;border:1px solid var(--line);border-radius:16px;padding:14px 18px;background:#fff}
+  #confirmed h2{margin:0 0 6px;font-size:17px}
+  #confirmed ul{list-style:none;margin:0;padding:0}
+  #confirmed li a{display:grid;grid-template-columns:130px minmax(0,1fr) auto;gap:4px 14px;align-items:baseline;padding:9px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--ink)}
+  #confirmed li:first-child a{border-top:0}
+  #confirmed li a:hover b{color:var(--blue)}
+  #confirmed .d{font:500 12px/1.3 var(--mono);color:var(--ink-2)}
+  #confirmed .n small,#confirmed .p small{display:block;color:var(--muted);font-size:12px}
+  #confirmed .p{text-align:right;white-space:nowrap}
+  @media (max-width:560px){#confirmed li a{grid-template-columns:1fr auto}#confirmed .d{grid-column:1/-1}}
+  details.more{margin-top:12px}
+  details.more > summary{display:inline-flex!important;cursor:pointer;font-size:13px;font-weight:500;color:var(--blue);padding:6px 12px!important;border:1px solid var(--line);border-radius:999px;background:#fff}
+  details.more > summary::after{content:""!important}
+  details.more[open] > summary{margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -295,6 +309,7 @@
     <h1>Accommodation</h1>
     <div class="hero-stats" id="stats"></div>
   </section>
+  <section id="confirmed"></section>
   <div id="blocks"></div>
   <footer>“Each” = per person, 2 sharing a room. Prices are for the trip dates, compared across booking sites via Google Hotels, refreshed every 2 weeks.</footer>
 </main>
@@ -377,6 +392,10 @@ function optHTML(o, b) {
 
 function render() {
   const openNow = new Set([...document.querySelectorAll("details.grp[open]")].map(d => d.dataset.g));
+  const openMore = new Set([...document.querySelectorAll("details.more[open]")].map(d => d.dataset.b));
+  // confirmed stays, at a glance
+  const conf = ACCOM.filter(b => !b.tao).flatMap(b => b.options.filter(o => o.booked).map(o => ({ b, o })));
+  document.getElementById("confirmed").innerHTML = conf.length ? `<h2>Booked</h2><ul>${conf.map(({ b, o }) => `<li><a href="#${b.id}"><span class="d">${esc(accomRange(b))}</span><span class="n"><b>${esc(o.name)}</b><small>${esc(b.area)}${o.booked.room ? " · " + esc(o.booked.room) : ""}</small></span><span class="p"><b>${money(o.booked.total / 2, 2)}</b> each${o.booked.cancellable ? `<small>cancellable${o.booked.cancelBy ? " until " + esc(o.booked.cancelBy) : ""}</small>` : `<small>${money(o.booked.total, 2)} for both</small>`}</span></a></li>`).join("")}</ul>` : "";
   const groups = [...new Set(ACCOM.map(b => b.region))];
   document.getElementById("blocks").innerHTML = groups.map(g => {
     const bs = ACCOM.filter(b => b.region === g);
@@ -401,7 +420,10 @@ function render() {
     return `<section class="blk" id="${b.id}" style="--c:${COLORS[b.region]}">
       <div class="blk-head"><h2>${esc(b.area)}</h2><span class="when">${esc(accomRange(b))}</span>${tag}</div>
       ${b.note ? `<p class="blk-note">${b.noteBold ? `<b>${esc(b.note)}</b>` : esc(b.note)}</p>` : ""}
-      <div class="opts">${b.options.map(o => optHTML(o, b)).join("")}</div></section>`;
+      ${(() => { const bk = b.options.filter(o => o.booked), rest = b.options.filter(o => !o.booked);
+        if (!bk.length || !rest.length) return `<div class="opts">${b.options.map(o => optHTML(o, b)).join("")}</div>`;
+        return `<div class="opts">${bk.map(o => optHTML(o, b)).join("")}</div>
+          <details class="more" data-b="${b.id}"${openMore.has(b.id) ? " open" : ""}><summary>Show ${rest.length} other option${rest.length > 1 ? "s" : ""}</summary><div class="opts">${rest.map(o => optHTML(o, b)).join("")}</div></details>`; })()}</section>`;
   }
 
   // range each: booked stays fixed, otherwise cheapest → priciest option in each place
@@ -417,10 +439,11 @@ function render() {
     if (choices.length) { lo += Math.min(...choices) * n / 2; hi += Math.max(...choices) * n / 2; priced += n; }
   });
   const rng = (a, c) => Math.round(a) === Math.round(c) ? money(a) : `${money(a)}–${money(c).slice(2)}`;
-  document.getElementById("stats").innerHTML = `<div class="big"><b>${rng(lo, hi)}</b><span>per person · ${all} nights${priced < all ? ` (${priced} priced)` : ""}${taoN ? ` + ${taoN} on TAO` : ""} · cheapest to priciest</span></div><div><b>${rng(lo / priced, hi / priced)}</b><span>per person / night</span></div><div><b>${rng(lo * 2, hi * 2)}</b><span>for both</span></div><div><b>${booked}/${all}</b><span>nights booked</span></div>${taoUsd ? `<div class="sep"><b>US$${taoUsd} <small>≈ ${money(taoUsd * USD_CAD)}</small></b><span>TAO each · separate</span></div>` : ""}`;
+  document.getElementById("stats").innerHTML = `<div class="big"><b>${rng(lo, hi)}</b><span>per person · ${all} nights${priced < all ? ` (${priced} priced)` : ""}${taoN ? ` + ${taoN} on TAO` : ""}${Math.round(lo) === Math.round(hi) ? "" : " · cheapest to priciest"}</span></div><div><b>${rng(lo / priced, hi / priced)}</b><span>per person / night</span></div><div><b>${rng(lo * 2, hi * 2)}</b><span>for both</span></div><div><b>${booked}/${all}</b><span>nights booked</span></div>${taoUsd ? `<div class="sep"><b>US$${taoUsd} <small>≈ ${money(taoUsd * USD_CAD)}</small></b><span>TAO each · separate</span></div>` : ""}`;
   if (location.hash && !render._hashed) { const el = document.querySelector(location.hash); if (el) { el.closest("details")?.setAttribute("open", ""); el.scrollIntoView(); render._hashed = true; } }
 }
 render();
+window.addEventListener("hashchange", () => { const el = location.hash && document.querySelector(location.hash); if (el) { el.closest("details.grp")?.setAttribute("open", ""); el.scrollIntoView(); } });
 fetch("data/hostel-prices.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
   .then(H => { LIVE = H?.hostels || {}; NIGHTLY = H?.nightly || {}; const f = document.querySelector("footer"); if (f && H?.updated) f.insertAdjacentHTML("afterbegin", `Prices last checked ${new Date(H.updated).toLocaleDateString("en-CA", { month: "short", day: "numeric" })}. `); ACCOM.forEach(b => b.options.forEach(o => { if (!LIVE[o.id]) o.live = false; })); render(); });
 </script>
