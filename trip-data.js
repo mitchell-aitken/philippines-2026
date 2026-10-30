@@ -521,6 +521,12 @@ const PICS = {
  ],
  "19": [
   [
+   "images/days/sardine-run.jpg",
+   "Sardine run (this one at Moalboal, Cebu; same at Napaling)",
+   "Iampjanz · CC BY-SA 4.0",
+   "https://commons.wikimedia.org/wiki/File:Sardine_run_over_seafloor_in_Moalboal_01.jpg"
+  ],
+  [
    "images/days/hinagdanan-1.jpg",
    "Hinagdanan Cave",
    "Deepak-nsk · CC0",

@@ -60,6 +60,20 @@
   .daybar .step:disabled{opacity:.3;cursor:default}
   @media (max-width:600px){.daybar{left:8px;right:8px;transform:none;max-width:none;bottom:calc(8px + env(safe-area-inset-bottom,0px))}.legend{bottom:calc(80px + env(safe-area-inset-bottom,0px))!important}.leaflet-bottom.leaflet-right{bottom:70px}}
   .leaflet-bottom.leaflet-right{margin-bottom:76px}
+  .sheet{display:none}
+  @media (max-width:600px){
+    .sheet{display:flex;flex-direction:column;position:fixed;z-index:1002;left:8px;right:8px;bottom:calc(74px + env(safe-area-inset-bottom,0px));max-height:min(54svh,520px);background:#fff;border-radius:16px;box-shadow:0 -4px 30px rgba(0,0,0,.2);overflow:hidden}
+    .sheet[hidden]{display:none}
+    .sheet-body{overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+    .sheet .pop{max-height:none;padding:14px 16px 16px}
+    .sheet .x{position:absolute;right:8px;top:8px;z-index:3;width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.95);box-shadow:0 1px 6px rgba(0,0,0,.25);font-size:22px;line-height:1;color:var(--ink);cursor:pointer}
+    .sheet .pop .eyebrow{padding-right:40px}
+    .sheet .pics{margin:8px -16px 10px;padding:0 16px 2px;gap:8px}
+    .sheet .pics figure{width:78vw;max-width:320px}
+    .sheet .pics img{height:170px;border-radius:12px}
+    body.sheet-open .legend,body.sheet-open .leaflet-control-zoom{display:none}
+    body.sheet-open .card .zoomto,body.sheet-open .card .brand p{display:none}
+  }
 
   /* ---------- pins ---------- */
   .pin{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;padding:5px 9px;border-radius:999px;background:var(--c);color:#fff;font:600 12px/1 var(--sans);font-variant-numeric:tabular-nums;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.25),0 4px 12px rgba(0,0,0,.14);transition:transform .15s ease;cursor:pointer}
@@ -151,6 +165,8 @@
     <div class="zoomto"><button id="overview" type="button">Whole trip</button><button data-r="Bohol" type="button">Bohol</button><button data-r="El Nido" type="button">El Nido</button><button data-r="TAO" type="button">TAO</button><button data-r="Coron" type="button">Coron</button></div>
   </div>
 </div>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-label="Day details"><button class="x" type="button" aria-label="Close">×</button><div class="sheet-body"></div></div>
 
 <nav class="daybar" aria-label="Day by day">
   <button class="step" id="prevDay" type="button" aria-label="Previous day">‹</button>
@@ -245,6 +261,7 @@ Object.entries(AIRPORTS).forEach(([code, a]) => {
 });
 
 /* ---------- day pins ---------- */
+const MOBILE = matchMedia("(max-width:600px)").matches;
 const TOPPAD = Math.round((document.querySelector(".card")?.getBoundingClientRect().bottom || 140) + 14);
 const markers = {};
 let activeDay = null;
@@ -255,6 +272,7 @@ function popupHTML(d) {
   return `<div class="pop" style="--c:${COLORS[d.region]}">
     <div class="eyebrow"><i></i>Day ${dayNum(d)} · ${d.dow} ${d.mon || MONTH} ${d.date} · ${esc(d.region)}</div>
     <h3>${esc(d.title)}</h3>
+    ${picsHTML(d)}
     ${d.lede ? `<p>${esc(d.lede)}</p>` : ""}
     <ul>${d.plan.map(([w, t]) => `<li><span>${esc(w)}</span>${esc(t)}</li>`).join("")}</ul>
     <div class="facts">
@@ -262,7 +280,6 @@ function popupHTML(d) {
       <div><b>Sleeping</b>${esc(stayText(d.stay, d))}</div>
     </div>
     ${d.tip ? `<p class="tip">${esc(d.tip)}</p>` : ""}
-    ${picsHTML(d)}
     ${photosHTML(d)}
     <a class="more" href="itinerary.html#day-${d.date}">Read in full itinerary →</a>
   </div>`;
@@ -284,7 +301,8 @@ function setActive(date) {
 pinned.forEach(d => {
   const icon = L.divIcon({ className: "", html: `<div class="pin" style="--c:${COLORS[d.region]}">${d.mon || MONTH} ${d.date}</div>`, iconSize: null, popupAnchor: [0, -14] });
   const m = L.marker(d.pin, { icon, title: `${d.mon || MONTH} ${d.date}: ${d.title}`, riseOnHover: true }).addTo(map);
-  m.bindPopup(popupHTML(d), { maxWidth: 360, autoPanPaddingTopLeft: [20, TOPPAD], autoPanPaddingBottomRight: [20, 110] });
+  if (MOBILE) m.on("click", () => openSheet(d));
+  else m.bindPopup(popupHTML(d), { maxWidth: 360, autoPanPaddingTopLeft: [20, TOPPAD], autoPanPaddingBottomRight: [20, 110] });
   m.bindTooltip(`${d.mon || MONTH} ${d.date} · ${esc(d.title)}`, { direction: "top", offset: [0, -16] });
   m.on("popupopen", () => { m.closeTooltip(); setActive(d.date); document.body.classList.add("popup-open"); history.replaceState(null, "", "#day-" + d.date); });
   m.on("popupclose", () => { if (activeDay === d.date) { setActive(null); document.body.classList.remove("popup-open"); history.replaceState(null, "", location.pathname); } });
@@ -324,7 +342,7 @@ function openFromHash() {
   const mk = m && markers[+m[1]];
   if (!mk) return;
   map.setView(mk.getLatLng(), 11, { animate: false }); updateDetail();
-  setTimeout(() => mk.openPopup(), 150);
+  setTimeout(() => MOBILE ? openSheet(DAYS.find(d => +d.date === +m[1] && d.pin)) : mk.openPopup(), 150);
 }
 openFromHash();
 
@@ -348,6 +366,17 @@ function goDay(i) {
   i = Math.max(0, Math.min(DAYS.length - 1, i));
   const d = DAYS[i];
   map.closePopup();
+  if (MOBILE) {
+    openSheet(d, true);
+    const at = d.pin || AIRPORTS.MNL.at, z = d.pin ? Math.max(map.getZoom(), d.region === "TAO" ? 9 : 11) : 6;
+    // put the pin in the gap between the top card and the sheet
+    const top = document.querySelector(".card").getBoundingClientRect().bottom, bottom = sheet.getBoundingClientRect().top;
+    const off = window.innerHeight / 2 - (top + bottom) / 2;
+    const center = map.unproject(map.project(at, z).add([0, off]), z);
+    map.flyTo(center, z, { duration: 0.6 });
+    map.once("moveend", () => { updateDetail(); setActive(d.date); });
+    return;
+  }
   if (d.pin && markers[d.date]) {
     const z = Math.max(map.getZoom(), d.region === "TAO" ? 9 : 11);
     map.flyTo(d.pin, z, { duration: 0.7 });
@@ -373,6 +402,29 @@ document.addEventListener("keydown", e => {
   if (e.key === "ArrowLeft") { e.preventDefault(); goDay(cur < 0 ? 0 : cur - 1); }
 });
 syncBar(activeDay); document.getElementById("prevDay").disabled = true;
+
+/* ---------- phone: bottom sheet instead of popups ---------- */
+const sheet = document.getElementById("sheet"), sheetBody = sheet.querySelector(".sheet-body");
+function focusPin(ll) {
+  if (!MOBILE || sheet.hidden) return;
+  const top = document.querySelector(".card").getBoundingClientRect().bottom, bottom = sheet.getBoundingClientRect().top;
+  const pt = map.latLngToContainerPoint(ll);
+  map.panBy([pt.x - window.innerWidth / 2, pt.y - (top + bottom) / 2], { animate: true, duration: 0.3 });
+}
+function openSheet(d, noFocus) {
+  if (!d) return;
+  sheetBody.innerHTML = popupHTML(d); sheet.hidden = false; sheetBody.scrollTop = 0;
+  document.body.classList.add("popup-open", "sheet-open");
+  setActive(d.date); history.replaceState(null, "", "#day-" + d.date);
+  if (d.pin && !noFocus) requestAnimationFrame(() => focusPin(d.pin));
+}
+function closeSheet() {
+  if (sheet.hidden) return;
+  sheet.hidden = true; document.body.classList.remove("popup-open", "sheet-open");
+  setActive(null); history.replaceState(null, "", location.pathname);
+}
+sheet.querySelector(".x").addEventListener("click", closeSheet);
+if (MOBILE) map.on("click", closeSheet);
 </script>
 </body>
 </html>
