@@ -422,14 +422,14 @@ const ACCOM = [
   { id: "panglao-1", area: "Panglao", region: "Bohol", from: "2026-11-15", to: "2026-11-17", picks: "pgl",
     note: "",
     options: [
-      { id: "bluewater-panglao", name: "Bluewater Panglao Beach Resort", where: "Dumaluan Beach", rating: "8.7 · 1,272 reviews (Kayak)", why: "Quiet Dumaluan Beach", url: bk("Bluewater Panglao Beach Resort", "2026-11-15", "2026-11-17"), live: true, booked: { total: 227.92, nights: 2, room: "Deluxe Room, two beds" } },
+      { id: "bluewater-panglao", name: "Bluewater Panglao Beach Resort", address: "Sitio Daurong, Danao, Panglao Island, Bohol", where: "Danao, Panglao", rating: "8.7 · 1,272 reviews (Kayak)", why: "Quiet, big lagoon pools", url: bk("Bluewater Panglao Beach Resort", "2026-11-15", "2026-11-17"), live: true, booked: { total: 227.92, nights: 2, room: "Deluxe Room, two beds" } },
       { id: "bathala", name: "Bathala Resort", where: "Panglao", why: "No price found yet", url: bk("Bathala Resort Panglao", "2026-11-15", "2026-11-17"), live: true },
       { id: "henann-alona", name: "Henann Resort Alona Beach", where: "Alona Beach", rating: "9.1 · 592 reviews (Trip.com)", why: "Trip.com average ~C$449/night, not for our dates", url: bk("Henann Resort Alona Beach", "2026-11-15", "2026-11-17"), live: true }
     ] },
   { id: "loboc", area: "Loboc", region: "Bohol", from: "2026-11-17", to: "2026-11-19",
     note: "Water to Forest booked. Close to the Chocolate Hills and EAT Danao.",
     options: [
-      { id: "water-forest", name: "Water to Forest Ecolodge", where: "Loboc riverside jungle", rating: "4.5 · 195 reviews (Google)", why: "Eco-lodge",
+      { id: "water-forest", name: "Water to Forest Ecolodge", address: "Valladolid, Loboc, 6316 Bohol", where: "Loboc riverside jungle", rating: "4.5 · 195 reviews (Google)", why: "Eco-lodge",
         url: bk("Water to Forest Ecolodge Loboc", "2026-11-17", "2026-11-19"), live: true,
         booked: { total: 77.40, nights: 2, room: "Single bed in 6-bed Partitioned Dormitory Room" } },
       { id: "fox-firefly", name: "Fox & The Firefly Cottages", where: "Loboc River, near the wharf", rating: "4.5 · 624 reviews", why: "Looks the nicest", nightly: "fox-firefly", full: true,
@@ -441,13 +441,13 @@ const ACCOM = [
   { id: "panglao-2", area: "Panglao", region: "Bohol", from: "2026-11-19", to: "2026-11-20", picks: "pgl",
     note: "Back on Panglao for the sardines and the 10:30 flight.",
     options: [
-      { id: "bluewater-panglao-19", name: "Bluewater Panglao Beach Resort", where: "Dumaluan Beach", rating: "8.7 · 1,272 reviews (Kayak)",
+      { id: "bluewater-panglao-19", name: "Bluewater Panglao Beach Resort", address: "Sitio Daurong, Danao, Panglao Island, Bohol", where: "Danao, Panglao", rating: "8.7 · 1,272 reviews (Kayak)",
         url: bk("Bluewater Panglao Beach Resort", "2026-11-19", "2026-11-20"), live: true, booked: { total: 97.56, nights: 1, room: "Deluxe Room, two beds" } }
     ] },
   { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-24", picks: "eni",
     note: "",
     options: [
-      { id: "happiness", name: "Happiness Boutique Resort El Nido", where: "El Nido", rating: "",
+      { id: "happiness", name: "Happiness Boutique Resort El Nido", address: "Sitio Lugadia, Brgy. Corong Corong, El Nido, 5313 Palawan", where: "El Nido", rating: "",
         url: bk("Happiness Boutique Resort El Nido", "2026-11-20", "2026-11-24"), live: true,
         booked: { total: 532.96, nights: 4, room: "1 × Premier King Room" } },
       { id: "calathea", name: "Calathea Suites", where: "El Nido", rating: "4.5 · Google",
@@ -462,7 +462,7 @@ const ACCOM = [
   { id: "coron", area: "Coron", region: "Coron", from: "2026-11-28", to: "2026-12-01", picks: "crn",
     note: "",
     options: [
-      { id: "fernvale", name: "Fernvale Leisure Club and Resort", where: "Coron", rating: "4.0 · Google",
+      { id: "fernvale", name: "Fernvale Leisure Club and Resort", address: "Acacia Ave, Coron, 5316 Palawan", where: "Coron", rating: "4.0 · Google",
         url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-28", "2026-12-01"), live: true, booked: { total: 278.71, nights: 3, dates: "Nov 28–Dec 1", room: "Standard Triple Room" } }
     ] }
 ];
@@ -521,10 +521,10 @@ const PICS = {
  ],
  "19": [
   [
-   "images/days/sardine-run.jpg",
-   "Sardine run (this one at Moalboal, Cebu; same at Napaling)",
-   "Iampjanz · CC BY-SA 4.0",
-   "https://commons.wikimedia.org/wiki/File:Sardine_run_over_seafloor_in_Moalboal_01.jpg"
+   "images/days/napaling-reef.jpg",
+   "Napaling Reef sardines",
+   "Photo: Klook",
+   "https://www.klook.com/"
   ],
   [
    "images/days/hinagdanan-1.jpg",
