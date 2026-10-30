@@ -1,26 +1,38 @@
 {
   "note": "Commons search terms per photo key. The Fetch photos workflow saves candidates to images/cand/ for review.",
-  "perTerm": 4,
+  "perTerm": 8,
   "items": [
     [
-      "sardine-1",
-      "Napaling Panglao"
+      "nap-a",
+      "Napaling -MNHN"
     ],
     [
-      "sardine-2",
-      "sardine run Philippines"
+      "nap-b",
+      "Napaling Reef"
     ],
     [
-      "sardine-3",
-      "Sardinella school Philippines"
+      "nap-c",
+      "Napaling Point Panglao"
     ],
     [
-      "sardine-4",
-      "sardines Moalboal"
+      "nap-d",
+      "Panglao sardines"
     ],
     [
-      "sardine-5",
-      "Panglao reef snorkeling"
+      "nap-e",
+      "Sardines Panglao Bohol"
+    ],
+    [
+      "nap-f",
+      "Tawala Panglao"
+    ],
+    [
+      "nap-g",
+      "Panglao Island cliff diving"
+    ],
+    [
+      "nap-h",
+      "Napaling Bohol"
     ]
   ]
 }
