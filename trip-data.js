@@ -419,12 +419,12 @@ const bookingSearch = p => `https://www.booking.com/searchresults.html?ss=${enco
 const bk = (q, a, b) => `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(q)}&checkin=${a}&checkout=${b}&group_adults=2&no_rooms=1&group_children=0`;
 const bkHotel = (slug, a, b) => `https://www.booking.com/hotel/ph/${slug}.html?checkin=${a}&checkout=${b}&group_adults=2&no_rooms=1&group_children=0`;
 const ACCOM = [
-  { id: "panglao-1", area: "Panglao", region: "Bohol", from: "2026-11-15", to: "2026-11-17", picks: "pgl", looking: true,
-    note: "Still looking for Panglao.", noteBold: true,
+  { id: "panglao-1", area: "Panglao", region: "Bohol", from: "2026-11-15", to: "2026-11-17", picks: "pgl",
+    note: "",
     options: [
+      { id: "bluewater-panglao", name: "Bluewater Panglao Beach Resort", where: "Dumaluan Beach", rating: "8.7 · 1,272 reviews (Kayak)", why: "Quiet Dumaluan Beach", url: bk("Bluewater Panglao Beach Resort", "2026-11-15", "2026-11-17"), live: true, booked: { total: 227.92, nights: 2, room: "Deluxe Room, two beds" } },
       { id: "bathala", name: "Bathala Resort", where: "Panglao", why: "No price found yet", url: bk("Bathala Resort Panglao", "2026-11-15", "2026-11-17"), live: true },
-      { id: "henann-alona", name: "Henann Resort Alona Beach", where: "Alona Beach", rating: "9.1 · 592 reviews (Trip.com)", why: "Trip.com average ~C$449/night, not for our dates", url: bk("Henann Resort Alona Beach", "2026-11-15", "2026-11-17"), live: true },
-      { id: "bluewater-panglao", name: "Bluewater Panglao Beach Resort", where: "Dumaluan Beach", rating: "8.7 · 1,272 reviews (Kayak)", why: "Kayak: from ~US$51, usually US$70–85/night, not for our dates", url: bk("Bluewater Panglao Beach Resort", "2026-11-15", "2026-11-17"), live: true }
+      { id: "henann-alona", name: "Henann Resort Alona Beach", where: "Alona Beach", rating: "9.1 · 592 reviews (Trip.com)", why: "Trip.com average ~C$449/night, not for our dates", url: bk("Henann Resort Alona Beach", "2026-11-15", "2026-11-17"), live: true }
     ] },
   { id: "loboc", area: "Loboc", region: "Bohol", from: "2026-11-17", to: "2026-11-19",
     note: "Water to Forest booked. Close to the Chocolate Hills and EAT Danao.",
@@ -438,9 +438,11 @@ const ACCOM = [
       { id: "stefanie-grace", name: "Stefanie Grace Inn", where: "Loboc", rating: "4.4 · 398 reviews", why: "Outdoor pool",
         url: bk("Stefanie Grace Inn Loboc Bohol", "2026-11-17", "2026-11-19"), live: true }
     ] },
-  { id: "panglao-2", area: "Panglao", region: "Bohol", from: "2026-11-19", to: "2026-11-20", picks: "pgl", looking: true,
-    note: "Still looking for Panglao. Back here for the sardines and the 10:30 flight.", noteBold: true,
+  { id: "panglao-2", area: "Panglao", region: "Bohol", from: "2026-11-19", to: "2026-11-20", picks: "pgl",
+    note: "Back on Panglao for the sardines and the 10:30 flight.",
     options: [
+      { id: "bluewater-panglao-19", name: "Bluewater Panglao Beach Resort", where: "Dumaluan Beach", rating: "8.7 · 1,272 reviews (Kayak)",
+        url: bk("Bluewater Panglao Beach Resort", "2026-11-19", "2026-11-20"), live: true, booked: { total: 97.56, nights: 1, room: "Deluxe Room, two beds" } }
     ] },
   { id: "el-nido", area: "El Nido", region: "El Nido", from: "2026-11-20", to: "2026-11-24", picks: "eni",
     note: "",
