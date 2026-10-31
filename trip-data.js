@@ -656,6 +656,20 @@ const PICS = {
    "Patrickroque01 · CC BY-SA 4.0",
    "https://commons.wikimedia.org/wiki/File:Coron_town_proper_skyline_sea_view_(Coron,_Palawan;_03-16-2024).jpg"
   ]
+ ],
+ "18": [
+  [
+   "images/days/danao-b-2.jpg",
+   "EAT Danao zipline over the gorge",
+   "Boholmission · CC BY-SA 3.0",
+   "https://commons.wikimedia.org/wiki/File:Danao_Adventure_Park_2.jpg"
+  ],
+  [
+   "images/days/danao-b-3.jpg",
+   "Wahig River canyon, EAT Danao",
+   "Boholmission · CC BY-SA 3.0",
+   "https://commons.wikimedia.org/wiki/File:Danao_Adventure_Park.jpg"
+  ]
  ]
 };
 
