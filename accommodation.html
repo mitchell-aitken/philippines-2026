@@ -320,6 +320,7 @@
 
 <script>document.write('<script src="trip-data.js?v=' + Date.now() + '"><\/script>');</script>
 <script>
+const mapUrl = o => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.name + ", " + o.address)}${o.placeId ? "&query_place_id=" + o.placeId : ""}`;
 const money = (n, c = 0) => "C$" + n.toLocaleString("en-CA", { minimumFractionDigits: c, maximumFractionDigits: c });
 const perNightOf = (o, n) => { if (o._splitTotal) return o._splitTotal / n; if (o.est && !o.booked && !LIVE[o.id]?.two?.cheapest) return o.est.perNight; if (o.booked) return o.booked.total / o.booked.nights; const c = LIVE[o.id]?.two?.cheapest;
   if (c) return c.total != null ? c.total / n : c.perNight; return o.seen ? o.seen.total / o.seen.nights : null; };
@@ -390,7 +391,7 @@ function optHTML(o, b) {
     <div class="opt-top"><a href="${esc(site || o.url)}" ${rel}>${esc(o.name)}</a>
       ${o.booked ? `<span class="tag ${o.booked.cancellable ? "maybe" : "ok"}">${o.booked.change ? "Booked · change dates" : o.booked.cancellable ? "Booked · cancellable" : "✓ Booked"}</span>` : ""}${o.preferred ? `<span class="tag pref">Preferred</span>` : ""}${o.full ? `<span class="tag maybe">${o._splitTotal ? "Switch rooms" : "Check booking"}</span>` : ""}${soldOut ? `<span class="tag out">Sold out</span>` : ""}</div>
     <small>${esc([o.where, o.rating && "★ " + o.rating, o.why].filter(Boolean).join(" · "))}</small>
-    ${o.address ? `<div class="room"><b>Address</b><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.name + ", " + o.address)}" ${rel}>${esc(o.address)} ↗</a></div>` : ""}
+    ${o.address ? `<div class="room"><b>Address</b><a class="maplink" href="${mapUrl(o)}" ${rel}>${esc(o.address)} ↗</a></div>` : ""}
     ${o.booked?.room ? `<div class="room"><b>Room</b>${esc(o.booked.room)}${o.booked.cancelBy ? ` · <span class="cxl${o.booked.urgent ? " urgent" : ""}">${o.booked.urgent ? `Cancel by ${esc(o.booked.cancelBy)}!` : `free cancellation before ${esc(o.booked.cancelBy)}`}</span>` : ""}</div>` : ""}
     <div class="prices">${web}${P.join("")}</div>${!o._splitTotal && o.roomPlan ? `<div class="split">${o.roomPlan.map(([d, r, bed]) => `<div><b>${esc(d)}</b> ${esc(r)} · <span class="bed">${esc(bed)}</span></div>`).join("")}<p>Switch rooms on Nov 18 if we want the Deluxe. No twin beds in either: both have one queen.</p></div>` : split}${also}</div>`;
 }
@@ -400,7 +401,7 @@ function render() {
   const openMore = new Set([...document.querySelectorAll("details.more[open]")].map(d => d.dataset.b));
   // confirmed stays, at a glance
   const conf = ACCOM.filter(b => !b.tao).flatMap(b => b.options.filter(o => o.booked).map(o => ({ b, o })));
-  document.getElementById("confirmed").innerHTML = conf.length ? `<h2>Booked</h2><ul>${conf.map(({ b, o }) => `<li><div class="row"><a class="d" href="#${b.id}">${esc(accomRange(b))}</a><span class="n"><a class="nm" href="#${b.id}"><b>${esc(o.name)}</b></a><small>${esc(b.area)}${o.booked.room ? " · " + esc(o.booked.room) : ""}</small>${o.address ? `<a class="addr" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.name + ", " + o.address)}" target="_blank" rel="noopener">${esc(o.address)} ↗</a>` : ""}</span><span class="p"><b>${money(o.booked.total / 2, 2)}</b> each${o.booked.cancellable ? `<small>cancellable${o.booked.cancelBy ? " until " + esc(o.booked.cancelBy) : ""}</small>` : `<small>${money(o.booked.total, 2)} for both</small>`}</span></div></li>`).join("")}</ul>` : "";
+  document.getElementById("confirmed").innerHTML = conf.length ? `<h2>Booked</h2><ul>${conf.map(({ b, o }) => `<li><div class="row"><a class="d" href="#${b.id}">${esc(accomRange(b))}</a><span class="n"><a class="nm" href="#${b.id}"><b>${esc(o.name)}</b></a><small>${esc(b.area)}${o.booked.room ? " · " + esc(o.booked.room) : ""}</small>${o.address ? `<a class="addr" href="${mapUrl(o)}" target="_blank" rel="noopener">${esc(o.address)} ↗</a>` : ""}</span><span class="p"><b>${money(o.booked.total / 2, 2)}</b> each${o.booked.cancellable ? `<small>cancellable${o.booked.cancelBy ? " until " + esc(o.booked.cancelBy) : ""}</small>` : `<small>${money(o.booked.total, 2)} for both</small>`}</span></div></li>`).join("")}</ul>` : "";
   const groups = [...new Set(ACCOM.map(b => b.region))];
   document.getElementById("blocks").innerHTML = groups.map(g => {
     const bs = ACCOM.filter(b => b.region === g);

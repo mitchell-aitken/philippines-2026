@@ -3,36 +3,24 @@
   "perTerm": 8,
   "items": [
     [
-      "nap-a",
-      "Napaling -MNHN"
+      "danao-a",
+      "EAT Danao"
     ],
     [
-      "nap-b",
-      "Napaling Reef"
+      "danao-b",
+      "Danao Adventure Park"
     ],
     [
-      "nap-c",
-      "Napaling Point Panglao"
+      "danao-c",
+      "Wahig River Danao"
     ],
     [
-      "nap-d",
-      "Panglao sardines"
+      "danao-d",
+      "Danao Bohol zipline"
     ],
     [
-      "nap-e",
-      "Sardines Panglao Bohol"
-    ],
-    [
-      "nap-f",
-      "Tawala Panglao"
-    ],
-    [
-      "nap-g",
-      "Panglao Island cliff diving"
-    ],
-    [
-      "nap-h",
-      "Napaling Bohol"
+      "danao-e",
+      "Danao Bohol river"
     ]
   ]
 }
