@@ -52,6 +52,48 @@
         "price": 1560.12,
         "date": "2026-10-13",
         "note": ""
+      },
+      "segments": {
+        "out": [
+          {
+            "flight": "WS 127",
+            "from": "Calgary",
+            "dep": "Fri Nov 13 19:10",
+            "to": "Vancouver",
+            "arr": "19:55"
+          },
+          {
+            "layover": "4 h layover in Vancouver",
+            "note": "Bags are checked through to Manila: don't pick them up. Follow “International Connections”, scan your boarding pass at the e-gate. No new security line."
+          },
+          {
+            "flight": "PR 117",
+            "from": "Vancouver",
+            "dep": "23:55",
+            "to": "Manila",
+            "arr": "Sun Nov 15 05:30"
+          }
+        ],
+        "ret": [
+          {
+            "flight": "PR 116",
+            "from": "Manila",
+            "dep": "Tue Dec 1 21:05",
+            "to": "Vancouver",
+            "arr": "Tue Dec 1 18:00"
+          },
+          {
+            "layover": "2 h 30 m layover in Vancouver",
+            "note": "You clear Canada customs here. If bags are tagged to Calgary, don't collect them: follow “Connections” on Level 4, scan your boarding pass, do the customs kiosk, then a short security check. Ask at Manila check-in to tag bags through to YYC."
+          },
+          {
+            "flight": "WS 126",
+            "from": "Vancouver",
+            "dep": "20:30",
+            "to": "Calgary",
+            "arr": "23:00"
+          }
+        ]
       }
     },
     {

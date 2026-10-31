@@ -176,6 +176,13 @@
     header .nav3 a{flex:1;text-align:center}
   }
   .warn-t{color:#9A3412;font-weight:500}
+  .segs{list-style:none;margin:6px 0 2px;padding:0;display:grid;gap:6px}
+  .segs li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:13.5px;color:var(--ink)}
+  .segs li b{font-weight:600}
+  .segs .fl{font:500 11px/1.4 var(--mono);color:var(--muted);min-width:46px}
+  .segs li.lay{display:block;margin-left:10px;padding:6px 10px;border-left:3px solid var(--gold);background:#FFFBEA;border-radius:0 8px 8px 0;font-size:13px}
+  .segs li.lay b{display:block;color:#7A5B00}
+  .segs li.lay span{color:var(--ink-2)}
 </style>
 </head>
 <body>
@@ -340,6 +347,14 @@ function render(cfg, live) {
     return links.length ? `<span class="book">Book: ${links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join("")}</span>` : "";
   };
   const stepIds = ["intl-mnl", "mnl-tag", "tag-eni", "tao", "usu-crk", "crk-mnl", "intl-mnl"];
+  // Calgary ⇄ Manila: each flight and the Vancouver layover
+  const segHTML = list => `<ol class="segs">${list.map(s => s.layover
+    ? `<li class="lay"><b>${esc(s.layover)}</b><span>${esc(s.note)}</span></li>`
+    : `<li><span class="fl">${esc(s.flight)}</span><b>${esc(s.from)} ${esc(s.dep)} → ${esc(s.to)} ${esc(s.arr)}</b></li>`).join("")}</ol>`;
+  if (intl.segments) {
+    steps[0] = steps[0].replace(/<b>[\s\S]*?<\/b><small>[\s\S]*?<\/small>/, `<b>Calgary → Vancouver → Manila</b><small>${segHTML(intl.segments.out)}</small>`);
+    steps[6] = steps[6].replace(/<b>[\s\S]*?<\/b><small>[\s\S]*?<\/small>/, `<b>Manila → Vancouver → Calgary</b><small>${segHTML(intl.segments.ret)}</small>`);
+  }
   stepIds.forEach((id, n) => { steps[n] = steps[n].replace("</small></div>", `</small>${bookHTML(id)}</div>`); });
   document.getElementById("plan").innerHTML = `
     <div class="plan-head">

@@ -17,8 +17,9 @@ const DAYS = [
     title: "Leave Calgary",
     lede: "",
     plan: [
-      ["19:10", "WS 127 Calgary → Vancouver"],
-      ["00:05", "PR 117 Vancouver → Manila, overnight"],
+      ["19:10", "WS 127 Calgary → Vancouver, lands 19:55"],
+      ["Layover", "4 h in Vancouver, bags go through"],
+      ["23:55", "PR 117 Vancouver → Manila, overnight"],
     ],
     move: "20 h 20 m · 1 stop · booked",
     stay: null,
