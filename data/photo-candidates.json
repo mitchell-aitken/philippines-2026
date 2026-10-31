@@ -1,0 +1,58 @@
+{
+  "danao-a": [],
+  "danao-b": [
+    {
+      "file": "images/cand/danao-b-1.jpg",
+      "title": "File:Danao Adventure Park 3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Danao_Adventure_Park_3.jpg",
+      "artist": "Boholmission",
+      "license": "CC BY-SA 3.0",
+      "desc": "lookout view"
+    },
+    {
+      "file": "images/cand/danao-b-2.jpg",
+      "title": "File:Danao Adventure Park 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Danao_Adventure_Park_2.jpg",
+      "artist": "Boholmission",
+      "license": "CC BY-SA 3.0",
+      "desc": "Zip line"
+    },
+    {
+      "file": "images/cand/danao-b-3.jpg",
+      "title": "File:Danao Adventure Park.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Danao_Adventure_Park.jpg",
+      "artist": "Boholmission",
+      "license": "CC BY-SA 3.0",
+      "desc": "View of valley used for zipline and big swing."
+    }
+  ],
+  "danao-c": [],
+  "danao-d": [
+    {
+      "file": "images/cand/danao-d-1.jpg",
+      "title": "File:Danao Adventure Park.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Danao_Adventure_Park.jpg",
+      "artist": "Boholmission",
+      "license": "CC BY-SA 3.0",
+      "desc": "View of valley used for zipline and big swing."
+    }
+  ],
+  "danao-e": [
+    {
+      "file": "images/cand/danao-e-1.jpg",
+      "title": "File:A pronouncing gazetteer and geographical dictionary of the Philippine Islands, United States of America with maps, charts and illustrations (1902) (14591562739).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A_pronouncing_gazetteer_and_geographical_dictionary_of_the_Philippine_Islands,_United_States_of_America_with_maps,_charts_and_illustrations_(1902)_(14591562739).jpg",
+      "artist": "Internet Archive Book Images",
+      "license": "No restrictions",
+      "desc": "Identifier: pronouncinggazet00unitrich (find matches) Title: A pronouncing gazetteer and geographical dictionary of the Philippine Islands, United States of America with maps, charts and illustrations"
+    },
+    {
+      "file": "images/cand/danao-e-2.jpg",
+      "title": "File:A pronouncing gazetteer and geographical dictionary of the Philippine Islands, United States of America with maps, charts and illustrations (1902) (14778254885).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A_pronouncing_gazetteer_and_geographical_dictionary_of_the_Philippine_Islands,_United_States_of_America_with_maps,_charts_and_illustrations_(1902)_(14778254885).jpg",
+      "artist": "Internet Archive Book Images",
+      "license": "No restrictions",
+      "desc": "PORT OF BIKOBIANFrom a Spanish Government Survey 1859Anbarede Pt. Lat 17°15'20\"N Long 122°24'0\"E approx. Identifier: pronouncinggazet00unitrich (find matches) Title: A pronouncing gazetteer and geogra"
+    }
+  ]
+}
