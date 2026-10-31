@@ -183,6 +183,25 @@
   .segs li.lay{display:block;margin-left:10px;padding:6px 10px;border-left:3px solid var(--gold);background:#FFFBEA;border-radius:0 8px 8px 0;font-size:13px}
   .segs li.lay b{display:block;color:#7A5B00}
   .segs li.lay span{color:var(--ink-2)}
+  .fstats{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:14px}
+  .fstats div{display:flex;flex-direction:column}
+  .fstats b{font-size:20px;color:#fff;font-variant-numeric:tabular-nums}
+  .fstats span{font:500 11px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.75)}
+  .trip{margin-top:16px;border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fff}
+  .trip-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+  .trip-head .when{font:500 12px/1.2 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;width:100%}
+  .trip-head h2{margin:0;font-size:21px;letter-spacing:-.01em}
+  .trip-head .tnote{color:var(--muted);font-size:13.5px}
+  .trip-head .ok{margin-left:auto;font:600 10.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 8px;border-radius:6px;background:var(--green-bg);color:var(--green)}
+  ol.flights{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+  ol.flights li.f{display:grid;grid-template-columns:72px minmax(150px,auto) 24px auto;justify-content:start;align-items:baseline;gap:8px;font-size:15px}
+  ol.flights .num{font:500 12px/1.4 var(--mono);color:var(--muted)}
+  ol.flights .t b{font-size:17px;font-variant-numeric:tabular-nums;margin-right:4px}
+  ol.flights .arrow{color:var(--muted)}
+  ol.flights li.gap{margin-left:72px;padding:3px 10px;border-left:3px solid var(--gold);color:#7A5B00;font-size:13px;background:#FFFBEA;border-radius:0 6px 6px 0}
+  .trip-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .trip-foot b{color:var(--ink)}
+  @media (max-width:560px){ol.flights li.f{grid-template-columns:1fr 14px 1fr}ol.flights .num{grid-column:1/-1}ol.flights li.gap{margin-left:0}ol.flights .t b{font-size:16px}}
 </style>
 </head>
 <body>
@@ -202,220 +221,44 @@
   <section class="intro hero-band">
     <div class="eyebrow">Nov 13 – Dec 1 · per person · CAD</div>
     <h1>Flights</h1>
-    <div class="status" id="status"><i></i><span>Loading prices…</span></div>
+    <div class="fstats" id="fstats"></div>
   </section>
 
-  <article class="opt-card win plan-card" id="plan"></article>
+  <div id="trips"></div>
 
-  <section class="block">
-    <div class="block-head"><h2>Coron → Manila on travel day</h2><span>Two ways to reach the 21:05 flight home</span></div>
-    <div class="options2" id="options"></div>
-  </section>
-
-  <section class="block">
-    <div class="block-head"><h2>Every flight we found</h2><span>Tap to open</span></div>
-    <div id="all"></div>
-  </section>
-
-  <section class="setup" id="setup" hidden>
-    <h2>Turn on live prices</h2>
-    Live fares come from Google Flights through SerpApi. A GitHub Action checks them every morning.
-    <ol>
-      <li>Get a free key at <a href="https://serpapi.com/users/sign_up" target="_blank" rel="noopener">serpapi.com</a>.</li>
-      <li>Repo <b>Settings → Secrets and variables → Actions → New repository secret</b>, named <code>SERPAPI_KEY</code>.</li>
-      <li><b>Actions → Update flight prices → Run workflow</b>.</li>
-    </ol>
-  </section>
-
-  <footer>Flight prices are live from Google Flights and change daily. TAO and bus times and fares come from the operators; confirm before booking. All prices are per person.</footer>
+  <footer>All flights booked. Prices are what we paid, per person.</footer>
 </main>
 
 <script>
-/* ---------- helpers ---------- */
-const N = 1;
-const fmt = n => "C$" + Math.round(n).toLocaleString("en-CA");
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const money = (n, c = 2) => "C$" + n.toLocaleString("en-CA", { minimumFractionDigits: c, maximumFractionDigits: c });
 const DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const day = iso => { const [y, m, d] = iso.slice(0, 10).split("-").map(Number); const dt = new Date(Date.UTC(y, m - 1, d)); return `${DOW[dt.getUTCDay()]} ${MON[m - 1]} ${d}`; };
 const hm = s => s.slice(11, 16);
-const dur = m => m ? `${Math.floor(m / 60)}h ${String(m % 60).padStart(2, "0")}m` : "";
-const addMin = (t, m) => { const [h, mi] = t.split(":").map(Number); const x = h * 60 + mi + m; return `${String(Math.floor(x / 60)).padStart(2, "0")}:${String(x % 60).padStart(2, "0")}`; };
-const via = o => o.stops ? `${o.stops} stop${o.stops > 1 ? "s" : ""} via ${o.via.join(", ")}` : "Nonstop";
+const CITY = { YYC: "Calgary", YVR: "Vancouver", MNL: "Manila", TAG: "Panglao", ENI: "El Nido", USU: "Coron", CRK: "Clark" };
 
-function fitWindow(f, o) {
-  if (!f) return null;
-  if (f.departAfter && o.depart < f.departAfter) return { cls: "bad", text: "Leaves too early for the plan" };
-  if (f.arriveBy && o.arrive > f.arriveBy) return { cls: "bad", text: `Lands ${day(o.arrive)} ${hm(o.arrive)}, too late` };
-  return { cls: "ok", text: "Fits the plan" };
-}
-function fitOf(leg, o) {
-  const c = leg.connect;
-  if (!c) return fitWindow(leg.fit, o);
-  const ad = o.arrive.slice(0, 10), at = hm(o.arrive);
-  if (ad < c.date) return { cls: "warn", text: `Lands ${day(ad)}: add a night in Cebu` };
-  if (ad > c.date) return { cls: "bad", text: `Lands ${day(ad)}, a day late` };
-  const t = c.times.find(x => x >= addMin(at, c.gap));
-  if (t) return { cls: "ok", text: `Makes the ${t} ferry`, ferry: t, ferryArr: addMin(t, c.duration) };
-  return { cls: "warn", text: "Too late for a ferry: night in Cebu" };
-}
-/* cheapest option that fits */
-const pick = (list, fn) => (list || []).find(o => fn(o)?.cls === "ok") || null;
-
-/* the outbound + return pair that makes one ticket, and its total price */
-function ticket(leg, l) {
-  if (!l?.options?.length) return null;
-  const same = (o, want) => want && want.every(n => o.flights.includes(n));
-  const out = l.options.find(o => same(o, leg.preferFlights)) || pick(l.options, o => fitOf(leg, o));
-  if (!out) return null;
-  const paired = l.returnFor && l.returnFor.flights.join() === out.flights.join();
-  const ret = paired ? (l.returnOptions.find(o => same(o, leg.preferReturn)) || pick(l.returnOptions, o => fitWindow(leg.returnFit, o))) : null;
-  return { out, ret, price: ret ? ret.price : out.price, fit: fitOf(leg, out) };
-}
-
-/* ---------- load ---------- */
-Promise.all([
-  fetch("data/flight-legs.json", { cache: "no-store" }).then(r => r.json()),
-  fetch("data/flights.json", { cache: "no-store" }).then(r => r.json()).catch(() => ({ legs: {} }))
-]).then(([cfg, live]) => render(cfg, live)).catch(err => {
-  document.getElementById("status").innerHTML = `<i></i><span class="err">Couldn't load prices (${esc(err.message)}).</span>`;
-});
-
-function render(cfg, live) {
+fetch("data/flight-legs.json", { cache: "no-store" }).then(r => r.json()).then(cfg => {
   const L = Object.fromEntries(cfg.legs.map(l => [l.id, l]));
-  const D = live.legs || {};
-
-  const st = document.getElementById("status");
-  if (live.updated) {
-    const d = new Date(live.updated);
-    st.className = "status live";
-    st.innerHTML = `<i></i><span>Live prices · checked ${d.toLocaleDateString("en-CA", { month: "short", day: "numeric" })} at ${d.toLocaleTimeString("en-CA", { hour: "numeric", minute: "2-digit" })}</span>`;
-  } else {
-    st.innerHTML = `<i></i><span>Estimates only · live prices aren't switched on yet</span>`;
-    document.getElementById("setup").hidden = false;
-  }
-
-  const est = leg => (leg.estimate.low + leg.estimate.high) / 2;
-  const legCost = id => {
-    const leg = L[id];
-    if (leg.kind === "flight") {
-      const opts = leg.prefer === "earliest" ? [...(D[id]?.options || [])].sort((x, y) => x.depart.localeCompare(y.depart)) : D[id]?.options;
-      const want = leg.preferFlights;
-      const o = (want && (opts || []).find(x => want.every(n => x.flights.includes(n)))) || pick(opts, x => fitOf(leg, x));
-      if (leg.booked) return { id, o: leg.booked.flight ? { stops: 0, via: [], ...leg.booked.flight } : o, price: leg.booked.price, live: "booked" };
-      return { id, o, price: o ? o.price : est(leg), live: !!o };
-    }
-    return { id, o: null, price: est(leg), live: false };
-  };
-  const step = (k, title, small, price, live) => `<li><span class="k">${k}</span><div><b>${title}</b><small>${small}</small></div>${price != null ? `<div class="sp">${live === "booked" && price === 0 ? "Incl." : fmt(price)}${live === undefined ? "" : `<span class="src ${live === "booked" ? "booked" : live ? "live" : "est"}">${live === "booked" ? "Booked" : live ? "Live" : "Est."}</span>`}</div>` : `<div class="sp"></div>`}</li>`;
-
-  /* ---------- the flights you'll book ---------- */
-  const intl = L["intl-mnl"], t = ticket(intl, D["intl-mnl"]);
-  const mt = legCost("mnl-tag"), te = legCost("tag-eni"), fe = legCost("tao"), uc = legCost("usu-crk"), bus = legCost("crk-mnl"), um = legCost("usu-mnl");
-  const ferryEC = L["tao"].departures[0];
-  const intlPrice = intl.booked ? intl.booked.price : (t ? t.price : est(intl));
-  const total = intlPrice + mt.price + te.price + uc.price + bus.price;
-
-  const steps = [
-    t?.out
-      ? step(day(t.out.depart), `${hm(t.out.depart)} Calgary → Manila ${hm(t.out.arrive)} <span class="tz">Calgary time out · Manila time in</span>`, `${esc(t.out.airlines.join(" + "))} ${esc(t.out.flights.join(" · "))} · ${dur(t.out.minutes)} · ${esc(via(t.out))} · lands ${day(t.out.arrive)}`, intlPrice, intl.booked ? "booked" : true)
-      : step("Fri Nov 13", "19:10 Calgary → Manila 05:30", "WestJet WS 127 + Philippine Airlines PR 117 · via Vancouver", intlPrice, false),
-    mt.o ? step(day(mt.o.depart), `${hm(mt.o.depart)} Manila → Panglao ${hm(mt.o.arrive)}`, `${esc(mt.o.airlines.join(" + "))} ${esc(mt.o.flights.join(" · "))} · separate ticket · move from Terminal 1 to Terminal 3`, mt.price, mt.live)
-         : step("Sun Nov 15", "Manila → Panglao", "Morning Cebu Pacific flight", mt.price, mt.live),
-    te.o ? step(day(te.o.depart), `${hm(te.o.depart)} Bohol → El Nido ${hm(te.o.arrive)}`, `${esc(te.o.airlines.join(" + "))} ${esc(te.o.flights.join(" · "))} · nonstop`, te.price, te.live)
-         : step(day(L["tag-eni"].outbound), "Bohol → El Nido", "Cebgo DG 6886 nonstop, 10:30", te.price, te.live),
-    step("Tue Nov 24", `07:30 El Nido → Coron, lands Sat Nov 28 ~12:00`, `TAO expedition · 4 nights on the boat and basecamps · ${esc(ferryEC.fare)} each, shown on the <a href="accommodation.html#tao">Accommodation</a> page${L["tao"].availability ? ` · <span class="warn-t">${esc(L["tao"].availability)}</span>` : ""}`, null),
-    uc.o ? step(day(uc.o.depart), `${hm(uc.o.depart)} Coron → Clark ${hm(uc.o.arrive)}`, `${esc(uc.o.airlines.join(" + "))} ${esc(uc.o.flights.join(" · "))} · separate ticket · earliest flight, for a safe buffer`, uc.price, uc.live)
-         : step(day(L["usu-crk"].outbound), "Coron → Clark", "Morning nonstop", uc.price, uc.live),
-    step(day(L["crk-mnl"].date), "Bus Clark → Manila airport", "Genesis P2P from Clark Airport, 2–3 hrs", bus.price, false),
-    t?.ret
-      ? step(day(t.ret.depart), `${hm(t.ret.depart)} Manila → Calgary ${hm(t.ret.arrive)} <span class="tz">Manila time out · Calgary time in</span>`, `${esc(t.ret.airlines.join(" + "))} ${esc(t.ret.flights.join(" · "))} · ${dur(t.ret.minutes)} · ${esc(via(t.ret))} · home ${day(t.ret.arrive)}`, null)
-      : step(day(intl.return), "21:05 Manila → Calgary 23:00", "Philippine Airlines + WestJet via Vancouver", null),
+  const flight = (num, from, dep, to, arr) => `<li class="f"><span class="num">${esc(num)}</span><span class="t"><b>${esc(dep)}</b> ${esc(from)}</span><span class="arrow">→</span><span class="t"><b>${esc(arr)}</b> ${esc(to)}</span></li>`;
+  const gap = txt => `<li class="gap">${esc(txt)}</li>`;
+  const segs = list => list.map(s => s.layover ? gap(s.layover) : flight(s.flight, s.from, s.dep.replace(/^[A-Z][a-z]{2} [A-Z][a-z]{2} \d+ /, ""), s.to, s.arr.replace(/^[A-Z][a-z]{2} [A-Z][a-z]{2} \d+ /, ""))).join("");
+  const one = id => { const l = L[id], f = l.booked.flight; return flight(f.flights.join(" · "), CITY[l.from], hm(f.depart), CITY[l.to], hm(f.arrive)); };
+  const intl = L["intl-mnl"], bus = L["crk-mnl"];
+  const trips = [
+    { date: "Fri Nov 13", title: "Calgary → Manila", note: "Lands Sun Nov 15", list: segs(intl.segments.out), paid: `${money(intl.booked.price)} round trip`, air: "WestJet + Philippine Airlines" },
+    { date: "Sun Nov 15", title: "Manila → Panglao", note: "Terminal 1 → Terminal 3", list: one("mnl-tag"), paid: money(L["mnl-tag"].booked.price), air: "Cebu Pacific · 20 kg bag · seats 30A / 30C" },
+    { date: "Fri Nov 20", title: "Panglao → El Nido", list: one("tag-eni"), paid: money(L["tag-eni"].booked.price), air: "Cebgo" },
+    { date: "Tue Dec 1", title: "Coron → Calgary", note: "Home 23:00", list: one("usu-crk") + gap(`P2P bus Clark → Manila airport, 2–3 h · ${bus.departures[0].fare}, pay on board`) + segs(intl.segments.ret), paid: `${money(L["usu-crk"].booked.price)} + round trip`, air: "Cebgo · then Philippine Airlines + WestJet" },
   ];
-  const gf = id => {
-    const leg = L[id];
-    if (D[id]?.googleUrl) return D[id].googleUrl;
-    const q = leg.type === "round" ? `Flights from ${leg.from} to ${leg.to} on ${leg.outbound} through ${leg.return}` : `One way flights from ${leg.from} to ${leg.to} on ${leg.outbound}`;
-    return "https://www.google.com/travel/flights?hl=en&curr=CAD&q=" + encodeURIComponent(q);
-  };
-  const bookHTML = id => {
-    const leg = L[id];
-    if (leg.booked) {
-      const paid = `<span class="book booked-note">✓ Booked ${esc(day(leg.booked.date))}${leg.booked.price ? ` · paid C$${leg.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} ${leg.type === "round" ? "round trip" : "per person"}` : ""}${leg.booked.note ? " · " + esc(leg.booked.note) : ""}</span>`;
-      return paid;
-    }
-    const links = [...(leg.kind === "flight" ? [["Google Flights", gf(id)]] : []), ...(leg.book || [])];
-    return links.length ? `<span class="book">Book: ${links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join("")}</span>` : "";
-  };
-  const stepIds = ["intl-mnl", "mnl-tag", "tag-eni", "tao", "usu-crk", "crk-mnl", "intl-mnl"];
-  // Calgary ⇄ Manila: each flight and the Vancouver layover
-  const segHTML = list => `<ol class="segs">${list.map(s => s.layover
-    ? `<li class="lay"><b>${esc(s.layover)}</b><span>${esc(s.note)}</span></li>`
-    : `<li><span class="fl">${esc(s.flight)}</span><b>${esc(s.from)} ${esc(s.dep)} → ${esc(s.to)} ${esc(s.arr)}</b></li>`).join("")}</ol>`;
-  if (intl.segments) {
-    steps[0] = steps[0].replace(/<b>[\s\S]*?<\/b><small>[\s\S]*?<\/small>/, `<b>Calgary → Vancouver → Manila</b><small>${segHTML(intl.segments.out)}</small>`);
-    steps[6] = steps[6].replace(/<b>[\s\S]*?<\/b><small>[\s\S]*?<\/small>/, `<b>Manila → Vancouver → Calgary</b><small>${segHTML(intl.segments.ret)}</small>`);
-  }
-  stepIds.forEach((id, n) => { steps[n] = steps[n].replace("</small></div>", `</small>${bookHTML(id)}</div>`); });
-  document.getElementById("plan").innerHTML = `
-    <div class="plan-head">
-      <div><div class="eyebrow">Flights</div><h2>Calgary → Manila → Bohol → El Nido → Coron → Clark → Manila → Calgary</h2></div>
-      <div class="price-big"><b>${fmt(total)}</b><span>per person, all flights and the bus</span></div>
-    </div>
-    <div class="clock">
-      <div><span class="eyebrow">Leave Calgary</span><b>${t?.out ? `${day(t.out.depart)} · ${hm(t.out.depart)}` : "Fri Nov 13 · 19:10"}</b><small>Calgary time</small></div>
-      <div><span class="eyebrow">Back in Calgary</span><b>${t?.ret ? `${day(t.ret.arrive)} · ${hm(t.ret.arrive)}` : `${day(intl.return)} · 23:00`}</b><small>Calgary time</small></div>
-    </div>
-    <ul class="steps">${steps.join("")}</ul>
-    <div class="opt-foot"><span>${intl.booked ? `Round trip booked: C$${intl.booked.price.toLocaleString("en-CA", { minimumFractionDigits: 2 })} (WestJet / Philippine Airlines)` : `Round trip ${fmt(intlPrice)} for the WestJet / Philippine Airlines flights${t ? "" : " (estimate)"}`}</span><span>${(() => { const left = [["mnl-tag","Manila → Panglao"],["tag-eni","Bohol → El Nido"],["tao","TAO"],["usu-crk","Coron → Clark"]].filter(([id]) => !L[id].booked).map(([, n]) => n); return left.length ? "Still to book: " + left.join(", ") : "Everything is booked"; })()}</span></div>`;
-
-  /* ---------- Coron → Manila: two ways ---------- */
-  const clarkTotal = uc.price + bus.price;
-  const clarkIn = uc.o ? addMin(hm(uc.o.arrive), 180) : "about 13:00";
-  const lateCebu = (D["usu-mnl"]?.options || []).filter(o => o.arrive.slice(0, 10) === L["usu-mnl"].outbound).sort((a, b) => a.arrive.localeCompare(b.arrive))[0];
-  const cards = [
-    { name: "Fly to Clark, bus to Manila", win: true, price: clarkTotal,
-      rows: [
-        uc.o ? step(hm(uc.o.depart), `Coron → Clark, lands ${hm(uc.o.arrive)}`, `${esc(uc.o.airlines.join(" + "))} ${esc(uc.o.flights.join(" · "))}`, uc.price, uc.live) : step("Morning", "Coron → Clark", "Cebgo or Sunlight Air", uc.price, uc.live),
-        step("+2–3 hrs", "Bus to Manila airport", "Genesis P2P, ₱450", bus.price, false),
-        step("At NAIA", `About ${clarkIn}`, `${uc.o ? "About 8 hours before" : "Hours before"} the 21:05 flight home. Later flights at 12:20–13:20 still make it if this one is cancelled.`, null),
-      ] },
-    { name: "Fly via Cebu", win: false, price: um.o ? um.price : null,
-      rows: um.o
-        ? [step(hm(um.o.depart), `Coron → Manila, lands ${hm(um.o.arrive)}`, `${esc(um.o.airlines.join(" + "))} · ${esc(via(um.o))}`, um.price, true)]
-        : [step(day(L["usu-mnl"].outbound), "Doesn't work the same day", `Every Coron → Cebu → Manila connection found that day leaves Coron in the afternoon${lateCebu ? ` and lands in Manila at ${hm(lateCebu.arrive)} at the earliest` : ""}, after the 21:05 flight home.`, null),
-           step("Day before", "Leave a day early instead", "About C$250–265, plus a hotel night in Manila, and one less day in Coron.", null)] },
-  ];
-  document.getElementById("options").innerHTML = cards.map(c => `
-    <article class="opt-card${c.win ? " win" : ""}">
-      <div class="opt-head"><div><div class="eyebrow">Coron → Manila airport</div><h2>${esc(c.name)}</h2></div>${c.win ? `<span class="badge win">${L["usu-crk"].booked ? "Booked" : "Recommended"}</span>` : '<span class="badge more">Doesn\'t fit</span>'}</div>
-      <div class="price-big"><b>${c.price != null ? (c.win && L["usu-crk"].booked ? "Booked" : fmt(c.price)) : "—"}</b><span>${c.price != null ? "per person" : "no same-day option"}</span></div>
-      <ul class="steps">${c.rows.join("")}</ul>
+  document.getElementById("trips").innerHTML = trips.map(t => `
+    <article class="trip">
+      <div class="trip-head"><span class="when">${esc(t.date)}</span><h2>${esc(t.title)}</h2>${t.note ? `<span class="tnote">${esc(t.note)}</span>` : ""}<span class="ok">✓ Booked</span></div>
+      <ol class="flights">${t.list}</ol>
+      <div class="trip-foot"><span>${esc(t.air)}</span><span>Paid <b>${esc(t.paid)}</b> each</span></div>
     </article>`).join("");
-
-  /* ---------- every flight, collapsed ---------- */
-  const row = (o, fit) => `<li class="row${fit?.cls === "bad" ? " dim" : ""}">
-      <div class="air">${esc(o.airlines.join(" + "))}<small>${esc(o.flights.join(" · "))}</small></div>
-      <div class="t">${day(o.depart)} ${hm(o.depart)} → ${o.arrive.slice(0, 10) !== o.depart.slice(0, 10) ? day(o.arrive) + " " : ""}${hm(o.arrive)}<small>${dur(o.minutes)} · ${esc(via(o))}</small>${fit ? `<span class="fit ${fit.cls}">${esc(fit.text)}</span>` : ""}</div>
-      <div class="p">${fmt(o.price)}</div></li>`;
-  const groups = [
-    ["intl-mnl", "Calgary ⇄ Manila", `Outbound ${day(intl.outbound)}`, `Return ${day(intl.return)}`],
-    ["mnl-tag", `Manila → Panglao · ${day(L["mnl-tag"].outbound)}`],
-    ["tag-eni", `Bohol → El Nido · ${day(L["tag-eni"].outbound)}`],
-    ["usu-crk", `Coron → Clark · ${day(L["usu-crk"].outbound)}`],
-    ["usu-mnl", `Coron → Manila via Cebu · ${day(L["usu-mnl"].outbound)}`],
-  ];
-  document.getElementById("all").innerHTML = groups.map(([id, title, outL, retL]) => {
-    const leg = L[id], l = D[id];
-    if (!l?.options?.length) return `<details><summary>${esc(title)}<span>${l?.error ? "check failed" : "not checked yet"}</span></summary><p class="sub">${esc(l?.error || "No live data yet.")}</p></details>`;
-    let html = outL ? `<div class="sub">${esc(outL)} · prices are for the whole round trip</div>` : "";
-    html += `<ul class="list">${l.options.map(o => row(o, fitOf(leg, o))).join("")}</ul>`;
-    if (l.returnOptions?.length) html += `<div class="sub">${esc(retL)} · with the ${esc(l.returnFor.flights.join(" / "))} outbound</div><ul class="list">${l.returnOptions.map(o => row(o, fitWindow(leg.returnFit, o))).join("")}</ul>`;
-    return `<details><summary>${esc(title)}<span>from ${fmt(l.lowest)}</span></summary>${html}</details>`;
-  }).join("") + `<details><summary>TAO and the Clark bus<span>times</span></summary>
-      ${["tao", "crk-mnl"].map(id => `<div class="sub">${esc(L[id].title)} · ${day(L[id].date)}</div>
-        <ul class="list">${L[id].departures.map(d => `<li class="row"><div class="air">${esc(d.op)}</div><div class="t">${esc(d.dep)} → ${esc(d.arr)}</div><div class="p">${esc(d.fare || "")}</div></li>`).join("")}</ul>`).join("")}
-    </details>`;
-}
+  const total = intl.booked.price + ["mnl-tag", "tag-eni", "usu-crk"].reduce((s, id) => s + L[id].booked.price, 0);
+  document.getElementById("fstats").innerHTML = `<div><b>${money(total, 0)}</b><span>per person, all flights</span></div><div><b>7</b><span>flights booked</span></div><div><b>Fri Nov 13 · 19:10</b><span>leave Calgary</span></div><div><b>Tue Dec 1 · 23:00</b><span>back in Calgary</span></div>`;
+});
 </script>
 </body>
 </html>
