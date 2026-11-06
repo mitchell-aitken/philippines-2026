@@ -63,12 +63,12 @@
             "arr": "19:55"
           },
           {
-            "layover": "4 h layover in Vancouver"
+            "layover": "4 h 10 m layover in Vancouver"
           },
           {
             "flight": "PR 117",
             "from": "Vancouver",
-            "dep": "23:55",
+            "dep": "Sat Nov 14 00:05",
             "to": "Manila",
             "arr": "Sun Nov 15 05:30"
           }
@@ -85,7 +85,7 @@
             "layover": "2 h 30 m layover in Vancouver"
           },
           {
-            "flight": "WS 126",
+            "flight": "PR 3014",
             "from": "Vancouver",
             "dep": "20:30",
             "to": "Calgary",
@@ -198,7 +198,7 @@
       "departures": [
         {
           "op": "TAO Original",
-          "dep": "Tue Nov 24 07:30",
+          "dep": "Tue Nov 24 08:00",
           "arr": "Sat Nov 28 ~12:00",
           "fare": "US$650"
         }

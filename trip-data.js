@@ -18,8 +18,8 @@ const DAYS = [
     lede: "",
     plan: [
       ["19:10", "WS 127 Calgary → Vancouver, lands 19:55"],
-      ["Layover", "4 h in Vancouver, bags go through"],
-      ["23:55", "PR 117 Vancouver → Manila, overnight"],
+      ["Layover", "4 h 10 m in Vancouver, bags go through"],
+      ["00:05", "PR 117 Vancouver → Manila (Sat), overnight"],
     ],
     move: "20 h 20 m · 1 stop · booked",
     stay: null,
@@ -199,7 +199,7 @@ const DAYS = [
     title: "TAO day 1: Beach Farm",
     lede: "",
     plan: [
-      ["07:30", "Meet at the TAO office, Corong-Corong"],
+      ["08:00", "Meet at the TAO office, Corong-Corong"],
       ["Morning", "Van to San Fernando, north El Nido"],
       ["Afternoon", "Daracotan Bay"],
       ["Night", "TAO Beach Farm"],
@@ -382,7 +382,7 @@ const PLACES = [
   { key: "pgl", place: "Bohol", nights: 5, inDate: "2026-11-15", outDate: "2026-11-20", region: "Bohol",
     days: "Sun Nov 15 → Fri Nov 20 (fly out 10:30)", bookingQ: "Panglao, Bohol" },
   { key: "eni", place: "El Nido", nights: 4, inDate: "2026-11-20", outDate: "2026-11-24", region: "El Nido",
-    days: "Fri Nov 20 midday → Tue Nov 24 (TAO 07:30)", bookingQ: "El Nido, Palawan" },
+    days: "Fri Nov 20 midday → Tue Nov 24 (TAO 08:00)", bookingQ: "El Nido, Palawan" },
   { key: "tao", place: "TAO boat", nights: 4, inDate: "2026-11-24", outDate: "2026-11-28", region: "TAO",
     days: "Tue Nov 24 → Sat Nov 28, lands ~noon", bookingQ: "" },
   { key: "crn", place: "Coron", nights: 3, inDate: "2026-11-28", outDate: "2026-12-01", region: "Coron",
@@ -464,7 +464,7 @@ const ACCOM = [
     note: "",
     options: [
       { id: "fernvale", name: "Fernvale Leisure Club and Resort", address: "Acacia Ave, Coron, 5316 Palawan", placeId: "ChIJyUdb92weujMRV1bY18sqmsc", where: "Coron", rating: "4.0 · Google",
-        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-28", "2026-12-01"), live: true, booked: { total: 278.71, nights: 3, dates: "Nov 28–Dec 1", room: "Standard Triple Room" } }
+        url: bkHotel("fernvale-leisure-club-and-resort", "2026-11-28", "2026-12-01"), live: true, booked: { total: 278.71, nights: 3, cancellable: true, cancelBy: "Nov 20, 2026", dates: "Nov 28–Dec 1", room: "Standard Triple Room · twin beds, breakfast included" } }
     ] }
 ];
 const nightsOf = b => Math.round((new Date(b.to) - new Date(b.from)) / 864e5);
