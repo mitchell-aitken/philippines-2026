@@ -156,7 +156,7 @@
           }
         ],
         "lastError": "Your account has run out of searches.",
-        "lastErrorAt": "2026-11-09T22:58:46.072Z"
+        "lastErrorAt": "2026-11-10T20:27:28.530Z"
       }
     },
     "kokosnuss": {
@@ -1496,6 +1496,6 @@
       }
     }
   },
-  "quotaOutAt": "2026-11-09T22:58:46.599Z",
+  "quotaOutAt": "2026-11-10T20:27:28.834Z",
   "areas": {}
 }
